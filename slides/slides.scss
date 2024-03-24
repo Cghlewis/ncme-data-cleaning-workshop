@@ -1,0 +1,153 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
+
+$theme-header-font: Domine, serif;
+$theme-body-font: Atkinson Hyperlegible, Nunito, sans-serif;
+$theme-code-font: Fira Mono, monospace;
+
+// Colors
+$theme-primary:       #0b7366;
+$theme-secondary:     #6a2d0a;
+$theme-light:         #f6fafa;
+
+// Background of the presentation
+$backgroundColor: $theme-light;
+
+// Primary/body text
+$mainFont: $theme-body-font;
+$mainFontSize: 35px;
+
+// Vertical spacing between blocks of text
+$blockMargin: 0.3em;
+
+// Headings
+$headingFont: $theme-header-font;
+$headingColor: $theme-primary;
+
+$headingMargin: 0 0 $blockMargin 0;
+$headingLineHeight: 1em;
+$headingLetterSpacing: 2px;
+$headingTextTransform: none;
+$headingTextShadow: none;
+$headingFontWeight: bold;
+
+$heading1Size: 2.5em;
+$heading2Size: 2.2em;
+$heading3Size: 1.5em;
+$heading4Size: 1.0em;
+
+// Code
+$codeFont: $theme-code-font;
+$code-block-font-size: 0.8em;
+
+// Links and actions
+$linkColor: $theme-secondary;
+$linkColorHover: darken( $linkColor, 20% );
+
+// Text selection
+$selectionBackgroundColor: $theme-primary;
+
+// Contrast
+$min-contrast-ratio: 7;
+
+/*-- scss:rules --*/
+
+// Font classes
+
+.warning {
+  color: #990000;
+}
+
+.reveal a:not([role="tab"]) {
+  text-decoration: underline !important;
+}
+
+.h2 {
+  padding-bottom: 3em !important;
+}
+
+.subtitle {
+  font-size: $heading3Size;
+  font-weight: bold;
+}
+
+#title-slide .subtitle {
+  margin-top: 6rem;
+}
+
+.quarto-title-author-name {
+  font-size: $heading3Size;
+}
+
+.reveal div.sourceCode {
+  margin-bottom: 15px !important;
+}
+
+// Table
+.reveal table {
+  margin-left: 0!important;
+}
+
+// Footer
+.reveal .footer {
+  font-size: 0.8em;
+  color: $theme-secondary;
+}
+
+// Containers
+.reveal .slide .v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  flex-direction: column;
+}
+
+// Alignment
+.center {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+// Background color sections
+.background-primary {
+  &:is(.slide-background) {
+  background: $theme-primary;
+  }
+}
+
+.background-secondary {
+  &:is(.slide-background) {
+  background: $theme-secondary;
+  }
+}
+
+section.has-dark-background a, section.has-dark-background a:hover {
+    color: $theme-light !important;
+}
+
+// Fontawesome
+.fab, .fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+  color: $theme-primary;
+  line-height: 1.5;
+}
+
+.fas, .fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: $theme-primary;
+  line-height: 1.2;
+}
+
+// Slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

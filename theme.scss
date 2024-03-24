@@ -1,0 +1,153 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fira+Mono&family=Domine:wght@400;700;900&family=Nunito:wght@400;900&display=swap');
+
+$theme-header-font: Domine, serif;
+$theme-body-font: Atkinson Hyperlegible, Nunito, sans-serif;
+$theme-code-font: Fira Mono, monospace;
+
+// Colors
+$theme-primary:   #0b7366;
+$theme-secondary: #6a2d0a;
+$theme-light:     #f6fafa;
+
+// Base document colors
+$navbar-bg: $theme-primary; // navbar background color
+$navbar-fg: $theme-light; // navbar foreground color
+$sidebar-bg: $theme-primary; // sidebar background color
+$sidebar-fg: $theme-light; // sidebar foreground color
+$footer-bg: $theme-primary; // footer background color
+$footer-fg: $theme-light; // footer foreground color
+$link-color: $theme-secondary; // hyperlinks
+
+// Inline code
+$code-bg: lighten($theme-secondary, 70%); // inline code background color
+$code-color: $theme-secondary; // inline code text color
+
+// Contrast
+$min-contrast-ratio:   7;
+
+/*-- scss:rules --*/
+
+.navbar-title {
+  font-family: $theme-header-font;
+  font-weight: 700;
+}
+
+h1, h2 {
+  font-size: 1.3em;
+  font-weight: 900;
+  font-family: $theme-header-font;
+  color: darken($theme-primary, 20%);
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3, h4 {
+  font-weight: 700;
+  font-family: $theme-header-font;
+  color: $theme-primary;
+}
+
+h3 {
+  font-size: 1.15em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5, h6 {
+  font-size: 1.05em;
+  font-weight: 600;
+  font-family: $theme-header-font;
+  color: $theme-secondary;
+}
+
+.fa-solid, .fab, .fa-brands {
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400;
+    color: $theme-primary;
+}
+
+p.subtitle.lead {
+  font-size: 1em;
+  text-align: center;
+}
+
+#title-block-header.quarto-title-block.default .description {
+  margin-top: 1em;
+}
+
+body {
+  font-family: $theme-body-font;
+  background-color: $theme-light;
+}
+
+// code
+
+code {
+  font-family: $theme-code-font;
+}
+
+.sourceCode pre code {
+  padding: 1.2em;
+}
+
+// images
+
+.figure-img {
+    margin-bottom: 0;
+    line-height: 0;
+    border-radius: 5px;
+}
+
+// specific classes
+
+.center-text {
+  text-align: center;
+}
+
+.img-va-bottom {
+  vertical-align: bottom;
+}
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-float-right {
+  float: right;
+  padding-left: 1em;
+}
+
+@media screen and (max-width: 991.98px) {
+  .img-float-right {
+    float: right;
+    width: 100%;
+    padding-bottom: 1em;
+    padding-left: 0em;
+  }
+}
+
+// github icon button
+
+.bi-github {
+  color: white;
+}
+
+// slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-style: solid;
+  border-width: 1px;
+}
+

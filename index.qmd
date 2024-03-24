@@ -1,0 +1,68 @@
+---
+title: "Parameterized Reporting with Quarto: R-Ladies Abuja"
+---
+
+------------------------------------------------------------------------
+
+::: callout-important
+# Template for creating a workshop website and slides with Quarto
+
+This is what the template workshop website and slides will look like before you edit or customize the content and styling. 
+
+Access the [`workshop-template` GitHub repository](https://github.com/jadeynryan/workshop-template).
+
+For instructions on using this template, see [`how-to-use-template.md`](https://github.com/jadeynryan/workshop-template/blob/main/how-to-use-template.md).
+:::
+
+<!-- ::: callout-important -->
+<!-- This workshop is currently being updated. Materials, links, exercises subject to change. -->
+<!-- ::: -->
+
+## R-Ladies Abuja Workshop
+
+📆 February 21, 2024 // 4:30 pm - 6:30 pm WAT  
+🏨 Virtual  
+🆓 **FREE** with [registration](https://www.meetup.com/rladies-abuja/events/298688371/)  
+🎥 [Recording](https://youtu.be/kQn82pa04jQ?si=Ksvdp0Hdgs1crOD0)  
+🏡 [Workshop website](https://jadeyryan.quarto.pub/rladies-abuja-quarto-params)  
+🔖 [Source tag](https://github.com/jadeynryan/parameterized-quarto-workshop/releases/tag/rladies-abuja)
+
+------------------------------------------------------------------------
+
+## Abstract
+
+Tired of manually adjusting Quarto reports for different regions, time periods, or clients? Dreaming of using just one template to generate both interactive HTML and static Word/PDF versions of your reports?
+
+Join our workshop to unlock the power of parameterized reporting with Quarto and leave with your own template and examples to modify for your own projects.
+
+Get a sneak preview of what you'll learn by checking out the [slides](https://jadeyryan.com/talks/2023-09-25_posit_parameterized-quarto/) from my posit::conf(2023) talk.
+
+We welcome everyone! However, if you're new to Quarto or functional programming with {purrr}, take a look at the [pre-work](prework.html#sec-quarto-purrr) for some background videos/tutorials.
+
+## Learning objectives
+
+1.  Understand what parameterized reporting is and when it is useful.
+
+2.  Learn how to convert a report into a parameterized template.
+
+3.  Render all variations of the report at once using [{quarto}](https://quarto-dev.github.io/quarto-r/) and [{purrr}](https://purrr.tidyverse.org/).
+
+4.  Generate multiple format outputs from the same template file with conditional content and conditional code execution.
+
+## Is this workshop for me?
+
+If your answer to any of the following questions is "yes", then this is the right workshop for you.
+
+-   Do you frequently report the same set of metrics, tables, or graphs for different groups?
+
+-   Do you want to stop combing through your source code to find and replace your [hard-coded values](https://www.bloomtech.com/article/what-is-hard-coding) each time you need to create a new variation of your report?
+
+-   Do you want to make your life easier and your reports more reproducible by parameterizing your reports?
+
+The workshop is designed for those with some experience in R and R Markdown or Quarto. It will be assumed that participants can perform basic data manipulation and visualization. Experience with the {tidyverse}, especially {purrr} and the pipe operator (`%>%` / `|>`), is a major plus, but is not required.
+
+## Speaker
+
+![](images/jadey.jpg){style="float:left;padding: 0 10px 0 0; border-radius:50%" fig-alt="Headshot of Jadey Ryan" width="150"} [**Jadey Ryan**](https://jadeyryan.com) is a self-taught R enthusiast working in environmental data science for the [Washington State Department of Agriculture](https://agr.wa.gov/AgScience). She is obsessed with cats, nature, R, and Quarto.
+
+[{{< fa link size=xl >}}](https://jadeyryan.com) [{{< fa brands mastodon size=xl >}}](https://fosstodon.org/@jadeynryan) [{{< fa brands linkedin size=xl >}}](https://www.linkedin.com/in/jadey-ryan) [{{< fa brands github size=xl >}}](https://github.com/jadeynryan/) [{{< fa brands etsy size=xl >}}](https://thecodingcats.etsy.com/)

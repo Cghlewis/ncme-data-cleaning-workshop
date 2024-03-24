@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "slides/index.html#acknowledgements",
+    "href": "slides/index.html#acknowledgements",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\n\n\n\nParameterized Reports with Quarto taught by Jadey Ryan\n\nR/Medicine Data Cleaning 2023 Workshop taught by Crystal Lewis, Shannon Pileggi, and Peter Higgins\n\nASA Traveling Courses on Quarto taught by Mine Çetinkaya-Rundel and Andrew Bray"
+  },
+  {
+    "objectID": "slides/index.html#disclaimer-and-license",
+    "href": "slides/index.html#disclaimer-and-license",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Disclaimer and license",
+    "text": "Disclaimer and license\nOpinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.\n\nThis work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)."
+  },
+  {
+    "objectID": "slides/index.html#jadey-ryan",
+    "href": "slides/index.html#jadey-ryan",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Jadey Ryan",
+    "text": "Jadey Ryan\n\n\nData scientist at WA Dept of Agriculture\nThe Coding Cats: cat & code themed merch\n jadeyryan.com\n @jadeynryan\n linkedin.com/in/jadey-ryan\n jadeynryan\n thecodingcats.etsy.com\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n @leslie.mmichel"
+  },
+  {
+    "objectID": "slides/index.html#logistics",
+    "href": "slides/index.html#logistics",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Logistics",
+    "text": "Logistics\nLogin to Posit Cloud workspace: bit.ly/rladies-parameterized-quarto.\n\nIf Posit Cloud doesn’t work, download materials locally:\n\nusethis::use_course(\n  \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\"\n#  ,destdir = \"___\"\n  )\n\n\n\nAsk questions in the public Zoom chat or raise hand ✋.\n\n\nWorkshop structure: presentation, demos/exercises, questions to answer in 💬 Chat."
+  },
+  {
+    "objectID": "slides/index.html#learning-objectives",
+    "href": "slides/index.html#learning-objectives",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\nUnderstand what parameterized reporting is and when it is useful.\n\n\n\nLearn how to convert a report into a parameterized template.\n\n\n\nRender all variations of the report at once using {quarto} and {purrr}.\n\n\n\nGenerate multiple format outputs from the same template file with conditional content and conditional code execution."
+  },
+  {
+    "objectID": "slides/index.html#pipes",
+    "href": "slides/index.html#pipes",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Pipes",
+    "text": "Pipes\n\n2014+ magrittr pipe %&gt;%\n2021+ (R \\(\\geq\\) 4.1.0) native R pipe |&gt;\n\n\nIsabella Velásquez’s blog post Understanding the native R pipe |&gt; (2022)\n\n\n\n\n\n\ndo_something(arg1, arg2, arg3, ...)\n\narg1 |&gt;  \n  do_something(arg2, arg3)\n\n\n\n\n\nmean(0:10)\n\n0:10 |&gt; \n  mean()\n\n\n\n\n\n\nTo change shortcut to the native pipe:\nTools → Global Options → Code → Editing → Use Native Pipe Operator\nWindows: Ctrl + Shift + M\nMac: Cmd + Shift + M\n\nSlide adapted from R/Medicine Data Cleaning 2023 Workshop"
+  },
+  {
+    "objectID": "slides/index.html#namespacing",
+    "href": "slides/index.html#namespacing",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "Namespacing",
+    "text": "Namespacing\npackage::function()\ndplyr::select()\n\n\ntells R explicitly to use the function select from the package dplyr\nhelps avoid name conflicts (e.g., MASS::select())\ndoes not require library(dplyr)\n\n\n\n\n\n\nlibrary(dplyr)\n\nmtcars |&gt;  \n  select(mpg, cyl) \n\n\n\n\n\n# library(dplyr) not needed\n\nmtcars |&gt;  \n  dplyr::select(mpg, cyl) \n\n\n\n\nSlide adapted from R/Medicine Data Cleaning 2023 Workshop"
+  },
+  {
+    "objectID": "slides/index.html#rstudio-options",
+    "href": "slides/index.html#rstudio-options",
+    "title": "Parameterized Reporting with Quarto ",
+    "section": "RStudio options",
+    "text": "RStudio options\nTools → Global Options →\n\n\nFussy YAML indentation:\nCode → Display → Indentation guides: → Rainbow lines\n\n\n\nMatch parentheses:\nCode → Display → Indentation guides: → Check Use rainbow parentheses\n\n\n\nMatching divs:\nR Markdown → Advanced → Check Use rainbow fenced divs\n\n\n\n\n\nParameterized Reporting with Quarto // jadeyryan.quarto.pub/rladies-abuja-quarto-params/"
+  },
+  {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "View slides in full screen."
+  },
+  {
+    "objectID": "materials.html#slides",
+    "href": "materials.html#slides",
+    "title": "Materials",
+    "section": "",
+    "text": "View slides in full screen."
+  },
+  {
+    "objectID": "materials.html#recording",
+    "href": "materials.html#recording",
+    "title": "Materials",
+    "section": "Recording",
+    "text": "Recording"
+  },
+  {
+    "objectID": "materials.html#exercises",
+    "href": "materials.html#exercises",
+    "title": "Materials",
+    "section": "Exercises",
+    "text": "Exercises\nOption 1: Posit Cloud\nJoin the workspace: bit.ly/rladies-parameterized-quarto.\nOpen the R-Ladies Abuja specific project: bit.ly/quarto-params-posit-cloud.\nOption 2: Download locally\nFill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")"
+  },
+  {
+    "objectID": "index.html#r-ladies-abuja-workshop",
+    "href": "index.html#r-ladies-abuja-workshop",
+    "title": "Parameterized Reporting with Quarto: R-Ladies Abuja",
+    "section": "R-Ladies Abuja Workshop",
+    "text": "R-Ladies Abuja Workshop\n📆 February 21, 2024 // 4:30 pm - 6:30 pm WAT\n🏨 Virtual\n🆓 FREE with registration\n🎥 Recording\n🏡 Workshop website\n🔖 Source tag"
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Parameterized Reporting with Quarto: R-Ladies Abuja",
+    "section": "Abstract",
+    "text": "Abstract\nTired of manually adjusting Quarto reports for different regions, time periods, or clients? Dreaming of using just one template to generate both interactive HTML and static Word/PDF versions of your reports?\nJoin our workshop to unlock the power of parameterized reporting with Quarto and leave with your own template and examples to modify for your own projects.\nGet a sneak preview of what you’ll learn by checking out the slides from my posit::conf(2023) talk.\nWe welcome everyone! However, if you’re new to Quarto or functional programming with {purrr}, take a look at the pre-work for some background videos/tutorials."
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Parameterized Reporting with Quarto: R-Ladies Abuja",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nUnderstand what parameterized reporting is and when it is useful.\nLearn how to convert a report into a parameterized template.\nRender all variations of the report at once using {quarto} and {purrr}.\nGenerate multiple format outputs from the same template file with conditional content and conditional code execution."
+  },
+  {
+    "objectID": "index.html#is-this-workshop-for-me",
+    "href": "index.html#is-this-workshop-for-me",
+    "title": "Parameterized Reporting with Quarto: R-Ladies Abuja",
+    "section": "Is this workshop for me?",
+    "text": "Is this workshop for me?\nIf your answer to any of the following questions is “yes”, then this is the right workshop for you.\n\nDo you frequently report the same set of metrics, tables, or graphs for different groups?\nDo you want to stop combing through your source code to find and replace your hard-coded values each time you need to create a new variation of your report?\nDo you want to make your life easier and your reports more reproducible by parameterizing your reports?\n\nThe workshop is designed for those with some experience in R and R Markdown or Quarto. It will be assumed that participants can perform basic data manipulation and visualization. Experience with the {tidyverse}, especially {purrr} and the pipe operator (%&gt;% / |&gt;), is a major plus, but is not required."
+  },
+  {
+    "objectID": "index.html#speaker",
+    "href": "index.html#speaker",
+    "title": "Parameterized Reporting with Quarto: R-Ladies Abuja",
+    "section": "Speaker",
+    "text": "Speaker\n Jadey Ryan is a self-taught R enthusiast working in environmental data science for the Washington State Department of Agriculture. She is obsessed with cats, nature, R, and Quarto."
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "Disclaimer and license",
+    "section": "",
+    "text": "© 2024 Jadey Ryan\nOpinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.\nThis work is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license.\n   \nIn short, you may share and adapt this content with appropriate credit and notation of any changes. You may not use this material for any commercial purposes."
+  },
+  {
+    "objectID": "prework.html",
+    "href": "prework.html",
+    "title": "Pre-work",
+    "section": "",
+    "text": "This workshop has five exercises for you to try. After the workshop, I encourage you to adapt the exercise template files and code to fit your own projects.\nThere are three ways for you to participate. Please complete the pre-work for whichever way you’d like to follow along before the workshop. Spinning up the Posit Cloud instance can take a few minutes, as can installing packages and downloading the exercises."
+  },
+  {
+    "objectID": "prework.html#follow-along-in-the-posit-cloud",
+    "href": "prework.html#follow-along-in-the-posit-cloud",
+    "title": "Pre-work",
+    "section": "Follow along in the Posit Cloud",
+    "text": "Follow along in the Posit Cloud\nThis workshop will largely be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. Please create an account if you don’t yet have one.\nJoin the R-Ladies workspace: bit.ly/rladies-parameterized-quarto.\nOpen the R-Ladies Abuja project: bit.ly/quarto-params-posit-cloud."
+  },
+  {
+    "objectID": "prework.html#watch-and-listen",
+    "href": "prework.html#watch-and-listen",
+    "title": "Pre-work",
+    "section": "Watch and listen",
+    "text": "Watch and listen\nIf you will not be using the Posit Cloud instance, you can learn by watching and listening. No pre-work needed for you. 😊"
+  },
+  {
+    "objectID": "prework.html#follow-along-on-your-own-computer",
+    "href": "prework.html#follow-along-on-your-own-computer",
+    "title": "Pre-work",
+    "section": "Follow along on your own computer",
+    "text": "Follow along on your own computer\nAs a more high-risk alternative, if you would like to try this out on your own computer, please have the following installed and configured on your machine. Note that we will NOT be able to help you with local computer problems during the workshop. If you choose to do this, you are on your own.\n\nRecent version of R\nRecent version of RStudio\n\nRecent version of packages used in this workshop:\n\npkgs &lt;- c(\"dplyr\", \"fs\", \"ggplot2\", \"here\", \"plotly\", \"purrr\", \"quarto\", \n          \"readr\", \"stringr\", \"janitor\", \"lubridate\", \"tidyr\", \"rmarkdown\",\n          \"knitr\")\n\ninstall.packages(pkgs)\n\n\n\nCheck that Quarto works on your computer:\n\nOpen RStudio and create a new Quarto (.qmd) document.\nSave the document and check you are able to render it.\n\n\n\nGet the project on your machine. Fill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")"
+  },
+  {
+    "objectID": "prework.html#sec-quarto-purrr",
+    "href": "prework.html#sec-quarto-purrr",
+    "title": "Pre-work",
+    "section": "Quarto and {purrr}",
+    "text": "Quarto and {purrr}\nIf you’re new to Quarto, we recommend watching Tom Mock’s excellent 2-hour introduction to Quarto.\nIf you’re new to {purrr}, we recommend watching this R-Ladies Baltimore presentation Make your R Code purr with purrr and reviewing Jenny Bryan’s tutorial and workshop."
+  }
+]

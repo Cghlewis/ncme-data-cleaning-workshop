@@ -1,0 +1,260 @@
+---
+title: "Parameterized Reporting<br> with Quarto<br> ![](images/jr-logo-quarto.webp){width=5em}"
+author: "Jadey Ryan // February 21, 2024<br>R-Ladies Abuja"
+footer: "Parameterized Reporting with Quarto // [jadeyryan.quarto.pub/rladies-abuja-quarto-params/](https://jadeyryan.quarto.pub/rladies-abuja-quarto-params/)"
+logo: "images/jr-logo-quarto.webp"
+logo-alt: "Two hex stickers side by side with a heart joining them in the middle. Left sticker is Jadey's cat logo. Right sticker is the Quarto logo."
+format: 
+  revealjs: 
+    width: 1600
+    height: 900  
+    theme: slides.scss
+    highlight-style: a11y
+    transition: fade
+    slide-number: true
+execute:
+  echo: true
+df-print: kable
+---
+
+## Acknowledgements
+
+::: {width="70%"}
+![](images/rladies-abuja.png){.center fig-alt="R-Ladies Abuja Logo"}
+:::
+
+<br>
+
+[Parameterized Reports with Quarto](https://github.com/jadeynryan/parameterized-quarto-workshop) taught by [Jadey Ryan](https://jadeyryan.com/)
+
+<br>
+
+[R/Medicine Data Cleaning 2023 Workshop](https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/) taught by [Crystal Lewis](https://cghlewis.com/), [Shannon Pileggi](https://www.pipinghotdata.com/), and [Peter Higgins](https://bookdown.org/pdr_higgins/rmrwr/)
+
+<br>
+
+[ASA Traveling Courses on Quarto](https://quarto.org/docs/blog/posts/2023-12-05-asa-traveling-courses/) taught by [Mine Çetinkaya-Rundel](https://mine-cr.com/) and [Andrew Bray](https://andrewpbray.github.io/)
+
+## Disclaimer and license
+
+Opinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.
+
+<br>
+
+This work is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+{{< fa brands creative-commons size=2x >}} {{< fa brands creative-commons-by size=2x >}} {{< fa brands creative-commons-nc size=2x >}} {{< fa brands creative-commons-sa size=2x >}}
+
+## Jadey Ryan
+
+::: columns
+::: {.column width="44%"}
+Data scientist at WA Dept of Agriculture
+
+The Coding Cats: cat & code themed merch
+
+{{< fa link size=xl >}} [jadeyryan.com](https://jadeyryan.com)
+
+{{< fa brands mastodon size=xl >}} [\@jadeynryan](https://fosstodon.org/@jadeynryan)
+
+{{< fa brands linkedin size=xl >}} [linkedin.com/in/jadey-ryan](https://www.linkedin.com/in/jadey-ryan)
+
+{{< fa brands github size=xl >}} [jadeynryan](https://github.com/jadeynryan/)
+
+{{< fa brands etsy size=xl >}} [thecodingcats.etsy.com](https://thecodingcats.etsy.com/)
+
+![](images/mts.webp){fig-alt="Three snowshoe siamese cats in loaf mode. From left to right: Tai, Mai, and Skye" style="border-radius:1em;margin-top:auto"}
+:::
+ 
+::: {.column width="28%"}
+![](images/bulk-density.jpg){fig-alt="Jadey collecting a bulk density soil sample in a field of wheat stubble." style="border-radius:1em;margin-top:auto"}
+:::
+
+::: {.column width="28%"}
+::: {layout-nrow="2"}
+![](images/soil-sampling.jpg){style="border-radius:1em;margin-top:auto" fig-alt="Jadey standing in a field of wheat stubble holding a 3 foot long soil sampling probe over her shoulder."}
+
+![](images/rangeland.jpg){fig-alt="Jadey standing in a grazed wildflower meadow with two colleagues collecting soil samples." style="border-radius:1em;margin-top:auto"}
+:::
+
+{{< fa camera title="Photo credit" >}} [@leslie.mmichel](https://twitter.com/leslie_mmichel)
+
+:::
+:::
+
+## Logistics
+
+Login to Posit Cloud workspace: [**bit.ly/rladies-parameterized-quarto**](https://bit.ly/rladies-parameterized-quarto).
+
+. . .
+
+If Posit Cloud doesn't work, download materials locally:
+
+```{r}
+#| eval: false
+
+usethis::use_course(
+  "https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip"
+#  ,destdir = "___"
+  )
+```
+
+. . .
+
+Ask questions in the public Zoom chat or raise hand ✋.
+
+. . .
+
+Workshop structure: presentation, demos/exercises, questions to answer in 💬 **Chat**.
+
+# 💪🏼 Exercise 0 {.background-primary}
+
+<br>
+
+💬 **Chat**: share your name, where you're calling from, and one thing you've made that you're proud of.
+
+```{r}
+#| echo: false
+countdown::countdown(minutes = 1, top = 0)
+```
+
+## Learning objectives
+
+::: incremental
+1.  Understand what parameterized reporting is and when it is useful.
+
+<br>
+
+2.  Learn how to convert a report into a parameterized template.
+
+<br>
+
+3.  Render all variations of the report at once using [{quarto}](https://quarto-dev.github.io/quarto-r/) and [{purrr}](https://purrr.tidyverse.org/).
+
+<br>
+
+4.  Generate multiple format outputs from the same template file with conditional content and conditional code execution.
+:::
+
+# Syntax and RStudio aside {.background-secondary}
+
+## Pipes
+
+-   2014+ magrittr pipe `%>%`
+
+-   2021+ (R $\geq$ 4.1.0) native R pipe `|>`
+
+. . .
+
+Isabella Velásquez's blog post [*Understanding the native R pipe* \|\>](https://ivelasq.rbind.io/blog/understanding-the-r-pipe/) (2022)
+
+<br>
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+```{r echo=TRUE, eval=FALSE}
+#| code-line-numbers: "|1|3-4"
+do_something(arg1, arg2, arg3, ...)
+
+arg1 |>  
+  do_something(arg2, arg3)
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="45%"}
+```{r echo=TRUE, eval=FALSE}
+#| code-line-numbers: "|1|3-4"
+mean(0:10)
+
+0:10 |> 
+  mean()
+```
+:::
+:::
+
+. . .
+
+<br>
+
+To change shortcut to the native pipe:
+
+`Tools` → `Global Options` → `Code` → `Editing` → `Use Native Pipe Operator`
+
+Windows: `Ctrl` + `Shift` + `M` 
+
+Mac: `Cmd` + `Shift` + `M` 
+
+::: footer
+Slide adapted from [R/Medicine Data Cleaning 2023 Workshop](https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/)
+:::
+
+## Namespacing
+
+`package::function()`
+
+`dplyr::select()`
+
+. . .
+
+-   tells R explicitly to use the function `select` from the package `dplyr`
+
+-   helps avoid name conflicts (e.g., `MASS::select()`)
+
+-   does not require `library(dplyr)`
+
+. . .
+
+::: columns
+::: {.column width="45%"}
+```{r echo=TRUE, eval=FALSE}
+library(dplyr)
+
+mtcars |>  
+  select(mpg, cyl) 
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+```{r echo=TRUE, eval=FALSE}
+# library(dplyr) not needed
+
+mtcars |>  
+  dplyr::select(mpg, cyl) 
+```
+:::
+:::
+
+::: footer
+Slide adapted from [R/Medicine Data Cleaning 2023 Workshop](https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/)
+:::
+
+## RStudio options
+
+`Tools` → `Global Options` →
+
+::: incremental
+-   Fussy YAML indentation:
+
+    `Code` → `Display` → `Indentation guides:` → `Rainbow lines`
+
+<br>
+
+-   Match parentheses:
+
+    `Code` → `Display` → `Indentation guides:` → Check `Use rainbow parentheses`
+
+<br>
+
+-   Matching divs:
+
+    `R Markdown` → `Advanced` → Check `Use rainbow fenced divs`
+:::
+
