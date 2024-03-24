@@ -1,1 +1,1 @@
-Sitemap: https://jadeyryan.quarto.pub/rladies-abuja-quarto-params/sitemap.xml
+Sitemap: https://Cghlewis.github.io/ncme-data-cleaning-workshop/sitemap.xml

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Parameterized Reporting with Quarto: R-Ladies Abuja</title>
+<title>Data Cleaning for Data Sharing Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./prework.html" rel="next">
-<link href="./images/jr-logo-circle.webp" rel="icon">
+<link href="./slides.html" rel="next">
+<link href="./images/NCME-AnnualMeeting2024Logo-F.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -73,12 +80,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,13 +95,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/jr-logo-quarto.webp" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./images/NCME-AnnualMeeting2024Logo-F.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
-    <a href="https://github.com/jadeynryan/parameterized-quarto-workshop" rel="" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -112,14 +119,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pre-work</span></a>
+  <a href="./slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./materials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Materials</span></a>
+  <a href="./exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -131,27 +138,31 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#r-ladies-abuja-workshop" id="toc-r-ladies-abuja-workshop" class="nav-link active" data-scroll-target="#r-ladies-abuja-workshop">R-Ladies Abuja Workshop</a></li>
-  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#ncme-2024-workshop" id="toc-ncme-2024-workshop" class="nav-link active" data-scroll-target="#ncme-2024-workshop">NCME 2024 Workshop</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#is-this-workshop-for-me" id="toc-is-this-workshop-for-me" class="nav-link" data-scroll-target="#is-this-workshop-for-me">Is this workshop for me?</a></li>
+  <li><a href="#prework" id="toc-prework" class="nav-link" data-scroll-target="#prework">Prework</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
   <li><a href="#speaker" id="toc-speaker" class="nav-link" data-scroll-target="#speaker">Speaker</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jadeynryan/parameterized-quarto-workshop/blob/main/index.qmd" class="toc-action">View source</a></p><p><a href="https://github.com/jadeynryan/parameterized-quarto-workshop/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jadeynryan/parameterized-quarto-workshop/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Parameterized Reporting with Quarto: R-Ladies Abuja</h1>
+<h1 class="title">Data Cleaning for Data Sharing Using R</h1>
 </div>
 
 
@@ -164,69 +175,49 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
+
 <hr>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Template for creating a workshop website and slides with Quarto
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is what the template workshop website and slides will look like before you edit or customize the content and styling.</p>
-<p>Access the <a href="https://github.com/jadeynryan/workshop-template"><code>workshop-template</code> GitHub repository</a>.</p>
-<p>For instructions on using this template, see <a href="https://github.com/jadeynryan/workshop-template/blob/main/how-to-use-template.md"><code>how-to-use-template.md</code></a>.</p>
-</div>
-</div>
-<!-- ::: callout-important -->
-<!-- This workshop is currently being updated. Materials, links, exercises subject to change. -->
-<!-- ::: -->
-<section id="r-ladies-abuja-workshop" class="level2">
-<h2 class="anchored" data-anchor-id="r-ladies-abuja-workshop">R-Ladies Abuja Workshop</h2>
-<p>📆 February 21, 2024 // 4:30 pm - 6:30 pm WAT<br>
-🏨 Virtual<br>
-🆓 <strong>FREE</strong> with <a href="https://www.meetup.com/rladies-abuja/events/298688371/">registration</a><br>
-🎥 <a href="https://youtu.be/kQn82pa04jQ?si=Ksvdp0Hdgs1crOD0">Recording</a><br>
-🏡 <a href="https://jadeyryan.quarto.pub/rladies-abuja-quarto-params">Workshop website</a><br>
-🔖 <a href="https://github.com/jadeynryan/parameterized-quarto-workshop/releases/tag/rladies-abuja">Source tag</a></p>
+<section id="ncme-2024-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="ncme-2024-workshop">NCME 2024 Workshop</h2>
+<p>📆 April 11, 2024 // 8:45 am - 12:45 pm EDT<br>
+🏨 In Person<br>
+📝 NCME attendees can register <a href="https://www.aera.net/registration">here</a><br>
+🏡 <a href="https://Cghlewis.github.io/ncme-data-cleaning-workshop/">Workshop website</a></p>
 <hr>
 </section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>Tired of manually adjusting Quarto reports for different regions, time periods, or clients? Dreaming of using just one template to generate both interactive HTML and static Word/PDF versions of your reports?</p>
-<p>Join our workshop to unlock the power of parameterized reporting with Quarto and leave with your own template and examples to modify for your own projects.</p>
-<p>Get a sneak preview of what you’ll learn by checking out the <a href="https://jadeyryan.com/talks/2023-09-25_posit_parameterized-quarto/">slides</a> from my posit::conf(2023) talk.</p>
-<p>We welcome everyone! However, if you’re new to Quarto or functional programming with {purrr}, take a look at the <a href="prework.html#sec-quarto-purrr">pre-work</a> for some background videos/tutorials.</p>
-</section>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>Before sharing research study data, it should be vetted to ensure that it is interpretable, analyzable, and reliable. This half-day, virtual workshop will provide a foundational understanding of how to organize data for the purpose of data sharing.</p>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<ol type="1">
-<li><p>Understand what parameterized reporting is and when it is useful.</p></li>
-<li><p>Learn how to convert a report into a parameterized template.</p></li>
-<li><p>Render all variations of the report at once using <a href="https://quarto-dev.github.io/quarto-r/">{quarto}</a> and <a href="https://purrr.tidyverse.org/">{purrr}</a>.</p></li>
-<li><p>Generate multiple format outputs from the same template file with conditional content and conditional code execution.</p></li>
-</ol>
+<ul>
+<li>Understand how to assess a data set for 8 data quality indicators</li>
+<li>Be able to review a data set and apply a list of standardized data cleaning steps as needed</li>
+<li>Feel comfortable using R code to clean a data set</li>
+<li>Understand types of documentation that should be shared alongside data</li>
+</ul>
 </section>
 <section id="is-this-workshop-for-me" class="level2">
 <h2 class="anchored" data-anchor-id="is-this-workshop-for-me">Is this workshop for me?</h2>
-<p>If your answer to any of the following questions is “yes”, then this is the right workshop for you.</p>
-<ul>
-<li><p>Do you frequently report the same set of metrics, tables, or graphs for different groups?</p></li>
-<li><p>Do you want to stop combing through your source code to find and replace your <a href="https://www.bloomtech.com/article/what-is-hard-coding">hard-coded values</a> each time you need to create a new variation of your report?</p></li>
-<li><p>Do you want to make your life easier and your reports more reproducible by parameterizing your reports?</p></li>
-</ul>
-<p>The workshop is designed for those with some experience in R and R Markdown or Quarto. It will be assumed that participants can perform basic data manipulation and visualization. Experience with the {tidyverse}, especially {purrr} and the pipe operator (<code>%&gt;%</code>&nbsp;/&nbsp;<code>|&gt;</code>), is a major plus, but is not required.</p>
+<p>This workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.</p>
+<p>This workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required.</p>
+</section>
+<section id="prework" class="level2">
+<h2 class="anchored" data-anchor-id="prework">Prework</h2>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
 </section>
 <section id="speaker" class="level2">
 <h2 class="anchored" data-anchor-id="speaker">Speaker</h2>
-<p><img src="images/jadey.jpg" class="img-fluid" style="float:left;padding: 0 10px 0 0; border-radius:50%" alt="Headshot of Jadey Ryan" width="150"> <a href="https://jadeyryan.com"><strong>Jadey Ryan</strong></a> is a self-taught R enthusiast working in environmental data science for the <a href="https://agr.wa.gov/AgScience">Washington State Department of Agriculture</a>. She is obsessed with cats, nature, R, and Quarto.</p>
-<p><a href="https://jadeyryan.com"><i class="fa-solid fa-link fa-xl" aria-label="link"></i></a> <a href="https://fosstodon.org/@jadeynryan"><i class="fa-brands fa-mastodon fa-xl" aria-label="mastodon"></i></a> <a href="https://www.linkedin.com/in/jadey-ryan"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a> <a href="https://github.com/jadeynryan/"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a> <a href="https://thecodingcats.etsy.com/"><i class="fa-brands fa-etsy fa-xl" aria-label="etsy"></i></a></p>
+<p><img src="images/Crystal_circle.png" class="img-fluid" style="float:left;padding: 0 10px 0 0; border-radius:50%" alt="Headshot of Crystal Lewis" width="150"> <a href="https://cghlewis.com/"><strong>Crystal Lewis</strong></a> is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—<a href="https://www.meetup.com/rladies-st-louis/">R-Ladies St.&nbsp;Louis</a>, an organization focused on promoting gender diversity in the R community, as well as the <a href="https://osf.io/ap3tk/">POWER (providing women opportunities in education research) Data Management Hub</a>, where she facilitates peer data management support in the education research community.</p>
+<p><a href="https://cghlewis.com/"><i class="fa-solid fa-link fa-xl" aria-label="link"></i></a> <a href="https://www.linkedin.com/in/crystal-lewis-922b4193/"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a> <a href="https://github.com/Cghlewis"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -309,10 +300,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/Cghlewis\.github\.io\/ncme-data-cleaning-workshop\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -322,8 +335,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -335,7 +357,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -379,6 +524,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -404,6 +550,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -461,39 +633,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/jadeyryan\.quarto\.pub\/rladies-abuja-quarto-params\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./prework.html" class="pagination-link">
-        <span class="nav-page-text">Pre-work</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./slides.html" class="pagination-link" aria-label="Slides">
+        <span class="nav-page-text">Slides</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© 2024 Jadey Ryan</div>   
-    <div class="nav-footer-center">Website built with ❤︎️ and <a href="https://quarto.org/">Quarto</a>.</div>
-    <div class="nav-footer-right">Inspired by <a href="https://jadeyryan.quarto.pub/rladies-abuja-quarto-params">Parameterized Reports with Quarto Workshop</a>, inspired by <a href="https://github.com/shannonpileggi/rmedicine-data-cleaning-2023">R/Medicine 2023 workshop</a>, inspired by <a href="https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed">R/Medicine 2022 Workshop</a>, inspired by <a href="https://twitter.com/minebocek"><span class="citation" data-cites="minebocek">@minebocek</span></a>.</div>
+    <div class="nav-footer-left">
+<p>© 2024 Crystal Lewis Consulting, LLC</p>
+</div>   
+    <div class="nav-footer-center">
+<p>Website built with ❤︎️ and <a href="https://quarto.org/">Quarto</a>.</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Inspired by the <a href="https://github.com/jadeynryan/workshop-template">Workshop Template by Jadey Ryan</a> and the <a href="https://github.com/shannonpileggi/rmedicine-data-cleaning-2023">R/Medicine 2023 workshop materials</a>.</p>
+</div>
   </div>
 </footer>
+
 
 
 

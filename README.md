@@ -1,63 +1,46 @@
-# Template for creating a workshop website and slides with Quarto
 
-For instructions on using this template, see [`how-to-use-template.md`](https://github.com/jadeynryan/workshop-template/blob/main/how-to-use-template.md).
-
-See below for a placeholder README for the workshop repository.
+# Data Cleaning for Data Sharing Using R
 
 ------------------------------------------------------------------------
 
-# Parameterized Reporting with Quarto
+## NCME 2024 Workshop
 
-------------------------------------------------------------------------
+📆 April 11, 2024 // 8:45 am - 12:45 pm EDT  
+🏨 In Person  
+📝 NCME attendees can register [here](https://www.aera.net/registration)  
+🏡 [Workshop website](https://Cghlewis.github.io/ncme-data-cleaning-workshop/)  
 
-#### R-Ladies Abuja
 
-📆 February 21, 2024 // 4:30 pm - 6:30 pm WAT  
-🏨 Virtual  
-🆓 **FREE** with [registration](https://www.meetup.com/rladies-abuja/events/298688371/)  
-🎥 [Recording](https://youtu.be/kQn82pa04jQ?si=Ksvdp0Hdgs1crOD0)  
-🏡 [Workshop website](https://jadeyryan.quarto.pub/rladies-abuja-quarto-params)  
-🔖 [Source tag](https://github.com/jadeynryan/parameterized-quarto-workshop/releases/tag/rladies-abuja)
+# Overview
 
-## Abstract
+Before sharing research study data, it should be vetted to ensure that it is interpretable, analyzable, and reliable. This half-day, virtual workshop will provide a foundational understanding of how to organize data for the purpose of data sharing.
 
-Tired of manually adjusting Quarto reports for different regions, time
-periods, or clients? Dreaming of using just one template to generate
-both interactive HTML and static Word/PDF versions of your reports?
+## Learning objectives
 
-Join our workshop to unlock the power of parameterized reporting with
-Quarto and leave with your own template and examples to modify for your
-own projects.
+- Understand how to assess a data set for 8 data quality indicators
+- Be able to review a data set and apply a list of standardized data cleaning steps as needed
+- Feel comfortable using R code to clean a data set
+- Understand types of documentation that should be shared alongside data
 
-Everyone is welcome to attend. 
+## Is this workshop for me?
 
-If you’re new to Quarto, we recommend
-watching [Tom Mock’s excellent 2-hour introduction to
-Quarto](https://www.youtube.com/watch?v=yvi5uXQMvu4).
+This workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.
 
-If you're new to {purrr}, we recommend watching this R-Ladies Baltimore presentation [*Make your R Code purr with purrr*](https://www.youtube.com/watch?v=IewsPpjKElc) and Jenny Bryan's [tutorial](https://jennybc.github.io/purrr-tutorial/) and [workshop](https://github.com/jennybc/row-oriented-workflows).
+This workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required. 
 
 ------------------------------------------------------------------------
 
 ## Speaker
 
-**Jadey Ryan**
-
-Jadey is a self-taught R enthusiast working in environmental data
-science for state government. She is obsessed with cats, nature, R, and
-Quarto.
-
-Learn more on her [personal website](https://jadeyryan.com) where you can also find ways to connect with her!
+[**Crystal Lewis**](https://cghlewis.com/) is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—[R-Ladies St. Louis](https://www.meetup.com/rladies-st-louis/), an organization focused on promoting gender diversity in the R community, as well as the [POWER (providing women opportunities in education research) Data Management Hub](https://osf.io/ap3tk/), where she facilitates peer data management support in the education research community.
 
 ## Acknowledgements
 
-This workshop structure has been adapted from:
+The structure of these workshop materials have been adapted from:
 
-- [Parameterized Reports with Quarto](https://github.com/jadeynryan/parameterized-quarto-workshop) taught by [Jadey Ryan](https://jadeyryan.com/)
+- The [Workshop Template](https://github.com/jadeynryan/workshop-template) by Jadey Ryan
 
 - [R/Medicine Data Cleaning 2023 Workshop](https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/) taught by [Crystal Lewis](https://cghlewis.com/), [Shannon Pileggi](https://www.pipinghotdata.com/), and [Peter Higgins](https://bookdown.org/pdr_higgins/rmrwr/)
-
-- [ASA Traveling Courses on Quarto](https://quarto.org/docs/blog/posts/2023-12-05-asa-traveling-courses/) taught by [Mine Çetinkaya-Rundel](https://mine-cr.com/) and [Andrew Bray](https://andrewpbray.github.io/)
 
 ------------------------------------------------------------------------
 

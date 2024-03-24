@@ -15,36 +15,36 @@ execute:
 
 website:
   page-navigation: true
-  title: "Parameterized Reporting with Quarto: R-Ladies Abuja"
-  description: "Homepage for the 2024 R-Ladies Abuja Parameterized Reports with Quarto Workshop"
-  site-url: "https://jadeyryan.quarto.pub/rladies-abuja-quarto-params/"
-  favicon: "images/jr-logo-circle.webp"
+  title: "Data Cleaning for Data Sharing Using R"
+  description: "Homepage for the NCME 2024 Workshop"
+  site-url: "https://Cghlewis.github.io/ncme-data-cleaning-workshop/"
+  favicon: "images/NCME-AnnualMeeting2024Logo-F.png"
 
-  repo-url: https://github.com/jadeynryan/parameterized-quarto-workshop
+  repo-url: https://github.com/Cghlewis/ncme-data-cleaning-workshop
   repo-actions: [source, edit, issue]
 
   page-footer:
-    left: "&copy; 2024 Jadey Ryan"
+    left: "&copy; 2024 Crystal Lewis Consulting, LLC"
     center: "Website built with ❤︎️ and [Quarto](https://quarto.org/)."
-    right: "Inspired by [Parameterized Reports with Quarto Workshop](https://jadeyryan.quarto.pub/rladies-abuja-quarto-params), inspired by [R/Medicine 2023 workshop](https://github.com/shannonpileggi/rmedicine-data-cleaning-2023), inspired by [R/Medicine 2022 Workshop](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed), inspired by [@minebocek](https://twitter.com/minebocek)."
+    right: "Inspired by the [Workshop Template by Jadey Ryan](https://github.com/jadeynryan/workshop-template) and the [R/Medicine 2023 workshop materials](https://github.com/shannonpileggi/rmedicine-data-cleaning-2023)."
 
   sidebar:
-    logo: "images/jr-logo-quarto.webp"
-    logo-alt: "Two hex stickers side by side with a heart joining them in the middle. Left sticker is Jadey's cat logo. Right sticker is the Quarto logo."
+    background: "#708090"
+    logo: "images/NCME-AnnualMeeting2024Logo-F.png"
     pinned: true
     align: center
     style: docked
     tools:
       - icon: github
-        href: https://github.com/jadeynryan/parameterized-quarto-workshop
+        href: https://github.com/Cghlewis/ncme-data-cleaning-workshop
         text: GitHub
     contents:
      - href: index.qmd
        text: Home
-     - href: prework.qmd
-       text: Pre-work
-     - href: materials.qmd
-       text: Materials
+     - href: slides.qmd
+       text: Slides
+     - href: exercises.qmd
+       text: Exercises
      - href: license.qmd
        text: License
 
