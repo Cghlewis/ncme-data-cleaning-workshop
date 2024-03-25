@@ -58,7 +58,7 @@ Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-s
 
 ## 3 Phases of Data
 
-![](images/phases.PNG){fig-align="center"}
+![](images/phases.png){fig-align="center"}
   
 ## Shared Datasets
 
