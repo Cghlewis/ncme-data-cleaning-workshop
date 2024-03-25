@@ -1,0 +1,17 @@
+{
+  "hash": "1843482e4af40c4732868ee4fbb04c89",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Data Cleaning: Exercises\"\nformat: \n  html:\n    code-fold: true\n    code-summary: \"Show the code solution\"\n---\n\n\n# Instructions\n\n**Recommended:** Complete these exercises in the dedicated Posit Cloud work space, which comes with\n\n1.  all packages pre-installed, and\n\n2.  a Quarto document to fill in.\n\nIt will be helpful to peek here to verify that your tables generated in Posit Cloud match the desired output and code solutions.\n\nJoin R/Medicine Posit cloud work space for Cleaning Medical Data with R: **[bit.ly/posit-cloud-cleaning-medical-data](https://bit.ly/posit-cloud-cleaning-medical-data){target=\"_blank\"}**\n\n**Otherwise:** Follow along this document, work on your personal computer, and challenge yourself **not to peek** at the code solutions until you have completed the exercise.\n\n# Packages\n\n\n## Exercises\n\n**Option 1: Posit Cloud**\n\nJoin the workspace: [bit.ly/rladies-parameterized-quarto](https://bit.ly/rladies-parameterized-quarto).\n\nOpen the R-Ladies Abuja specific project:\n[bit.ly/quarto-params-posit-cloud](https://bit.ly/quarto-params-posit-cloud).\n\n**Option 2: Download locally**\n\nFill in `destdir` with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n\n::: {.cell}\n\n```{.r .cell-code  code-fold=\"false\"}\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")\n```\n:::\n",
+    "supporting": [
+      "exercises_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

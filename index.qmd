@@ -32,9 +32,33 @@ This workshop assumes you have some experience working with rectangular data, as
 
 ## Prework
 
+A portion of this workshop will be conducted in the Posit Cloud environment. Please create a login to the Posit Cloud instance of this workshop here:
+
+**[https://posit.cloud/content/7872027](https://posit.cloud/content/7872027){target="_blank"}**.
+
+
+**Alternative**
+
+If you are struggling using Posit Cloud, you can download the materials locally on your machine.
+
+Fill in `destdir` with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.
+
+```{r}
+#| eval: false
+
+# install.packages("usethis")
+usethis::use_course(
+    "https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip",
+    destdir = "___")
+
+```
+
+
 ## Further Reading
 
-
+* Data Management in Large-Scale Education Research book
+* Data Management for Data Sharing Blog Post Series
+* The Basics of Data Management
 
 ## Speaker
 

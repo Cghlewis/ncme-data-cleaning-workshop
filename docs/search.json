@@ -1,59 +1,80 @@
 [
   {
-    "objectID": "slides/index.html#acknowledgements",
-    "href": "slides/index.html#acknowledgements",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n\n\n\n\nParameterized Reports with Quarto taught by Jadey Ryan\n\nR/Medicine Data Cleaning 2023 Workshop taught by Crystal Lewis, Shannon Pileggi, and Peter Higgins\n\nASA Traveling Courses on Quarto taught by Mine Çetinkaya-Rundel and Andrew Bray"
+    "objectID": "slides/index.html#about-the-speaker",
+    "href": "slides/index.html#about-the-speaker",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "About the Speaker",
+    "text": "About the Speaker\n\n\n\nIndependent Research Data Management Consultant\n\ncghlewis.com\n\nPreviously oversaw data management for the Missouri Prevention Science Institute at the University of Missouri\nCo-organizer for R-Ladies St. Louis\n\nmeetup.com/rladies-st-louis\n\nCo-organizer for the POWER Data Management in Education Research Hub\n\nhttps://osf.io/ap3tk/\n\nAuthor “Data Management in Large-Scale Education Research”\n\ndatamgmtinedresearch.com"
   },
   {
-    "objectID": "slides/index.html#disclaimer-and-license",
-    "href": "slides/index.html#disclaimer-and-license",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Disclaimer and license",
-    "text": "Disclaimer and license\nOpinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.\n\nThis work is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)."
+    "objectID": "slides/index.html#introductions",
+    "href": "slides/index.html#introductions",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Introductions",
+    "text": "Introductions\n\n\n\nYour name\nYour affiliation\nYour role\nYour data cleaning experience\n\nOriginal data that you/your team has collected\nExternal datasets\n\nYour experience with R\n\nTidyverse experience?\n\n\n\n\n\n\n\n\n\n\n\nImage from Unsplash"
   },
   {
-    "objectID": "slides/index.html#jadey-ryan",
-    "href": "slides/index.html#jadey-ryan",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Jadey Ryan",
-    "text": "Jadey Ryan\n\n\nData scientist at WA Dept of Agriculture\nThe Coding Cats: cat & code themed merch\n jadeyryan.com\n @jadeynryan\n linkedin.com/in/jadey-ryan\n jadeynryan\n thecodingcats.etsy.com\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n @leslie.mmichel"
+    "objectID": "slides/index.html#phases-of-data",
+    "href": "slides/index.html#phases-of-data",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "3 Phases of Data",
+    "text": "3 Phases of Data"
   },
   {
-    "objectID": "slides/index.html#logistics",
-    "href": "slides/index.html#logistics",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Logistics",
-    "text": "Logistics\nLogin to Posit Cloud workspace: bit.ly/rladies-parameterized-quarto.\n\nIf Posit Cloud doesn’t work, download materials locally:\n\nusethis::use_course(\n  \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\"\n#  ,destdir = \"___\"\n  )\n\n\n\nAsk questions in the public Zoom chat or raise hand ✋.\n\n\nWorkshop structure: presentation, demos/exercises, questions to answer in 💬 Chat."
+    "objectID": "slides/index.html#shared-datasets",
+    "href": "slides/index.html#shared-datasets",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Shared Datasets",
+    "text": "Shared Datasets"
+  },
+  {
+    "objectID": "slides/index.html#shared-datasets-1",
+    "href": "slides/index.html#shared-datasets-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Shared Datasets",
+    "text": "Shared Datasets"
+  },
+  {
+    "objectID": "slides/index.html#shared-datasets-2",
+    "href": "slides/index.html#shared-datasets-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Shared Datasets",
+    "text": "Shared Datasets"
+  },
+  {
+    "objectID": "slides/index.html#shared-datasets-3",
+    "href": "slides/index.html#shared-datasets-3",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Shared Datasets",
+    "text": "Shared Datasets"
   },
   {
     "objectID": "slides/index.html#learning-objectives",
     "href": "slides/index.html#learning-objectives",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nUnderstand what parameterized reporting is and when it is useful.\n\n\n\nLearn how to convert a report into a parameterized template.\n\n\n\nRender all variations of the report at once using {quarto} and {purrr}.\n\n\n\nGenerate multiple format outputs from the same template file with conditional content and conditional code execution."
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\n\nUnderstand how to assess a data set for 8 data quality indicators\n\n\n\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\n\n\n\nFeel comfortable using R code to clean a data set using our standardized steps\n\n\n\nUnderstand types of documentation that should be shared alongside data"
   },
   {
-    "objectID": "slides/index.html#pipes",
-    "href": "slides/index.html#pipes",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Pipes",
-    "text": "Pipes\n\n2014+ magrittr pipe %&gt;%\n2021+ (R \\(\\geq\\) 4.1.0) native R pipe |&gt;\n\n\nIsabella Velásquez’s blog post Understanding the native R pipe |&gt; (2022)\n\n\n\n\n\n\ndo_something(arg1, arg2, arg3, ...)\n\narg1 |&gt;  \n  do_something(arg2, arg3)\n\n\n\n\n\nmean(0:10)\n\n0:10 |&gt; \n  mean()\n\n\n\n\n\n\nTo change shortcut to the native pipe:\nTools → Global Options → Code → Editing → Use Native Pipe Operator\nWindows: Ctrl + Shift + M\nMac: Cmd + Shift + M\n\nSlide adapted from R/Medicine Data Cleaning 2023 Workshop"
+    "objectID": "slides/index.html#schedule",
+    "href": "slides/index.html#schedule",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\nTime\nTopic\n\n\n\n\n8:45 - 9:00\nIntro/Logistics\n\n\n9:00 - 9:45\nFundamentals of Data Organization\n\n\n9:45 - 10:30\nStandardized Data Cleaning Checklist\n\n\n10:30 - 10:45\nBreak\n\n\n10:45 - 12:30\nData Cleaning Functions\n\n\n12:30 - 12:45\nDocumentation for Data Sharing"
   },
   {
-    "objectID": "slides/index.html#namespacing",
-    "href": "slides/index.html#namespacing",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "Namespacing",
-    "text": "Namespacing\npackage::function()\ndplyr::select()\n\n\ntells R explicitly to use the function select from the package dplyr\nhelps avoid name conflicts (e.g., MASS::select())\ndoes not require library(dplyr)\n\n\n\n\n\n\nlibrary(dplyr)\n\nmtcars |&gt;  \n  select(mpg, cyl) \n\n\n\n\n\n# library(dplyr) not needed\n\nmtcars |&gt;  \n  dplyr::select(mpg, cyl) \n\n\n\n\nSlide adapted from R/Medicine Data Cleaning 2023 Workshop"
+    "objectID": "slides/index.html#logistics",
+    "href": "slides/index.html#logistics",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Logistics",
+    "text": "Logistics\nExercises\nLogin to Posit Cloud workspace: https://posit.cloud/content/7872027.\n\n\nIf Posit Cloud doesn’t work, download materials locally:\n\nusethis::use_course(\n  \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\"\n#  ,destdir = \"___\"\n  )\n\n\n\n\nFeel free to interrupt me with questions/comments at any time ✋.\n\n\n\nGet up and move around as much as you need to 🚶."
   },
   {
-    "objectID": "slides/index.html#rstudio-options",
-    "href": "slides/index.html#rstudio-options",
-    "title": "Parameterized Reporting with Quarto ",
-    "section": "RStudio options",
-    "text": "RStudio options\nTools → Global Options →\n\n\nFussy YAML indentation:\nCode → Display → Indentation guides: → Rainbow lines\n\n\n\nMatch parentheses:\nCode → Display → Indentation guides: → Check Use rainbow parentheses\n\n\n\nMatching divs:\nR Markdown → Advanced → Check Use rainbow fenced divs\n\n\n\n\n\n\nParameterized Reporting with Quarto // jadeyryan.quarto.pub/rladies-abuja-quarto-params/"
+    "objectID": "slides/index.html#something-else",
+    "href": "slides/index.html#something-else",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Something else",
+    "text": "Something else\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
   },
   {
     "objectID": "prework.html",
@@ -125,7 +146,7 @@
     "href": "index.html#prework",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Prework",
-    "text": "Prework",
+    "text": "Prework\nA portion of this workshop will be conducted in the Posit Cloud environment. Please create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027.\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nFill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
     "crumbs": [
       "Home"
     ]
@@ -135,7 +156,7 @@
     "href": "index.html#further-reading",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Further Reading",
-    "text": "Further Reading",
+    "text": "Further Reading\n\nData Management in Large-Scale Education Research book\nData Management for Data Sharing Blog Post Series\nThe Basics of Data Management",
     "crumbs": [
       "Home"
     ]
@@ -145,7 +166,7 @@
     "href": "index.html#speaker",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Speaker",
-    "text": "Speaker\n Crystal Lewis is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—R-Ladies St. Louis, an organization focused on promoting gender diversity in the R community, as well as the POWER (providing women opportunities in education research) Data Management Hub, where she facilitates peer data management support in the education research community.",
+    "text": "Speaker\nCrystal Lewis is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—R-Ladies St. Louis, an organization focused on promoting gender diversity in the R community, as well as the POWER (providing women opportunities in education research) Data Management Hub, where she facilitates peer data management support in the education research community.",
     "crumbs": [
       "Home"
     ]
@@ -155,7 +176,17 @@
     "href": "exercises.html",
     "title": "Data Cleaning: Exercises",
     "section": "",
-    "text": "Instructions\nRecommended: Complete these exercises in the dedicated Posit Cloud work space, which comes with\n\nall packages pre-installed, and\na Quarto document to fill in.\n\nIt will be helpful to peek here to verify that your tables generated in Posit Cloud match the desired output and code solutions.\nJoin R/Medicine Posit cloud work space for Cleaning Medical Data with R: bit.ly/posit-cloud-cleaning-medical-data\nOtherwise: Follow along this document, work on your personal computer, and challenge yourself not to peek at the code solutions until you have completed the exercise.\n\n\nPackages",
+    "text": "Recommended: Complete these exercises in the dedicated Posit Cloud work space, which comes with\n\nall packages pre-installed, and\na Quarto document to fill in.\n\nIt will be helpful to peek here to verify that your tables generated in Posit Cloud match the desired output and code solutions.\nJoin R/Medicine Posit cloud work space for Cleaning Medical Data with R: bit.ly/posit-cloud-cleaning-medical-data\nOtherwise: Follow along this document, work on your personal computer, and challenge yourself not to peek at the code solutions until you have completed the exercise.",
+    "crumbs": [
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "exercises.html#exercises",
+    "href": "exercises.html#exercises",
+    "title": "Data Cleaning: Exercises",
+    "section": "Exercises",
+    "text": "Exercises\nOption 1: Posit Cloud\nJoin the workspace: bit.ly/rladies-parameterized-quarto.\nOpen the R-Ladies Abuja specific project: bit.ly/quarto-params-posit-cloud.\nOption 2: Download locally\nFill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
     "crumbs": [
       "Exercises"
     ]
@@ -186,26 +217,6 @@
     "title": "Materials",
     "section": "",
     "text": "View slides in full screen.",
-    "crumbs": [
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#recording",
-    "href": "slides.html#recording",
-    "title": "Materials",
-    "section": "Recording",
-    "text": "Recording",
-    "crumbs": [
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#exercises",
-    "href": "slides.html#exercises",
-    "title": "Materials",
-    "section": "Exercises",
-    "text": "Exercises\nOption 1: Posit Cloud\nJoin the workspace: bit.ly/rladies-parameterized-quarto.\nOpen the R-Ladies Abuja specific project: bit.ly/quarto-params-posit-cloud.\nOption 2: Download locally\nFill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
     "crumbs": [
       "Slides"
     ]

@@ -8,13 +8,11 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.551">
 
-  <meta name="author" content="Jadey Ryan // February 21, 2024 R-Ladies Abuja">
-  <title>Data Cleaning for Data Sharing Using R - Parameterized Reporting with Quarto </title>
+  <meta name="author" content="Crystal Lewis // April 11, 2024 NCME Annual Meeting">
+  <title>Data Cleaning for Data Sharing Using R - Data Cleaning for Data Sharing Using R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -388,81 +386,183 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
-
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Parameterized Reporting<br> with Quarto<br> <img data-src="images/jr-logo-quarto.webp" style="width:5em"></h1>
+  <h1 class="title">Data Cleaning for Data Sharing<br> Using R</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Jadey Ryan // February 21, 2024<br>R-Ladies Abuja 
+Crystal Lewis // April 11, 2024<br>NCME Annual Meeting 
 </div>
 </div>
 </div>
 
 </section>
-<section id="acknowledgements" class="slide level2">
-<h2>Acknowledgements</h2>
-<div width="70%">
-<p><img data-src="images/rladies-abuja.png" class="center" alt="R-Ladies Abuja Logo"></p>
-</div>
-<p><br></p>
-<p><a href="https://github.com/jadeynryan/parameterized-quarto-workshop">Parameterized Reports with Quarto</a> taught by <a href="https://jadeyryan.com/">Jadey Ryan</a></p>
-<p><br></p>
-<p><a href="https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/">R/Medicine Data Cleaning 2023 Workshop</a> taught by <a href="https://cghlewis.com/">Crystal Lewis</a>, <a href="https://www.pipinghotdata.com/">Shannon Pileggi</a>, and <a href="https://bookdown.org/pdr_higgins/rmrwr/">Peter Higgins</a></p>
-<p><br></p>
-<p><a href="https://quarto.org/docs/blog/posts/2023-12-05-asa-traveling-courses/">ASA Traveling Courses on Quarto</a> taught by <a href="https://mine-cr.com/">Mine Çetinkaya-Rundel</a> and <a href="https://andrewpbray.github.io/">Andrew Bray</a></p>
-</section>
-<section id="disclaimer-and-license" class="slide level2">
-<h2>Disclaimer and license</h2>
-<p>Opinions expressed are solely my own and do not express the views of my employer or any organizations I am associated with.</p>
-<p><br></p>
-<p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA)</a>.</p>
-<p><i class="fa-brands fa-creative-commons fa-2x" aria-label="creative-commons"></i> <i class="fa-brands fa-creative-commons-by fa-2x" aria-label="creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc fa-2x" aria-label="creative-commons-nc"></i> <i class="fa-brands fa-creative-commons-sa fa-2x" aria-label="creative-commons-sa"></i></p>
-</section>
-<section id="jadey-ryan" class="slide level2">
-<h2>Jadey Ryan</h2>
+<section id="about-the-speaker" class="slide level2">
+<h2>About the Speaker</h2>
 <div class="columns">
-<div class="column" style="width:44%;">
-<p>Data scientist at WA Dept of Agriculture</p>
-<p>The Coding Cats: cat &amp; code themed merch</p>
-<p><i class="fa-solid fa-link fa-xl" aria-label="link"></i> <a href="https://jadeyryan.com">jadeyryan.com</a></p>
-<p><i class="fa-brands fa-mastodon fa-xl" aria-label="mastodon"></i> <a href="https://fosstodon.org/@jadeynryan">@jadeynryan</a></p>
-<p><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i> <a href="https://www.linkedin.com/in/jadey-ryan">linkedin.com/in/jadey-ryan</a></p>
-<p><i class="fa-brands fa-github fa-xl" aria-label="github"></i> <a href="https://github.com/jadeynryan/">jadeynryan</a></p>
-<p><i class="fa-brands fa-etsy fa-xl" aria-label="etsy"></i> <a href="https://thecodingcats.etsy.com/">thecodingcats.etsy.com</a></p>
-<p><img data-src="images/mts.webp" style="border-radius:1em;margin-top:auto" alt="Three snowshoe siamese cats in loaf mode. From left to right: Tai, Mai, and Skye"></p>
-</div><div class="column" style="width:28%;">
-<p><img data-src="images/bulk-density.jpg" style="border-radius:1em;margin-top:auto" alt="Jadey collecting a bulk density soil sample in a field of wheat stubble."></p>
-</div><div class="column" style="width:28%;">
-<div class="quarto-layout-panel" data-layout-nrow="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="images/soil-sampling.jpg" style="border-radius:1em;margin-top:auto" alt="Jadey standing in a field of wheat stubble holding a 3 foot long soil sampling probe over her shoulder."></p>
+<div class="column" style="width:50%;">
+<ul>
+<li>Independent Research Data Management Consultant
+<ul>
+<li><a href="https://cghlewis.com/">cghlewis.com</a></li>
+</ul></li>
+<li>Previously oversaw data management for the Missouri Prevention Science Institute at the University of Missouri</li>
+<li>Co-organizer for R-Ladies St.&nbsp;Louis
+<ul>
+<li><a href="https://www.meetup.com/rladies-st-louis/">meetup.com/rladies-st-louis</a></li>
+</ul></li>
+<li>Co-organizer for the POWER Data Management in Education Research Hub
+<ul>
+<li><a href="https://osf.io/ap3tk/">https://osf.io/ap3tk/</a></li>
+</ul></li>
+<li>Author “Data Management in Large-Scale Education Research”
+<ul>
+<li><a href="https://datamgmtinedresearch.com/">datamgmtinedresearch.com</a></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/book-cover.PNG" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
 </div>
 </div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<p><img data-src="images/rangeland.jpg" style="border-radius:1em;margin-top:auto" alt="Jadey standing in a grazed wildflower meadow with two colleagues collecting soil samples."></p>
+</div>
+</section>
+<section id="introductions" class="slide level2">
+<h2>Introductions</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Your name</li>
+<li>Your affiliation</li>
+<li>Your role</li>
+<li>Your data cleaning experience
+<ul>
+<li>Original data that you/your team has collected</li>
+<li>External datasets</li>
+</ul></li>
+<li>Your experience with R
+<ul>
+<li>Tidyverse experience?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/greeting.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
 </div>
 </div>
-<p><i class="fa-solid fa-camera" title="Photo credit" aria-label="camera"></i> <a href="https://twitter.com/leslie_mmichel"><span class="citation" data-cites="leslie.mmichel">@leslie.mmichel</span></a></p>
+<div class="footer">
+<p>Image from <a href="https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE">Unsplash</a></p>
+</div>
+</section>
+<section id="phases-of-data" class="slide level2">
+<h2>3 Phases of Data</h2>
+
+<img data-src="images/phases.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shared-datasets" class="slide level2">
+<h2>Shared Datasets</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publicdata1-1.PNG" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publicdata1-2.PNG" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
 </div>
+</div>
+</section>
+<section id="shared-datasets-1" class="slide level2">
+<h2>Shared Datasets</h2>
+
+<img data-src="images/publicdata2.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shared-datasets-2" class="slide level2">
+<h2>Shared Datasets</h2>
+
+<img data-src="images/publicdata3.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="shared-datasets-3" class="slide level2">
+<h2>Shared Datasets</h2>
+
+<img data-src="images/publicdata4.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning Objectives</h2>
+<div>
+<ol type="1">
+<li class="fragment">Understand how to assess a data set for 8 data quality indicators</li>
+</ol>
+<p><br></p>
+<ol start="2" type="1">
+<li class="fragment">Be able to review a data set and apply a list of standardized data cleaning steps as needed</li>
+</ol>
+<p><br></p>
+<ol start="3" type="1">
+<li class="fragment">Feel comfortable using R code to clean a data set using our standardized steps</li>
+</ol>
+<p><br></p>
+<ol start="4" type="1">
+<li class="fragment">Understand types of documentation that should be shared alongside data</li>
+</ol>
+</div>
+</section>
+<section id="schedule" class="slide level2">
+<h2>Schedule</h2>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8:45 - 9:00</td>
+<td>Intro/Logistics</td>
+</tr>
+<tr class="even">
+<td>9:00 - 9:45</td>
+<td>Fundamentals of Data Organization</td>
+</tr>
+<tr class="odd">
+<td>9:45 - 10:30</td>
+<td>Standardized Data Cleaning Checklist</td>
+</tr>
+<tr class="even">
+<td>10:30 - 10:45</td>
+<td>Break</td>
+</tr>
+<tr class="odd">
+<td>10:45 - 12:30</td>
+<td>Data Cleaning Functions</td>
+</tr>
+<tr class="even">
+<td>12:30 - 12:45</td>
+<td>Documentation for Data Sharing</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="logistics" class="slide level2">
 <h2>Logistics</h2>
-<p>Login to Posit Cloud workspace: <a href="https://bit.ly/rladies-parameterized-quarto"><strong>bit.ly/rladies-parameterized-quarto</strong></a>.</p>
+<p><strong>Exercises</strong></p>
+<p>Login to Posit Cloud workspace: <a href="https://posit.cloud/content/7872027"><strong>https://posit.cloud/content/7872027</strong></a>.</p>
 <div class="fragment">
+<p><br></p>
 <p>If Posit Cloud doesn’t work, download materials locally:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>usethis<span class="sc">::</span><span class="fu">use_course</span>(</span>
@@ -472,153 +572,26 @@ Jadey Ryan // February 21, 2024<br>R-Ladies Abuja
 </div>
 </div>
 <div class="fragment">
-<p>Ask questions in the public Zoom chat or raise hand ✋.</p>
+<p><br></p>
+<p>Feel free to interrupt me with questions/comments at any time ✋.</p>
 </div>
 <div class="fragment">
-<p>Workshop structure: presentation, demos/exercises, questions to answer in 💬 <strong>Chat</strong>.</p>
+<p><br></p>
+<p>Get up and move around as much as you need to 🚶.</p>
 </div>
 </section>
 <section>
-<section id="exercise-0" class="title-slide slide level1 background-primary center">
-<h1>💪🏼 Exercise 0</h1>
-<p><br></p>
-<p>💬 <strong>Chat</strong>: share your name, where you’re calling from, and one thing you’ve made that you’re proud of.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_ee6ef2c6" data-update-every="1" tabindex="0" style="top:0;right:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="learning-objectives" class="slide level2">
-<h2>Learning objectives</h2>
-<div>
-<ol type="1">
-<li class="fragment">Understand what parameterized reporting is and when it is useful.</li>
-</ol>
-<p><br></p>
-<ol start="2" type="1">
-<li class="fragment">Learn how to convert a report into a parameterized template.</li>
-</ol>
-<p><br></p>
-<ol start="3" type="1">
-<li class="fragment">Render all variations of the report at once using <a href="https://quarto-dev.github.io/quarto-r/">{quarto}</a> and <a href="https://purrr.tidyverse.org/">{purrr}</a>.</li>
-</ol>
-<p><br></p>
-<ol start="4" type="1">
-<li class="fragment">Generate multiple format outputs from the same template file with conditional content and conditional code execution.</li>
-</ol>
-</div>
-</section></section>
-<section>
-<section id="syntax-and-rstudio-aside" class="title-slide slide level1 background-secondary center">
-<h1>Syntax and RStudio aside</h1>
+<section id="data-quality-indicators" class="title-slide slide level1 background-secondary center">
+<h1>Data Quality Indicators</h1>
 
 </section>
-<section id="pipes" class="slide level2">
-<h2>Pipes</h2>
-<ul>
-<li><p>2014+ magrittr pipe <code>%&gt;%</code></p></li>
-<li><p>2021+ (R <span class="math inline">\(\geq\)</span> 4.1.0) native R pipe <code>|&gt;</code></p></li>
-</ul>
-<div class="fragment">
-<p>Isabella Velásquez’s blog post <a href="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/"><em>Understanding the native R pipe</em> |&gt;</a> (2022)</p>
-<p><br></p>
-</div>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-code-line-numbers="|1|3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">do_something</span>(arg1, arg2, arg3, ...)</span>
-<span id="cb2-2"><a></a></span>
-<span id="cb2-3"><a></a>arg1 <span class="sc">|&gt;</span>  </span>
-<span id="cb2-4"><a></a>  <span class="fu">do_something</span>(arg2, arg3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-code-line-numbers="|1|3-4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">mean</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>)</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">|&gt;</span> </span>
-<span id="cb3-4"><a></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><br></p>
-<p>To change shortcut to the native pipe:</p>
-<p><code>Tools</code> → <code>Global Options</code> → <code>Code</code> → <code>Editing</code> → <code>Use Native Pipe Operator</code></p>
-<p>Windows: <code>Ctrl</code> + <code>Shift</code> + <code>M</code></p>
-<p>Mac: <code>Cmd</code> + <code>Shift</code> + <code>M</code></p>
-<div class="footer">
-<p>Slide adapted from <a href="https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/">R/Medicine Data Cleaning 2023 Workshop</a></p>
-</div>
-</div>
-</section>
-<section id="namespacing" class="slide level2">
-<h2>Namespacing</h2>
-<p><code>package::function()</code></p>
-<p><code>dplyr::select()</code></p>
-<div class="fragment">
-<ul>
-<li><p>tells R explicitly to use the function <code>select</code> from the package <code>dplyr</code></p></li>
-<li><p>helps avoid name conflicts (e.g., <code>MASS::select()</code>)</p></li>
-<li><p>does not require <code>library(dplyr)</code></p></li>
-</ul>
-</div>
-<div class="fragment">
-<div class="columns">
-<div class="column" style="width:45%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>mtcars <span class="sc">|&gt;</span>  </span>
-<span id="cb4-4"><a></a>  <span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># library(dplyr) not needed</span></span>
-<span id="cb5-2"><a></a></span>
-<span id="cb5-3"><a></a>mtcars <span class="sc">|&gt;</span>  </span>
-<span id="cb5-4"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(mpg, cyl) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div class="footer">
-<p>Slide adapted from <a href="https://shannonpileggi.github.io/rmedicine-data-cleaning-2023/">R/Medicine Data Cleaning 2023 Workshop</a></p>
-</div>
-</div>
-</section>
-<section id="rstudio-options" class="slide level2">
-<h2>RStudio options</h2>
-<p><code>Tools</code> → <code>Global Options</code> →</p>
-<div>
-<ul>
-<li class="fragment"><p>Fussy YAML indentation:</p>
-<p><code>Code</code> → <code>Display</code> → <code>Indentation guides:</code> → <code>Rainbow lines</code></p></li>
-</ul>
-<p><br></p>
-<ul>
-<li class="fragment"><p>Match parentheses:</p>
-<p><code>Code</code> → <code>Display</code> → <code>Indentation guides:</code> → Check <code>Use rainbow parentheses</code></p></li>
-</ul>
-<p><br></p>
-<ul>
-<li class="fragment"><p>Matching divs:</p>
-<p><code>R Markdown</code> → <code>Advanced</code> → Check <code>Use rainbow fenced divs</code></p></li>
-</ul>
-</div>
+<section id="something-else" class="slide level2">
+<h2>Something else</h2>
 
 <div class="quarto-auto-generated-content">
-<p><img src="images/jr-logo-quarto.webp" class="slide-logo"></p>
+<p><img src="images/NCME-AnnualMeeting2024Logo-F.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Parameterized Reporting with Quarto // <a href="https://jadeyryan.quarto.pub/rladies-abuja-quarto-params/">jadeyryan.quarto.pub/rladies-abuja-quarto-params/</a></p>
+<p>Data Cleaning for Data Sharing // <a href="https://Cghlewis.github.io/ncme-data-cleaning-workshop/">Cghlewis.github.io/ncme-data-cleaning-workshop/</a></p>
 </div>
 </div>
 </section></section>

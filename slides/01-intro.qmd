@@ -1,0 +1,162 @@
+
+```{r}
+#| echo: false
+#| cache: false
+library(tidyverse)
+library(countdown)
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
+## About the Speaker
+
+::: columns
+::: {.column width="50%"}
+
+- Independent Research Data Management Consultant
+   - [cghlewis.com](https://cghlewis.com/)
+- Previously oversaw data management for the Missouri Prevention Science Institute at the University of Missouri
+- Co-organizer for R-Ladies St. Louis
+  - [meetup.com/rladies-st-louis](https://www.meetup.com/rladies-st-louis/)
+- Co-organizer for the POWER Data Management in Education Research Hub
+  - [https://osf.io/ap3tk/](https://osf.io/ap3tk/)
+- Author "Data Management in Large-Scale Education Research"
+  - [datamgmtinedresearch.com](https://datamgmtinedresearch.com/)
+
+:::
+ 
+::: {.column width="50%"}
+![](images/book-cover.PNG){fig-align="center" width=60%}
+
+:::
+:::
+
+## Introductions
+
+::: columns
+::: {.column width="60%"}
+
+- Your name
+- Your affiliation
+- Your role
+- Your data cleaning experience
+  - Original data that you/your team has collected
+  - External datasets
+- Your experience with R
+  - Tidyverse experience?
+
+:::
+ 
+::: {.column width="40%"}
+![](images/greeting.jpg){fig-align="center"}
+:::
+:::
+
+::: footer  
+Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE)
+:::  
+
+## 3 Phases of Data
+
+![](images/phases.PNG){fig-align="center"}
+  
+## Shared Datasets
+
+:::: columns
+
+::: {.column width="50%"}
+
+![](images/publicdata1-1.PNG){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/publicdata1-2.PNG){fig-align="center"}
+
+:::
+:::
+
+## Shared Datasets
+
+![](images/publicdata2.PNG){fig-align="center"}
+
+## Shared Datasets
+
+![](images/publicdata3.PNG){fig-align="center"}
+
+## Shared Datasets
+
+![](images/publicdata4.PNG){fig-align="center"}
+
+
+## Learning Objectives
+
+::: incremental
+
+1.  Understand how to assess a data set for 8 data quality indicators
+
+<br>
+
+2.  Be able to review a data set and apply a list of standardized data cleaning steps as needed
+
+<br>
+
+3.  Feel comfortable using R code to clean a data set using our standardized steps
+
+<br>
+
+4.  Understand types of documentation that should be shared alongside data
+
+:::
+
+
+
+## Schedule
+
+<br>
+
+
+| Time          | Topic           |
+|---------------|--------------------|
+|8:45 - 9:00  |   Intro/Logistics | 
+|9:00 - 9:45 | Fundamentals of Data Organization|
+|9:45 - 10:30 | Standardized Data Cleaning Checklist|
+|10:30 - 10:45 | Break|
+|10:45 - 12:30 | Data Cleaning Functions|
+|12:30 - 12:45 | Documentation for Data Sharing|
+
+  
+## Logistics
+
+**Exercises**
+
+Login to Posit Cloud workspace: [**https://posit.cloud/content/7872027**](https://posit.cloud/content/7872027).
+
+. . .
+
+<br>
+
+If Posit Cloud doesn't work, download materials locally:
+
+```{r}
+#| eval: false
+
+usethis::use_course(
+  "https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip"
+#  ,destdir = "___"
+  )
+```
+
+. . .
+
+<br>
+
+Feel free to interrupt me with questions/comments at any time ✋.
+
+. . .
+
+<br>
+
+Get up and move around as much as you need to 🚶.
+  

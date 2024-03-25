@@ -21,3 +21,27 @@ Join R/Medicine Posit cloud work space for Cleaning Medical Data with R: **[bit.
 **Otherwise:** Follow along this document, work on your personal computer, and challenge yourself **not to peek** at the code solutions until you have completed the exercise.
 
 # Packages
+
+
+## Exercises
+
+**Option 1: Posit Cloud**
+
+Join the workspace: [bit.ly/rladies-parameterized-quarto](https://bit.ly/rladies-parameterized-quarto).
+
+Open the R-Ladies Abuja specific project:
+[bit.ly/quarto-params-posit-cloud](https://bit.ly/quarto-params-posit-cloud).
+
+**Option 2: Download locally**
+
+Fill in `destdir` with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.
+
+```{r}
+#| eval: false
+#| code-fold: false
+
+# install.packages("usethis")
+usethis::use_course(
+    "https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip",
+    destdir = "___")
+```
