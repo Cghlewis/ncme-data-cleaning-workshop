@@ -15,7 +15,7 @@ fa_fill <- "#606060"
 
 - Independent Research Data Management Consultant
    - [cghlewis.com](https://cghlewis.com/)
-- Previously oversaw data management for the Missouri Prevention Science Institute at the University of Missouri
+- Previously oversaw data management for the Missouri Prevention Science Institute
 - Co-organizer for R-Ladies St. Louis
   - [meetup.com/rladies-st-louis](https://www.meetup.com/rladies-st-louis/)
 - Co-organizer for the POWER Data Management in Education Research Hub
@@ -26,7 +26,7 @@ fa_fill <- "#606060"
 :::
  
 ::: {.column width="50%"}
-![](images/book-cover.PNG){fig-align="center" width=60%}
+![](images/book-cover.jpg){fig-align="center" width=60%}
 
 :::
 :::
@@ -58,7 +58,7 @@ Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-s
 
 ## 3 Phases of Data
 
-![](images/phases.PNG){fig-align="center"}
+![](images/phases.jpg){fig-align="center"}
   
 ## Shared Datasets
 
