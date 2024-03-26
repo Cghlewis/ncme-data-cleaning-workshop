@@ -275,14 +275,14 @@
     "href": "slides/index.html#interpretable",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Interpretable",
-    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nw1_t_mast1, w1_t_mast2, w1_t_gad1, w2_t_gad2\n\n\n\n\n\n\n\nIn that case, by Allison Horst"
+    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nw1_t_mast1, w1_t_mast2, w1_t_gad1, w1_t_gad2, w1_t_gender\n\n\n\n\n\n\n\nIn that case, by Allison Horst"
   },
   {
     "objectID": "slides/index.html#exercise-1",
     "href": "slides/index.html#exercise-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\nWhat data quality issues do you detect for the “interpretable” indicator?\n\n\n\n\n−+\n01:00"
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “interpretable” indicator?\n\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/index.html#solution-1",
@@ -422,6 +422,6 @@
     "href": "slides/index.html#interpretable-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Interpretable",
-    "text": "Interpretable\n\nIf you are sharing data in SPSS, SAS, or Stata format, you may consider adding embedded metadata (i.e., variable and value labels)\n\nWhen publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)"
+    "text": "Interpretable\n\nIf you are sharing data in SPSS, SAS, or Stata format, you may consider adding embedded metadata (i.e., variable label and value labels)\n\nWhen publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)"
   }
 ]
