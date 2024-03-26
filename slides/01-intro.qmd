@@ -48,53 +48,51 @@ fa_fill <- "#606060"
 :::
  
 ::: {.column width="40%"}
-![](images/greeting.jpg){fig-align="center"}
+![Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE)](images/greeting.jpg){fig-align="center"}
 :::
 :::
 
-::: footer  
-Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE)
-:::  
 
 ## 3 Phases of Data
 
 ![](images/phases.jpg){fig-align="center"}
-  
-## Shared Datasets
 
-:::: columns
 
-::: {.column width="50%"}
+## A Sampling of Open Datasets
 
-![](images/publicdata1-1.PNG){fig-align="center"}
+::: {.r-stack}
+
+
+![](images/publicdata5.PNG){.fragment}
+
+
+![](images/publicdata2.PNG){.fragment}
+
+
+![](images/publicdata1-1.PNG){.fragment}
+
+
+![](images/publicdata6.PNG){.fragment}
+
+
+![](images/publicdata4.PNG){.fragment}
+
 
 :::
 
-::: {.column width="50%"}
+::: {.notes}
+What do you notice when you look at these different datasets?
 
-![](images/publicdata1-2.PNG){fig-align="center"}
+There is no real consistency in how data is structured, variables are named, o
 
+Adhering to common standards for data quality allows our data to be consistently cleaned and organized within and across projects. There are several data quality criteria that are commonly agreed upon 
 :::
-:::
-
-## Shared Datasets
-
-![](images/publicdata2.PNG){fig-align="center"}
-
-## Shared Datasets
-
-![](images/publicdata3.PNG){fig-align="center"}
-
-## Shared Datasets
-
-![](images/publicdata4.PNG){fig-align="center"}
-
 
 ## Learning Objectives
 
 ::: incremental
 
-1.  Understand how to assess a data set for 8 data quality indicators
+1.  Understand how to assess a data set for 7 data quality indicators
 
 <br>
 
@@ -110,6 +108,9 @@ Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-s
 
 :::
 
+::: {.notes}
+Before cleaning our data, we need to have a shared understanding for what we expect our data to look like once it is cleaned. 
+:::
 
 
 ## Schedule

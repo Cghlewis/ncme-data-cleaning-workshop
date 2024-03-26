@@ -59,6 +59,7 @@ usethis::use_course(
 * Data Management in Large-Scale Education Research book
 * Data Management for Data Sharing Blog Post Series
 * The Basics of Data Management
+* R Resources
 
 ## Speaker
 

@@ -1,3 +1,267 @@
 # Data Quality Indicators {.background-secondary}
 
-## Something else
+## 7 Data Quality Indicators
+
+::: columns
+::: {.column width="40%"}
+
+<br>
+
+1. Analyzable
+
+2. Interpretable
+
+3. Complete
+
+4. Valid
+
+5. Accurate
+
+6. Consistent
+
+7. De-identified
+
+
+:::
+ 
+::: {.column width="60%"}
+
+![Taming the Data Beast, by Allison Horst](images/data_beast_allison_horst.jpeg)
+
+:::
+:::
+
+## Analyzable
+
+- Data should make a rectangle of rows and columns
+  - The first row, and only the first row, is your variable names
+  - The remaining data should be made up of values in cells
+
+![](images/quality-analyze1.PNG){fig-align="center"}
+
+## Analyzable
+
+- Column values are analyzable
+  - Information is explicit
+  
+![](images/quality-analyze2.PNG){fig-align="center" width="80%}
+
+## Analyzable
+
+<br>
+
+![](images/quality-analyze3.PNG){fig-align="center"}
+
+## Analyzable
+
+- Only one piece of information is collected per variable
+
+![](images/quality-analyze4.PNG){fig-align="center"}
+
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+What data quality issues do you detect for the "analyzable" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
+
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "2em")
+
+```
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+- Data does not make a rectangle
+- Color coding used to convey information
+- More than one piece of information in a variable
+
+
+![](images/quality-exercise1.PNG){fig-align="center"}
+
+## Interpretable
+
+::: columns
+::: {.column width="50%"}
+
+
+- Variable names should be machine-readable
+  - Unique
+  - No spaces or special characters except `_`
+    - This includes no `.` or `-`
+  - Not begin with a number
+
+- Variable names should be human-readable
+  - Meaningful (`gender` instead of `Q1`)
+  - Consistently formatted (capitalization and delimiters)
+  - Consistent order of information
+    - `w1_t_mast1`, `w1_t_mast2`, `w1_t_gad1`, `w1_t_gad2`, `w1_t_gender`
+
+:::
+ 
+::: {.column width="50%"}
+
+![In that case, by Allison Horst](images/naming_case.jpg)
+
+:::
+:::
+
+## Interpretable
+
+- If you are sharing data in SPSS, SAS, or Stata format, you may consider adding embedded metadata (i.e., **variable label** and **value labels**)
+  - When publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)
+  
+![](images/quality-interpret1.PNG){fig-align="center"}
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+What data quality issues do you detect for the "interpretable" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "2em")
+
+```
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+- Spaces and special characters used in variable names
+- Some variable names are unclear
+- Inconsistent use of capitalization
+
+![](images/quality-exercise2.PNG){fig-align="center"}
+
+## Complete
+
+- Cases
+  - The number of rows in your dataset should total to your sample N
+    - No missing cases/no duplicate cases
+    
+- Variables
+  - The number of columns in your dataset should total to what you planned to have
+    - No missing variables
+  - No unexpected missing data
+    - If you collected the data, it should exist in the dataset
+
+## Helpful documentation
+
+#### Tracking Database
+
+![](images/quality-complete1.PNG){fig-align="center"}
+
+#### Data Dictionary
+
+![](images/quality-complete2.PNG){fig-align="center"}
+
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+What "complete" data quality issues do you detect?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "1em")
+
+```
+
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+
+## Valid
+
+- Variables conform to your planned constraints (i.e., review your data dictionary)
+  - Planned variable types
+  - Allowable variable values and ranges
+  - Item-level missingness aligns with variable universe rules and skip patterns
+  
+![](images/quality-valid1.PNG){fig-align="center"}
+
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+What "valid" data quality issues do you detect?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "1em")
+
+```
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+
+## Accurate
+
+- Information should be accurate based on any implicit knowledge you have
+  - For instance, values should not exist for a school where you know that data was not collected that wave
+
+- Accurate within and across sources
+  - A date of birth collected from school records should match the date of birth provided by the student
+  - If a student is in 2nd grade, they should be associated with a second grade teacher
+  
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+What "accurate" data quality issues do you detect?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "1em")
+
+```
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+
+## Consistent
+
+- Variable values are consistently measured, formatted, or coded within a column
+
+- Variables are consistently measured across collections of the same form
+
+![](images/quality-consistent1.PNG){fig-align="center"}
+
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+What "consistent" data quality issues do you detect?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "1em")
+
+```
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+
+## De-identified
+
+![](images/quality-identify1.PNG){fig-align="center"}
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+What "de-identified" data quality issues do you detect?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 1, font_size = "1em")
+
+```
+
+## [Solution]{style="color:#ccd64d"}{.background-secondary}

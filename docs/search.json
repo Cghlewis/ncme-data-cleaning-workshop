@@ -11,7 +11,7 @@
     "href": "slides/index.html#introductions",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Introductions",
-    "text": "Introductions\n\n\n\nYour name\nYour affiliation\nYour role\nYour data cleaning experience\n\nOriginal data that you/your team has collected\nExternal datasets\n\nYour experience with R\n\nTidyverse experience?\n\n\n\n\n\n\n\n\n\n\n\nImage from Unsplash"
+    "text": "Introductions\n\n\n\nYour name\nYour affiliation\nYour role\nYour data cleaning experience\n\nOriginal data that you/your team has collected\nExternal datasets\n\nYour experience with R\n\nTidyverse experience?\n\n\n\n\n\n\nImage from Unsplash"
   },
   {
     "objectID": "slides/index.html#phases-of-data",
@@ -46,14 +46,14 @@
     "href": "slides/index.html#shared-datasets-3",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Shared Datasets",
-    "text": "Shared Datasets"
+    "text": "Shared Datasets\n\n\nWhat do you notice when you look at these different datasets?\nThere is no real consistency in how data is structured, variables are named, o\nAdhering to common standards for data quality allows our data to be consistently cleaned and organized within and across projects. There are several data quality criteria that are commonly agreed upon"
   },
   {
     "objectID": "slides/index.html#learning-objectives",
     "href": "slides/index.html#learning-objectives",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\n\n\nUnderstand how to assess a data set for 8 data quality indicators\n\n\n\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\n\n\n\nFeel comfortable using R code to clean a data set using our standardized steps\n\n\n\nUnderstand types of documentation that should be shared alongside data"
+    "text": "Learning Objectives\n\n\nUnderstand how to assess a data set for 7 data quality indicators\n\n\n\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\n\n\n\nFeel comfortable using R code to clean a data set using our standardized steps\n\n\n\nUnderstand types of documentation that should be shared alongside data\n\n\n\nBefore cleaning our data, we need to have a shared understanding for what we expect our data to look like once it is cleaned."
   },
   {
     "objectID": "slides/index.html#schedule",
@@ -220,5 +220,208 @@
     "crumbs": [
       "Slides"
     ]
+  },
+  {
+    "objectID": "slides/index.html#data-quality-indicators-1",
+    "href": "slides/index.html#data-quality-indicators-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "7 Data Quality Indicators",
+    "text": "7 Data Quality Indicators\n\n\n\n\nAnalyzable\nInterpretable\nComplete\nValid\nAccurate\nConsistent\nDe-identified\n\n\n\n\n\nTaming the Data Beast, by Allison Horst"
+  },
+  {
+    "objectID": "slides/index.html#analyzable",
+    "href": "slides/index.html#analyzable",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Analyzable",
+    "text": "Analyzable\n\nData should make a rectangle of rows and columns\n\nThe first row, and only the first row, is your variable names\nThe remaining data should be made up of values in cells"
+  },
+  {
+    "objectID": "slides/index.html#analyzable-1",
+    "href": "slides/index.html#analyzable-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Analyzable",
+    "text": "Analyzable\n\nColumn values are analyzable\n\nInformation is explicit"
+  },
+  {
+    "objectID": "slides/index.html#analyzable-2",
+    "href": "slides/index.html#analyzable-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Analyzable",
+    "text": "Analyzable"
+  },
+  {
+    "objectID": "slides/index.html#analyzable-3",
+    "href": "slides/index.html#analyzable-3",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Analyzable",
+    "text": "Analyzable\n\nOnly one piece of information is collected per variable"
+  },
+  {
+    "objectID": "slides/index.html#exercise",
+    "href": "slides/index.html#exercise",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “analyzable” indicator?\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution",
+    "href": "slides/index.html#solution",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution\n\nData does not make a rectangle\nColor coding used to convey information\nMore than one piece of information in a variable"
+  },
+  {
+    "objectID": "slides/index.html#interpretable",
+    "href": "slides/index.html#interpretable",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Interpretable",
+    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nw1_t_mast1, w1_t_mast2, w1_t_gad1, w2_t_gad2\n\n\n\n\n\n\n\nIn that case, by Allison Horst"
+  },
+  {
+    "objectID": "slides/index.html#exercise-1",
+    "href": "slides/index.html#exercise-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nWhat data quality issues do you detect for the “interpretable” indicator?\n\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution-1",
+    "href": "slides/index.html#solution-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution\n\nSpaces and special characters used in variable names\nSome variable names are unclear\nInconsistent use of capitalization"
+  },
+  {
+    "objectID": "slides/index.html#complete",
+    "href": "slides/index.html#complete",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Complete",
+    "text": "Complete\n\nCases\n\nThe number of rows in your dataset should total to your sample N\n\nNo missing cases/no duplicate cases\n\n\nVariables\n\nThe number of columns in your dataset should total to what you planned to have\n\nNo missing variables\n\nNo unexpected missing data\n\nIf you collected the data, it should exist in the dataset"
+  },
+  {
+    "objectID": "slides/index.html#helpful-documentation",
+    "href": "slides/index.html#helpful-documentation",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Helpful documentation",
+    "text": "Helpful documentation\nTracking Database\n\n\n\n\n\nData Dictionary"
+  },
+  {
+    "objectID": "slides/index.html#exercise-2",
+    "href": "slides/index.html#exercise-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nWhat “complete” data quality issues do you detect?\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution-2",
+    "href": "slides/index.html#solution-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "slides/index.html#valid",
+    "href": "slides/index.html#valid",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Valid",
+    "text": "Valid\n\nVariables conform to your planned constraints (i.e., review your data dictionary)\n\nPlanned variable types\nAllowable variable values and ranges\nItem-level missingness aligns with variable universe rules and skip patterns"
+  },
+  {
+    "objectID": "slides/index.html#exercise-3",
+    "href": "slides/index.html#exercise-3",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nWhat “valid” data quality issues do you detect?\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution-3",
+    "href": "slides/index.html#solution-3",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "slides/index.html#accurate",
+    "href": "slides/index.html#accurate",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Accurate",
+    "text": "Accurate\n\nInformation should be accurate based on any implicit knowledge you have\n\nFor instance, values should not exist for a school where you know that data was not collected that wave\n\nAccurate within and across sources\n\nA date of birth collected from school records should match the date of birth provided by the student\nIf a student is in 2nd grade, they should be associated with a second grade teacher"
+  },
+  {
+    "objectID": "slides/index.html#exercise-4",
+    "href": "slides/index.html#exercise-4",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nWhat “accurate” data quality issues do you detect?\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution-4",
+    "href": "slides/index.html#solution-4",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "slides/index.html#consistent",
+    "href": "slides/index.html#consistent",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Consistent",
+    "text": "Consistent\n\nVariable values are consistently measured, formatted, or coded within a column\nVariables are consistently measured across collections of the same form"
+  },
+  {
+    "objectID": "slides/index.html#exercise-5",
+    "href": "slides/index.html#exercise-5",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nWhat “consistent” data quality issues do you detect?\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution-5",
+    "href": "slides/index.html#solution-5",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "slides/index.html#de-identified",
+    "href": "slides/index.html#de-identified",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identified",
+    "text": "De-identified"
+  },
+  {
+    "objectID": "slides/index.html#exercise-6",
+    "href": "slides/index.html#exercise-6",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nWhat “de-identified” data quality issues do you detect?\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/index.html#solution-6",
+    "href": "slides/index.html#solution-6",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Solution",
+    "text": "Solution\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+  },
+  {
+    "objectID": "slides/index.html#open-datasets",
+    "href": "slides/index.html#open-datasets",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Open Datasets",
+    "text": "Open Datasets\n\n\n\n\n\n\n\n\nWhat do you notice when you look at these different datasets?\nThere is no real consistency in how data is structured, variables are named, o\nAdhering to common standards for data quality allows our data to be consistently cleaned and organized within and across projects. There are several data quality criteria that are commonly agreed upon"
+  },
+  {
+    "objectID": "slides/index.html#a-sampling-of-open-datasets",
+    "href": "slides/index.html#a-sampling-of-open-datasets",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "A Sampling of Open Datasets",
+    "text": "A Sampling of Open Datasets\n\n\n\n\n\n\n\n\nWhat do you notice when you look at these different datasets?\nThere is no real consistency in how data is structured, variables are named, o\nAdhering to common standards for data quality allows our data to be consistently cleaned and organized within and across projects. There are several data quality criteria that are commonly agreed upon"
+  },
+  {
+    "objectID": "slides/index.html#interpretable-1",
+    "href": "slides/index.html#interpretable-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Interpretable",
+    "text": "Interpretable\n\nIf you are sharing data in SPSS, SAS, or Stata format, you may consider adding embedded metadata (i.e., variable and value labels)\n\nWhen publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)"
   }
 ]
