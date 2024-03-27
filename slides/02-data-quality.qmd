@@ -1,5 +1,9 @@
 # Data Quality Indicators {.background-secondary}
 
+## The Data are Ready
+
+![](images/data-ready.PNG){fig-align="center" width="80%"}
+
 ## 7 Data Quality Indicators
 
 ::: columns
@@ -36,6 +40,7 @@
 - Data should make a rectangle of rows and columns
   - The first row, and only the first row, is your variable names
   - The remaining data should be made up of values in cells
+  - At least one column uniquely defines the rows in the data (e.g., unique identifier)
 
 ![](images/quality-analyze1.PNG){fig-align="center"}
 
@@ -44,7 +49,7 @@
 - Column values are analyzable
   - Information is explicit
   
-![](images/quality-analyze2.PNG){fig-align="center" width="80%}
+![](images/quality-analyze2.PNG){fig-align="center" width="70%"}
 
 ## Analyzable
 
@@ -80,6 +85,7 @@ countdown(minutes = 1, font_size = "2em")
 - Data does not make a rectangle
 - Color coding used to convey information
 - More than one piece of information in a variable
+- Blank values implied to be 0 for `Q4`{style="color:#ccd64d"} variables
 
 
 ![](images/quality-exercise1.PNG){fig-align="center"}
@@ -145,7 +151,8 @@ countdown(minutes = 1, font_size = "2em")
 
 - Cases
   - The number of rows in your dataset should total to your sample N
-    - No missing cases/no duplicate cases
+    - No missing cases
+    - No duplicate cases (i.e., no unique identifier)
     
 - Variables
   - The number of columns in your dataset should total to what you planned to have
@@ -166,18 +173,25 @@ countdown(minutes = 1, font_size = "2em")
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
-What "complete" data quality issues do you detect?
+<br>
+
+What data quality issues do you detect for the "complete" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
 
 ```{r}
 #| echo: false
 #| cache: false
-countdown(minutes = 1, font_size = "1em")
+countdown(minutes = 1, font_size = "2em")
 
 ```
 
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
+- The data contain a duplicate ID (104)
+
+![](images/quality-exercise3.PNG){fig-align="center"}
 
 ## Valid
 
@@ -191,16 +205,25 @@ countdown(minutes = 1, font_size = "1em")
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
-What "valid" data quality issues do you detect?
+<br>
+
+What data quality issues do you detect for the "valid" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
 
 ```{r}
 #| echo: false
 #| cache: false
-countdown(minutes = 1, font_size = "1em")
+countdown(minutes = 1, font_size = "2em")
 
 ```
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+- `AGE/YR`{style="color:#ccd64d"} does not adhere to our planned variable type
+- Values in `Score`{style="color:#ccd64d"} fall out of our expected range
+
+![](images/quality-exercise4.PNG){fig-align="center"}
 
 
 ## Accurate
@@ -214,21 +237,28 @@ countdown(minutes = 1, font_size = "1em")
   
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
-What "accurate" data quality issues do you detect?
+<br>
+
+What data quality issues do you detect for the "accurate" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
 
 ```{r}
 #| echo: false
 #| cache: false
-countdown(minutes = 1, font_size = "1em")
+countdown(minutes = 1, font_size = "2em")
 
 ```
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
+- ID 105 has conflicting information for `TEACHING LEVEL`style="color:#ccd64d"} and `SCHOOL`{style="color:#ccd64d"}
+
+![](images/quality-exercise5.PNG){fig-align="center"}
 
 ## Consistent
 
-- Variable values are consistently measured, formatted, or coded within a column
+- Variable values are consistently measured, formatted, or categorized within a column
 
 - Variables are consistently measured across collections of the same form
 
@@ -237,17 +267,24 @@ countdown(minutes = 1, font_size = "1em")
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
-What "consistent" data quality issues do you detect?
+<br>
+
+What data quality issues do you detect for the "consistent" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
 
 ```{r}
 #| echo: false
 #| cache: false
-countdown(minutes = 1, font_size = "1em")
+countdown(minutes = 1, font_size = "2em")
 
 ```
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
+- Values for `GENDER`{style="color:#ccd64d"} are not consistently categorized
+
+![](images/quality-exercise6.PNG){fig-align="center"}
 
 ## De-identified
 
@@ -255,13 +292,24 @@ countdown(minutes = 1, font_size = "1em")
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
-What "de-identified" data quality issues do you detect?
+<br>
+
+What data quality issues do you detect for the "de-identified" indicator?
+
+![](images/example-data.PNG){fig-align="center"}
 
 ```{r}
 #| echo: false
 #| cache: false
-countdown(minutes = 1, font_size = "1em")
+countdown(minutes = 1, font_size = "2em")
 
 ```
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
+
+- Replace School Name with an unique ID
+- Review combination of demographics to see if other alterations are necessary
+
+![](images/quality-exercise7.PNG){fig-align="center"}
+
+

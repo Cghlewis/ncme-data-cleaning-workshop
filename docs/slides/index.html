@@ -416,7 +416,7 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <ul>
 <li><a href="https://cghlewis.com/">cghlewis.com</a></li>
 </ul></li>
-<li>Previously oversaw data management for the Missouri Prevention Science Institute</li>
+<li>Previously data manager for the Missouri Prevention Science Institute</li>
 <li>Co-organizer for R-Ladies St.&nbsp;Louis
 <ul>
 <li><a href="https://www.meetup.com/rladies-st-louis/">meetup.com/rladies-st-louis</a></li>
@@ -470,7 +470,20 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <section id="phases-of-data" class="slide level2">
 <h2>3 Phases of Data</h2>
 
-<img data-src="images/phases.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/phases.jpg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>Raw data may be original data that you collected It may be externally collected data that you extracted from a site or received from a partner Here I just simply mean you have conducted no transformations on the data</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="a-sampling-of-open-datasets" class="slide level2">
 <h2>A Sampling of Open Datasets</h2>
 <div class="r-stack">
@@ -595,6 +608,10 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <h1>Data Quality Indicators</h1>
 
 </section>
+<section id="the-data-are-ready" class="slide level2">
+<h2>The Data are Ready</h2>
+
+<img data-src="images/data-ready.PNG" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section id="data-quality-indicators-1" class="slide level2">
 <h2>7 Data Quality Indicators</h2>
 <div class="columns">
@@ -626,6 +643,7 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <ul>
 <li>The first row, and only the first row, is your variable names</li>
 <li>The remaining data should be made up of values in cells</li>
+<li>At least one column uniquely defines the rows in the data (e.g., unique identifier)</li>
 </ul></li>
 </ul>
 
@@ -639,7 +657,7 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </ul></li>
 </ul>
 
-<img data-src="images/quality-analyze2.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="images/quality-analyze2.PNG" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%"></section>
 <section id="analyzable-2" class="slide level2">
 <h2>Analyzable</h2>
 <p><br></p>
@@ -659,7 +677,7 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 
 <img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2115dece" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
+<div class="countdown" id="timer_edfcec9e" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -672,6 +690,7 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <li>Data does not make a rectangle</li>
 <li>Color coding used to convey information</li>
 <li>More than one piece of information in a variable</li>
+<li>Blank values implied to be 0 for <code style="color:#ccd64d">Q4</code> variables</li>
 </ul>
 
 <img data-src="images/quality-exercise1.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
@@ -726,7 +745,7 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 
 <img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2172a40c" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
+<div class="countdown" id="timer_798d5cde" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -749,7 +768,8 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <ul>
 <li>The number of rows in your dataset should total to your sample N
 <ul>
-<li>No missing cases/no duplicate cases</li>
+<li>No missing cases</li>
+<li>No duplicate cases (i.e., no unique identifier)</li>
 </ul></li>
 </ul></li>
 <li>Variables
@@ -782,10 +802,12 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="exercise-2" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Exercise</span></h2>
-<p>What “complete” data quality issues do you detect?</p>
-<div class="cell">
+<p><br></p>
+<p>What data quality issues do you detect for the “complete” indicator?</p>
+
+<img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_fa3a42cc" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:1em;">
+<div class="countdown" id="timer_0bde2089" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -794,7 +816,11 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="solution-2" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Solution</span></h2>
-</section>
+<ul>
+<li>The data contain a duplicate ID (104)</li>
+</ul>
+
+<img data-src="images/quality-exercise3.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="valid" class="slide level2">
 <h2>Valid</h2>
 <ul>
@@ -809,10 +835,12 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 <img data-src="images/quality-valid1.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="exercise-3" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Exercise</span></h2>
-<p>What “valid” data quality issues do you detect?</p>
-<div class="cell">
+<p><br></p>
+<p>What data quality issues do you detect for the “valid” indicator?</p>
+
+<img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d8e773e0" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:1em;">
+<div class="countdown" id="timer_2ea1a1b0" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -821,7 +849,12 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="solution-3" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Solution</span></h2>
-</section>
+<ul>
+<li><code style="color:#ccd64d">AGE/YR</code> does not adhere to our planned variable type</li>
+<li>Values in <code style="color:#ccd64d">Score</code> fall out of our expected range</li>
+</ul>
+
+<img data-src="images/quality-exercise4.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="accurate" class="slide level2">
 <h2>Accurate</h2>
 <ul>
@@ -838,10 +871,12 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="exercise-4" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Exercise</span></h2>
-<p>What “accurate” data quality issues do you detect?</p>
-<div class="cell">
+<p><br></p>
+<p>What data quality issues do you detect for the “accurate” indicator?</p>
+
+<img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2b0636d7" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:1em;">
+<div class="countdown" id="timer_c0802368" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -850,21 +885,27 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="solution-4" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Solution</span></h2>
-</section>
+<ul>
+<li>ID 105 has conflicting information for <code>TEACHING LEVEL</code>style=“color:#ccd64d”} and <code style="color:#ccd64d">SCHOOL</code></li>
+</ul>
+
+<img data-src="images/quality-exercise5.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="consistent" class="slide level2">
 <h2>Consistent</h2>
 <ul>
-<li><p>Variable values are consistently measured, formatted, or coded within a column</p></li>
+<li><p>Variable values are consistently measured, formatted, or categorized within a column</p></li>
 <li><p>Variables are consistently measured across collections of the same form</p></li>
 </ul>
 
 <img data-src="images/quality-consistent1.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="exercise-5" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Exercise</span></h2>
-<p>What “consistent” data quality issues do you detect?</p>
-<div class="cell">
+<p><br></p>
+<p>What data quality issues do you detect for the “consistent” indicator?</p>
+
+<img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1fb8aff4" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:1em;">
+<div class="countdown" id="timer_22643a3b" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -873,17 +914,23 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="solution-5" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Solution</span></h2>
-</section>
+<ul>
+<li>Values for <code style="color:#ccd64d">GENDER</code> are not consistently categorized</li>
+</ul>
+
+<img data-src="images/quality-exercise6.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="de-identified" class="slide level2">
 <h2>De-identified</h2>
 
 <img data-src="images/quality-identify1.PNG" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="exercise-6" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Exercise</span></h2>
-<p>What “de-identified” data quality issues do you detect?</p>
-<div class="cell">
+<p><br></p>
+<p>What data quality issues do you detect for the “de-identified” indicator?</p>
+
+<img data-src="images/example-data.PNG" class="quarto-figure quarto-figure-center r-stretch"><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_98fc166f" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:1em;">
+<div class="countdown" id="timer_80f06696" data-update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -892,6 +939,19 @@ Crystal Lewis // April 11, 2024<br>NCME Annual Meeting
 </section>
 <section id="solution-6" class="slide level2 background-secondary">
 <h2><span style="color:#ccd64d">Solution</span></h2>
+<ul>
+<li>Replace School Name with an unique ID</li>
+<li>Review combination of demographics to see if other alterations are necessary</li>
+</ul>
+
+<img data-src="images/quality-exercise7.PNG" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="data-cleaning-checklist" class="title-slide slide level1 background-secondary center">
+<h1>Data Cleaning Checklist</h1>
+
+</section>
+<section id="standardized-checklist" class="slide level2">
+<h2>Standardized Checklist</h2>
 
 <div class="quarto-auto-generated-content">
 <p><img src="images/NCME-AnnualMeeting2024Logo-F.png" class="slide-logo"></p>

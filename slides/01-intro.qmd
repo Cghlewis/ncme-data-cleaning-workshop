@@ -15,7 +15,7 @@ fa_fill <- "#606060"
 
 - Independent Research Data Management Consultant
    - [cghlewis.com](https://cghlewis.com/)
-- Previously oversaw data management for the Missouri Prevention Science Institute
+- Previously data manager for the Missouri Prevention Science Institute
 - Co-organizer for R-Ladies St. Louis
   - [meetup.com/rladies-st-louis](https://www.meetup.com/rladies-st-louis/)
 - Co-organizer for the POWER Data Management in Education Research Hub
@@ -57,6 +57,11 @@ fa_fill <- "#606060"
 
 ![](images/phases.jpg){fig-align="center"}
 
+::: {.notes}
+Raw data may be original data that you collected
+It may be externally collected data that you extracted from a site or received from a partner
+Here I just simply mean you have conducted no transformations on the data
+:::
 
 ## A Sampling of Open Datasets
 

@@ -19,3 +19,5 @@ df-print: kable
 {{< include 01-intro.qmd >}}
 
 {{< include 02-data-quality.qmd >}}
+
+{{< include 03-cleaning-checklist.qmd >}}
