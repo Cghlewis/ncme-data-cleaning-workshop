@@ -1,3 +1,165 @@
 # Data Cleaning Checklist {.background-secondary}
 
-## Standardized Checklist
+## Data Cleaning
+
+![](images/side-by-side-data.PNG){fig-align="center"}
+
+## Standard Data Cleaning Checklist
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+`r fontawesome::fa("check")` Import the raw data
+
+`r fontawesome::fa("check")` Review the raw data
+
+`r fontawesome::fa("check")` Find missing data
+
+`r fontawesome::fa("check")` Adjust the sample
+
+`r fontawesome::fa("check")` De-identify data
+
+`r fontawesome::fa("check")` Drop irrelevant columns
+
+`r fontawesome::fa("check")` Split columns
+
+`r fontawesome::fa("check")` Rename variables
+
+`r fontawesome::fa("check")` Normalize variables
+
+`r fontawesome::fa("check")` Standardize variables
+
+:::
+ 
+::: {.column width="50%"}
+
+`r fontawesome::fa("check")` Update variable types
+
+`r fontawesome::fa("check")` Recode variables
+
+`r fontawesome::fa("check")` Construct new variables
+
+`r fontawesome::fa("check")` Add missing values
+
+`r fontawesome::fa("check")` [Add metadata](https://github.com/Cghlewis/data-wrangling-functions/wiki/Label-Data)
+
+`r fontawesome::fa("check")` Validate data
+
+`r fontawesome::fa("check")` [Join data](https://cghlewis.com/blog/joins/)
+
+`r fontawesome::fa("check")` [Reshape data](https://osf.io/xumg4)
+
+`r fontawesome::fa("check")` Save clean data
+
+:::
+:::
+
+## Import raw data
+
+![](images/checklist1.PNG){fig-align="center"}
+
+## Review data
+
+![](images/checklist2.PNG){fig-align="center"}
+
+::: {.notes}
+At this point you're just taking notes about what is going on in your data
+Am I even working with the right data
+What transformations are required based on what is going on in this data
+:::
+
+## Find missing data
+
+![](images/checklist3.PNG){fig-align="center"}
+
+## Adjust the sample
+
+![](images/checklist4.PNG){fig-align="center"}
+
+## De-identify data
+
+![](images/checklist5-1.PNG){fig-align="center"}
+
+## De-identify data
+
+![](images/checklist5-2.PNG){fig-align="center"}
+
+## De-identify data
+
+![](images/checklist5-3.PNG){fig-align="center"}
+
+|Source|Resource|
+|--------|-----------|
+|[Alena Filip](https://www.sjsu.edu/research/docs/irb-data-management-handbook.pdf) |Table 2 provides pros and cons of various de-identification methods|
+|[J-PAL](https://www.povertyactionlab.org/resource/data-de-identification)| Table 3 provides a list of direct and indirect identifiers and recommended removal methods|
+|[Schatschneider, et.al](https://figshare.com/articles/preprint/De-Identification_Guide/13228664)| Deidentifying Data Guide|
+
+## Drop irrelevant columns
+
+<br>
+
+![](images/checklist6.PNG){fig-align="center"}
+
+## Split columns
+
+![](images/checklist7.PNG){fig-align="center"}
+
+## Rename variables
+
+![](images/checklist8.PNG){fig-align="center"}
+
+## Normalize variables
+
+- Compare the types in your raw data to the types you expected in your data dictionary. Do they align?
+  - If not, what needs to be done so that they do
+
+![](images/checklist9.PNG){fig-align="center"}
+
+## Standardize variables
+
+- Are columns consistently measured, coded, and formatted according to your data dictionary?
+
+![](images/checklist10.PNG){fig-align="center"}
+
+## Update variable types
+
+![](images/checklist11.PNG){fig-align="center"}
+
+## Recode variables
+
+![](images/checklist12.PNG){fig-align="center"}
+
+## Construct additional variables
+
+![](images/checklist13.PNG){fig-align="center"}
+
+## Add missing values
+
+![](images/checklist14.PNG){fig-align="center"}
+
+## Data validation
+
+::: columns
+
+::: {.column width="50%"}
+
+![](images/checklist15-1.PNG)
+
+:::
+
+::: {.column width="50%"}
+
+::: {layout-nrow=2}
+
+![](images/checklist15-2.PNG)
+
+![](images/checklist15-3.PNG)
+
+:::
+
+:::
+:::
+
+
+

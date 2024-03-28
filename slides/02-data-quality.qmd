@@ -196,12 +196,16 @@ countdown(minutes = 1, font_size = "2em")
 ## Valid
 
 - Variables conform to your planned constraints (i.e., review your data dictionary)
-  - Planned variable types
-  - Allowable variable values and ranges
+  - Planned variable types (e.g., `numeric`, `character`, `date`)
+  - Allowable variable values and ranges (e.g., `1-5`)
   - Item-level missingness aligns with variable universe rules and skip patterns
   
 ![](images/quality-valid1.PNG){fig-align="center"}
 
+
+## Helpful documentation
+
+![](images/quality-valid2.PNG){fig-align="center"}
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -252,7 +256,7 @@ countdown(minutes = 1, font_size = "2em")
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
-- ID 105 has conflicting information for `TEACHING LEVEL`style="color:#ccd64d"} and `SCHOOL`{style="color:#ccd64d"}
+- ID 105 has conflicting information for `TEACHING LEVEL`{style="color:#ccd64d"} and `SCHOOL`{style="color:#ccd64d"}
 
 ![](images/quality-exercise5.PNG){fig-align="center"}
 
@@ -290,6 +294,23 @@ countdown(minutes = 1, font_size = "2em")
 
 ![](images/quality-identify1.PNG){fig-align="center"}
 
+## De-identified - Indirect Identifiers
+
+- Open-ended questions
+  - These variables may contain information that can directly or indirectly identify individuals.
+- Outliers
+  - If someone has extreme values for a variable, it may be easier to identify that individual.
+- Small cell sizes
+  - [NCES Standard 4-2-10](https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2003601), suggests that all categories have at least 3 cases to minimize risk
+- Combinations of variables, or crosstabs, can also create small cell-sizes
+  - race + gender + grade level
+- Also consider what other public information could be used to re-identify someone
+  - Linking department of education data with your data (e.g., by size and location of school)
+
+::: {.notes}
+You also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like, how often do you use drugs, the risk is higher because that information could impact your career, relationships, and so forth. 
+:::
+
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
 <br>
@@ -305,11 +326,41 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
+
+
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
 - Replace School Name with an unique ID
 - Review combination of demographics to see if other alterations are necessary
 
 ![](images/quality-exercise7.PNG){fig-align="center"}
+
+::: {.notes}
+That one PhD may or may not be an issue. May there is only one person with a PhD in our sample, but many with PhDs in the school so maybe it's not a big deal. People (outside of that school) don't necessarily know who is in our sample and who is not.
+::: 
+
+## Biggest Advice
+
+The number one way to reduce data errors is to make a plan before you collect data
+
+> Correct data at the source
+
+<br>
+
+. . .
+
+- Plan the variables you want to collect
+
+. . .
+
+- Build your data collection/entry tools in a way that follows your plan
+
+. . .
+
+- Test your data tools before collecting/entering data
+
+. . .
+
+- Check your data often during data collection/entry
 
 
