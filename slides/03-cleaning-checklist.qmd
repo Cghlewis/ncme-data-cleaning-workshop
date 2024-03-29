@@ -197,7 +197,7 @@ What transformations are required based on what is going on in this data
 
 <br>
 
-![](images/checklist16.PNG){fig-align="center"}
+![](images/checklist16.jpg){fig-align="center"}
 
 
 ## Creating a data cleaning plan
