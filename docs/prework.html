@@ -59,6 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./slides.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./images/NCME-AnnualMeeting2024Logo-F.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Pre-work</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prework.html">Pre-work</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -134,14 +136,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Slides</span></a>
+  <a href="./prework.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Pre-work</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercises</span></a>
+  <a href="./slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,10 +160,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#follow-along-in-the-posit-cloud" id="toc-follow-along-in-the-posit-cloud" class="nav-link active" data-scroll-target="#follow-along-in-the-posit-cloud">Follow along in the Posit Cloud</a></li>
-  <li><a href="#watch-and-listen" id="toc-watch-and-listen" class="nav-link" data-scroll-target="#watch-and-listen">Watch and listen</a></li>
-  <li><a href="#follow-along-on-your-own-computer" id="toc-follow-along-on-your-own-computer" class="nav-link" data-scroll-target="#follow-along-on-your-own-computer">Follow along on your own computer</a></li>
-  <li><a href="#sec-quarto-purrr" id="toc-sec-quarto-purrr" class="nav-link" data-scroll-target="#sec-quarto-purrr">Quarto and {purrr}</a></li>
+<li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link active" data-scroll-target="#r-and-rstudio">R and RStudio</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">Tidyverse</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/blob/main/prework.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/edit/main/prework.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -180,48 +180,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>This workshop has five exercises for you to try. After the workshop, I encourage you to adapt the exercise template files and code to fit your own projects.</p>
-<p>There are three ways for you to participate. Please complete the pre-work for whichever way you’d like to follow along <strong>before the workshop</strong>. Spinning up the Posit Cloud instance can take a few minutes, as can installing packages and downloading the exercises.</p>
-<section id="follow-along-in-the-posit-cloud" class="level2"><h2 class="anchored" data-anchor-id="follow-along-in-the-posit-cloud">Follow along in the Posit Cloud</h2>
-<p>This workshop will largely be conducted in the <a href="https://posit.cloud/">Posit Cloud</a> environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. Please create an account if you don’t yet have one.</p>
-<p><strong>Join the R-Ladies workspace</strong>: <a href="https://bit.ly/rladies-parameterized-quarto">bit.ly/rladies-parameterized-quarto</a>.</p>
-<p><strong>Open the R-Ladies Abuja project</strong>: <a href="https://bit.ly/quarto-params-posit-cloud">bit.ly/quarto-params-posit-cloud</a>.</p>
-</section><section id="watch-and-listen" class="level2"><h2 class="anchored" data-anchor-id="watch-and-listen">Watch and listen</h2>
-<p>If you will not be using the Posit Cloud instance, you can learn by watching and listening. No pre-work needed for you. 😊</p>
-</section><section id="follow-along-on-your-own-computer" class="level2"><h2 class="anchored" data-anchor-id="follow-along-on-your-own-computer">Follow along on your own computer</h2>
-<p>As a more high-risk alternative, if you would like to try this out on your own computer, please have the following installed and configured on your machine. Note that we will <strong>NOT</strong> be able to help you with local computer problems during the workshop. If you choose to do this, you are on your own.</p>
+</header><p>A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .</p>
+<p>Please create a login to the Posit Cloud instance of this workshop here:</p>
+<p><strong><a href="https://posit.cloud/content/7872027" target="_blank">https://posit.cloud/content/7872027</a></strong></p>
+<p><strong>Alternative</strong></p>
+<p>If you are struggling using Posit Cloud, you can download the materials locally on your machine.</p>
+<p>Note that the presenter will <strong>NOT</strong> be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:</p>
 <ul>
 <li><p>Recent version of <strong>R</strong></p></li>
 <li><p>Recent version of <strong>RStudio</strong></p></li>
-<li>
-<p>Recent version of packages used in this workshop:</p>
+<li><p>Recent version of packages used in this workshop:</p></li>
+</ul>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"dplyr"</span>, <span class="st">"fs"</span>, <span class="st">"ggplot2"</span>, <span class="st">"here"</span>, <span class="st">"plotly"</span>, <span class="st">"purrr"</span>, <span class="st">"quarto"</span>, </span>
-<span>          <span class="st">"readr"</span>, <span class="st">"stringr"</span>, <span class="st">"janitor"</span>, <span class="st">"lubridate"</span>, <span class="st">"tidyr"</span>, <span class="st">"rmarkdown"</span>,</span>
-<span>          <span class="st">"knitr"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"readxl"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkgs</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</li>
-<li>
-<p>Check that Quarto works on your computer:</p>
-<ol type="1">
-<li><p>Open RStudio and create a new Quarto (<code>.qmd</code>) document.</p></li>
-<li><p>Save the document and check you are able to render it.</p></li>
-</ol>
-</li>
-<li>
-<p>Get the project on your machine. Fill in <code>destdir</code> with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.</p>
+<ul>
+<li>Get the project on your machine. Fill in <code>destdir</code> with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.</li>
+</ul>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("usethis")</span></span>
 <span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/zip-utils.html">use_course</a></span><span class="op">(</span></span>
 <span>    <span class="st">"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip"</span>,</span>
 <span>    destdir <span class="op">=</span> <span class="st">"___"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</li>
-</ul></section><section id="sec-quarto-purrr" class="level2"><h2 class="anchored" data-anchor-id="sec-quarto-purrr">Quarto and {purrr}</h2>
-<p>If you’re new to Quarto, we recommend watching <a href="https://www.youtube.com/watch?v=yvi5uXQMvu4">Tom Mock’s excellent 2-hour introduction to Quarto</a>.</p>
-<p>If you’re new to {purrr}, we recommend watching this R-Ladies Baltimore presentation <a href="https://www.youtube.com/watch?v=IewsPpjKElc"><em>Make your R Code purr with purrr</em></a> and reviewing Jenny Bryan’s <a href="https://jennybc.github.io/purrr-tutorial/">tutorial</a> and <a href="https://github.com/jennybc/row-oriented-workflows">workshop</a>.</p>
+<section id="r-and-rstudio" class="level2"><h2 class="anchored" data-anchor-id="r-and-rstudio">R and RStudio</h2>
+<p>For this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some experience working with R syntax.</p>
+<ul>
+<li><a href="https://rfortherestofus.com/courses/getting-started">Getting Started with R from R</a></li>
+<li><a href="R and the Tidyverse for working with data">R and Tidyverse for working with data</a></li>
+<li><a href="https://bookdown.org/aschmi11/RESMHandbook/">R Software Handbook</a></li>
+</ul></section><section id="tidyverse" class="level2"><h2 class="anchored" data-anchor-id="tidyverse">Tidyverse</h2>
+<p>If you’re new to the {tidyverse}, here are some materials I recommend reviewing before the workshop.</p>
+<ul>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science</a></li>
+<li><a href="https://jhudatascience.org/tidyversecourse/">Tidyverse Skills for Data Science</a></li>
+</ul>
 
 
 </section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
@@ -637,7 +632,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Home">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./slides.html" class="pagination-link" aria-label="Slides">
+        <span class="nav-page-text">Slides</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">

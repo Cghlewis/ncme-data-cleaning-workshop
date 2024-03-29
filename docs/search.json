@@ -1,5 +1,143 @@
 [
   {
+    "objectID": "solutions.html",
+    "href": "solutions.html",
+    "title": "Data Cleaning Exercises",
+    "section": "",
+    "text": "library(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.1.3\n\n\n-- Attaching packages --------------------------------------- tidyverse 1.3.2 --\nv ggplot2 3.4.0     v purrr   0.3.4\nv tibble  3.1.8     v dplyr   1.0.9\nv tidyr   1.1.4     v stringr 1.5.0\nv readr   2.1.2     v forcats 0.5.1\n\n\nWarning: package 'ggplot2' was built under R version 4.1.3\n\n\nWarning: package 'tibble' was built under R version 4.1.3\n\n\nWarning: package 'stringr' was built under R version 4.1.3\n\n\n-- Conflicts ------------------------------------------ tidyverse_conflicts() --\nx dplyr::filter() masks stats::filter()\nx dplyr::lag()    masks stats::lag()\n\nlibrary(readxl)\n\nWarning: package 'readxl' was built under R version 4.1.3"
+  },
+  {
+    "objectID": "solutions.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
+    "href": "solutions.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
+    "title": "Data Cleaning Exercises",
+    "section": "Replace “__” with the number of rows to skip. Then run the code.",
+    "text": "Replace “__” with the number of rows to skip. Then run the code.\n\nsvy &lt;- read_excel(\"data/sample_tch_svy_raw.xlsx\",\n                  skip = 2)"
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Materials",
+    "section": "",
+    "text": "View slides in full screen.",
+    "crumbs": [
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "slides.html#slides",
+    "href": "slides.html#slides",
+    "title": "Materials",
+    "section": "",
+    "text": "View slides in full screen.",
+    "crumbs": [
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
+    "section": "",
+    "text": "This work is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license.\n   \nIn short, you may share and adapt this content with appropriate credit and notation of any changes. You may not use this material for any commercial purposes.",
+    "crumbs": [
+      "License"
+    ]
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Data Cleaning Exercises",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(readxl)"
+  },
+  {
+    "objectID": "exercises.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
+    "href": "exercises.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
+    "title": "Data Cleaning Exercises",
+    "section": "Replace “__” with the number of rows to skip. Then run the code.",
+    "text": "Replace “__” with the number of rows to skip. Then run the code.\n\nsvy &lt;- read_excel(\"data/sample_tch_svy_raw.xlsx\",\n                  skip = ___)"
+  },
+  {
+    "objectID": "index.html#ncme-2024-workshop",
+    "href": "index.html#ncme-2024-workshop",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "NCME 2024 Workshop",
+    "text": "NCME 2024 Workshop\n📆 April 11, 2024 // 8:45 am - 12:45 pm EDT\n🏨 In Person\n📝 NCME attendees can register here\n🏡 Workshop website",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nUnderstand how to assess a data set for 8 data quality indicators\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\nFeel comfortable using R code to clean a data set\nUnderstand types of documentation that should be shared alongside data",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#is-this-workshop-for-me",
+    "href": "index.html#is-this-workshop-for-me",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Is this workshop for me?",
+    "text": "Is this workshop for me?\nThis workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.\nThis workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#further-reading",
+    "href": "index.html#further-reading",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nData Management in Large-Scale Education Research book\nData Management for Data Sharing Blog Post Series\nThe Basics of Data Management\nR Resources",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#speaker",
+    "href": "index.html#speaker",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Speaker",
+    "text": "Speaker\n Crystal Lewis is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—R-Ladies St. Louis, an organization focused on promoting gender diversity in the R community, as well as the POWER (providing women opportunities in education research) Data Management Hub, where she facilitates peer data management support in the education research community.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "prework.html",
+    "href": "prework.html",
+    "title": "Pre-work",
+    "section": "",
+    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
+    "crumbs": [
+      "Pre-work"
+    ]
+  },
+  {
+    "objectID": "prework.html#r-and-rstudio",
+    "href": "prework.html#r-and-rstudio",
+    "title": "Pre-work",
+    "section": "R and RStudio",
+    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some experience working with R syntax.\n\nGetting Started with R from R\nR and Tidyverse for working with data\nR Software Handbook",
+    "crumbs": [
+      "Pre-work"
+    ]
+  },
+  {
+    "objectID": "prework.html#tidyverse",
+    "href": "prework.html#tidyverse",
+    "title": "Pre-work",
+    "section": "Tidyverse",
+    "text": "Tidyverse\nIf you’re new to the {tidyverse}, here are some materials I recommend reviewing before the workshop.\n\nR for Data Science\nTidyverse Skills for Data Science",
+    "crumbs": [
+      "Pre-work"
+    ]
+  },
+  {
     "objectID": "slides/index.html#about-the-speaker",
     "href": "slides/index.html#about-the-speaker",
     "title": "Data Cleaning for Data Sharing Using R",
@@ -396,151 +534,76 @@
     "href": "slides/index.html#data-validation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Data validation",
-    "text": "Data validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+    "text": "Data validation"
   },
   {
-    "objectID": "prework.html",
-    "href": "prework.html",
-    "title": "Pre-work",
-    "section": "",
-    "text": "This workshop has five exercises for you to try. After the workshop, I encourage you to adapt the exercise template files and code to fit your own projects.\nThere are three ways for you to participate. Please complete the pre-work for whichever way you’d like to follow along before the workshop. Spinning up the Posit Cloud instance can take a few minutes, as can installing packages and downloading the exercises."
-  },
-  {
-    "objectID": "prework.html#follow-along-in-the-posit-cloud",
-    "href": "prework.html#follow-along-in-the-posit-cloud",
-    "title": "Pre-work",
-    "section": "Follow along in the Posit Cloud",
-    "text": "Follow along in the Posit Cloud\nThis workshop will largely be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. Please create an account if you don’t yet have one.\nJoin the R-Ladies workspace: bit.ly/rladies-parameterized-quarto.\nOpen the R-Ladies Abuja project: bit.ly/quarto-params-posit-cloud."
-  },
-  {
-    "objectID": "prework.html#watch-and-listen",
-    "href": "prework.html#watch-and-listen",
-    "title": "Pre-work",
-    "section": "Watch and listen",
-    "text": "Watch and listen\nIf you will not be using the Posit Cloud instance, you can learn by watching and listening. No pre-work needed for you. 😊"
-  },
-  {
-    "objectID": "prework.html#follow-along-on-your-own-computer",
-    "href": "prework.html#follow-along-on-your-own-computer",
-    "title": "Pre-work",
-    "section": "Follow along on your own computer",
-    "text": "Follow along on your own computer\nAs a more high-risk alternative, if you would like to try this out on your own computer, please have the following installed and configured on your machine. Note that we will NOT be able to help you with local computer problems during the workshop. If you choose to do this, you are on your own.\n\nRecent version of R\nRecent version of RStudio\n\nRecent version of packages used in this workshop:\n\npkgs &lt;- c(\"dplyr\", \"fs\", \"ggplot2\", \"here\", \"plotly\", \"purrr\", \"quarto\", \n          \"readr\", \"stringr\", \"janitor\", \"lubridate\", \"tidyr\", \"rmarkdown\",\n          \"knitr\")\n\ninstall.packages(pkgs)\n\n\n\nCheck that Quarto works on your computer:\n\nOpen RStudio and create a new Quarto (.qmd) document.\nSave the document and check you are able to render it.\n\n\n\nGet the project on your machine. Fill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")"
-  },
-  {
-    "objectID": "prework.html#sec-quarto-purrr",
-    "href": "prework.html#sec-quarto-purrr",
-    "title": "Pre-work",
-    "section": "Quarto and {purrr}",
-    "text": "Quarto and {purrr}\nIf you’re new to Quarto, we recommend watching Tom Mock’s excellent 2-hour introduction to Quarto.\nIf you’re new to {purrr}, we recommend watching this R-Ladies Baltimore presentation Make your R Code purr with purrr and reviewing Jenny Bryan’s tutorial and workshop."
-  },
-  {
-    "objectID": "index.html#ncme-2024-workshop",
-    "href": "index.html#ncme-2024-workshop",
+    "objectID": "slides/index.html#data-validation-1",
+    "href": "slides/index.html#data-validation-1",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "NCME 2024 Workshop",
-    "text": "NCME 2024 Workshop\n📆 April 11, 2024 // 8:45 am - 12:45 pm EDT\n🏨 In Person\n📝 NCME attendees can register here\n🏡 Workshop website",
-    "crumbs": [
-      "Home"
-    ]
+    "section": "Data validation",
+    "text": "Data validation\n\n\n\nComplete\n\nCheck for missing/duplicate cases\n\nCheck Ns by groups for completeness\n\nCorrect for missing/too many columns\n\nValid and consistent\n\nCheck for unallowed categories/values out of range\n\nCheck ranges by groups\n\nCheck for invalid, non-unique, or missing study IDs\nCheck for incorrect variable types/formats\nCheck missing value patterns\n\n\n\n\nAccurate\n\nAgreement across variables\n\nDe-identified\n\nAll direct identifiers are removed\nAll indirect identifiers managed as needed\n\nInterpretable\n\nVariables correctly named"
   },
   {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
+    "objectID": "slides/index.html#export-data",
+    "href": "slides/index.html#export-data",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nUnderstand how to assess a data set for 8 data quality indicators\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\nFeel comfortable using R code to clean a data set\nUnderstand types of documentation that should be shared alongside data",
-    "crumbs": [
-      "Home"
-    ]
+    "section": "Export data",
+    "text": "Export data"
   },
   {
-    "objectID": "index.html#is-this-workshop-for-me",
-    "href": "index.html#is-this-workshop-for-me",
+    "objectID": "slides/index.html#creating-a-data-cleaning-plan",
+    "href": "slides/index.html#creating-a-data-cleaning-plan",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Is this workshop for me?",
-    "text": "Is this workshop for me?\nThis workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.\nThis workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required.",
-    "crumbs": [
-      "Home"
-    ]
+    "section": "Creating a data cleaning plan",
+    "text": "Creating a data cleaning plan"
   },
   {
-    "objectID": "index.html#prework",
-    "href": "index.html#prework",
+    "objectID": "slides/index.html#review-our-sample-data-and-documentation",
+    "href": "slides/index.html#review-our-sample-data-and-documentation",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Prework",
-    "text": "Prework\nA portion of this workshop will be conducted in the Posit Cloud environment. Please create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027.\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nFill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
-    "crumbs": [
-      "Home"
-    ]
+    "section": "Review our sample data and documentation",
+    "text": "Review our sample data and documentation\n\n\n\nTake 5 minutes to review our data.\n\nLog in to Posit Cloud and navigate to our project\nOpen the data folder and open “sample_tch_svy_raw.csv”\n\n\n\n\n\n\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "index.html#further-reading",
-    "href": "index.html#further-reading",
+    "objectID": "slides/index.html#tidyverse",
+    "href": "slides/index.html#tidyverse",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Further Reading",
-    "text": "Further Reading\n\nData Management in Large-Scale Education Research book\nData Management for Data Sharing Blog Post Series\nThe Basics of Data Management\nR Resources",
-    "crumbs": [
-      "Home"
-    ]
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\nAn opinionated collection of R packages designed for data science\nAll packages share an underlying design philosophy, grammar, and data structures"
   },
   {
-    "objectID": "index.html#speaker",
-    "href": "index.html#speaker",
+    "objectID": "slides/index.html#tidyverse-1",
+    "href": "slides/index.html#tidyverse-1",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Speaker",
-    "text": "Speaker\nCrystal Lewis is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—R-Ladies St. Louis, an organization focused on promoting gender diversity in the R community, as well as the POWER (providing women opportunities in education research) Data Management Hub, where she facilitates peer data management support in the education research community.",
-    "crumbs": [
-      "Home"
-    ]
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\nTidy Evaluation\nSelecting test_score and grade_level from our data frame named sch_data\n\n\nselect(sch_data, test_score, \n       grade_level)\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3\n\n\n\nBase R\nSelecting test_score and grade_level from our data frame named sch_data\n\n\nsch_data[ , c(\"test_score\", \n              \"grade_level\")]\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3"
   },
   {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Data Cleaning: Exercises",
-    "section": "",
-    "text": "Recommended: Complete these exercises in the dedicated Posit Cloud work space, which comes with\n\nall packages pre-installed, and\na Quarto document to fill in.\n\nIt will be helpful to peek here to verify that your tables generated in Posit Cloud match the desired output and code solutions.\nJoin R/Medicine Posit cloud work space for Cleaning Medical Data with R: bit.ly/posit-cloud-cleaning-medical-data\nOtherwise: Follow along this document, work on your personal computer, and challenge yourself not to peek at the code solutions until you have completed the exercise.",
-    "crumbs": [
-      "Exercises"
-    ]
+    "objectID": "slides/index.html#pipes",
+    "href": "slides/index.html#pipes",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Pipes",
+    "text": "Pipes\n\n2014+ magrittr pipe %&gt;%\n2021+ (R \\(\\geq\\) 4.1.0) native R pipe |&gt;\n\n\nIsabella Velásquez’s blog post Understanding the native R pipe |&gt; (2022)\n\n\n\n\n\n\nsch_data &lt;- read_csv(\"school_data.csv\")\n\nsch_data2 &lt;- select(sch_data, id, \n                    test_score)\n\nsch_data3 &lt;- filter(sch_data2, \n                    test_score &gt; 300)\n\n\n\nsch_data &lt;- read_csv(\"school_data.csv\") |&gt;\n  select(id, test_score) |&gt;\n  filter(test_score &gt; 300)\n\n\n\n\n\n\nTo turn on the native pipe:\nTools → Global Options → Code → Editing → Use Native Pipe Operator"
   },
   {
-    "objectID": "exercises.html#exercises",
-    "href": "exercises.html#exercises",
-    "title": "Data Cleaning: Exercises",
-    "section": "Exercises",
-    "text": "Exercises\nOption 1: Posit Cloud\nJoin the workspace: bit.ly/rladies-parameterized-quarto.\nOpen the R-Ladies Abuja specific project: bit.ly/quarto-params-posit-cloud.\nOption 2: Download locally\nFill in destdir with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.\n\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
-    "crumbs": [
-      "Exercises"
-    ]
+    "objectID": "slides/index.html#import-our-data",
+    "href": "slides/index.html#import-our-data",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Import our data",
+    "text": "Import our data\nCommon data importing functions\n\nread_csv() from the readr package\nread_excel() from the readxl package\nread_sav() from the haven package\n\nWhich function should we use to read in our sample data?"
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "License",
-    "section": "",
-    "text": "This work is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license.\n   \nIn short, you may share and adapt this content with appropriate credit and notation of any changes. You may not use this material for any commercial purposes.",
-    "crumbs": [
-      "License"
-    ]
+    "objectID": "slides/index.html#import-our-file",
+    "href": "slides/index.html#import-our-file",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Import our file",
+    "text": "Import our file\n\nread_excel() has several arguments.\n\npath\nsheet = NULL\ncol_names = TRUE\nna = “”\nskip = 0\n\nType ?read_excel() in your console to see more arguments"
   },
   {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Materials",
-    "section": "",
-    "text": "View slides in full screen.",
-    "crumbs": [
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#slides",
-    "href": "slides.html#slides",
-    "title": "Materials",
-    "section": "",
-    "text": "View slides in full screen.",
-    "crumbs": [
-      "Slides"
-    ]
+    "objectID": "slides/index.html#exercise-7",
+    "href": "slides/index.html#exercise-7",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\nTake 3 minutes to import the data.\n\nOpen “exercises.qmd” in our Posit Cloud project.\nNavigate to exercise 1.\nUpdate the code and run the code chunk using the green arrow.\nIf you get stuck, you can open “solutions.qmd”\n\n\n\n\n−+\n03:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
   }
 ]

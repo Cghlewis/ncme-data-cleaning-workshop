@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.551">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
 <title>Data Cleaning for Data Sharing Using R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -17,41 +20,8 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
+
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -59,7 +29,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./slides.html" rel="next">
+<link href="./prework.html" rel="next">
 <link href="./images/NCME-AnnualMeeting2024Logo-F.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -71,7 +41,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -97,12 +68,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><style>html{ scroll-behavior: smooth; }</style>
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
 </head>
+
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -113,11 +90,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-center sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/NCME-AnnualMeeting2024Logo-F.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="./images/NCME-AnnualMeeting2024Logo-F.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
 </div>
@@ -129,10 +111,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-work</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -143,39 +131,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercises</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">License</span></a>
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#ncme-2024-workshop" id="toc-ncme-2024-workshop" class="nav-link active" data-scroll-target="#ncme-2024-workshop">NCME 2024 Workshop</a></li>
-  <li>
-<a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <li><a href="#ncme-2024-workshop" id="toc-ncme-2024-workshop" class="nav-link active" data-scroll-target="#ncme-2024-workshop">NCME 2024 Workshop</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#is-this-workshop-for-me" id="toc-is-this-workshop-for-me" class="nav-link" data-scroll-target="#is-this-workshop-for-me">Is this workshop for me?</a></li>
-  <li><a href="#prework" id="toc-prework" class="nav-link" data-scroll-target="#prework">Prework</a></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
   <li><a href="#speaker" id="toc-speaker" class="nav-link" data-scroll-target="#speaker">Speaker</a></li>
+  </ul></li>
   </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
 <h1 class="title">Data Cleaning for Data Sharing Using R</h1>
 </div>
 
@@ -190,47 +175,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><hr>
-<section id="ncme-2024-workshop" class="level2"><h2 class="anchored" data-anchor-id="ncme-2024-workshop">NCME 2024 Workshop</h2>
+</header>
+
+
+<hr>
+<section id="ncme-2024-workshop" class="level2">
+<h2 class="anchored" data-anchor-id="ncme-2024-workshop">NCME 2024 Workshop</h2>
 <p>📆 April 11, 2024 // 8:45 am - 12:45 pm EDT<br>
 🏨 In Person<br>
 📝 NCME attendees can register <a href="https://www.aera.net/registration">here</a><br>
 🏡 <a href="https://Cghlewis.github.io/ncme-data-cleaning-workshop/">Workshop website</a></p>
-<hr></section><section id="overview" class="level1"><h1>Overview</h1>
+<hr>
+</section>
+<section id="overview" class="level1">
+<h1>Overview</h1>
 <p>Before sharing research study data, it should be vetted to ensure that it is interpretable, analyzable, and reliable. This half-day, virtual workshop will provide a foundational understanding of how to organize data for the purpose of data sharing.</p>
-<section id="learning-objectives" class="level2"><h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
 <li>Understand how to assess a data set for 8 data quality indicators</li>
 <li>Be able to review a data set and apply a list of standardized data cleaning steps as needed</li>
 <li>Feel comfortable using R code to clean a data set</li>
 <li>Understand types of documentation that should be shared alongside data</li>
-</ul></section><section id="is-this-workshop-for-me" class="level2"><h2 class="anchored" data-anchor-id="is-this-workshop-for-me">Is this workshop for me?</h2>
+</ul>
+</section>
+<section id="is-this-workshop-for-me" class="level2">
+<h2 class="anchored" data-anchor-id="is-this-workshop-for-me">Is this workshop for me?</h2>
 <p>This workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.</p>
 <p>This workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required.</p>
-</section><section id="prework" class="level2"><h2 class="anchored" data-anchor-id="prework">Prework</h2>
-<p>A portion of this workshop will be conducted in the Posit Cloud environment. Please create a login to the Posit Cloud instance of this workshop here:</p>
-<p><strong><a href="https://posit.cloud/content/7872027" target="_blank">https://posit.cloud/content/7872027</a></strong>.</p>
-<p><strong>Alternative</strong></p>
-<p>If you are struggling using Posit Cloud, you can download the materials locally on your machine.</p>
-<p>Fill in <code>destdir</code> with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("usethis")</span></span>
-<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/zip-utils.html">use_course</a></span><span class="op">(</span></span>
-<span>    <span class="st">"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip"</span>,</span>
-<span>    destdir <span class="op">=</span> <span class="st">"___"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="further-reading" class="level2"><h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
 <ul>
 <li>Data Management in Large-Scale Education Research book</li>
 <li>Data Management for Data Sharing Blog Post Series</li>
 <li>The Basics of Data Management</li>
 <li>R Resources</li>
-</ul></section><section id="speaker" class="level2"><h2 class="anchored" data-anchor-id="speaker">Speaker</h2>
-<p><img src="images/Crystal_circle.png" class="img-fluid" style="float:left;padding: 0 10px 0 0; border-radius:50%" alt="Headshot of Crystal Lewis" width="150"><a href="https://cghlewis.com/"><strong>Crystal Lewis</strong></a> is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—<a href="https://www.meetup.com/rladies-st-louis/">R-Ladies St.&nbsp;Louis</a>, an organization focused on promoting gender diversity in the R community, as well as the <a href="https://osf.io/ap3tk/">POWER (providing women opportunities in education research) Data Management Hub</a>, where she facilitates peer data management support in the education research community.</p>
+</ul>
+</section>
+<section id="speaker" class="level2">
+<h2 class="anchored" data-anchor-id="speaker">Speaker</h2>
+<p><img src="images/Crystal_circle.png" class="img-fluid" style="float:left;padding: 0 10px 0 0; border-radius:50%" alt="Headshot of Crystal Lewis" width="150"> <a href="https://cghlewis.com/"><strong>Crystal Lewis</strong></a> is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—<a href="https://www.meetup.com/rladies-st-louis/">R-Ladies St.&nbsp;Louis</a>, an organization focused on promoting gender diversity in the R community, as well as the <a href="https://osf.io/ap3tk/">POWER (providing women opportunities in education research) Data Management Hub</a>, where she facilitates peer data management support in the education research community.</p>
 <p><a href="https://cghlewis.com/"><i class="fa-solid fa-link fa-xl" aria-label="link"></i></a> <a href="https://www.linkedin.com/in/crystal-lewis-922b4193/"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a> <a href="https://github.com/Cghlewis"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a></p>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -643,16 +636,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./slides.html" class="pagination-link" aria-label="Slides">
-        <span class="nav-page-text">Slides</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./prework.html" class="pagination-link" aria-label="Pre-work">
+        <span class="nav-page-text">Pre-work</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
 <p>© 2024 Crystal Lewis Consulting, LLC</p>
 </div>   
@@ -664,6 +660,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+
+
 
 
 <script src="site_libs/quarto-html/zenscroll-min.js"></script>

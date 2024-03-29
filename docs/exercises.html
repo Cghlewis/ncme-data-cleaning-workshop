@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.551">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Data Cleaning for Data Sharing Using R - Data Cleaning: Exercises</title>
+<meta name="author" content="Crystal Lewis">
+<title>Data Cleaning for Data Sharing Using R - Data Cleaning Exercises</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +60,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./license.html" rel="next">
-<link href="./slides.html" rel="prev">
 <link href="./images/NCME-AnnualMeeting2024Logo-F.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -105,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exercises.html">Exercises</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data Cleaning Exercises</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -136,14 +135,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Slides</span></a>
+  <a href="./prework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-work</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercises.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Exercises</span></a>
+  <a href="./slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slides</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -160,24 +159,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
-  <li>
-<a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
+<li>
+<a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1">Exercise 1</a>
   <ul class="collapse">
-<li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+<li><a href="#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code." id="toc-replace-__-with-the-number-of-rows-to-skip.-then-run-the-code." class="nav-link" data-scroll-target="#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.">Replace “__” with the number of rows to skip. Then run the code.</a></li>
   </ul>
 </li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/blob/main/exercises.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/edit/main/exercises.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/Cghlewis/ncme-data-cleaning-workshop/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Data Cleaning: Exercises</h1>
+<h1 class="title">Data Cleaning Exercises</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Crystal Lewis </p>
+          </div>
+  </div>
     
   
     
@@ -185,31 +190,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="instructions" class="level1"><h1>Instructions</h1>
-<p><strong>Recommended:</strong> Complete these exercises in the dedicated Posit Cloud work space, which comes with</p>
-<ol type="1">
-<li><p>all packages pre-installed, and</p></li>
-<li><p>a Quarto document to fill in.</p></li>
-</ol>
-<p>It will be helpful to peek here to verify that your tables generated in Posit Cloud match the desired output and code solutions.</p>
-<p>Join R/Medicine Posit cloud work space for Cleaning Medical Data with R: <strong><a href="https://bit.ly/posit-cloud-cleaning-medical-data" target="_blank">bit.ly/posit-cloud-cleaning-medical-data</a></strong></p>
-<p><strong>Otherwise:</strong> Follow along this document, work on your personal computer, and challenge yourself <strong>not to peek</strong> at the code solutions until you have completed the exercise.</p>
-</section><section id="packages" class="level1"><h1>Packages</h1>
-<section id="exercises" class="level2"><h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p><strong>Option 1: Posit Cloud</strong></p>
-<p>Join the workspace: <a href="https://bit.ly/rladies-parameterized-quarto">bit.ly/rladies-parameterized-quarto</a>.</p>
-<p>Open the R-Ladies Abuja specific project: <a href="https://bit.ly/quarto-params-posit-cloud">bit.ly/quarto-params-posit-cloud</a>.</p>
-<p><strong>Option 2: Download locally</strong></p>
-<p>Fill in <code>destdir</code> with the location where you want to download the project. Delete that argument if you want it to default to your Desktop.</p>
-<div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("usethis")</span></span>
-<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu"><a href="https://usethis.r-lib.org/reference/zip-utils.html">use_course</a></span><span class="op">(</span></span>
-<span>    <span class="st">"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip"</span>,</span>
-<span>    destdir <span class="op">=</span> <span class="st">"___"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</header><div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readxl.tidyverse.org">readxl</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="exercise-1" class="level1"><h1>Exercise 1</h1>
+<section id="replace-__-with-the-number-of-rows-to-skip.-then-run-the-code." class="level2"><h2 class="anchored" data-anchor-id="replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.">Replace “__” with the number of rows to skip. Then run the code.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>svy <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/sample_tch_svy_raw.xlsx"</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">skip =</span> ___)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="exercise-2" class="level1"><h1>Exercise 2</h1>
 
 
-</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -622,17 +616,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./slides.html" class="pagination-link" aria-label="Slides">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Slides</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./license.html" class="pagination-link" aria-label="License">
-        <span class="nav-page-text">License</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
+</script>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">

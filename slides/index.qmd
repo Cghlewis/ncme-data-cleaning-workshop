@@ -13,7 +13,6 @@ format:
     slide-number: true
 execute:
   echo: true
-df-print: kable
 ---
 
 {{< include 01-intro.qmd >}}
@@ -21,3 +20,5 @@ df-print: kable
 {{< include 02-data-quality.qmd >}}
 
 {{< include 03-cleaning-checklist.qmd >}}
+
+{{< include 04-cleaning-r.qmd >}}

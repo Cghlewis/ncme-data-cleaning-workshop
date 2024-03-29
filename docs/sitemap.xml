@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/slides/index.html</loc>
-    <lastmod>2024-03-27T20:48:03.341Z</lastmod>
+    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/solutions.html</loc>
+    <lastmod>2024-03-29T17:46:33.208Z</lastmod>
   </url>
   <url>
-    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/prework.html</loc>
-    <lastmod>2024-03-24T19:08:49.697Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/index.html</loc>
-    <lastmod>2024-03-26T18:29:06.398Z</lastmod>
-  </url>
-  <url>
-    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/exercises.html</loc>
-    <lastmod>2024-03-25T11:26:23.048Z</lastmod>
+    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/slides.html</loc>
+    <lastmod>2024-03-25T11:24:52.002Z</lastmod>
   </url>
   <url>
     <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/license.html</loc>
     <lastmod>2024-03-24T21:40:58.039Z</lastmod>
   </url>
   <url>
-    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/slides.html</loc>
-    <lastmod>2024-03-25T11:24:52.002Z</lastmod>
+    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/exercises.html</loc>
+    <lastmod>2024-03-29T18:01:31.185Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/index.html</loc>
+    <lastmod>2024-03-29T17:59:38.277Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/prework.html</loc>
+    <lastmod>2024-03-29T18:19:01.755Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Cghlewis.github.io/ncme-data-cleaning-workshop/slides/index.html</loc>
+    <lastmod>2024-03-29T16:55:19.205Z</lastmod>
   </url>
 </urlset>

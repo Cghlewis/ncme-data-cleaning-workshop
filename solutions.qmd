@@ -4,9 +4,7 @@ author: "Crystal Lewis"
 ---
 
 ```{r Install packages}
-#| warning: false
-#| message: false
-#| 
+
 library(tidyverse)
 library(readxl)
 
@@ -17,10 +15,9 @@ library(readxl)
 ## Replace "__" with the number of rows to skip. Then run the code.
 
 ```{r Import data}
-#| eval: false
-  
+
 svy <- read_excel("data/sample_tch_svy_raw.xlsx",
-                  skip = ___)
+                  skip = 2)
 
 ```
 

@@ -136,7 +136,7 @@ What transformations are required based on what is going on in this data
 
 ## Add missing values
 
-![](images/checklist14.PNG){fig-align="center"}
+![](images/checklist14.png){fig-align="center"}
 
 ## Data validation
 
@@ -144,7 +144,7 @@ What transformations are required based on what is going on in this data
 
 ::: {.column width="50%"}
 
-![](images/checklist15-1.PNG)
+![](images/checklist15-1.png)
 
 :::
 
@@ -152,14 +152,55 @@ What transformations are required based on what is going on in this data
 
 ::: {layout-nrow=2}
 
-![](images/checklist15-2.PNG)
+![](images/checklist15-2.png)
 
-![](images/checklist15-3.PNG)
-
-:::
+![](images/checklist15-3.png)
 
 :::
+
+:::
 :::
 
+## Data validation
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+- Complete
+  - Check for missing/duplicate cases
+    - Check Ns by groups for completeness
+  - Correct for missing/too many columns
+- Valid and consistent
+  - Check for unallowed categories/values out of range
+    - Check ranges by groups
+  - Check for invalid, non-unique, or missing study IDs
+  - Check for incorrect variable types/formats
+  - Check missing value patterns
+
+:::
+ 
+::: {.column width="40%"}
+
+- Accurate
+  - Agreement across variables
+- De-identified
+  - All direct identifiers are removed
+  - All indirect identifiers managed as needed
+- Interpretable
+  - Variables correctly named
+
+:::
+:::
+
+## Export data
+
+<br>
+
+![](images/checklist16.png){fig-align="center"}
+
+## Creating a data cleaning plan
+
+![](images/data_cleaning_plan.PNG){fig-align="center"}
 
 

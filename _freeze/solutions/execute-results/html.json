@@ -1,0 +1,15 @@
+{
+  "hash": "8666afa1af25f6d796fa3780cd8ef66e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Data Cleaning Exercises\"\nauthor: \"Crystal Lewis\"\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'tidyverse' was built under R version 4.1.3\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n-- Attaching packages --------------------------------------- tidyverse 1.3.2 --\nv ggplot2 3.4.0     v purrr   0.3.4\nv tibble  3.1.8     v dplyr   1.0.9\nv tidyr   1.1.4     v stringr 1.5.0\nv readr   2.1.2     v forcats 0.5.1\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'ggplot2' was built under R version 4.1.3\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'tibble' was built under R version 4.1.3\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'stringr' was built under R version 4.1.3\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n-- Conflicts ------------------------------------------ tidyverse_conflicts() --\nx dplyr::filter() masks stats::filter()\nx dplyr::lag()    masks stats::lag()\n```\n\n\n:::\n\n```{.r .cell-code}\nlibrary(readxl)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'readxl' was built under R version 4.1.3\n```\n\n\n:::\n:::\n\n\n# Exercise 1\n\n## Replace \"__\" with the number of rows to skip. Then run the code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsvy <- read_excel(\"data/sample_tch_svy_raw.xlsx\",\n                  skip = 2)\n```\n:::\n\n\n# Exercise 2\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
