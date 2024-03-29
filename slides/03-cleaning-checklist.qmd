@@ -136,7 +136,7 @@ What transformations are required based on what is going on in this data
 
 ## Add missing values
 
-![](images/checklist14.png){fig-align="center"}
+![](images/checklist14.PNG){fig-align="center"}
 
 ## Data validation
 
@@ -198,6 +198,7 @@ What transformations are required based on what is going on in this data
 <br>
 
 ![](images/checklist16.PNG){fig-align="center"}
+
 
 ## Creating a data cleaning plan
 
