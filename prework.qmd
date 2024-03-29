@@ -37,13 +37,13 @@ install.packages(pkgs)
 
 # install.packages("usethis")
 usethis::use_course(
-    "https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip",
+    "https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip",
     destdir = "___")
 ```
 
 ## R and RStudio
 
-For this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some experience working with R syntax. 
+For this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.
 
 - [Getting Started with R from R](https://rfortherestofus.com/courses/getting-started)
 - [R and Tidyverse for working with data](R and the Tidyverse for working with data)

@@ -1,0 +1,38 @@
+---
+title: "NCME Data Cleaning Exercises"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r Install packages}
+
+library(tidyverse)
+library(readxl)
+library(summarytools)
+
+```
+
+# Exercise 1
+
+## Replace skip = "__" with the number of rows to skip and na = "____" with the value to replace. Then run the code.
+
+```{r Import data, eval=FALSE}
+
+svy <- read_excel("data/sample_tch_svy_raw.xlsx",
+                  skip = 2,
+                  na = "-99")
+
+```
+
+
+# Exercise 2
+
+## Use the `dfSummary()` function to review our data
+
+```{r}
+
+dfSummary(svy)
+
+```
+
+

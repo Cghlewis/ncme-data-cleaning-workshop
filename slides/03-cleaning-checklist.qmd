@@ -203,4 +203,15 @@ What transformations are required based on what is going on in this data
 
 ![](images/data_cleaning_plan.PNG){fig-align="center"}
 
+## BREAK!
 
+![](https://media1.tenor.com/m/XFNnJtXYH_gAAAAC/dog-wipe-face.gif){fig-align="center" width=80%}
+
+## BREAK!
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 15, font_size = "10em", style = "position: relative; width: min-content;")
+
+```

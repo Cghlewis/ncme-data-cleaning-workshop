@@ -1,42 +1,43 @@
 # Cleaning in R {.background-secondary}
 
-```{r}
-#| echo: false
-#| cache: false
-countdown(minutes = 15, font_size = "2em")
+## Packages
 
-```
+- R has many built in (base) functions
+- We can also use functions that live in packages that we can install onto our computer
 
-
-## Review our sample data and documentation
+- Once installed, there are two ways to call packages
+  - You may see both methods used in these slides
 
 <br>
 
-:::: {.columns}
+::: columns
+::: {.column width="50%"}
 
-::: {.column width="40%"}
+Using `library()`
 
-Take 5 minutes to review our data.
+```{r echo=TRUE, eval=FALSE}
+library(dplyr)
 
-1. Log in to Posit Cloud and navigate to our project
-2. Open the data folder and open "sample_tch_svy_raw.csv"
-
-:::
- 
-::: {.column width="60%"}
-
-![](images/sample-data.PNG){fig-align="center"}
-
-```{r}
-#| echo: false
-#| cache: false
-countdown(minutes = 5, font_size = "2em")
+mtcars |>  
+  select(mpg, cyl) 
 
 ```
-
-:::
 :::
 
+::: {.column width="50%"}
+
+Using Namespacing `package::function()`
+
+```{r echo=TRUE, eval=FALSE}
+
+# library(dplyr) not needed
+
+mtcars |>  
+  dplyr::select(mpg, cyl) 
+
+```
+:::
+:::
 
 
 ## Tidyverse
@@ -63,12 +64,14 @@ All packages share an underlying design philosophy, grammar, and data structures
 
 <br>
 
+Selecting `test_score` and `grade_level` from our data frame named `sch_data`
+
+<br>
+
 ::: columns
 ::: {.column width="50%"}
 
 [Tidy Evaluation](https://dplyr.tidyverse.org/articles/programming.html)
-
-Selecting `test_score` and `grade_level` from our data frame named `sch_data`
 
 <br>
 
@@ -92,8 +95,6 @@ select(sch_data, test_score,
 ::: {.column width="50%"}
 
 Base R
-
-Selecting `test_score` and `grade_level` from our data frame named `sch_data`
 
 <br>
 
@@ -124,12 +125,10 @@ Isabella Velásquez's blog post [*Understanding the native R pipe* \|\>](https:/
 ::: {.column width="50%"}
 ```{r echo=TRUE, eval=FALSE}
 
-sch_data <- read_csv("school_data.csv")
-
-sch_data2 <- select(sch_data, id, 
+sch_data <- select(sch_data, id, 
                     test_score)
 
-sch_data3 <- filter(sch_data2, 
+sch_data <- filter(sch_data, 
                     test_score > 300)
 
 ```
@@ -140,7 +139,7 @@ sch_data3 <- filter(sch_data2,
 #| echo: true
 #| eval: false
 
-sch_data <- read_csv("school_data.csv") |>
+sch_data <- sch_data |>
   select(id, test_score) |>
   filter(test_score > 300)
 
@@ -156,7 +155,42 @@ To turn on the native pipe:
 
 `Tools` → `Global Options` → `Code` → `Editing` → `Use Native Pipe Operator`
 
+## Open our data
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<br>
+
+### Take 5 minutes to open and look at our data file.
+
+1. Log in to Posit Cloud and navigate to our project
+2. Open the data folder and open "sample_tch_svy_raw.csv"
+
+:::
+ 
+::: {.column width="60%"}
+
+<br>
+
+![](images/sample-data.PNG){fig-align="center"}
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 5, font_size = "2em")
+
+```
+
+:::
+:::
+
 ## Import our data
+
+<br>
 
 Common data importing functions
 
@@ -166,9 +200,19 @@ Common data importing functions
 
 - `read_sav()` from the `haven` package
 
-Which function should we use to read in our sample data?
+- Learn more about importing multiple files at once [here](https://github.com/Cghlewis/data-wrangling-functions/wiki/Import-Files)
+
+<br>
+
+. . .
+
+**Which function should we use to read in our sample data?**🤔
 
 ## Import our file
+
+::: columns
+ 
+::: {.column width="50%"}
 
 - `read_excel()` has several arguments. 
   - path
@@ -178,14 +222,28 @@ Which function should we use to read in our sample data?
   - skip = 0
 - Type `?read_excel()` in your console to see more arguments
 
-## Exercise
+:::
 
-Take 3 minutes to import the data.
+::: {.column width="50%"}
 
-1. Open "exercises.qmd" in our Posit Cloud project.
+![](images/read_excel.PNG){fig-align="center"}
+
+:::
+:::
+
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 3 minutes to import the data.
+
+<br>
+
+1. Open "exercises.Rmd" in our Posit Cloud project.
 2. Navigate to exercise 1.
 3. Update the code and run the code chunk using the green arrow.
-4. If you get stuck, you can open "solutions.qmd"
+4. If you get stuck, you can open "solutions.Rmd"
 
 ```{r}
 #| echo: false
@@ -194,4 +252,52 @@ countdown(minutes = 3, font_size = "2em")
 
 ```
 
+## Review our data
 
+::: columns
+::: {.column width="50%"}
+
+- How many rows?
+  - In this hypothetical situation, we assume we are not missing any cases
+  - However, there may be duplicates
+- How many columns?
+  - Compare to our data dictionary
+- What are the variable values and ranges?
+  - Compare to our data dictionary
+- How much missing data do we have?
+
+:::
+
+::: {.column width="50%"}
+
+There are several functions we can use to explore data
+
+- `dplyr::glimpse()`
+- `skimr::skim()`
+- `base::summary()`
+- `summarytools::dfSummary()`
+- `Hmisc::describe()`
+
+:::
+:::
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 5 minutes to review our data.
+
+1. Navigate to exercise 2.
+2. Run the code. 
+    - Write down any potential issues you see in the data.
+3. Open "sample_tch_svy_data_dictionary.xlsx". 
+    - What issues do you see when you compare the data to our data dictionary?
+4. Review "sample_tch_svy_cleaning-plan.txt". 
+    - How does it compare to the issues you wrote down?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 5, font_size = "2em")
+
+```

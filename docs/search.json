@@ -1,143 +1,5 @@
 [
   {
-    "objectID": "solutions.html",
-    "href": "solutions.html",
-    "title": "Data Cleaning Exercises",
-    "section": "",
-    "text": "library(tidyverse)\n\nWarning: package 'tidyverse' was built under R version 4.1.3\n\n\n-- Attaching packages --------------------------------------- tidyverse 1.3.2 --\nv ggplot2 3.4.0     v purrr   0.3.4\nv tibble  3.1.8     v dplyr   1.0.9\nv tidyr   1.1.4     v stringr 1.5.0\nv readr   2.1.2     v forcats 0.5.1\n\n\nWarning: package 'ggplot2' was built under R version 4.1.3\n\n\nWarning: package 'tibble' was built under R version 4.1.3\n\n\nWarning: package 'stringr' was built under R version 4.1.3\n\n\n-- Conflicts ------------------------------------------ tidyverse_conflicts() --\nx dplyr::filter() masks stats::filter()\nx dplyr::lag()    masks stats::lag()\n\nlibrary(readxl)\n\nWarning: package 'readxl' was built under R version 4.1.3"
-  },
-  {
-    "objectID": "solutions.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
-    "href": "solutions.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
-    "title": "Data Cleaning Exercises",
-    "section": "Replace “__” with the number of rows to skip. Then run the code.",
-    "text": "Replace “__” with the number of rows to skip. Then run the code.\n\nsvy &lt;- read_excel(\"data/sample_tch_svy_raw.xlsx\",\n                  skip = 2)"
-  },
-  {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Materials",
-    "section": "",
-    "text": "View slides in full screen.",
-    "crumbs": [
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "slides.html#slides",
-    "href": "slides.html#slides",
-    "title": "Materials",
-    "section": "",
-    "text": "View slides in full screen.",
-    "crumbs": [
-      "Slides"
-    ]
-  },
-  {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "License",
-    "section": "",
-    "text": "This work is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license.\n   \nIn short, you may share and adapt this content with appropriate credit and notation of any changes. You may not use this material for any commercial purposes.",
-    "crumbs": [
-      "License"
-    ]
-  },
-  {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Data Cleaning Exercises",
-    "section": "",
-    "text": "library(tidyverse)\nlibrary(readxl)"
-  },
-  {
-    "objectID": "exercises.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
-    "href": "exercises.html#replace-__-with-the-number-of-rows-to-skip.-then-run-the-code.",
-    "title": "Data Cleaning Exercises",
-    "section": "Replace “__” with the number of rows to skip. Then run the code.",
-    "text": "Replace “__” with the number of rows to skip. Then run the code.\n\nsvy &lt;- read_excel(\"data/sample_tch_svy_raw.xlsx\",\n                  skip = ___)"
-  },
-  {
-    "objectID": "index.html#ncme-2024-workshop",
-    "href": "index.html#ncme-2024-workshop",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "NCME 2024 Workshop",
-    "text": "NCME 2024 Workshop\n📆 April 11, 2024 // 8:45 am - 12:45 pm EDT\n🏨 In Person\n📝 NCME attendees can register here\n🏡 Workshop website",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#learning-objectives",
-    "href": "index.html#learning-objectives",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\nUnderstand how to assess a data set for 8 data quality indicators\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\nFeel comfortable using R code to clean a data set\nUnderstand types of documentation that should be shared alongside data",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#is-this-workshop-for-me",
-    "href": "index.html#is-this-workshop-for-me",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Is this workshop for me?",
-    "text": "Is this workshop for me?\nThis workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.\nThis workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#further-reading",
-    "href": "index.html#further-reading",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Further Reading",
-    "text": "Further Reading\n\nData Management in Large-Scale Education Research book\nData Management for Data Sharing Blog Post Series\nThe Basics of Data Management\nR Resources",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#speaker",
-    "href": "index.html#speaker",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Speaker",
-    "text": "Speaker\n Crystal Lewis is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—R-Ladies St. Louis, an organization focused on promoting gender diversity in the R community, as well as the POWER (providing women opportunities in education research) Data Management Hub, where she facilitates peer data management support in the education research community.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "prework.html",
-    "href": "prework.html",
-    "title": "Pre-work",
-    "section": "",
-    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
-    "crumbs": [
-      "Pre-work"
-    ]
-  },
-  {
-    "objectID": "prework.html#r-and-rstudio",
-    "href": "prework.html#r-and-rstudio",
-    "title": "Pre-work",
-    "section": "R and RStudio",
-    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some experience working with R syntax.\n\nGetting Started with R from R\nR and Tidyverse for working with data\nR Software Handbook",
-    "crumbs": [
-      "Pre-work"
-    ]
-  },
-  {
-    "objectID": "prework.html#tidyverse",
-    "href": "prework.html#tidyverse",
-    "title": "Pre-work",
-    "section": "Tidyverse",
-    "text": "Tidyverse\nIf you’re new to the {tidyverse}, here are some materials I recommend reviewing before the workshop.\n\nR for Data Science\nTidyverse Skills for Data Science",
-    "crumbs": [
-      "Pre-work"
-    ]
-  },
-  {
     "objectID": "slides/index.html#about-the-speaker",
     "href": "slides/index.html#about-the-speaker",
     "title": "Data Cleaning for Data Sharing Using R",
@@ -558,11 +420,25 @@
     "text": "Creating a data cleaning plan"
   },
   {
-    "objectID": "slides/index.html#review-our-sample-data-and-documentation",
-    "href": "slides/index.html#review-our-sample-data-and-documentation",
+    "objectID": "slides/index.html#break",
+    "href": "slides/index.html#break",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Review our sample data and documentation",
-    "text": "Review our sample data and documentation\n\n\n\nTake 5 minutes to review our data.\n\nLog in to Posit Cloud and navigate to our project\nOpen the data folder and open “sample_tch_svy_raw.csv”\n\n\n\n\n\n\n\n\n\n\n−+\n05:00"
+    "section": "BREAK!",
+    "text": "BREAK!"
+  },
+  {
+    "objectID": "slides/index.html#break-1",
+    "href": "slides/index.html#break-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "BREAK!",
+    "text": "BREAK!\n\n\n\n−+\n15:00"
+  },
+  {
+    "objectID": "slides/index.html#packages",
+    "href": "slides/index.html#packages",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Packages",
+    "text": "Packages\n\nR has many built in (base) functions\nWe can also use functions that live in packages that we can install onto our computer\nOnce installed, there are two ways to call packages\n\nYou may see both methods used in these slides\n\n\n\n\n\nUsing library()\n\nlibrary(dplyr)\n\nmtcars |&gt;  \n  select(mpg, cyl) \n\n\nUsing Namespacing package::function()\n\n# library(dplyr) not needed\n\nmtcars |&gt;  \n  dplyr::select(mpg, cyl)"
   },
   {
     "objectID": "slides/index.html#tidyverse",
@@ -576,34 +452,165 @@
     "href": "slides/index.html#tidyverse-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Tidyverse",
-    "text": "Tidyverse\n\n\n\nTidy Evaluation\nSelecting test_score and grade_level from our data frame named sch_data\n\n\nselect(sch_data, test_score, \n       grade_level)\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3\n\n\n\nBase R\nSelecting test_score and grade_level from our data frame named sch_data\n\n\nsch_data[ , c(\"test_score\", \n              \"grade_level\")]\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3"
+    "text": "Tidyverse\n\nSelecting test_score and grade_level from our data frame named sch_data\n\n\n\nTidy Evaluation\n\n\nselect(sch_data, test_score, \n       grade_level)\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3\n\n\n\nBase R\n\n\nsch_data[ , c(\"test_score\", \n              \"grade_level\")]\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3"
   },
   {
     "objectID": "slides/index.html#pipes",
     "href": "slides/index.html#pipes",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Pipes",
-    "text": "Pipes\n\n2014+ magrittr pipe %&gt;%\n2021+ (R \\(\\geq\\) 4.1.0) native R pipe |&gt;\n\n\nIsabella Velásquez’s blog post Understanding the native R pipe |&gt; (2022)\n\n\n\n\n\n\nsch_data &lt;- read_csv(\"school_data.csv\")\n\nsch_data2 &lt;- select(sch_data, id, \n                    test_score)\n\nsch_data3 &lt;- filter(sch_data2, \n                    test_score &gt; 300)\n\n\n\nsch_data &lt;- read_csv(\"school_data.csv\") |&gt;\n  select(id, test_score) |&gt;\n  filter(test_score &gt; 300)\n\n\n\n\n\n\nTo turn on the native pipe:\nTools → Global Options → Code → Editing → Use Native Pipe Operator"
+    "text": "Pipes\n\n2014+ magrittr pipe %&gt;%\n2021+ (R \\(\\geq\\) 4.1.0) native R pipe |&gt;\n\n\nIsabella Velásquez’s blog post Understanding the native R pipe |&gt; (2022)\n\n\n\n\n\n\nsch_data &lt;- select(sch_data, id, \n                    test_score)\n\nsch_data &lt;- filter(sch_data, \n                    test_score &gt; 300)\n\n\n\nsch_data &lt;- sch_data |&gt;\n  select(id, test_score) |&gt;\n  filter(test_score &gt; 300)\n\n\n\n\n\n\nTo turn on the native pipe:\nTools → Global Options → Code → Editing → Use Native Pipe Operator"
+  },
+  {
+    "objectID": "slides/index.html#open-our-data",
+    "href": "slides/index.html#open-our-data",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Open our data",
+    "text": "Open our data\n\n\n\n\nTake 5 minutes to open and look at our data file.\n\nLog in to Posit Cloud and navigate to our project\nOpen the data folder and open “sample_tch_svy_raw.csv”\n\n\n\n\n\n\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#import-our-data",
     "href": "slides/index.html#import-our-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Import our data",
-    "text": "Import our data\nCommon data importing functions\n\nread_csv() from the readr package\nread_excel() from the readxl package\nread_sav() from the haven package\n\nWhich function should we use to read in our sample data?"
+    "text": "Import our data\n\nCommon data importing functions\n\nread_csv() from the readr package\nread_excel() from the readxl package\nread_sav() from the haven package\nLearn more about importing multiple files at once here\n\n\n\nWhich function should we use to read in our sample data?🤔"
   },
   {
     "objectID": "slides/index.html#import-our-file",
     "href": "slides/index.html#import-our-file",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Import our file",
-    "text": "Import our file\n\nread_excel() has several arguments.\n\npath\nsheet = NULL\ncol_names = TRUE\nna = “”\nskip = 0\n\nType ?read_excel() in your console to see more arguments"
+    "text": "Import our file\n\n\n\nread_excel() has several arguments.\n\npath\nsheet = NULL\ncol_names = TRUE\nna = “”\nskip = 0\n\nType ?read_excel() in your console to see more arguments"
   },
   {
     "objectID": "slides/index.html#exercise-7",
     "href": "slides/index.html#exercise-7",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\nTake 3 minutes to import the data.\n\nOpen “exercises.qmd” in our Posit Cloud project.\nNavigate to exercise 1.\nUpdate the code and run the code chunk using the green arrow.\nIf you get stuck, you can open “solutions.qmd”\n\n\n\n\n−+\n03:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+    "text": "Exercise\n\nTake 3 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nNavigate to exercise 1.\nUpdate the code and run the code chunk using the green arrow.\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/index.html#review-our-data",
+    "href": "slides/index.html#review-our-data",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Review our data",
+    "text": "Review our data\n\n\n\nHow many rows?\n\nIn this hypothetical situation, we assume we are not missing any cases\nHowever, there may be duplicates\n\nHow many columns?\n\nCompare to our data dictionary\n\nWhat are the variable values and ranges?\n\nCompare to our data dictionary\n\nHow much missing data do we have?\n\n\nThere are several functions we can use to explore data\n\ndplyr::glimpse()\nskimr::skim()\nbase::summary()\nsummarytools::dfSummary()\nHmisc::describe()"
+  },
+  {
+    "objectID": "slides/index.html#exercise-8",
+    "href": "slides/index.html#exercise-8",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data.\n\nOpen “sample_tch_svy_data_dictionary.xlsx”.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nReview “sample_tch_svy_cleaning-plan.txt”.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+  },
+  {
+    "objectID": "prework.html",
+    "href": "prework.html",
+    "title": "Pre-work",
+    "section": "",
+    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
+    "crumbs": [
+      "Pre-work"
+    ]
+  },
+  {
+    "objectID": "prework.html#r-and-rstudio",
+    "href": "prework.html#r-and-rstudio",
+    "title": "Pre-work",
+    "section": "R and RStudio",
+    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R from R\nR and Tidyverse for working with data\nR Software Handbook",
+    "crumbs": [
+      "Pre-work"
+    ]
+  },
+  {
+    "objectID": "prework.html#tidyverse",
+    "href": "prework.html#tidyverse",
+    "title": "Pre-work",
+    "section": "Tidyverse",
+    "text": "Tidyverse\nIf you’re new to the {tidyverse}, here are some materials I recommend reviewing before the workshop.\n\nR for Data Science\nTidyverse Skills for Data Science",
+    "crumbs": [
+      "Pre-work"
+    ]
+  },
+  {
+    "objectID": "index.html#ncme-2024-workshop",
+    "href": "index.html#ncme-2024-workshop",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "NCME 2024 Workshop",
+    "text": "NCME 2024 Workshop\n📆 April 11, 2024 // 8:45 am - 12:45 pm EDT\n🏨 In Person\n📝 NCME attendees can register here\n🏡 Workshop website",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nUnderstand how to assess a data set for 8 data quality indicators\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\nFeel comfortable using R code to clean a data set\nUnderstand types of documentation that should be shared alongside data",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#is-this-workshop-for-me",
+    "href": "index.html#is-this-workshop-for-me",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Is this workshop for me?",
+    "text": "Is this workshop for me?\nThis workshop is for any education researcher who could benefit from guidance on how to take a messy raw dataset and organize it into a shareable data product.\nThis workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#further-reading",
+    "href": "index.html#further-reading",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nData Management in Large-Scale Education Research book\nData Management for Data Sharing Blog Post Series\nThe Basics of Data Management\nR Resources",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#speaker",
+    "href": "index.html#speaker",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Speaker",
+    "text": "Speaker\n Crystal Lewis is an independent research data management consultant, providing recommendations, direct service, and training to education researchers and their teams across the country. She also co-organizes two community groups—R-Ladies St. Louis, an organization focused on promoting gender diversity in the R community, as well as the POWER (providing women opportunities in education research) Data Management Hub, where she facilitates peer data management support in the education research community.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "License",
+    "section": "",
+    "text": "This work is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license.\n   \nIn short, you may share and adapt this content with appropriate credit and notation of any changes. You may not use this material for any commercial purposes.",
+    "crumbs": [
+      "License"
+    ]
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Materials",
+    "section": "",
+    "text": "View slides in full screen.",
+    "crumbs": [
+      "Slides"
+    ]
+  },
+  {
+    "objectID": "slides.html#slides",
+    "href": "slides.html#slides",
+    "title": "Materials",
+    "section": "",
+    "text": "View slides in full screen.",
+    "crumbs": [
+      "Slides"
+    ]
   }
 ]
