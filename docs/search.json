@@ -508,7 +508,7 @@
     "href": "prework.html",
     "title": "Pre-work",
     "section": "",
-    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
+    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\", \"summarytools\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
     "crumbs": [
       "Pre-work"
     ]
@@ -518,7 +518,7 @@
     "href": "prework.html#r-and-rstudio",
     "title": "Pre-work",
     "section": "R and RStudio",
-    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R from R\nR and Tidyverse for working with data\nR Software Handbook",
+    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R\nR and Tidyverse for working with data\nR Software Handbook",
     "crumbs": [
       "Pre-work"
     ]

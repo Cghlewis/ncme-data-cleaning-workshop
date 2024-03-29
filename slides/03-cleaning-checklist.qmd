@@ -144,7 +144,7 @@ What transformations are required based on what is going on in this data
 
 ::: {.column width="50%"}
 
-![](images/checklist15-1.png)
+![](images/checklist15-1.PNG)
 
 :::
 
@@ -152,9 +152,9 @@ What transformations are required based on what is going on in this data
 
 ::: {layout-nrow=2}
 
-![](images/checklist15-2.png)
+![](images/checklist15-2.PNG)
 
-![](images/checklist15-3.png)
+![](images/checklist15-3.PNG)
 
 :::
 
@@ -197,7 +197,7 @@ What transformations are required based on what is going on in this data
 
 <br>
 
-![](images/checklist16.png){fig-align="center"}
+![](images/checklist16.PNG){fig-align="center"}
 
 ## Creating a data cleaning plan
 

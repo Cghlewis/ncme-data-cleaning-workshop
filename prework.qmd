@@ -24,7 +24,7 @@ Note that the presenter will **NOT** be able to help you with local computer pro
 ``` {r}
 #| eval: false
 
-pkgs <- c("tidyverse", "readxl")
+pkgs <- c("tidyverse", "readxl", "summarytools")
 
 install.packages(pkgs)
 
@@ -45,7 +45,7 @@ usethis::use_course(
 
 For this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.
 
-- [Getting Started with R from R](https://rfortherestofus.com/courses/getting-started)
+- [Getting Started with R](https://rfortherestofus.com/courses/getting-started)
 - [R and Tidyverse for working with data](R and the Tidyverse for working with data)
 - [R Software Handbook](https://bookdown.org/aschmi11/RESMHandbook/)
 
