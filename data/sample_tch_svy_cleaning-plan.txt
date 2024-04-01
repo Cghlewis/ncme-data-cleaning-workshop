@@ -4,25 +4,23 @@
 3. Find missing data
   - Assumption for this exercise is that is is all here
 4. Adjust the sample
-  - Remove duplicate `tch_id`
+  - Remove duplicate `tch_id` based on our predefined rules (if both complete, always keep most recent submission)
 5. De-identify data
-  - Replace `SCHOOL` with `sch_id`
+  - Replace `Q2` with `sch_id`
   - We may want to drop `svy_date` at some point
-  - We can review `age` and `gender` and decide if transformations are needed
 6. Split columns
   - Not needed here
-7. Rename variables
-  - Rename `Q1`, `Q2`, `Q3`
+7. Rename all variables
 8. Normalize variables
-  - Remove characters from `age`
-9. Standardize variables
-  - Standardize `gender`
-10. Update variable types
-  - Update `age` to numeric
-11. Recode variables
-  - Recode blanks to 0 for `support` variables
-  - Recode all -99 to missing (deal with this in the import)
-12. Construct new variables
-  - Calculate `stress_mean` and create `int` variable
+  - Remove characters values from `tch_yrs`
+9. Update variable types
+  - Update `tch_yrs` to numeric
+10. Recode variables
+  - Recode blanks to 0 for `grade` variables
+  - Recode `mathanx`
+  - Recode `mathanx_scale`
+11. Construct new variables
+  - Calculate `gad_sum`
+12. Recode all numeric missing values to -99
 13. Validate data
 14. Export CSV file
