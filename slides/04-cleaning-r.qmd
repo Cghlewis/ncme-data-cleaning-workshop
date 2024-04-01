@@ -77,7 +77,7 @@ Selecting `test_score` and `grade_level` from our data frame named `sch_data`
 
 ```{r echo=FALSE}
 
-sch_data <- tibble::tribble(~test_score, ~grade_level,
+sch_data <- tibble::tribble(~id, ~test_score, ~grade_level,
                 350, 3,
                 380, 4,
                 290, 3)
@@ -301,3 +301,430 @@ There are several functions we can use to explore data
 countdown(minutes = 5, font_size = "2em")
 
 ```
+
+
+## Adjust the sample
+
+- There are two key functions we can use to both identify and remove duplicates in our data
+  - `janitor::get_dupes()`
+    - Tells you which rows contain duplicate unique identifiers, if any
+  - `dplyr::distinct()`
+    - Keeps the first instance of a duplicate unique identifier
+      - But what if your raw data is sorted differently at a later point? 
+      - Helpful to use `dplyr::arrange()` first so that your data is always sorted the same way before dropping your duplicates
+  
+## Adjust the sample
+
+::: columns
+::: {.column width="50%"}
+
+Check for duplicates
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  get_dupes(id_vars)
+
+```
+
+- Replace "id_vars" with your unique identifier
+- If you have more than one variable that uniquely identifies rows, use `c(id1, id2)`
+
+:::
+
+::: {.column width="50%"}
+
+Remove duplicates
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+df |>
+  arrange(another_identier) |>
+  distinct(id_vars, 
+           .keep_all = TRUE)
+
+```
+- Replace "another_identifier" with a variable that makes your duplicates unique (e.g., "date")
+- Replace "id_vars" with your unique identifier/s
+- Always add the argument ".keep_all = TRUE"
+
+
+:::
+:::
+
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 5 minutes to check for and remove duplicates.
+
+1. Navigate to exercise 3.
+2. Run the code to check for duplicates. 
+    - Which `tch_id` is duplicated?
+3. Run the code to remove our duplicates. 
+    - Our documented rule is that if both surveys are complete, keep the most recently completed row.
+4. Run the code to check for duplicates again.
+    - Are the duplicates removed?
+5. Run the code to confirm that we kept the most recent submission of the duplicate survey ("2023-04-02").
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 5, font_size = "2em")
+
+```
+
+## De-identify data
+
+<br>
+
+The functions used here will depend on what is required.
+
+Examples of functions you might use:
+
+- `dplyr::select()` to drop variables
+- `dplyr::case_when()` or `dplyr::recode()` to collapse categories/recode values
+- `dplyr::*_join()` to merge in identifying variables
+- `stringr::str_remove()` or `stringr::str_replace()` to redact character values
+
+<br>
+
+Here we are going to use `dplyr::select()` and `dplyr::case_when()`
+
+## De-identify data
+
+<br>
+
+Select or Drop Variables
+
+::: columns
+::: {.column width="50%"}
+
+To select variables of interest
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  select(varname1, varname2, varname3)
+
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+To drop variables I add `-`
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+df |>
+  select(-varname1)
+
+```
+
+- If I had more than one variable to drop, I can use `-c(var1, var2)`
+
+:::
+:::
+
+## De-identify data
+
+Recategorize Values
+
+
+::: columns
+::: {.column width="50%"}
+
+Recategorize numeric values
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  dplyr::mutate(new_var_name =
+                  case_when(
+                    var_name == old_value ~ new_value,
+                    var_name == old_value ~ new_value,
+                  ))
+
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+Recategorize character values
+
+```{r}
+#| echo: true
+#| eval: false
+
+
+df |>
+  dplyr::mutate(new_var_name =
+                  case_when(
+                    var_name %in% c("geom", "alg") ~ "math",
+                    var_name %in% c("lit", "read") ~ "ela"
+                  ))
+
+```
+
+:::
+:::
+
+- To learn more about setting *default* values for `case_when()`, type `?case_when` in your console
+- Note that there is a new function, `case_match()`, that is worth looking in to. It reduces repetition in the syntax.
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 5 minutes to de-identify our data
+
+1. Navigate to exercise 4.
+2. Run the code to review what identifying variables we might have in our data.
+3. Run the code to create a `sch_id` variable.
+    - Review the new variable after it is created.
+4. Run the code to drop our identifying variables.
+    - Review to make sure those variables were removed.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 5, font_size = "2em")
+
+```
+
+## Rename variables
+
+Two functions we can use to rename variables
+
+- `dplyr::rename()`
+    - Commonly used to rename just a few variables
+- `purrr::set_names()`
+    - Used to rename all of our variables
+    - Variables must be in the exact right order
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+Rename one variable
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  rename(new_name = old_name)
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+Rename all variables
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+df |>
+  set_names(c("name1", "name2", "name3"))
+
+```
+
+:::
+:::
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 3 minutes to rename variables
+
+1. Navigate to exercise 3.
+2. Review the current variable names.
+3. Rename variables according to our data dictionary.
+4. Check variable names again to make sure the renaming worked.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 3, font_size = "2em")
+
+```
+
+
+## Normalize variables
+
+There are several functions that can help us remove unexpected values from our variables. 
+
+Some examples of those include:
+
+- `stringr::str_remove_all()`
+- `stringr::str_replace_all()`
+- `readr::parse_number()`
+
+<br>
+
+Say this is our data
+
+```{r echo=FALSE}
+
+library(stringr)
+library(readr)
+
+df <- tibble::tribble(~id, ~income,
+                      1, "$32,000",
+                      2, "120000",
+                      3, "$45,000")
+
+df
+
+```
+
+
+## Normalize variables
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+Remove character values with `stringr::str_remove_all()`
+
+```{r}
+#| echo: true
+
+df |>
+  dplyr::mutate(income = 
+                  str_remove_all(income, "\\$|,"))
+
+```
+
+- Notice that our variable is still character type
+
+:::
+
+::: {.column width="50%"}
+
+Remove character values with `readr::parse_number()`
+
+```{r}
+#| echo: true
+ 
+df |>
+  dplyr::mutate(income = 
+                  parse_number(income))
+
+```
+
+- Notice that `parse_number()` converts our variable to numeric type
+
+:::
+:::
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 3 minutes to normalize our `tch_yrs` variable
+
+1. Navigate to exercise 6.
+2. Review the current values for `tch_yrs`.
+3. Remove all non-numeric values from this variable.
+4. Review the new values in `tch_yrs`.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 3, font_size = "2em")
+
+```
+
+## Update variable type
+
+Depending on what is needed, there are several functions we can use to change variable types.
+
+Some examples include:
+
+- `as.numeric()`
+- `as.character()`
+- `as.Date()`
+- Several functions in the `lubridate` package to assist with converting dates
+- `janitor::excel_numeric_to_date()` can be very helpful at times
+
+## Update variable type
+
+It's important to normalize variables **before** converting types (especially when converting from character to numeric)
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+Our data without normalizing
+
+```{r}
+#| echo: true
+
+df
+
+```
+
+
+
+:::
+
+::: {.column width="50%"}
+
+When we try to convert `income` to numeric....
+
+```{r}
+#| echo: true
+#| warning: true
+ 
+df |>
+  dplyr::mutate(income = 
+                  as.numeric(income))
+
+```
+
+We end up converting several values to `NA` (notice our warning)
+
+:::
+:::
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 3 minutes to convert `tch_yrs` to numeric
+
+1. Navigate to exercise 7.
+2. Review the current variable type for `tch_yrs`.
+3. Convert the variable to numeric.
+4. Review the new variable type for `tch_yrs`.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 3, font_size = "2em")
+
+```
+

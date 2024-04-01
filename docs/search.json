@@ -452,7 +452,7 @@
     "href": "slides/index.html#tidyverse-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Tidyverse",
-    "text": "Tidyverse\n\nSelecting test_score and grade_level from our data frame named sch_data\n\n\n\nTidy Evaluation\n\n\nselect(sch_data, test_score, \n       grade_level)\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3\n\n\n\nBase R\n\n\nsch_data[ , c(\"test_score\", \n              \"grade_level\")]\n\n# A tibble: 3 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1        350           3\n2        380           4\n3        290           3"
+    "text": "Tidyverse\n\nSelecting test_score and grade_level from our data frame named sch_data\n\n\n\nTidy Evaluation\n\n\nselect(sch_data, test_score, \n       grade_level)\n\n# A tibble: 2 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1          3         380\n2        290           3\n\n\n\nBase R\n\n\nsch_data[ , c(\"test_score\", \n              \"grade_level\")]\n\n# A tibble: 2 x 2\n  test_score grade_level\n       &lt;dbl&gt;       &lt;dbl&gt;\n1          3         380\n2        290           3"
   },
   {
     "objectID": "slides/index.html#pipes",
@@ -501,14 +501,112 @@
     "href": "slides/index.html#exercise-8",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data.\n\nOpen “sample_tch_svy_data_dictionary.xlsx”.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nReview “sample_tch_svy_cleaning-plan.txt”.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data.\n\nOpen “sample_tch_svy_data_dictionary.xlsx”.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nReview “sample_tch_svy_cleaning-plan.txt”.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/index.html#adjust-the-sample-1",
+    "href": "slides/index.html#adjust-the-sample-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Adjust the sample",
+    "text": "Adjust the sample\n\nThere are two key functions we can use to both identify and remove duplicates in our data\n\njanitor::get_dupes()\n\nTells you which rows contain duplicate unique identifiers, if any\n\ndplyr::distinct()\n\nKeeps the first instance of a duplicate unique identifier\n\nBut what if your raw data is sorted differently at a later point?\nHelpful to use dplyr::arrange() first so that your data is always sorted the same way before dropping your duplicates"
+  },
+  {
+    "objectID": "slides/index.html#adjust-the-sample-2",
+    "href": "slides/index.html#adjust-the-sample-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Adjust the sample",
+    "text": "Adjust the sample\n\n\nCheck for duplicates\n\ndf |&gt;\n  get_dupes(id_vars)\n\n\nReplace “id_vars” with your unique identifier\nIf you have more than one variable that uniquely identifies rows, use c(id1, id2)\n\n\nRemove duplicates\n\ndf |&gt;\n  arrange(another_identier) |&gt;\n  distinct(id_vars, \n           .keep_all = TRUE)\n\n\nReplace “another_identifier” with a variable that makes your duplicates unique (e.g., “date”)\nReplace “id_vars” with your unique identifier/s\nAlways add the argument “.keep_all = TRUE”"
+  },
+  {
+    "objectID": "slides/index.html#exercise-9",
+    "href": "slides/index.html#exercise-9",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 5 minutes to check for and remove duplicates.\n\nNavigate to exercise 3.\nRun the code to check for duplicates.\n\nWhich tch_id is duplicated?\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun the code to check for duplicates again.\n\nAre the duplicates removed?\n\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2023-04-02”).\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/index.html#de-identify-data-3",
+    "href": "slides/index.html#de-identify-data-3",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identify data",
+    "text": "De-identify data\n\nThe functions used here will depend on what is required.\nExamples of functions you might use:\n\ndplyr::select() to drop variables\ndplyr::case_when() or dplyr::recode() to collapse categories/recode values\ndplyr::*_join() to merge in identifying variables\nstringr::str_remove() or stringr::str_replace() to redact character values\n\n\nHere we are going to use dplyr::select() and dplyr::case_when()"
+  },
+  {
+    "objectID": "slides/index.html#de-identify-data-4",
+    "href": "slides/index.html#de-identify-data-4",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identify data",
+    "text": "De-identify data\n\nSelect or Drop Variables\n\n\nTo select variables of interest\n\ndf |&gt;\n  select(varname1, varname2, varname3)\n\n\nTo drop variables I add -\n\ndf |&gt;\n  select(-varname1)\n\n\nIf I had more than one variable to drop, I can use -c(var1, var2)"
+  },
+  {
+    "objectID": "slides/index.html#de-identify-data-5",
+    "href": "slides/index.html#de-identify-data-5",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identify data",
+    "text": "De-identify data\nRecategorize Values\n\n\nRecategorize numeric values\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name == old_value ~ new_value,\n                    var_name == old_value ~ new_value,\n                  ))\n\n\nRecategorize character values\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name %in% c(\"geom\", \"alg\") ~ \"math\",\n                    var_name %in% c(\"lit\", \"read\") ~ \"ela\"\n                  ))\n\n\n\n\nTo learn more about setting default values for case_when(), type ?case_when in your console\nNote that there is a new function, case_match(), that is worth looking in to. It reduces repetition in the syntax."
+  },
+  {
+    "objectID": "slides/index.html#exercise-10",
+    "href": "slides/index.html#exercise-10",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 5 minutes to de-identify our data\n\nNavigate to exercise 4.\nRun the code to review what identifying variables we might have in our data.\nRun the code to create a sch_id variable.\n\nReview the new variable after it is created.\n\nRun the code to drop our identifying variables.\n\nReview to make sure those variables were removed.\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/index.html#rename-variables-1",
+    "href": "slides/index.html#rename-variables-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Rename variables",
+    "text": "Rename variables\nTwo functions we can use to rename variables\n\ndplyr::rename()\n\nCommonly used to rename just a few variables\n\npurrr::set_names()\n\nUsed to rename all of our variables\nVariables must be in the exact right order\n\n\n\n\n\nRename one variable\n\ndf |&gt;\n  rename(new_name = old_name)\n\n\nRename all variables\n\ndf |&gt;\n  set_names(c(\"name1\", \"name2\", \"name3\"))"
+  },
+  {
+    "objectID": "slides/index.html#exercise-11",
+    "href": "slides/index.html#exercise-11",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 3 minutes to rename variables\n\nNavigate to exercise 3.\nReview the current variable names.\nRename variables according to our data dictionary.\nCheck variable names again to make sure the renaming worked.\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/index.html#normalize-variables-1",
+    "href": "slides/index.html#normalize-variables-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Normalize variables",
+    "text": "Normalize variables\nThere are several functions that can help us remove unexpected values from our variables.\nSome examples of those include:\n\nstringr::str_remove_all()\nstringr::str_replace_all()\nreadr::parse_number()\n\n\nSay this is our data\n\n\n# A tibble: 3 x 2\n     id income \n  &lt;dbl&gt; &lt;chr&gt;  \n1     1 $32,000\n2     2 120000 \n3     3 $45,000"
+  },
+  {
+    "objectID": "slides/index.html#normalize-variables-2",
+    "href": "slides/index.html#normalize-variables-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Normalize variables",
+    "text": "Normalize variables\n\n\n\nRemove character values with stringr::str_remove_all()\n\ndf |&gt;\n  dplyr::mutate(income = \n                  str_remove_all(income, \"\\\\$|,\"))\n\n# A tibble: 3 x 2\n     id income\n  &lt;dbl&gt; &lt;chr&gt; \n1     1 32000 \n2     2 120000\n3     3 45000 \n\n\n\nNotice that our variable is still character type\n\n\nRemove character values with readr::parse_number()\n\ndf |&gt;\n  dplyr::mutate(income = \n                  parse_number(income))\n\n# A tibble: 3 x 2\n     id income\n  &lt;dbl&gt;  &lt;dbl&gt;\n1     1  32000\n2     2 120000\n3     3  45000\n\n\n\nNotice that parse_number() converts our variable to numeric type"
+  },
+  {
+    "objectID": "slides/index.html#exercise-12",
+    "href": "slides/index.html#exercise-12",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 3 minutes to normalize our tch_yrs variable\n\nNavigate to exercise 6.\nReview the current values for tch_yrs.\nRemove all non-numeric values from this variable.\nReview the new values in tch_yrs.\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/index.html#update-variable-type",
+    "href": "slides/index.html#update-variable-type",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Update variable type",
+    "text": "Update variable type\nDepending on what is needed, there are several functions we can use to change variable types.\nSome examples include:\n\nas.numeric()\nas.character()\nas.Date()\nSeveral functions in the lubridate package to assist with converting dates\njanitor::excel_numeric_to_date() can be very helpful at times"
+  },
+  {
+    "objectID": "slides/index.html#update-variable-type-1",
+    "href": "slides/index.html#update-variable-type-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Update variable type",
+    "text": "Update variable type\nIt’s important to normalize variables before converting types (especially when converting from character to numeric)\n\n\n\nOur data without normalizing\n\ndf\n\n# A tibble: 3 x 2\n     id income \n  &lt;dbl&gt; &lt;chr&gt;  \n1     1 $32,000\n2     2 120000 \n3     3 $45,000\n\n\n\nWhen we try to convert income to numeric….\n\ndf |&gt;\n  dplyr::mutate(income = \n                  as.numeric(income))\n\nWarning in mask$eval_all_mutate(quo): NAs introduced by coercion\n\n\n# A tibble: 3 x 2\n     id income\n  &lt;dbl&gt;  &lt;dbl&gt;\n1     1     NA\n2     2 120000\n3     3     NA\n\n\nWe end up converting several values to NA (notice our warning)"
   },
   {
     "objectID": "prework.html",
     "href": "prework.html",
     "title": "Pre-work",
     "section": "",
-    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\", \"summarytools\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
+    "text": "A portion of this workshop will be conducted in the Posit Cloud environment. Posit Cloud allows us all to work in the exact same environment with the same version of R, R packages, and directory of files. .\nPlease create a login to the Posit Cloud instance of this workshop here:\nhttps://posit.cloud/content/7872027\nAlternative\nIf you are struggling using Posit Cloud, you can download the materials locally on your machine.\nNote that the presenter will NOT be able to help you with local computer problems during the workshop. To do this you will need the following to do the following prior to the workshop:\npkgs &lt;- c(\"tidyverse\", \"readxl\", \"summarytools\", \"janitor\")\n\ninstall.packages(pkgs)\n# install.packages(\"usethis\")\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")",
     "crumbs": [
       "Pre-work"
     ]
@@ -518,7 +616,7 @@
     "href": "prework.html#r-and-rstudio",
     "title": "Pre-work",
     "section": "R and RStudio",
-    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R\nR and Tidyverse for working with data\nR Software Handbook",
+    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R\n\nWhat They Forgot to Teach You About R (In particular, the “A holistic workflow” section)\nR and Tidyverse for working with data\nR Software Handbook",
     "crumbs": [
       "Pre-work"
     ]
@@ -612,5 +710,12 @@
     "crumbs": [
       "Slides"
     ]
+  },
+  {
+    "objectID": "slides/index.html#exercise-13",
+    "href": "slides/index.html#exercise-13",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 3 minutes to convert tch_yrs to numeric\n\nNavigate to exercise 7.\nReview the current variable type for tch_yrs.\nConvert the variable to numeric.\nReview the new variable type for tch_yrs.\n\n\n\n\n−+\n03:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
   }
 ]
