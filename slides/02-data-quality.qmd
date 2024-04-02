@@ -4,6 +4,16 @@
 
 ![](images/data-ready.PNG){fig-align="center" width="80%"}
 
+::: {.notes}
+
+Has anyone here ever had someone give them a dataset that they've said is good to go, but then you open the data and it looks something like this? Just a mess.
+
+I feel like this happens to me on a weekly basis.
+
+So today we are going to review a standard set of data quality indicators that we can use to determine if a dataset is really ready to be shared or not.
+
+:::
+
 ## 7 Data Quality Indicators
 
 ::: columns
@@ -44,6 +54,15 @@
 
 ![](images/quality-analyze1.PNG){fig-align="center"}
 
+::: {.notes}
+
+So first and foremost, data needs to make a rectangle. This rectangle shape is how machines read data.
+
+- short representation of the information contained in a column.
+
+
+:::
+
 ## Analyzable
 
 - Column values are analyzable
@@ -51,17 +70,36 @@
   
 ![](images/quality-analyze2.PNG){fig-align="center" width="70%"}
 
+::: {.notes}
+
+Another rule of analyzable data is that information is explicit, not implicit. This means unless data is actually missing, there should be no blanks in your data. They should be filled with the applicable values.
+
+:::
+
 ## Analyzable
 
 <br>
 
 ![](images/quality-analyze3.PNG){fig-align="center"}
 
+::: {.notes}
+
+Another example of data that is not explicit is when color coding is used. Here, color coding is used to indicate study treatment groups. However, machines cannot interpret color codes. This information needs to be defined in a variable with values assigned for each group.
+
+:::
+
 ## Analyzable
 
 - Only one piece of information is collected per variable
 
 ![](images/quality-analyze4.PNG){fig-align="center"}
+
+::: {.notes}
+
+And then last, for data to be analyzable, you should only collect one piece of information per variable. In this example, a rate variable has been included the data where the numerator is the number of incidents and the denominator is the total number of students in the school. But it is difficult to work with combined information. It's much better to separate those pieces of information into their own variables and then you can aggregate information as needed.
+
+:::
+
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -101,12 +139,14 @@ countdown(minutes = 1, font_size = "2em")
   - No spaces or special characters except `_`
     - This includes no `.` or `-`
   - Not begin with a number
+  - Character limit of 32
+  
 
 - Variable names should be human-readable
   - Meaningful (`gender` instead of `Q1`)
   - Consistently formatted (capitalization and delimiters)
   - Consistent order of information
-    - `w1_t_mast1`, `w1_t_mast2`, `w1_t_gad1`, `w1_t_gad2`, `w1_t_gender`
+    - `wave-responder-scale-#` (`w1_t_mast1`)
 
 :::
  
@@ -117,12 +157,32 @@ countdown(minutes = 1, font_size = "2em")
 :::
 :::
 
+
+::: {.notes}
+
+- First interpretable applies to your variable names
+
+- Even dashes are not allowed because R reads them as minus signs
+- While periods are allowed in R, they aren't in other languages like Stata so it's best to avoid them.
+
+- Most statistical programs are case sensitive so if you are inconsistent with things like delimiters and capitalization, it just makes it so much more difficult to work with your data.
+
+:::
+
 ## Interpretable
 
-- If you are sharing data in SPSS, SAS, or Stata format, you may consider adding embedded metadata (i.e., **variable label** and **value labels**)
-  - When publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)
+- When publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)
+  - But if you would also like to share a copy in a commonly used format such as SPSS, SAS, or Stata, consider adding embedded metadata (i.e., **variable label** and **value labels**)
   
 ![](images/quality-interpret1.PNG){fig-align="center"}
+
+::: {.notes}
+
+- But interpretable can also apply to other formatting
+
+- Because that can really help with interpretation. Rather than having to flip back and forth to the data dictionary to see what codes mean or what a variable represents, the information lives within the dataset and can be accessed as needed.
+
+:::
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -160,7 +220,7 @@ countdown(minutes = 1, font_size = "2em")
   - No unexpected missing data
     - If you collected the data, it should exist in the dataset
 
-## Helpful documentation
+## Complete
 
 #### Tracking Database
 
@@ -170,6 +230,17 @@ countdown(minutes = 1, font_size = "2em")
 
 ![](images/quality-complete2.PNG){fig-align="center"}
 
+::: {.notes}
+
+Two documents that can be helpful for verifying if you have complete data are a participant tracking database and a data dictionary.
+
+A participant tracking database is a spreadsheet or database where a project coordinator tracks what is collected in a study for each participant. Depending on your role in the study, you may or may not have access to this type of database. If you do not, you are just going to have to trust that you have been given a dataset that includes the entire sample.
+
+A data dictionary is something you hopefully always have access to though and this should list out exactly what variables exist in a dataset and what those variables represent.
+
+Both of these documents are excellent resources for determining if you have a complete dataset.
+
+:::
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -186,6 +257,11 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
+::: {.notes}
+
+Here we don't have access to a tracking database or a data dictionary but there is still something we can catch in this dataset without those documents.
+
+:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
@@ -195,7 +271,7 @@ countdown(minutes = 1, font_size = "2em")
 
 ## Valid
 
-- Variables conform to your planned constraints (i.e., review your data dictionary)
+- Variables conform to the planned constraints
   - Planned variable types (e.g., `numeric`, `character`, `date`)
   - Allowable variable values and ranges (e.g., `1-5`)
   - Item-level missingness aligns with variable universe rules and skip patterns
@@ -203,9 +279,15 @@ countdown(minutes = 1, font_size = "2em")
 ![](images/quality-valid1.PNG){fig-align="center"}
 
 
-## Helpful documentation
+## Valid
 
 ![](images/quality-valid2.PNG){fig-align="center"}
+
+::: {.notes}
+
+Again, the data dictionary is going to be a really important document in determining if data is valid because the dicionary defines all of the constraints that need to be checked.
+
+:::
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -221,6 +303,12 @@ What data quality issues do you detect for the "valid" indicator?
 countdown(minutes = 1, font_size = "2em")
 
 ```
+
+::: {.notes}
+
+Again we don't have a data dictionary for this example...
+
+:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
@@ -239,6 +327,12 @@ countdown(minutes = 1, font_size = "2em")
   - A date of birth collected from school records should match the date of birth provided by the student
   - If a student is in 2nd grade, they should be associated with a second grade teacher
   
+::: {.notes}
+
+So accuracy can be a tough thing to judge, but depending on your level of involvement in the study, you may have some implicit knowledge you can use to judge accuracy.
+
+:::
+  
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
 <br>
@@ -254,6 +348,12 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
+::: {.notes}
+
+So by comparing pieces of information within the dataset, what data quality issues do you see within this dataset?
+
+:::
+
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
 - ID 105 has conflicting information for `TEACHING LEVEL`{style="color:#ccd64d"} and `SCHOOL`{style="color:#ccd64d"}
@@ -267,6 +367,12 @@ countdown(minutes = 1, font_size = "2em")
 - Variables are consistently measured across collections of the same form
 
 ![](images/quality-consistent1.PNG){fig-align="center"}
+
+::: {.notes}
+
+And the reason that this consistency matters is that a computer doesn't know that three different spellings of yes are all still yes. It will think these are 3 different things.
+
+:::
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -294,18 +400,43 @@ countdown(minutes = 1, font_size = "2em")
 
 ![](images/quality-identify1.PNG){fig-align="center"}
 
-## De-identified - Indirect Identifiers
+::: {.notes}
+
+In the world of education research we are often working with human subjects and we often promise those subjects that their identifying information will remain private
+
+Direct identifiers are unique to an individual and can be used alone to identify a participant. 
+
+Indirect identifiers however are not necessarily unique to a particular individual, but if combined with other information they could be used to identify a participant.
+
+  - age + gender + education level
+  - 50 + female + PhD
+  - it’s possible that someone could use that information to identify someone in a dataset
+
+:::
+
+## De-identified
+
+- Direct identifiers are removed
+
+
+![](images/quality-identify2.PNG){fig-align="center"}
+
+## De-identified
 
 - Open-ended questions
-  - These variables may contain information that can directly or indirectly identify individuals.
+  - These variables may contain information that can directly or indirectly identify individuals
 - Outliers
-  - If someone has extreme values for a variable, it may be easier to identify that individual.
+  - If someone has extreme values for a variable, it may be easier to identify that individual
 - Small cell sizes
   - [NCES Standard 4-2-10](https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2003601), suggests that all categories have at least 3 cases to minimize risk
 - Combinations of variables, or crosstabs, can also create small cell-sizes
   - race + gender + grade level
-- Also consider what other public information could be used to re-identify someone
-  - Linking department of education data with your data (e.g., by size and location of school)
+
+<br>
+
+🚨 Consider this in the context of risk
+
+- Math assessment may be low risk while a survey on substance use is higher risk
 
 ::: {.notes}
 You also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like, how often do you use drugs, the risk is higher because that information could impact your career, relationships, and so forth. 
@@ -326,41 +457,19 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
+::: {.notes}
 
+This is a very small dataset so don't worry about indirect identifiers right now. Focus more on direct identifiers
+
+:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
 - Replace School Name with an unique ID
-- Review combination of demographics to see if other alterations are necessary
+- Review outliers and combination of demographics to see if other alterations are necessary
 
 ![](images/quality-exercise7.PNG){fig-align="center"}
 
 ::: {.notes}
 That one PhD may or may not be an issue. May there is only one person with a PhD in our sample, but many with PhDs in the school so maybe it's not a big deal. People (outside of that school) don't necessarily know who is in our sample and who is not.
 ::: 
-
-## Biggest Advice
-
-The number one way to reduce data errors is to make a plan before you collect data
-
-> Correct data at the source
-
-<br>
-
-. . .
-
-- Plan the variables you want to collect
-
-. . .
-
-- Build your data collection/entry tools in a way that follows your plan
-
-. . .
-
-- Test your data tools before collecting/entering data
-
-. . .
-
-- Check your data often during data collection/entry
-
-

@@ -8,6 +8,74 @@ library(countdown)
 fa_fill <- "#606060"
 ```
 
+## Schedule
+
+<br>
+
+
+| Time          | Topic           |
+|---------------|--------------------|
+|8:45 - 9:00  |   Intro/Logistics | 
+|9:00 - 9:45 | Fundamentals of Data Organization|
+|9:45 - 10:30 | Standardized Data Cleaning Checklist|
+|10:30 - 10:45 | Break|
+|10:45 - 12:30 | Data Cleaning Functions|
+|12:30 - 12:45 | Documentation for Data Sharing|
+
+  
+## Logistics
+
+**Materials**
+
+[Cghlewis.github.io/ncme-data-cleaning-workshop/](https://Cghlewis.github.io/ncme-data-cleaning-workshop/)
+
+<br>
+
+**Exercises**
+
+Login to Posit Cloud workspace: [**https://posit.cloud/content/7872027**](https://posit.cloud/content/7872027).
+
+. . .
+
+<br>
+
+If Posit Cloud doesn't work, download materials locally:
+
+```{r}
+#| eval: false
+
+# install.packages("usethis")
+
+usethis::use_course(
+    "https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip",
+    destdir = "___")
+
+```
+
+. . .
+
+<br>
+
+Feel free to interrupt me with questions/comments at any time ✋.
+
+<br>
+
+Get up and move around as much as you need to 🚶.
+  
+::: {.notes}
+- All materials for the workshop can be found at this website. 
+  - Link also lives at the bottom of these slides
+
+- Hands on exercises in R in the second half of this workshop 
+  - Posit Cloud trouble shoot
+  - If you have any trouble logging into Posit Cloud
+
+- If Posit Cloud is a total failure, you should also be able to download the materials 
+
+- And then I really hope that today will be a very relaxed environment.
+
+:::
+
 ## About the Speaker
 
 ::: columns
@@ -20,7 +88,7 @@ fa_fill <- "#606060"
   - [meetup.com/rladies-st-louis](https://www.meetup.com/rladies-st-louis/)
 - Co-organizer for the POWER Data Management in Education Research Hub
   - [https://osf.io/ap3tk/](https://osf.io/ap3tk/)
-- Author "Data Management in Large-Scale Education Research"
+- Author **Data Management in Large-Scale Education Research**
   - [datamgmtinedresearch.com](https://datamgmtinedresearch.com/)
 
 :::
@@ -31,23 +99,37 @@ fa_fill <- "#606060"
 :::
 :::
 
+::: {.notes}
+- Independent research data management consultant
+  - This means I work for myself. 
+
+- Prior to this I worked for the MPSI for 8 years 
+
+- I'm also a co-organization for two organizations. 
+  - whose mission it is to promote gender diversity in the R community. 
+  - We organize monthly meetups
+
+- I also organize the POWER Data Management in Education Research Hub.
+  - Our smaller hub is particularly focused on sharing knowledge around data management issues in education research.
+
+- And then probably the most noteworthy thing about me right now is that I recently finished writing this book
+
+:::
+
 ## Introductions
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="40%"}
 
 - Your name
 - Your affiliation
 - Your role
 - Your data cleaning experience
-  - Original data that you/your team has collected
-  - External datasets
 - Your experience with R
-  - Tidyverse experience?
 
 :::
  
-::: {.column width="40%"}
+::: {.column width="60%"}
 ![Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE)](images/greeting.jpg){fig-align="center"}
 :::
 :::
@@ -58,9 +140,24 @@ fa_fill <- "#606060"
 ![](images/phases.jpg){fig-align="center"}
 
 ::: {.notes}
-Raw data may be original data that you collected
-It may be externally collected data that you extracted from a site or received from a partner
-Here I just simply mean you have conducted no transformations on the data
+
+- So, before we begin, I want to clarify what we will be talking about today. So in terms of data, there are typically 3 phases.
+
+- First, there is raw data. And I am defining raw data as data that comes directly from a source.     - That source could be original data 
+    - What makes it raw, no transformations
+    - You simply downloaded 
+    - And the thing about this raw data is that it usually is messy AND it usually (in the world of education research) contains some identifying information. And we often can't share this outside of our research team.
+
+- Next, we have the clean data. And this is the data that we will be talking about today. 
+   - This is the data we typically share 
+   - This data is still in its true, raw form, but has been de-identified and minimally altered to allow the data to be correctly interpreted. 
+   - entire study sample (no outliers have been removed), all missing data is still labelled as missing (no imputation is done), and no analysis-specific variables are calculated. 
+
+- Last, we have all of these analytic datasets. 
+  - These are datasets that are created from the general clean dataset 
+  - These datasets will typically also be publicly shared in a repository
+  - But these datasets are analysis specific and are not going to be part of the data cleaning process we are discussing today.
+
 :::
 
 ## A Sampling of Open Datasets
@@ -86,11 +183,15 @@ Here I just simply mean you have conducted no transformations on the data
 :::
 
 ::: {.notes}
+
+So in preparation for this workshop, I went through several public repositories and found a sampling of shared datasets. Let me show you some of them.
+
 What do you notice when you look at these different datasets?
 
-There is no real consistency in how data is structured, variables are named, o
+There is no real consistency in how data is structured, variables are named, or how information is coded. And this is a problem because it makes reuse of this data very difficult.
 
-Adhering to common standards for data quality allows our data to be consistently cleaned and organized within and across projects. There are several data quality criteria that are commonly agreed upon 
+Data don't necessarily have to be identically formatted. Different variable naming conventions can be used, different coding schemes can be used. But there are several data quality standards that all data should adhere to in order to allow data to be interpretable and usable, and that is what we are going to talk about today.
+
 :::
 
 ## Learning Objectives
@@ -113,56 +214,3 @@ Adhering to common standards for data quality allows our data to be consistently
 
 :::
 
-::: {.notes}
-Before cleaning our data, we need to have a shared understanding for what we expect our data to look like once it is cleaned. 
-:::
-
-
-## Schedule
-
-<br>
-
-
-| Time          | Topic           |
-|---------------|--------------------|
-|8:45 - 9:00  |   Intro/Logistics | 
-|9:00 - 9:45 | Fundamentals of Data Organization|
-|9:45 - 10:30 | Standardized Data Cleaning Checklist|
-|10:30 - 10:45 | Break|
-|10:45 - 12:30 | Data Cleaning Functions|
-|12:30 - 12:45 | Documentation for Data Sharing|
-
-  
-## Logistics
-
-**Exercises**
-
-Login to Posit Cloud workspace: [**https://posit.cloud/content/7872027**](https://posit.cloud/content/7872027).
-
-. . .
-
-<br>
-
-If Posit Cloud doesn't work, download materials locally:
-
-```{r}
-#| eval: false
-
-usethis::use_course(
-  "https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip"
-#  ,destdir = "___"
-  )
-```
-
-. . .
-
-<br>
-
-Feel free to interrupt me with questions/comments at any time ✋.
-
-. . .
-
-<br>
-
-Get up and move around as much as you need to 🚶.
-  

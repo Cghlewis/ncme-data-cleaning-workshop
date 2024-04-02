@@ -4,35 +4,35 @@
     "href": "slides/index.html#about-the-speaker",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "About the Speaker",
-    "text": "About the Speaker\n\n\n\nIndependent Research Data Management Consultant\n\ncghlewis.com\n\nPreviously data manager for the Missouri Prevention Science Institute\nCo-organizer for R-Ladies St. Louis\n\nmeetup.com/rladies-st-louis\n\nCo-organizer for the POWER Data Management in Education Research Hub\n\nhttps://osf.io/ap3tk/\n\nAuthor “Data Management in Large-Scale Education Research”\n\ndatamgmtinedresearch.com"
+    "text": "About the Speaker\n\n\n\nIndependent Research Data Management Consultant\n\ncghlewis.com\n\nPreviously data manager for the Missouri Prevention Science Institute\nCo-organizer for R-Ladies St. Louis\n\nmeetup.com/rladies-st-louis\n\nCo-organizer for the POWER Data Management in Education Research Hub\n\nhttps://osf.io/ap3tk/\n\nAuthor Data Management in Large-Scale Education Research\n\ndatamgmtinedresearch.com\n\n\n\n\n\n\n\n\n\n\n\n\nIndependent research data management consultant\n\nThis means I work for myself.\n\nPrior to this I worked for the MPSI for 8 years\nI’m also a co-organization for two organizations.\n\nwhose mission it is to promote gender diversity in the R community.\nWe organize monthly meetups\n\nI also organize the POWER Data Management in Education Research Hub.\n\nOur smaller hub is particularly focused on sharing knowledge around data management issues in education research.\n\nAnd then probably the most noteworthy thing about me right now is that I recently finished writing this book"
   },
   {
     "objectID": "slides/index.html#introductions",
     "href": "slides/index.html#introductions",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Introductions",
-    "text": "Introductions\n\n\n\nYour name\nYour affiliation\nYour role\nYour data cleaning experience\n\nOriginal data that you/your team has collected\nExternal datasets\n\nYour experience with R\n\nTidyverse experience?\n\n\n\n\n\n\nImage from Unsplash"
+    "text": "Introductions\n\n\n\nYour name\nYour affiliation\nYour role\nYour data cleaning experience\nYour experience with R\n\n\n\n\n\nImage from Unsplash"
   },
   {
     "objectID": "slides/index.html#phases-of-data",
     "href": "slides/index.html#phases-of-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "3 Phases of Data",
-    "text": "3 Phases of Data\n\n\nRaw data may be original data that you collected It may be externally collected data that you extracted from a site or received from a partner Here I just simply mean you have conducted no transformations on the data"
+    "text": "3 Phases of Data\n\n\n\nSo, before we begin, I want to clarify what we will be talking about today. So in terms of data, there are typically 3 phases.\nFirst, there is raw data. And I am defining raw data as data that comes directly from a source. - That source could be original data\n\nWhat makes it raw, no transformations\nYou simply downloaded\nAnd the thing about this raw data is that it usually is messy AND it usually (in the world of education research) contains some identifying information. And we often can’t share this outside of our research team.\n\nNext, we have the clean data. And this is the data that we will be talking about today.\n\nThis is the data we typically share\nThis data is still in its true, raw form, but has been de-identified and minimally altered to allow the data to be correctly interpreted.\nentire study sample (no outliers have been removed), all missing data is still labelled as missing (no imputation is done), and no analysis-specific variables are calculated.\n\nLast, we have all of these analytic datasets.\n\nThese are datasets that are created from the general clean dataset\nThese datasets will typically also be publicly shared in a repository\nBut these datasets are analysis specific and are not going to be part of the data cleaning process we are discussing today."
   },
   {
     "objectID": "slides/index.html#a-sampling-of-open-datasets",
     "href": "slides/index.html#a-sampling-of-open-datasets",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "A Sampling of Open Datasets",
-    "text": "A Sampling of Open Datasets\n\n\n\n\n\n\n\n\nWhat do you notice when you look at these different datasets?\nThere is no real consistency in how data is structured, variables are named, o\nAdhering to common standards for data quality allows our data to be consistently cleaned and organized within and across projects. There are several data quality criteria that are commonly agreed upon"
+    "text": "A Sampling of Open Datasets\n\n\n\n\n\n\n\n\nSo in preparation for this workshop, I went through several public repositories and found a sampling of shared datasets. Let me show you some of them.\nWhat do you notice when you look at these different datasets?\nThere is no real consistency in how data is structured, variables are named, or how information is coded. And this is a problem because it makes reuse of this data very difficult.\nData don’t necessarily have to be identically formatted. Different variable naming conventions can be used, different coding schemes can be used. But there are several data quality standards that all data should adhere to in order to allow data to be interpretable and usable, and that is what we are going to talk about today."
   },
   {
     "objectID": "slides/index.html#learning-objectives",
     "href": "slides/index.html#learning-objectives",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Learning Objectives",
-    "text": "Learning Objectives\n\n\nUnderstand how to assess a data set for 7 data quality indicators\n\n\n\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\n\n\n\nFeel comfortable using R code to clean a data set using our standardized steps\n\n\n\nUnderstand types of documentation that should be shared alongside data\n\n\n\nBefore cleaning our data, we need to have a shared understanding for what we expect our data to look like once it is cleaned."
+    "text": "Learning Objectives\n\n\nUnderstand how to assess a data set for 7 data quality indicators\n\n\n\nBe able to review a data set and apply a list of standardized data cleaning steps as needed\n\n\n\nFeel comfortable using R code to clean a data set using our standardized steps\n\n\n\nUnderstand types of documentation that should be shared alongside data"
   },
   {
     "objectID": "slides/index.html#schedule",
@@ -46,14 +46,14 @@
     "href": "slides/index.html#logistics",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Logistics",
-    "text": "Logistics\nExercises\nLogin to Posit Cloud workspace: https://posit.cloud/content/7872027.\n\n\nIf Posit Cloud doesn’t work, download materials locally:\n\nusethis::use_course(\n  \"https://github.com/jadeynryan/parameterized-quarto-workshop/raw/main/exercises/exercises.zip\"\n#  ,destdir = \"___\"\n  )\n\n\n\n\nFeel free to interrupt me with questions/comments at any time ✋.\n\n\n\nGet up and move around as much as you need to 🚶."
+    "text": "Logistics\nMaterials\nCghlewis.github.io/ncme-data-cleaning-workshop/\n\nExercises\nLogin to Posit Cloud workspace: https://posit.cloud/content/7872027.\n\n\nIf Posit Cloud doesn’t work, download materials locally:\n\n# install.packages(\"usethis\")\n\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")\n\n\n\n\nFeel free to interrupt me with questions/comments at any time ✋.\n\nGet up and move around as much as you need to 🚶.\n\n\nAll materials for the workshop can be found at this website.\n\nLink also lives at the bottom of these slides\n\nHands on exercises in R in the second half of this workshop\n\nPosit Cloud trouble shoot\nIf you have any trouble logging into Posit Cloud\n\nIf Posit Cloud is a total failure, you should also be able to download the materials\nAnd then I really hope that today will be a very relaxed environment."
   },
   {
     "objectID": "slides/index.html#the-data-are-ready",
     "href": "slides/index.html#the-data-are-ready",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "The Data are Ready",
-    "text": "The Data are Ready"
+    "text": "The Data are Ready\n\n\nHas anyone here ever had someone give them a dataset that they’ve said is good to go, but then you open the data and it looks something like this? Just a mess.\nI feel like this happens to me on a weekly basis.\nSo today we are going to review a standard set of data quality indicators that we can use to determine if a dataset is really ready to be shared or not."
   },
   {
     "objectID": "slides/index.html#data-quality-indicators-1",
@@ -67,28 +67,28 @@
     "href": "slides/index.html#analyzable",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Analyzable",
-    "text": "Analyzable\n\nData should make a rectangle of rows and columns\n\nThe first row, and only the first row, is your variable names\nThe remaining data should be made up of values in cells\nAt least one column uniquely defines the rows in the data (e.g., unique identifier)"
+    "text": "Analyzable\n\nData should make a rectangle of rows and columns\n\nThe first row, and only the first row, is your variable names\nThe remaining data should be made up of values in cells\nAt least one column uniquely defines the rows in the data (e.g., unique identifier)\n\n\n\n\nSo first and foremost, data needs to make a rectangle. This rectangle shape is how machines read data.\n\nshort representation of the information contained in a column."
   },
   {
     "objectID": "slides/index.html#analyzable-1",
     "href": "slides/index.html#analyzable-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Analyzable",
-    "text": "Analyzable\n\nColumn values are analyzable\n\nInformation is explicit"
+    "text": "Analyzable\n\nColumn values are analyzable\n\nInformation is explicit\n\n\n\n\nAnother rule of analyzable data is that information is explicit, not implicit. This means unless data is actually missing, there should be no blanks in your data. They should be filled with the applicable values."
   },
   {
     "objectID": "slides/index.html#analyzable-2",
     "href": "slides/index.html#analyzable-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Analyzable",
-    "text": "Analyzable"
+    "text": "Analyzable\n\n\n\nAnother example of data that is not explicit is when color coding is used. Here, color coding is used to indicate study treatment groups. However, machines cannot interpret color codes. This information needs to be defined in a variable with values assigned for each group."
   },
   {
     "objectID": "slides/index.html#analyzable-3",
     "href": "slides/index.html#analyzable-3",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Analyzable",
-    "text": "Analyzable\n\nOnly one piece of information is collected per variable"
+    "text": "Analyzable\n\nOnly one piece of information is collected per variable\n\n\n\nAnd then last, for data to be analyzable, you should only collect one piece of information per variable. In this example, a rate variable has been included the data where the numerator is the number of incidents and the denominator is the total number of students in the school. But it is difficult to work with combined information. It’s much better to separate those pieces of information into their own variables and then you can aggregate information as needed."
   },
   {
     "objectID": "slides/index.html#exercise",
@@ -109,14 +109,14 @@
     "href": "slides/index.html#interpretable",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Interpretable",
-    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nw1_t_mast1, w1_t_mast2, w1_t_gad1, w1_t_gad2, w1_t_gender\n\n\n\n\n\n\n\nIn that case, by Allison Horst"
+    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\nCharacter limit of 32\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nwave-responder-scale-# (w1_t_mast1)\n\n\n\n\n\n\n\nIn that case, by Allison Horst\n\n\n\n\n\n\nFirst interpretable applies to your variable names\nEven dashes are not allowed because R reads them as minus signs\nWhile periods are allowed in R, they aren’t in other languages like Stata so it’s best to avoid them.\nMost statistical programs are case sensitive so if you are inconsistent with things like delimiters and capitalization, it just makes it so much more difficult to work with your data."
   },
   {
     "objectID": "slides/index.html#interpretable-1",
     "href": "slides/index.html#interpretable-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Interpretable",
-    "text": "Interpretable\n\nIf you are sharing data in SPSS, SAS, or Stata format, you may consider adding embedded metadata (i.e., variable label and value labels)\n\nWhen publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)"
+    "text": "Interpretable\n\nWhen publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)\n\nBut if you would also like to share a copy in a commonly used format such as SPSS, SAS, or Stata, consider adding embedded metadata (i.e., variable label and value labels)\n\n\n\n\n\nBut interpretable can also apply to other formatting\nBecause that can really help with interpretation. Rather than having to flip back and forth to the data dictionary to see what codes mean or what a variable represents, the information lives within the dataset and can be accessed as needed."
   },
   {
     "objectID": "slides/index.html#exercise-1",
@@ -144,14 +144,14 @@
     "href": "slides/index.html#helpful-documentation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Helpful documentation",
-    "text": "Helpful documentation\nTracking Database\n\n\n\n\n\nData Dictionary"
+    "text": "Helpful documentation\nTracking Database\n\n\n\n\n\nData Dictionary\n\n\n\n\n\n\nTwo documents that can be helpful for verifying if you have complete data or a participant tracking database and a data dictionary.\nA participant tracking database is a spreadsheet or database where a project coordinator tracks what is collected in a study for each participant. Depending on your role in the study, you may or may not have access to this type of database. If you do not, you are just going to have to trust that you have been given a dataset that includes the entire sample.\nA data dictionary is something you hopefully always have access to though and this should list out exactly what variables exist in a dataset and what those variables represent.\nBoth of these documents are excellent resources for determining if you have a complete dataset."
   },
   {
     "objectID": "slides/index.html#exercise-2",
     "href": "slides/index.html#exercise-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nWhat data quality issues do you detect for the “complete” indicator?\n\n\n\n\n−+\n01:00"
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “complete” indicator?\n\n\n\n\n−+\n01:00\n\n\n\n\nHere we don’t have access to a tracking database or a data dictionary but there is still something we can catch in this dataset without those documents."
   },
   {
     "objectID": "slides/index.html#solution-2",
@@ -165,7 +165,7 @@
     "href": "slides/index.html#valid",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Valid",
-    "text": "Valid\n\nVariables conform to your planned constraints (i.e., review your data dictionary)\n\nPlanned variable types (e.g., numeric, character, date)\nAllowable variable values and ranges (e.g., 1-5)\nItem-level missingness aligns with variable universe rules and skip patterns"
+    "text": "Valid\n\nVariables conform to the planned constraints\n\nPlanned variable types (e.g., numeric, character, date)\nAllowable variable values and ranges (e.g., 1-5)\nItem-level missingness aligns with variable universe rules and skip patterns"
   },
   {
     "objectID": "slides/index.html#helpful-documentation-1",
@@ -179,7 +179,7 @@
     "href": "slides/index.html#exercise-3",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nWhat data quality issues do you detect for the “valid” indicator?\n\n\n\n\n−+\n01:00"
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “valid” indicator?\n\n\n\n\n−+\n01:00\n\n\n\n\nAgain we don’t have a data dictionary for this example…"
   },
   {
     "objectID": "slides/index.html#solution-3",
@@ -193,14 +193,14 @@
     "href": "slides/index.html#accurate",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Accurate",
-    "text": "Accurate\n\nInformation should be accurate based on any implicit knowledge you have\n\nFor instance, values should not exist for a school where you know that data was not collected that wave\n\nAccurate within and across sources\n\nA date of birth collected from school records should match the date of birth provided by the student\nIf a student is in 2nd grade, they should be associated with a second grade teacher"
+    "text": "Accurate\n\nInformation should be accurate based on any implicit knowledge you have\n\nFor instance, values should not exist for a school where you know that data was not collected that wave\n\nAccurate within and across sources\n\nA date of birth collected from school records should match the date of birth provided by the student\nIf a student is in 2nd grade, they should be associated with a second grade teacher\n\n\n\nSo accuracy can be a tough thing to judge, but depending on your level of involvement in the study, you may have some implicit knowledge you can use to judge accuracy."
   },
   {
     "objectID": "slides/index.html#exercise-4",
     "href": "slides/index.html#exercise-4",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nWhat data quality issues do you detect for the “accurate” indicator?\n\n\n\n\n−+\n01:00"
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “accurate” indicator?\n\n\n\n\n−+\n01:00\n\n\n\n\nSo by comparing pieces of information within the dataset, what data quality issues do you see within this dataset?"
   },
   {
     "objectID": "slides/index.html#solution-4",
@@ -214,7 +214,7 @@
     "href": "slides/index.html#consistent",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Consistent",
-    "text": "Consistent\n\nVariable values are consistently measured, formatted, or categorized within a column\nVariables are consistently measured across collections of the same form"
+    "text": "Consistent\n\nVariable values are consistently measured, formatted, or categorized within a column\nVariables are consistently measured across collections of the same form\n\n\n\nAnd the reason that this consistency matters is that a computer doesn’t know that three different spellings of yes are all still yes. It will think these are 3 different things."
   },
   {
     "objectID": "slides/index.html#exercise-5",
@@ -235,7 +235,7 @@
     "href": "slides/index.html#de-identified",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identified",
-    "text": "De-identified"
+    "text": "De-identified\n\n\nIn the world of education research we are often working with human subjects and we often promise those subjects that their identifying information will remain private\nDirect identifiers are unique to an individual and can be used alone to identify a participant.\nIndirect identifiers however are not necessarily unique to a particular individual, but if combined with other information they could be used to identify a participant.\n\nage + gender + education level\n50 + female + PhD\nit’s possible that someone could use that information to identify someone in a dataset"
   },
   {
     "objectID": "slides/index.html#de-identified---indirect-identifiers",
@@ -249,21 +249,21 @@
     "href": "slides/index.html#exercise-6",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nWhat data quality issues do you detect for the “de-identified” indicator?\n\n\n\n\n−+\n01:00"
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “de-identified” indicator?\n\n\n\n\n−+\n01:00\n\n\n\n\nThis is a very small dataset so don’t worry about indirect identifiers right now. Focus more on direct identifiers"
   },
   {
     "objectID": "slides/index.html#solution-6",
     "href": "slides/index.html#solution-6",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Solution",
-    "text": "Solution\n\nReplace School Name with an unique ID\nReview combination of demographics to see if other alterations are necessary\n\n\n\nThat one PhD may or may not be an issue. May there is only one person with a PhD in our sample, but many with PhDs in the school so maybe it’s not a big deal. People (outside of that school) don’t necessarily know who is in our sample and who is not."
+    "text": "Solution\n\nReplace School Name with an unique ID\nReview outliers and combination of demographics to see if other alterations are necessary\n\n\n\nThat one PhD may or may not be an issue. May there is only one person with a PhD in our sample, but many with PhDs in the school so maybe it’s not a big deal. People (outside of that school) don’t necessarily know who is in our sample and who is not."
   },
   {
     "objectID": "slides/index.html#biggest-advice",
     "href": "slides/index.html#biggest-advice",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Biggest Advice",
-    "text": "Biggest Advice\nThe number one way to reduce data errors is to make a plan before you collect data\n\nCorrect data at the source\n\n\n\n\nPlan the variables you want to collect\n\n\n\n\nBuild your data collection/entry tools in a way that follows your plan\n\n\n\n\nTest your data tools before collecting/entering data\n\n\n\n\nCheck your data often during data collection/entry"
+    "text": "Biggest Advice\nThe number one way to reduce data errors is to make a plan before you collect data\n\nCorrect data at the source\n\n\n\n\nPlan the variables you want to collect\n\n\n\n\nBuild your data collection/entry tools in a way that follows your plan\n\n\n\n\nTest your data tools before collecting/entering data\n\n\n\n\nCheck your data often during data collection/entry\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
   },
   {
     "objectID": "slides/index.html#data-cleaning",
@@ -277,35 +277,35 @@
     "href": "slides/index.html#standard-data-cleaning-checklist",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Standard Data Cleaning Checklist",
-    "text": "Standard Data Cleaning Checklist\n\n\n Import the raw data\n Review the raw data\n Find missing data\n Adjust the sample\n De-identify data\n Drop irrelevant columns\n Split columns\n Rename variables\n Normalize variables\n Standardize variables\n\n Update variable types\n Recode variables\n Construct new variables\n Add missing values\n Add metadata\n Validate data\n Join data\n Reshape data\n Save clean data"
+    "text": "Standard Data Cleaning Checklist\n\n\n Import the raw data\n Review the raw data\n Find missing data\n Adjust the sample\n De-identify data\n Drop irrelevant columns\n Split columns\n Rename variables\n Normalize variables\n Standardize variables\n\n Update variable types\n Recode variables\n Construct new variables\n Add missing values\n Add metadata\n Validate data\n Join data\n Reshape data\n Save clean data\n\n\n\nHowever, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards.\nAs you use this checklist to clean your specific datasaet you use the checklist steps that are relevant to your data and remove the steps that are not relevant.\nThe order of these steps are fluid. You can move them around in whatever order makes sense for your specific dataset, with two big exceptions."
   },
   {
     "objectID": "slides/index.html#import-raw-data",
     "href": "slides/index.html#import-raw-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Import raw data",
-    "text": "Import raw data"
+    "text": "Import raw data\n\n\nImporting your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to your raw data to start over again if you need to."
   },
   {
     "objectID": "slides/index.html#review-data",
     "href": "slides/index.html#review-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Review data",
-    "text": "Review data\n\n\nAt this point you’re just taking notes about what is going on in your data Am I even working with the right data What transformations are required based on what is going on in this data"
+    "text": "Review data\n\n\nReviewing your data should always be step number two. It’s important that you know exactly what is happening in your data before moving forward in the cleaning process.\nIf you have access to those documents we discussed earlier, participant tracking database and a data dictionary, now is the time to use them."
   },
   {
     "objectID": "slides/index.html#find-missing-data",
     "href": "slides/index.html#find-missing-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Find missing data",
-    "text": "Find missing data"
+    "text": "Find missing data\n\n\nYou want to retrieve that missing data before moving forward in the cleaning process\nStart back at step 1"
   },
   {
     "objectID": "slides/index.html#adjust-the-sample",
     "href": "slides/index.html#adjust-the-sample",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Adjust the sample",
-    "text": "Adjust the sample"
+    "text": "Adjust the sample\n\n\nThis means both removing anyone who should not be in the dataset - maybe they didn’t consent to be in the study\nIt also means taking care of any duplicates in your data\nThe first thing you’ll want to do before removing duplicates is determine if it is a true duplicate, not just an error in the data - Insider knowledge - or maybe able to deduce that from other pieces of information in the dataset\nThen removing any true duplicates based on your duplicate removal rule"
   },
   {
     "objectID": "slides/index.html#de-identify-data",
@@ -326,7 +326,7 @@
     "href": "slides/index.html#de-identify-data-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identify data",
-    "text": "De-identify data\n\n\n\n\nSource\nResource\n\n\n\n\nAlena Filip\nTable 2 provides pros and cons of various de-identification methods\n\n\nJ-PAL\nTable 3 provides a list of direct and indirect identifiers and recommended removal methods\n\n\nSchatschneider, et.al\nDeidentifying Data Guide"
+    "text": "De-identify data\n\n\n\n\nSource\nResource\n\n\n\n\nAlena Filip\nTable 2 provides pros and cons of various de-identification methods\n\n\nJ-PAL\nTable 3 provides a list of direct and indirect identifiers and recommended removal methods\n\n\nSchatschneider, et.al\nDeidentifying Data Guide\n\n\n\n\n\nRedaction\n\nEliminate the entire variable from the data\n\nSuppression\n\nRemove data in a particular cell or row (In this example, age 67 was an outlier so I suppressed that cell value and replaced it with -98 which I’ve coded as suppressed).\n\nGeneralization\n\nReduce precision in the data (In this example here, I’ve binned my age rages so they are less precise)\n\nTruncation\n\nRestricting upper and lower ranges to mask outliers"
   },
   {
     "objectID": "slides/index.html#drop-irrelevant-columns",
@@ -515,7 +515,7 @@
     "href": "slides/index.html#adjust-the-sample-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Adjust the sample",
-    "text": "Adjust the sample\n\n\nCheck for duplicates\n\ndf |&gt;\n  get_dupes(id_vars)\n\n\nReplace “id_vars” with your unique identifier\nIf you have more than one variable that uniquely identifies rows, use c(id1, id2)\n\n\nRemove duplicates\n\ndf |&gt;\n  arrange(another_identier) |&gt;\n  distinct(id_vars, \n           .keep_all = TRUE)\n\n\nReplace “another_identifier” with a variable that makes your duplicates unique (e.g., “date”)\nReplace “id_vars” with your unique identifier/s\nAlways add the argument “.keep_all = TRUE”"
+    "text": "Adjust the sample\n\n\nCheck for duplicates\n\ndf |&gt;\n  get_dupes(id_vars)\n\n\nReplace “id_vars” with your unique identifier\nIf you have more than one variable that uniquely identifies rows, use c(first_name, last_name)\n\n\nRemove duplicates\n\ndf |&gt;\n  arrange(another_identier) |&gt;\n  distinct(id_vars, \n           .keep_all = TRUE)\n\n\nReplace “another_identifier” with a variable that makes your duplicates unique (e.g., “date”)\nReplace “id_vars” with your unique identifier/s\nAlways add the argument “.keep_all = TRUE”"
   },
   {
     "objectID": "slides/index.html#exercise-9",
@@ -529,7 +529,7 @@
     "href": "slides/index.html#de-identify-data-3",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identify data",
-    "text": "De-identify data\n\nThe functions used here will depend on what is required.\nExamples of functions you might use:\n\ndplyr::select() to drop variables\ndplyr::case_when() or dplyr::recode() to collapse categories/recode values\ndplyr::*_join() to merge in identifying variables\nstringr::str_remove() or stringr::str_replace() to redact character values\n\n\nHere we are going to use dplyr::select() and dplyr::case_when()"
+    "text": "De-identify data\n\nThe functions used here will depend on what is required.\nExamples of functions you might use:\n\ndplyr::select() to drop variables\ndplyr::case_when() or dplyr::recode() to collapse categories/recode values\ndplyr::*_join() to merge in identifying variables\nstringr::str_remove_all() or stringr::str_replace_all() to redact character values\n\n\nHere we are going to use dplyr::select() and dplyr::case_when()"
   },
   {
     "objectID": "slides/index.html#de-identify-data-4",
@@ -550,7 +550,7 @@
     "href": "slides/index.html#exercise-10",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to de-identify our data\n\nNavigate to exercise 4.\nRun the code to review what identifying variables we might have in our data.\nRun the code to create a sch_id variable.\n\nReview the new variable after it is created.\n\nRun the code to drop our identifying variables.\n\nReview to make sure those variables were removed.\n\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to de-identify our data\n\nNavigate to exercise 4.\nRun the code to create a sch_id variable.\n\nReview the new variable after it is created.\n\nRun the code to drop our identifying variables.\n\nReview to make sure those variables were removed.\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#rename-variables-1",
@@ -716,6 +716,48 @@
     "href": "slides/index.html#exercise-13",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to convert tch_yrs to numeric\n\nNavigate to exercise 7.\nReview the current variable type for tch_yrs.\nConvert the variable to numeric.\nReview the new variable type for tch_yrs.\n\n\n\n\n−+\n03:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+    "text": "Exercise\n\nTake 3 minutes to convert tch_yrs to numeric\n\nNavigate to exercise 7.\nReview the current variable type for tch_yrs.\nConvert the variable to numeric.\nReview the new variable type for tch_yrs.\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "slides/index.html#de-identify-data---select",
+    "href": "slides/index.html#de-identify-data---select",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identify data - Select",
+    "text": "De-identify data - Select\n\n\n\nTo select variables of interest\n\ndf |&gt;\n  select(varname1, varname2, varname3)\n\n\nTo drop variables I add -\n\ndf |&gt;\n  select(-varname1)\n\n\nIf I had more than one variable to drop, I can use -c(var1, var2)"
+  },
+  {
+    "objectID": "slides/index.html#de-identify-data---categorize",
+    "href": "slides/index.html#de-identify-data---categorize",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identify data - Categorize",
+    "text": "De-identify data - Categorize\n\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name == old_value ~ new_value,\n                    var_name == old_value ~ new_value,\n                  ))\n\n\nTo learn more about setting default values for case_when(), type ?case_when in your console\nNote that there is a new function, case_match(), that is worth looking in to. It reduces repetition in the syntax."
+  },
+  {
+    "objectID": "slides/index.html#complete-1",
+    "href": "slides/index.html#complete-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Complete",
+    "text": "Complete\nTracking Database\n\n\n\n\n\nData Dictionary\n\n\n\n\n\n\nTwo documents that can be helpful for verifying if you have complete data are a participant tracking database and a data dictionary.\nA participant tracking database is a spreadsheet or database where a project coordinator tracks what is collected in a study for each participant. Depending on your role in the study, you may or may not have access to this type of database. If you do not, you are just going to have to trust that you have been given a dataset that includes the entire sample.\nA data dictionary is something you hopefully always have access to though and this should list out exactly what variables exist in a dataset and what those variables represent.\nBoth of these documents are excellent resources for determining if you have a complete dataset."
+  },
+  {
+    "objectID": "slides/index.html#valid-1",
+    "href": "slides/index.html#valid-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Valid",
+    "text": "Valid\n\n\nAgain, the data dictionary is going to be a really important document in determining if data is valid because the dicionary defines all of the constraints that need to be checked."
+  },
+  {
+    "objectID": "slides/index.html#de-identified-1",
+    "href": "slides/index.html#de-identified-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identified",
+    "text": "De-identified\n\nDirect identifiers are removed"
+  },
+  {
+    "objectID": "slides/index.html#de-identified-2",
+    "href": "slides/index.html#de-identified-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "De-identified",
+    "text": "De-identified\n\nOpen-ended questions\n\nThese variables may contain information that can directly or indirectly identify individuals\n\nOutliers\n\nIf someone has extreme values for a variable, it may be easier to identify that individual\n\nSmall cell sizes\n\nNCES Standard 4-2-10, suggests that all categories have at least 3 cases to minimize risk\n\nCombinations of variables, or crosstabs, can also create small cell-sizes\n\nrace + gender + grade level\n\n\n\n🚨 Consider this in the context of risk\n\nMath assessment may be low risk while a survey on substance use is higher risk\n\n\nYou also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it’s a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like, how often do you use drugs, the risk is higher because that information could impact your career, relationships, and so forth."
   }
 ]

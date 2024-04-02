@@ -4,6 +4,7 @@
 
 ![](images/side-by-side-data.PNG){fig-align="center"}
 
+
 ## Standard Data Cleaning Checklist
 
 :::: {.columns}
@@ -55,27 +56,67 @@
 :::
 :::
 
+::: {.notes}
+
+However, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards. 
+
+As you use this checklist to clean your specific datasaet you use the checklist steps that are relevant to your data and remove the steps that are not relevant. 
+
+The order of these steps are fluid. You can move them around in whatever order makes sense for your specific dataset, with two big exceptions.
+
+
+:::
+
 ## Import raw data
 
 ![](images/checklist1.PNG){fig-align="center"}
+
+::: {.notes}
+
+Importing your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to your raw data to start over again if you need to. 
+
+:::
 
 ## Review data
 
 ![](images/checklist2.PNG){fig-align="center"}
 
 ::: {.notes}
-At this point you're just taking notes about what is going on in your data
-Am I even working with the right data
-What transformations are required based on what is going on in this data
+
+Reviewing your data should always be step number two. It's important that you know exactly what is happening in your data before moving forward in the cleaning process.
+
+If you have access to those documents we discussed earlier, participant tracking database and a data dictionary, now is the time to use them.
+
 :::
 
 ## Find missing data
 
 ![](images/checklist3.PNG){fig-align="center"}
 
+::: {.notes}
+
+You want to retrieve that missing data before moving forward in the cleaning process
+
+Start back at step 1
+
+:::
+
 ## Adjust the sample
 
 ![](images/checklist4.PNG){fig-align="center"}
+
+::: {.notes}
+
+This means both removing anyone who should not be in the dataset - maybe they didn't consent to be in the study
+
+It also means taking care of any duplicates in your data
+
+The first thing you'll want to do before removing duplicates is determine if it is a true duplicate, not just an error in the data
+  - Insider knowledge - or maybe able to deduce that from other pieces of information in the dataset
+
+Then removing any true duplicates based on your duplicate removal rule
+
+:::
 
 ## De-identify data
 
@@ -94,6 +135,19 @@ What transformations are required based on what is going on in this data
 |[Alena Filip](https://www.sjsu.edu/research/docs/irb-data-management-handbook.pdf) |Table 2 provides pros and cons of various de-identification methods|
 |[J-PAL](https://www.povertyactionlab.org/resource/data-de-identification)| Table 3 provides a list of direct and indirect identifiers and recommended removal methods|
 |[Schatschneider, et.al](https://figshare.com/articles/preprint/De-Identification_Guide/13228664)| Deidentifying Data Guide|
+
+:::{.notes}
+
+- Redaction
+  - Eliminate the entire variable from the data
+- Suppression
+  - Remove data in a particular cell or row (In this example, age 67 was an outlier so I suppressed that cell value and replaced it with -98 which I’ve coded as suppressed).
+- Generalization
+  - Reduce precision in the data (In this example here, I’ve binned my age rages so they are less precise)
+- Truncation
+  - Restricting upper and lower ranges to mask outliers
+
+:::
 
 ## Drop irrelevant columns
 
@@ -203,6 +257,7 @@ What transformations are required based on what is going on in this data
 ## Creating a data cleaning plan
 
 ![](images/data_cleaning_plan.PNG){fig-align="center"}
+
 
 ## BREAK!
 

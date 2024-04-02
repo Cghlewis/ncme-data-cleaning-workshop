@@ -330,7 +330,7 @@ df |>
 ```
 
 - Replace "id_vars" with your unique identifier
-- If you have more than one variable that uniquely identifies rows, use `c(id1, id2)`
+- If you have more than one variable that uniquely identifies rows, use `c(first_name, last_name)`
 
 :::
 
@@ -390,17 +390,16 @@ Examples of functions you might use:
 - `dplyr::select()` to drop variables
 - `dplyr::case_when()` or `dplyr::recode()` to collapse categories/recode values
 - `dplyr::*_join()` to merge in identifying variables
-- `stringr::str_remove()` or `stringr::str_replace()` to redact character values
+- `stringr::str_remove_all()` or `stringr::str_replace_all()` to redact character values
 
 <br>
 
 Here we are going to use `dplyr::select()` and `dplyr::case_when()`
 
-## De-identify data
+## De-identify data - Select
 
 <br>
 
-Select or Drop Variables
 
 ::: columns
 ::: {.column width="50%"}
@@ -437,15 +436,9 @@ df |>
 :::
 :::
 
-## De-identify data
+## De-identify data - Categorize
 
-Recategorize Values
-
-
-::: columns
-::: {.column width="50%"}
-
-Recategorize numeric values
+<br>
 
 ```{r}
 #| echo: true
@@ -460,29 +453,6 @@ df |>
 
 ```
 
-
-:::
-
-::: {.column width="50%"}
-
-Recategorize character values
-
-```{r}
-#| echo: true
-#| eval: false
-
-
-df |>
-  dplyr::mutate(new_var_name =
-                  case_when(
-                    var_name %in% c("geom", "alg") ~ "math",
-                    var_name %in% c("lit", "read") ~ "ela"
-                  ))
-
-```
-
-:::
-:::
 
 - To learn more about setting *default* values for `case_when()`, type `?case_when` in your console
 - Note that there is a new function, `case_match()`, that is worth looking in to. It reduces repetition in the syntax.
@@ -494,10 +464,9 @@ df |>
 ### Take 5 minutes to de-identify our data
 
 1. Navigate to exercise 4.
-2. Run the code to review what identifying variables we might have in our data.
-3. Run the code to create a `sch_id` variable.
+2. Run the code to create a `sch_id` variable.
     - Review the new variable after it is created.
-4. Run the code to drop our identifying variables.
+3. Run the code to drop our identifying variables.
     - Review to make sure those variables were removed.
 
 ```{r}
@@ -728,3 +697,27 @@ countdown(minutes = 3, font_size = "2em")
 
 ```
 
+
+## Biggest Advice
+
+The number one way to reduce data errors is to make a plan before you collect data
+
+> Correct data at the source
+
+<br>
+
+. . .
+
+- Plan the variables you want to collect
+
+. . .
+
+- Build your data collection/entry tools in a way that follows your plan
+
+. . .
+
+- Test your data tools before collecting/entering data
+
+. . .
+
+- Check your data often during data collection/entry
