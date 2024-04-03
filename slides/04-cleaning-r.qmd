@@ -155,6 +155,45 @@ To turn on the native pipe:
 
 `Tools` → `Global Options` → `Code` → `Editing` → `Use Native Pipe Operator`
 
+## Operators
+
+::: columns
+::: {.column width="50%"}
+
+Comparison operators
+
+- `==` equal to
+- `!=` not equal to
+- `<` less than
+- `>` greater than
+- `%in%` value is present within
+
+```{r eval=FALSE}
+
+df |>
+  filter(city %in% c("boston","philly"))
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+Assignment operators
+
+- `<-` Assign value to an object
+- `=` Assign value to an object
+
+```{r eval = FALSE}
+
+df <- df |>
+  mutate(year = "2024")
+
+```
+
+:::
+:::
+
 ## Open our data
 
 <br>
@@ -168,7 +207,7 @@ To turn on the native pipe:
 ### Take 5 minutes to open and look at our data file.
 
 1. Log in to Posit Cloud and navigate to our project
-2. Open the data folder and open "sample_tch_svy_raw.csv"
+2. Open the data folder and open "sample_tch_svy_raw.xlsx"
 
 :::
  
@@ -656,8 +695,6 @@ df
 
 ```
 
-
-
 :::
 
 ::: {.column width="50%"}
@@ -697,6 +734,139 @@ countdown(minutes = 3, font_size = "2em")
 
 ```
 
+## Recode variables
+
+Common functions for recoding values are
+
+- `dplyr::case_when()`
+- `dplyr::recode()`
+- `tidyr::replace_na()`
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+```{r eval=FALSE}
+
+df |>
+  mutate(newvar = 
+           recode(oldvar,
+                  `oldvalue` = newvalue))
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r eval=FALSE}
+
+df |> 
+  mutate(newvar = 
+           replace_na(oldvar, 
+                      replace = 0))
+
+```
+
+:::
+:::
+
+## Recode variables
+
+<br>
+
+`dplyr::across()` allows you to apply the same transformation across multiple columns
+
+<br>
+
+```{r eval=FALSE}
+
+df |>
+  mutate(across(var1:var3, 
+                ~ case_when(
+                  . == oldvalue1 ~ newvalue1,
+                  . == oldvalue2 ~ newvalue2
+                )))
+
+```
+
+
+If you don't want to save over the existing variables, you can add the argument *.names* which lives in the `dplyr::across()` function. This creates new variables with new names.
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 5 minutes to recode variables
+
+1. Navigate to exercise 8.
+2. Recode the blank values for the `grade` variables.  
+    - Check to see if the recoding worked.
+3. Recode the `mathanx` variable.  
+    - Check to see that the recoding worked.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 5, font_size = "2em")
+
+```
+
+## Construct new variables
+
+- The most important function for constructing new variables is `dplyr::mutate()`
+
+- From there, other functions may be required. For today, we are going to use `rowSums()` which allows us to create sum scores for each row
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+The default is to **not** calculate a sum if there are any `NA` values
+
+```{r eval=FALSE}
+
+df |>
+  mutate(newvar = rowSums(
+    across(var1:var3)))
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+If you want to calculate a sum even if there are NA values, add *na.rm = TRUE*
+
+```{r eval=FALSE}
+
+df |>
+  mutate(newvar = rowSums(
+    across(var1:var3), na.rm = TRUE))
+
+```
+
+:::
+:::
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 3 minutes to construct `gad_sum`
+
+1. Navigate to exercise 9.
+2. Calculate `gad_sum`
+3. Review summary information for the new variable.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 3, font_size = "2em")
+
+```
 
 ## Biggest Advice
 

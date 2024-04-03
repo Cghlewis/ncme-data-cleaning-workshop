@@ -88,7 +88,7 @@ Get up and move around as much as you need to 🚶.
   - [meetup.com/rladies-st-louis](https://www.meetup.com/rladies-st-louis/)
 - Co-organizer for the POWER Data Management in Education Research Hub
   - [https://osf.io/ap3tk/](https://osf.io/ap3tk/)
-- Author **Data Management in Large-Scale Education Research**
+- Author *Data Management in Large-Scale Education Research*
   - [datamgmtinedresearch.com](https://datamgmtinedresearch.com/)
 
 :::

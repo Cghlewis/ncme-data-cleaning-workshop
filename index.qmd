@@ -32,10 +32,9 @@ This workshop assumes you have some experience working with rectangular data, as
 
 ## Further Reading
 
-* Data Management in Large-Scale Education Research book
-* Data Management for Data Sharing Blog Post Series
-* The Basics of Data Management
-* R Resources
+* [Data Management in Large-Scale Education Research book](https://datamgmtinedresearch.com/)
+* [Data Cleaning for Data Sharing Blog Post Series](https://cghlewis.com/blog/data_clean_01/)
+* [The Basics of Data Management](https://figshare.com/articles/preprint/The_Basics_of_Data_Management/13215350/2)
 
 ## Speaker
 

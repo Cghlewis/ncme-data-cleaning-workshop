@@ -62,7 +62,9 @@ However, to produce datasets that consistently meet the data quality criteria we
 
 As you use this checklist to clean your specific datasaet you use the checklist steps that are relevant to your data and remove the steps that are not relevant. 
 
-The order of these steps are fluid. You can move them around in whatever order makes sense for your specific dataset, with two big exceptions.
+The order of these steps are fluid. With the exception of the first two on the list, you can move them around in whatever order makes sense for your specific dataset.
+
+We are going to take some time to review each step on this list with the exception of the ones in blue. Those require more time to cover than we have today, so instead I have linked to more information here for you to review in your own time.
 
 
 :::
