@@ -44,8 +44,6 @@ If Posit Cloud doesn't work, download materials locally:
 ```{r}
 #| eval: false
 
-# install.packages("usethis")
-
 usethis::use_course(
     "https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip",
     destdir = "___")
@@ -154,7 +152,7 @@ Get up and move around as much as you need to 🚶.
    - entire study sample (no outliers have been removed), all missing data is still labelled as missing (no imputation is done), and no analysis-specific variables are calculated. 
 
 - Last, we have all of these analytic datasets. 
-  - These are datasets that are created from the general clean dataset 
+  - These are datasets that are created from the general clean dataset and contain further manipulations that are done for a specific analysis
   - These datasets will typically also be publicly shared in a repository
   - But these datasets are analysis specific and are not going to be part of the data cleaning process we are discussing today.
 

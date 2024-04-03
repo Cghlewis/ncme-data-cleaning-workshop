@@ -1,5 +1,11 @@
 # Cleaning in R {.background-secondary}
 
+:::{.notes}
+
+Before we jump in I just want to preface this section with the understanding that this material isn't about learning all of the various ways you may be able to solve every unique data cleaning problem. There's no way to cover that much material, and on top of that, for every data cleaning issue you encounter in your data, there are probably 10 different ways to solve that issue. So I am sharing this to say, that this section is not about learning a specific set of data cleaning functions, it is about learning a standardized way of thinking through a data cleaning process and pulling from the available R functions, some of which we will learn today, to work through that process. 
+
+:::
+
 ## Packages
 
 - R has many built in (base) functions
@@ -18,8 +24,7 @@ Using `library()`
 ```{r echo=TRUE, eval=FALSE}
 library(dplyr)
 
-mtcars |>  
-  select(mpg, cyl) 
+select(df, var1, var2) 
 
 ```
 :::
@@ -32,13 +37,17 @@ Using Namespacing `package::function()`
 
 # library(dplyr) not needed
 
-mtcars |>  
-  dplyr::select(mpg, cyl) 
+dplyr::select(df, var1, var2) 
 
 ```
 :::
 :::
 
+:::{.notes}
+
+Foundational
+
+:::
 
 ## Tidyverse
 
@@ -194,26 +203,14 @@ df <- df |>
 :::
 :::
 
-## Open our data
+## Scenario
 
-<br>
-
-:::: {.columns}
-
-::: {.column width="40%"}
-
-<br>
-
-### Take 5 minutes to open and look at our data file.
+#### Take 5 minutes to open and look at our data file.
 
 1. Log in to Posit Cloud and navigate to our project
-2. Open the data folder and open "sample_tch_svy_raw.xlsx"
-
-:::
- 
-::: {.column width="60%"}
-
-<br>
+    - [**https://posit.cloud/content/7872027**](https://posit.cloud/content/7872027)
+2. Open the `data` folder and open "sample_tch_svy_raw.xlsx"
+    - Notice that the "labels" tab has some basic information about the variables
 
 ![](images/sample-data.PNG){fig-align="center"}
 
@@ -224,8 +221,6 @@ countdown(minutes = 5, font_size = "2em")
 
 ```
 
-:::
-:::
 
 ## Import our data
 
@@ -233,11 +228,11 @@ countdown(minutes = 5, font_size = "2em")
 
 Common data importing functions
 
-- `read_csv()` from the `readr` package
+- `read_csv()`, `read_delim()` from the `readr` package
 
 - `read_excel()` from the `readxl` package
 
-- `read_sav()` from the `haven` package
+- `read_sav()`, `read_sas()`, `read_dta()` from the `haven` package
 
 - Learn more about importing multiple files at once [here](https://github.com/Cghlewis/data-wrangling-functions/wiki/Import-Files)
 
@@ -281,7 +276,7 @@ Common data importing functions
 
 1. Open "exercises.Rmd" in our Posit Cloud project.
 2. Navigate to exercise 1.
-3. Update the code and run the code chunk using the green arrow.
+3. Update the code and run the code chunks using the green arrows.
 4. If you get stuck, you can open "solutions.Rmd"
 
 ```{r}
@@ -314,7 +309,7 @@ There are several functions we can use to explore data
 - `dplyr::glimpse()`
 - `skimr::skim()`
 - `base::summary()`
-- `summarytools::dfSummary()`
+- **`summarytools::dfSummary()`**
 - `Hmisc::describe()`
 
 :::
@@ -329,9 +324,9 @@ There are several functions we can use to explore data
 1. Navigate to exercise 2.
 2. Run the code. 
     - Write down any potential issues you see in the data.
-3. Open "sample_tch_svy_data_dictionary.xlsx". 
+3. Open "sample_tch_svy_data_dictionary.xlsx" in the `docs` folder. 
     - What issues do you see when you compare the data to our data dictionary?
-4. Review "sample_tch_svy_cleaning-plan.txt". 
+4. Review "sample_tch_svy_cleaning-plan.txt" in the `docs` folder. 
     - How does it compare to the issues you wrote down?
 
 ```{r}
@@ -341,18 +336,37 @@ countdown(minutes = 5, font_size = "2em")
 
 ```
 
+:::{.notes}
+
+So we are going to follow this data cleaning plan for the rest of this section
+
+:::
+
 
 ## Adjust the sample
 
-- There are two key functions we can use to both identify and remove duplicates in our data
+<br>
+
+There are two key functions we can use to both identify and remove duplicates in our data
+
+<br>
+
   - `janitor::get_dupes()`
     - Tells you which rows contain duplicate unique identifiers, if any
   - `dplyr::distinct()`
     - Keeps the first instance of a duplicate unique identifier
-      - But what if your raw data is sorted differently at a later point? 
-      - Helpful to use `dplyr::arrange()` first so that your data is always sorted the same way before dropping your duplicates
+      - Helpful to first use `dplyr::arrange()` so that your data is always sorted the same way before dropping your duplicates
+      
+:::{.notes}
+
+So the next step in our checklist is to adjust the sample
+And we found some duplicates in our sample
+
+:::
   
 ## Adjust the sample
+
+<br>
 
 ::: columns
 ::: {.column width="50%"}
@@ -368,7 +382,7 @@ df |>
 
 ```
 
-- Replace "id_vars" with your unique identifier
+- Replace `id_vars` with your unique identifier
 - If you have more than one variable that uniquely identifies rows, use `c(first_name, last_name)`
 
 :::
@@ -387,9 +401,10 @@ df |>
            .keep_all = TRUE)
 
 ```
-- Replace "another_identifier" with a variable that makes your duplicates unique (e.g., "date")
-- Replace "id_vars" with your unique identifier/s
-- Always add the argument ".keep_all = TRUE"
+- Replace `another_identifier` with a variable that makes your duplicates unique (e.g., "date")
+  - The default is to sort values in ascending order
+- Replace `id_vars` with your unique identifier/s
+- Always add the argument *.keep_all = TRUE*
 
 
 :::
@@ -407,9 +422,8 @@ df |>
     - Which `tch_id` is duplicated?
 3. Run the code to remove our duplicates. 
     - Our documented rule is that if both surveys are complete, keep the most recently completed row.
-4. Run the code to check for duplicates again.
-    - Are the duplicates removed?
-5. Run the code to confirm that we kept the most recent submission of the duplicate survey ("2023-04-02").
+4. Run a check to make sure duplicates are removed.
+5. Run the code to confirm that we kept the most recent submission of the duplicate survey ("2024-04-02").
 
 ```{r}
 #| echo: false
@@ -424,16 +438,20 @@ countdown(minutes = 5, font_size = "2em")
 
 The functions used here will depend on what is required.
 
+<br>
+
 Examples of functions you might use:
 
 - `dplyr::select()` to drop variables
 - `dplyr::case_when()` or `dplyr::recode()` to collapse categories/recode values
-- `dplyr::*_join()` to merge in identifying variables
+- `dplyr::*_join()` to merge in study unique IDs
 - `stringr::str_remove_all()` or `stringr::str_replace_all()` to redact character values
 
-<br>
 
-Here we are going to use `dplyr::select()` and `dplyr::case_when()`
+For our sample data we are going to use the following.
+
+1. `dplyr::select()` to drop identifying variables and
+2. `dplyr::case_when()` to recategorize names into our unique study ID values
 
 ## De-identify data - Select
 
@@ -486,8 +504,8 @@ df |>
 df |>
   dplyr::mutate(new_var_name =
                   case_when(
-                    var_name == old_value ~ new_value,
-                    var_name == old_value ~ new_value,
+                    var_name == old_value1 ~ new_value1,
+                    var_name == old_value2 ~ new_value2,
                   ))
 
 ```
@@ -867,27 +885,3 @@ df |>
 countdown(minutes = 3, font_size = "2em")
 
 ```
-
-## Biggest Advice
-
-The number one way to reduce data errors is to make a plan before you collect data
-
-> Correct data at the source
-
-<br>
-
-. . .
-
-- Plan the variables you want to collect
-
-. . .
-
-- Build your data collection/entry tools in a way that follows your plan
-
-. . .
-
-- Test your data tools before collecting/entering data
-
-. . .
-
-- Check your data often during data collection/entry

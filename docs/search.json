@@ -11,7 +11,7 @@
     "href": "slides/index.html#logistics",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Logistics",
-    "text": "Logistics\nMaterials\nCghlewis.github.io/ncme-data-cleaning-workshop/\n\nExercises\nLogin to Posit Cloud workspace: https://posit.cloud/content/7872027.\n\n\nIf Posit Cloud doesn’t work, download materials locally:\n\n# install.packages(\"usethis\")\n\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")\n\n\n\n\nFeel free to interrupt me with questions/comments at any time ✋.\n\nGet up and move around as much as you need to 🚶.\n\n\nAll materials for the workshop can be found at this website.\n\nLink also lives at the bottom of these slides\n\nHands on exercises in R in the second half of this workshop\n\nPosit Cloud trouble shoot\nIf you have any trouble logging into Posit Cloud\n\nIf Posit Cloud is a total failure, you should also be able to download the materials\nAnd then I really hope that today will be a very relaxed environment."
+    "text": "Logistics\nMaterials\nCghlewis.github.io/ncme-data-cleaning-workshop/\n\nExercises\nLogin to Posit Cloud workspace: https://posit.cloud/content/7872027.\n\n\nIf Posit Cloud doesn’t work, download materials locally:\n\nusethis::use_course(\n    \"https://github.com/Cghlewis/ncme-data-cleaning-workshop/raw/main/exercises/exercises.zip\",\n    destdir = \"___\")\n\n\n\n\nFeel free to interrupt me with questions/comments at any time ✋.\n\nGet up and move around as much as you need to 🚶.\n\n\nAll materials for the workshop can be found at this website.\n\nLink also lives at the bottom of these slides\n\nHands on exercises in R in the second half of this workshop\n\nPosit Cloud trouble shoot\nIf you have any trouble logging into Posit Cloud\n\nIf Posit Cloud is a total failure, you should also be able to download the materials\nAnd then I really hope that today will be a very relaxed environment."
   },
   {
     "objectID": "slides/index.html#about-the-speaker",
@@ -32,7 +32,7 @@
     "href": "slides/index.html#phases-of-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "3 Phases of Data",
-    "text": "3 Phases of Data\n\n\n\nSo, before we begin, I want to clarify what we will be talking about today. So in terms of data, there are typically 3 phases.\nFirst, there is raw data. And I am defining raw data as data that comes directly from a source. - That source could be original data\n\nWhat makes it raw, no transformations\nYou simply downloaded\nAnd the thing about this raw data is that it usually is messy AND it usually (in the world of education research) contains some identifying information. And we often can’t share this outside of our research team.\n\nNext, we have the clean data. And this is the data that we will be talking about today.\n\nThis is the data we typically share\nThis data is still in its true, raw form, but has been de-identified and minimally altered to allow the data to be correctly interpreted.\nentire study sample (no outliers have been removed), all missing data is still labelled as missing (no imputation is done), and no analysis-specific variables are calculated.\n\nLast, we have all of these analytic datasets.\n\nThese are datasets that are created from the general clean dataset\nThese datasets will typically also be publicly shared in a repository\nBut these datasets are analysis specific and are not going to be part of the data cleaning process we are discussing today."
+    "text": "3 Phases of Data\n\n\n\nSo, before we begin, I want to clarify what we will be talking about today. So in terms of data, there are typically 3 phases.\nFirst, there is raw data. And I am defining raw data as data that comes directly from a source. - That source could be original data\n\nWhat makes it raw, no transformations\nYou simply downloaded\nAnd the thing about this raw data is that it usually is messy AND it usually (in the world of education research) contains some identifying information. And we often can’t share this outside of our research team.\n\nNext, we have the clean data. And this is the data that we will be talking about today.\n\nThis is the data we typically share\nThis data is still in its true, raw form, but has been de-identified and minimally altered to allow the data to be correctly interpreted.\nentire study sample (no outliers have been removed), all missing data is still labelled as missing (no imputation is done), and no analysis-specific variables are calculated.\n\nLast, we have all of these analytic datasets.\n\nThese are datasets that are created from the general clean dataset and contain further manipulations that are done for a specific analysis\nThese datasets will typically also be publicly shared in a repository\nBut these datasets are analysis specific and are not going to be part of the data cleaning process we are discussing today."
   },
   {
     "objectID": "slides/index.html#a-sampling-of-open-datasets",
@@ -109,7 +109,7 @@
     "href": "slides/index.html#interpretable",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Interpretable",
-    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\nCharacter limit of 32\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nwave-responder-scale-# (w1_t_mast1)\n\n\n\n\n\n\n\nIn that case, by Allison Horst\n\n\n\n\n\n\nFirst interpretable applies to your variable names\nEven dashes are not allowed because R reads them as minus signs\nWhile periods are allowed in R, they aren’t in other languages like Stata so it’s best to avoid them.\nMost statistical programs are case sensitive so if you are inconsistent with things like delimiters and capitalization, it just makes it so much more difficult to work with your data."
+    "text": "Interpretable\n\n\n\nVariable names should be machine-readable\n\nUnique\nNo spaces or special characters except _\n\nThis includes no . or -\n\nNot begin with a number\nCharacter limit of 32\n\nVariable names should be human-readable\n\nMeaningful (gender instead of Q1)\nConsistently formatted (capitalization and delimiters)\nConsistent order of information\n\nwave_responder_scale# (w1_t_mast1)\n\n\n\n\n\n\n\nIn that case, by Allison Horst\n\n\n\n\n\n\nFirst interpretable applies to your variable names\nEven dashes are not allowed because R reads them as minus signs\nWhile periods are allowed in R, they aren’t in other languages like Stata so it’s best to avoid them.\nMost statistical programs are case sensitive so if you are inconsistent with things like delimiters and capitalization, it just makes it so much more difficult to work with your data."
   },
   {
     "objectID": "slides/index.html#interpretable-1",
@@ -200,7 +200,7 @@
     "href": "slides/index.html#exercise-4",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nWhat data quality issues do you detect for the “accurate” indicator?\n\n\n\n\n−+\n01:00\n\n\n\n\nSo by comparing pieces of information within the dataset, what data quality issues do you see within this dataset?"
+    "text": "Exercise\n\nWhat data quality issues do you detect for the “accurate” indicator?\n\n\n\n\n−+\n01:00\n\n\n\n\nSo in this case we don’t have any implicit knowledge, but by comparing pieces of information within the dataset, what data quality issues do you see for the accurate indicator here?"
   },
   {
     "objectID": "slides/index.html#solution-4",
@@ -249,7 +249,7 @@
     "href": "slides/index.html#de-identified-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identified",
-    "text": "De-identified\n\nOpen-ended questions\n\nThese variables may contain information that can directly or indirectly identify individuals\n\nOutliers\n\nIf someone has extreme values for a variable, it may be easier to identify that individual\n\nSmall cell sizes\n\nNCES Standard 4-2-10, suggests that all categories have at least 3 cases to minimize risk\n\nCombinations of variables, or crosstabs, can also create small cell-sizes\n\nrace + gender + grade level\n\n\n\n🚨 Consider this in the context of risk\n\nMath assessment may be low risk while a survey on substance use is higher risk\n\n\nYou also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it’s a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like, how often do you use drugs, the risk is higher because that information could impact your career, relationships, and so forth."
+    "text": "De-identified\n\nOpen-ended questions\n\nThese variables may contain information that can directly or indirectly identify individuals\n\nOutliers\n\nIf someone has extreme values for a variable, it may be easier to identify that individual\n\nSmall cell sizes\n\nNCES Standard 4-2-10, suggests that all categories have at least 3 cases to minimize risk\n\nCombinations of variables, or crosstabs, can also create small cell-sizes\n\nrace + gender + grade level\n\n\n\n🚨 Consider this in the context of risk\n\nMath assessment may be low risk while a survey on substance use is higher risk\n\n\nBut there is more you need to check for.\nYou also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it’s a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth."
   },
   {
     "objectID": "slides/index.html#exercise-6",
@@ -263,7 +263,14 @@
     "href": "slides/index.html#solution-6",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Solution",
-    "text": "Solution\n\nReplace School Name with an unique ID\nReview outliers and combination of demographics to see if other alterations are necessary\n\n\n\nThat one PhD may or may not be an issue. May there is only one person with a PhD in our sample, but many with PhDs in the school so maybe it’s not a big deal. People (outside of that school) don’t necessarily know who is in our sample and who is not."
+    "text": "Solution\n\nReplace School Name with an unique ID\nReview outliers and combination of demographics to see if other alterations are necessary"
+  },
+  {
+    "objectID": "slides/index.html#biggest-advice",
+    "href": "slides/index.html#biggest-advice",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Biggest Advice",
+    "text": "Biggest Advice\nThe number one way to reduce data errors is to make a plan before you collect data\n\nCorrect data at the source\n\n\n\n\nPlan the variables you want to collect\n\n\n\n\nBuild your data collection/entry tools in a way that follows your plan\n\n\n\n\nTest your data tools before collecting/entering data\n\n\n\n\nCheck your data often during data collection/entry\n\n\nSo before we move on to how to clean data for the purposes of data sharing, I want to point out one really important thing. And that is, if you are collecting your own original data\nDoing this ensures not only that you have much less data cleaning to do in the end, but it also prevents you from potentially losing data or having to recollect bad data. So it’s 100% worth the time and effort to spend time planning for quality data collection in the beginning if you can.\nBut of course, we are not always in charge of data collection and we just have to deal with the data we are given and so are going to talk about this in the next sections."
   },
   {
     "objectID": "slides/index.html#data-cleaning",
@@ -277,14 +284,14 @@
     "href": "slides/index.html#standard-data-cleaning-checklist",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Standard Data Cleaning Checklist",
-    "text": "Standard Data Cleaning Checklist\n\n\n Import the raw data\n Review the raw data\n Find missing data\n Adjust the sample\n De-identify data\n Drop irrelevant columns\n Split columns\n Rename variables\n Normalize variables\n Standardize variables\n\n Update variable types\n Recode variables\n Construct new variables\n Add missing values\n Add metadata\n Validate data\n Join data\n Reshape data\n Save clean data\n\n\n\nHowever, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards.\nAs you use this checklist to clean your specific datasaet you use the checklist steps that are relevant to your data and remove the steps that are not relevant.\nThe order of these steps are fluid. With the exception of the first two on the list, you can move them around in whatever order makes sense for your specific dataset.\nWe are going to take some time to review each step on this list with the exception of the ones in blue. Those require more time to cover than we have today, so instead I have linked to more information here for you to review in your own time."
+    "text": "Standard Data Cleaning Checklist\n\n\n Import the raw data\n Review the raw data\n Find missing data\n Adjust the sample\n De-identify data\n Drop irrelevant columns\n Split columns\n Rename variables\n Normalize variables\n Standardize variables\n\n Update variable types\n Recode variables\n Construct new variables\n Add missing values\n Add metadata\n Validate data\n Join data\n Reshape data\n Save clean data\n\n\n\nHowever, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards.\nAs you use this checklist to clean your specific datasaet you use the steps that are relevant to your data and remove the steps that are not relevant.\nThe order of these steps are fluid. With the exception of the first two on the list, you can move them around in whatever order makes sense for your specific dataset.\nWe are going to take some time to review each step on this list with the exception of the ones in blue. Those require more time to cover than we have today, so instead I have linked to more information here for you to review in your own time."
   },
   {
     "objectID": "slides/index.html#import-raw-data",
     "href": "slides/index.html#import-raw-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Import raw data",
-    "text": "Import raw data\n\n\nImporting your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to your raw data to start over again if you need to."
+    "text": "Import raw data\n\n\nImporting your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to the untouched raw data to start over again if you need to."
   },
   {
     "objectID": "slides/index.html#review-data",
@@ -298,14 +305,14 @@
     "href": "slides/index.html#find-missing-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Find missing data",
-    "text": "Find missing data\n\n\nYou want to retrieve that missing data before moving forward in the cleaning process\nStart back at step 1"
+    "text": "Find missing data\n\n\nIf you find that any data is missing in your review process (missing cases/missing variables) you’ll want to retrieve that missing data before moving forward in the cleaning process\nStart back at step 1"
   },
   {
     "objectID": "slides/index.html#adjust-the-sample",
     "href": "slides/index.html#adjust-the-sample",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Adjust the sample",
-    "text": "Adjust the sample\n\n\nThis means both removing anyone who should not be in the dataset - maybe they didn’t consent to be in the study\nIt also means taking care of any duplicates in your data\nThe first thing you’ll want to do before removing duplicates is determine if it is a true duplicate, not just an error in the data - Insider knowledge - or maybe able to deduce that from other pieces of information in the dataset\nThen removing any true duplicates based on your duplicate removal rule"
+    "text": "Adjust the sample\n\n\nThis means removing anyone who should not be in the dataset - maybe they didn’t consent to be in the study\nIt also means taking care of any duplicates in your data\nThe first thing you’ll want to do before removing duplicates is determine if it is a true duplicate, not just an error in the data\nThen removing any true duplicates based on your duplicate removal rule\nIt’s really important that these kinds of decisions rules are documented for future data users. And we’ll talk more about where to document these kinds of things later."
   },
   {
     "objectID": "slides/index.html#de-identify-data",
@@ -326,7 +333,7 @@
     "href": "slides/index.html#de-identify-data-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identify data",
-    "text": "De-identify data\n\n\n\n\nSource\nResource\n\n\n\n\nAlena Filip\nTable 2 provides pros and cons of various de-identification methods\n\n\nJ-PAL\nTable 3 provides a list of direct and indirect identifiers and recommended removal methods\n\n\nSchatschneider, et.al\nDeidentifying Data Guide\n\n\n\n\n\nRedaction\n\nEliminate the entire variable from the data\n\nSuppression\n\nRemove data in a particular cell or row (In this example, age 67 was an outlier so I suppressed that cell value and replaced it with -98 which I’ve coded as suppressed).\n\nGeneralization\n\nReduce precision in the data (In this example here, I’ve binned my age rages so they are less precise)\n\nTruncation\n\nRestricting upper and lower ranges to mask outliers"
+    "text": "De-identify data\n\n\n\n\nSource\nResource\n\n\n\n\nAlena Filip\nTable 2 provides pros and cons of various de-identification methods\n\n\nJ-PAL\nTable 3 provides a list of direct and indirect identifiers and recommended removal methods\n\n\nSchatschneider, et.al\nDeidentifying Data Guide\n\n\n\n\n\nRedaction\n\nEliminate the entire variable from the data\n\nSuppression\n\nRemove data in a particular cell or row (In this example, age 67 was an outlier so I suppressed that cell value and replaced it with -98 which I’ve coded as suppressed).\n\nGeneralization\n\nReduce precision in the data (In this example here, I’ve binned my age rages so they are less precise)\n\nTruncation\n\nRestricting upper and lower ranges to mask outliers\n\n\nThere are many, even more sophisticated ways, to de-identify data"
   },
   {
     "objectID": "slides/index.html#drop-irrelevant-columns",
@@ -354,35 +361,35 @@
     "href": "slides/index.html#normalize-variables",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Normalize variables",
-    "text": "Normalize variables\n\nCompare the types in your raw data to the types you expected in your data dictionary. Do they align?\n\nIf not, what needs to be done so that they do"
+    "text": "Normalize variables\n\nCompare the variable types in your raw data to the types you expected in your data dictionary.\n\nDo they align? If not, what needs to be done so that they do\n\n\n\n\nI realize this is unconventional terminology to use, but here I am using the term normalize to talk about returning variables to their normal or expected state."
   },
   {
     "objectID": "slides/index.html#standardize-variables",
     "href": "slides/index.html#standardize-variables",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Standardize variables",
-    "text": "Standardize variables\n\nAre columns consistently measured, coded, and formatted according to your data dictionary?"
+    "text": "Standardize variables\n\nAre columns consistently measured, categorized, and formatted according to your data dictionary?\n\nIf not, what needs to be done so that they are\n\n\n\n\nHere I am using the term standardize to convey the process of checking for consistency"
   },
   {
     "objectID": "slides/index.html#update-variable-types",
     "href": "slides/index.html#update-variable-types",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Update variable types",
-    "text": "Update variable types"
+    "text": "Update variable types\n\n\nCharacter to Numeric, Numeric to Date, And so forth"
   },
   {
     "objectID": "slides/index.html#recode-variables",
     "href": "slides/index.html#recode-variables",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Recode variables",
-    "text": "Recode variables"
+    "text": "Recode variables\n\n\n\nThis includes recoding your categorical numeric values to match your data dictionary values\nBut it also includes any planned coding, such as reverse coding a variable\nAs well as recoding any implicit values to their explicit values"
   },
   {
     "objectID": "slides/index.html#construct-additional-variables",
     "href": "slides/index.html#construct-additional-variables",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Construct additional variables",
-    "text": "Construct additional variables"
+    "text": "Construct additional variables\n\n\n\nThis is not the time to construct analysis-specific variables. This is the time to create or calculate variables that should always be a part of the core study dataset.\nThis could be things like grouping variables (treatment, cohort, site)\nIt could be time component variables (year, wave)\nIt could be additional unique identifiers that you need to add for linking purposes (like adding a school ID to a teacher file)\nOr it could be measure composite or summary scores that you want included in the core dataset\nAny other variables you want added to the core sharing dataset\nSome of these variables will be calculated, others may be merged in from other sources"
   },
   {
     "objectID": "slides/index.html#add-missing-values",
@@ -396,14 +403,21 @@
     "href": "slides/index.html#data-validation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Data validation",
-    "text": "Data validation"
+    "text": "Data validation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou should absolutely be checking your transformations throughout your cleaning process, but then, before exporting your data you should do one final review to make sure you haven’t missed anything.\nHere are several examples where various researchers did not have data validation as part of their data cleaning process and found out much later on that their data contained errors. And so we want to try to prevent this scenario by catching any errors now, rather than later."
   },
   {
     "objectID": "slides/index.html#data-validation-1",
     "href": "slides/index.html#data-validation-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Data validation",
-    "text": "Data validation\n\n\n\nComplete\n\nCheck for missing/duplicate cases\n\nCheck Ns by groups for completeness\n\nCorrect for missing/too many columns\n\nValid and consistent\n\nCheck for unallowed categories/values out of range\n\nCheck ranges by groups\n\nCheck for invalid, non-unique, or missing study IDs\nCheck for incorrect variable types/formats\nCheck missing value patterns\n\n\n\n\nAccurate\n\nAgreement across variables\n\nDe-identified\n\nAll direct identifiers are removed\nAll indirect identifiers managed as needed\n\nInterpretable\n\nVariables correctly named"
+    "text": "Data validation\n\n\n\nComplete\n\nCheck for missing/duplicate cases\n\nCheck Ns by groups for completeness\n\nCheck for missing/too many columns\n\nValid and consistent\n\nCheck for unallowed categories/values out of range\n\nCheck ranges by groups\n\nCheck for invalid, non-unique, or missing study IDs\nCheck for incorrect variable types/formats\nCheck missing value patterns\n\n\n\n\nAccurate\n\nAgreement across variables\n\nDe-identified\n\nAll direct identifiers are removed\nAll indirect identifiers managed as needed\n\nInterpretable\n\nVariables correctly named\n\n\n\n\n\nUse your data quality indicator list as a guide when doing your final data review"
+  },
+  {
+    "objectID": "slides/index.html#data-validation-2",
+    "href": "slides/index.html#data-validation-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Data validation",
+    "text": "Data validation\n\n\n\nDocumentation errors\n\nFix in documentation\n\nData cleaning errors\n\nFix in your cleaning process\n\nData entry/export process errors\n\nFix at the source and export new raw file\n\nTrue values that are inaccurate, uninterpretable, or outside of a valid range\n\nLeave the data as is (document the issue)\nRecode those values to designated error code\nCreate data quality indicators\nChoose one source of truth for inconsistent values\nUse logical/deductive editing\n\n\n\n\n\n\n\n\n\n\n\nWhat’s most important is that you document your decisions for future users"
   },
   {
     "objectID": "slides/index.html#export-data",
@@ -417,7 +431,7 @@
     "href": "slides/index.html#creating-a-data-cleaning-plan",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Creating a data cleaning plan",
-    "text": "Creating a data cleaning plan"
+    "text": "Creating a data cleaning plan\n\n\nUltimately what I like to do in a cleaning process is pull out my checklist, import and review my data, and then plan out the steps that are needed to clean my specific dataset"
   },
   {
     "objectID": "slides/index.html#break",
@@ -438,7 +452,7 @@
     "href": "slides/index.html#packages",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Packages",
-    "text": "Packages\n\nR has many built in (base) functions\nWe can also use functions that live in packages that we can install onto our computer\nOnce installed, there are two ways to call packages\n\nYou may see both methods used in these slides\n\n\n\n\n\nUsing library()\n\nlibrary(dplyr)\n\nmtcars |&gt;  \n  select(mpg, cyl) \n\n\nUsing Namespacing package::function()\n\n# library(dplyr) not needed\n\nmtcars |&gt;  \n  dplyr::select(mpg, cyl)"
+    "text": "Packages\n\nR has many built in (base) functions\nWe can also use functions that live in packages that we can install onto our computer\nOnce installed, there are two ways to call packages\n\nYou may see both methods used in these slides\n\n\n\n\n\nUsing library()\n\nlibrary(dplyr)\n\nselect(df, var1, var2) \n\n\nUsing Namespacing package::function()\n\n# library(dplyr) not needed\n\ndplyr::select(df, var1, var2) \n\n\n\n\nFoundational"
   },
   {
     "objectID": "slides/index.html#tidyverse",
@@ -462,18 +476,25 @@
     "text": "Pipes\n\n2014+ magrittr pipe %&gt;%\n2021+ (R \\(\\geq\\) 4.1.0) native R pipe |&gt;\n\n\nIsabella Velásquez’s blog post Understanding the native R pipe |&gt; (2022)\n\n\n\n\n\n\nsch_data &lt;- select(sch_data, id, \n                    test_score)\n\nsch_data &lt;- filter(sch_data, \n                    test_score &gt; 300)\n\n\n\nsch_data &lt;- sch_data |&gt;\n  select(id, test_score) |&gt;\n  filter(test_score &gt; 300)\n\n\n\n\n\n\nTo turn on the native pipe:\nTools → Global Options → Code → Editing → Use Native Pipe Operator"
   },
   {
-    "objectID": "slides/index.html#open-our-data",
-    "href": "slides/index.html#open-our-data",
+    "objectID": "slides/index.html#operators",
+    "href": "slides/index.html#operators",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Open our data",
-    "text": "Open our data\n\n\n\n\nTake 5 minutes to open and look at our data file.\n\nLog in to Posit Cloud and navigate to our project\nOpen the data folder and open “sample_tch_svy_raw.xlsx”\n\n\n\n\n\n\n\n\n\n\n\n−+\n05:00"
+    "section": "Operators",
+    "text": "Operators\n\n\nComparison operators\n\n== equal to\n!= not equal to\n&lt; less than\n&gt; greater than\n%in% value is present within\n\n\ndf |&gt;\n  filter(city %in% c(\"boston\",\"philly\"))\n\n\nAssignment operators\n\n&lt;- Assign value to an object\n= Assign value to an object\n\n\ndf &lt;- df |&gt;\n  mutate(year = \"2024\")"
+  },
+  {
+    "objectID": "slides/index.html#scenario",
+    "href": "slides/index.html#scenario",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Scenario",
+    "text": "Scenario\nTake 5 minutes to open and look at our data file.\n\nLog in to Posit Cloud and navigate to our project\n\nhttps://posit.cloud/content/7872027\n\nOpen the data folder and open “sample_tch_svy_raw.xlsx”\n\nNotice that the “labels” tab has some basic information about the variables\n\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#import-our-data",
     "href": "slides/index.html#import-our-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Import our data",
-    "text": "Import our data\n\nCommon data importing functions\n\nread_csv() from the readr package\nread_excel() from the readxl package\nread_sav() from the haven package\nLearn more about importing multiple files at once here\n\n\n\nWhich function should we use to read in our sample data?🤔"
+    "text": "Import our data\n\nCommon data importing functions\n\nread_csv(), read_delim() from the readr package\nread_excel() from the readxl package\nread_sav(), read_sas(), read_dta() from the haven package\nLearn more about importing multiple files at once here\n\n\n\nWhich function should we use to read in our sample data?🤔"
   },
   {
     "objectID": "slides/index.html#import-our-file",
@@ -487,7 +508,7 @@
     "href": "slides/index.html#exercise-7",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nNavigate to exercise 1.\nUpdate the code and run the code chunk using the green arrow.\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n\n−+\n03:00"
+    "text": "Exercise\n\nTake 3 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nNavigate to exercise 1.\nUpdate the code and run the code chunks using the green arrows.\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/index.html#review-our-data",
@@ -501,35 +522,35 @@
     "href": "slides/index.html#exercise-8",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data.\n\nOpen “sample_tch_svy_data_dictionary.xlsx”.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nReview “sample_tch_svy_cleaning-plan.txt”.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data.\n\nOpen “sample_tch_svy_data_dictionary.xlsx” in the docs folder.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nReview “sample_tch_svy_cleaning-plan.txt” in the docs folder.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
   },
   {
     "objectID": "slides/index.html#adjust-the-sample-1",
     "href": "slides/index.html#adjust-the-sample-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Adjust the sample",
-    "text": "Adjust the sample\n\nThere are two key functions we can use to both identify and remove duplicates in our data\n\njanitor::get_dupes()\n\nTells you which rows contain duplicate unique identifiers, if any\n\ndplyr::distinct()\n\nKeeps the first instance of a duplicate unique identifier\n\nBut what if your raw data is sorted differently at a later point?\nHelpful to use dplyr::arrange() first so that your data is always sorted the same way before dropping your duplicates"
+    "text": "Adjust the sample\n\nThere are two key functions we can use to both identify and remove duplicates in our data\n\n\njanitor::get_dupes()\n\nTells you which rows contain duplicate unique identifiers, if any\n\ndplyr::distinct()\n\nKeeps the first instance of a duplicate unique identifier\n\nHelpful to first use dplyr::arrange() so that your data is always sorted the same way before dropping your duplicates\n\n\n\n\nSo the next step in our checklist is to adjust the sample And we found some duplicates in our sample"
   },
   {
     "objectID": "slides/index.html#adjust-the-sample-2",
     "href": "slides/index.html#adjust-the-sample-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Adjust the sample",
-    "text": "Adjust the sample\n\n\nCheck for duplicates\n\ndf |&gt;\n  get_dupes(id_vars)\n\n\nReplace “id_vars” with your unique identifier\nIf you have more than one variable that uniquely identifies rows, use c(first_name, last_name)\n\n\nRemove duplicates\n\ndf |&gt;\n  arrange(another_identier) |&gt;\n  distinct(id_vars, \n           .keep_all = TRUE)\n\n\nReplace “another_identifier” with a variable that makes your duplicates unique (e.g., “date”)\nReplace “id_vars” with your unique identifier/s\nAlways add the argument “.keep_all = TRUE”"
+    "text": "Adjust the sample\n\n\n\nCheck for duplicates\n\ndf |&gt;\n  get_dupes(id_vars)\n\n\nReplace id_vars with your unique identifier\nIf you have more than one variable that uniquely identifies rows, use c(first_name, last_name)\n\n\nRemove duplicates\n\ndf |&gt;\n  arrange(another_identier) |&gt;\n  distinct(id_vars, \n           .keep_all = TRUE)\n\n\nReplace another_identifier with a variable that makes your duplicates unique (e.g., “date”)\n\nThe default is to sort values in ascending order\n\nReplace id_vars with your unique identifier/s\nAlways add the argument .keep_all = TRUE"
   },
   {
     "objectID": "slides/index.html#exercise-9",
     "href": "slides/index.html#exercise-9",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to check for and remove duplicates.\n\nNavigate to exercise 3.\nRun the code to check for duplicates.\n\nWhich tch_id is duplicated?\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun the code to check for duplicates again.\n\nAre the duplicates removed?\n\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2023-04-02”).\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to check for and remove duplicates.\n\nNavigate to exercise 3.\nRun the code to check for duplicates.\n\nWhich tch_id is duplicated?\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun a check to make sure duplicates are removed.\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2024-04-02”).\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#de-identify-data-3",
     "href": "slides/index.html#de-identify-data-3",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identify data",
-    "text": "De-identify data\n\nThe functions used here will depend on what is required.\nExamples of functions you might use:\n\ndplyr::select() to drop variables\ndplyr::case_when() or dplyr::recode() to collapse categories/recode values\ndplyr::*_join() to merge in identifying variables\nstringr::str_remove_all() or stringr::str_replace_all() to redact character values\n\n\nHere we are going to use dplyr::select() and dplyr::case_when()"
+    "text": "De-identify data\n\nThe functions used here will depend on what is required.\n\nExamples of functions you might use:\n\ndplyr::select() to drop variables\ndplyr::case_when() or dplyr::recode() to collapse categories/recode values\ndplyr::*_join() to merge in study unique IDs\nstringr::str_remove_all() or stringr::str_replace_all() to redact character values\n\nFor our sample data we are going to use the following.\n\ndplyr::select() to drop identifying variables and\ndplyr::case_when() to recategorize names into our unique study ID values"
   },
   {
     "objectID": "slides/index.html#de-identify-data---select",
@@ -543,7 +564,7 @@
     "href": "slides/index.html#de-identify-data---categorize",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identify data - Categorize",
-    "text": "De-identify data - Categorize\n\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name == old_value ~ new_value,\n                    var_name == old_value ~ new_value,\n                  ))\n\n\nTo learn more about setting default values for case_when(), type ?case_when in your console\nNote that there is a new function, case_match(), that is worth looking in to. It reduces repetition in the syntax."
+    "text": "De-identify data - Categorize\n\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name == old_value1 ~ new_value1,\n                    var_name == old_value2 ~ new_value2,\n                  ))\n\n\nTo learn more about setting default values for case_when(), type ?case_when in your console\nNote that there is a new function, case_match(), that is worth looking in to. It reduces repetition in the syntax."
   },
   {
     "objectID": "slides/index.html#exercise-10",
@@ -609,11 +630,39 @@
     "text": "Exercise\n\nTake 3 minutes to convert tch_yrs to numeric\n\nNavigate to exercise 7.\nReview the current variable type for tch_yrs.\nConvert the variable to numeric.\nReview the new variable type for tch_yrs.\n\n\n\n\n−+\n03:00"
   },
   {
-    "objectID": "slides/index.html#biggest-advice",
-    "href": "slides/index.html#biggest-advice",
+    "objectID": "slides/index.html#recode-variables-1",
+    "href": "slides/index.html#recode-variables-1",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Biggest Advice",
-    "text": "Biggest Advice\nThe number one way to reduce data errors is to make a plan before you collect data\n\nCorrect data at the source\n\n\n\n\nPlan the variables you want to collect\n\n\n\n\nBuild your data collection/entry tools in a way that follows your plan\n\n\n\n\nTest your data tools before collecting/entering data\n\n\n\n\nCheck your data often during data collection/entry\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+    "section": "Recode variables",
+    "text": "Recode variables\nCommon functions for recoding values are\n\ndplyr::case_when()\ndplyr::recode()\ntidyr::replace_na()\n\n\n\n\n\ndf |&gt;\n  mutate(newvar = \n           recode(oldvar,\n                  `oldvalue` = newvalue))\n\n\n\ndf |&gt; \n  mutate(newvar = \n           replace_na(oldvar, \n                      replace = 0))"
+  },
+  {
+    "objectID": "slides/index.html#recode-variables-2",
+    "href": "slides/index.html#recode-variables-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Recode variables",
+    "text": "Recode variables\n\ndplyr::across() allows you to apply the same transformation across multiple columns\n\n\ndf |&gt;\n  mutate(across(var1:var3, \n                ~ case_when(\n                  . == oldvalue1 ~ newvalue1,\n                  . == oldvalue2 ~ newvalue2\n                )))\n\nIf you don’t want to save over the existing variables, you can add the argument .names which lives in the dplyr::across() function. This creates new variables with new names."
+  },
+  {
+    "objectID": "slides/index.html#exercise-14",
+    "href": "slides/index.html#exercise-14",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 5 minutes to recode variables\n\nNavigate to exercise 8.\nRecode the blank values for the grade variables.\n\nCheck to see if the recoding worked.\n\nRecode the mathanx variable.\n\nCheck to see that the recoding worked.\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/index.html#construct-new-variables",
+    "href": "slides/index.html#construct-new-variables",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Construct new variables",
+    "text": "Construct new variables\n\nThe most important function for constructing new variables is dplyr::mutate()\nFrom there, other functions may be required. For today, we are going to use rowSums() which allows us to create sum scores for each row\n\n\n\n\nThe default is to not calculate a sum if there are any NA values\n\ndf |&gt;\n  mutate(newvar = rowSums(\n    across(var1:var3)))\n\n\nIf you want to calculate a sum even if there are NA values, add na.rm = TRUE\n\ndf |&gt;\n  mutate(newvar = rowSums(\n    across(var1:var3), na.rm = TRUE))"
+  },
+  {
+    "objectID": "slides/index.html#exercise-15",
+    "href": "slides/index.html#exercise-15",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 3 minutes to construct gad_sum\n\nNavigate to exercise 9.\nCalculate gad_sum\nReview summary information for the new variable.\n\n\n\n\n−+\n03:00\n\n\n\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
   },
   {
     "objectID": "prework.html",
@@ -630,7 +679,7 @@
     "href": "prework.html#r-and-rstudio",
     "title": "Pre-work",
     "section": "R and RStudio",
-    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R\n\nWhat They Forgot to Teach You About R (In particular, the “A holistic workflow” section)\nR and Tidyverse for working with data\nR Software Handbook",
+    "text": "R and RStudio\nFor this workshop it is assumed that you are comfortable navigating the RStudio environment and that you have some understanding of things like packages, functions, objects, file paths, and R syntax. If you need any refreshers, I recommend reviewing the following materials.\n\nGetting Started with R\n\nWhat They Forgot to Teach You About R (In particular, the “A holistic workflow” section)\nR and Tidyverse for working with data\nR Software Handbook",
     "crumbs": [
       "Pre-work"
     ]
@@ -724,47 +773,5 @@
     "crumbs": [
       "Slides"
     ]
-  },
-  {
-    "objectID": "slides/index.html#operators",
-    "href": "slides/index.html#operators",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Operators",
-    "text": "Operators\n\n\nComparison operators\n\n== equal to\n!= not equal to\n&lt; less than\n&gt; greater than\n%in% value is present within\n\n\ndf |&gt;\n  filter(city %in% c(\"boston\",\"philly\"))\n\n\nAssignment operators\n\n&lt;- Assign value to an object\n= Assign value to an object\n\n\ndf &lt;- df |&gt;\n  mutate(year = \"2024\")"
-  },
-  {
-    "objectID": "slides/index.html#recode-variables-1",
-    "href": "slides/index.html#recode-variables-1",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Recode variables",
-    "text": "Recode variables\nCommon functions for recoding values are\n\ndplyr::case_when()\ndplyr::recode()\ntidyr::replace_na()\n\n\n\n\n\ndf |&gt;\n  mutate(newvar = \n           recode(oldvar,\n                  `oldvalue` = newvalue))\n\n\n\ndf |&gt; \n  mutate(newvar = \n           replace_na(oldvar, \n                      replace = 0))"
-  },
-  {
-    "objectID": "slides/index.html#recode-variables-2",
-    "href": "slides/index.html#recode-variables-2",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Recode variables",
-    "text": "Recode variables\n\ndplyr::across() allows you to apply the same transformation across multiple columns\n\n\ndf |&gt;\n  mutate(across(var1:var3, \n                ~ case_when(\n                  . == oldvalue1 ~ newvalue1,\n                  . == oldvalue2 ~ newvalue2\n                )))\n\nIf you don’t want to save over the existing variables, you can add the argument .names which lives in the dplyr::across() function. This creates new variables with new names."
-  },
-  {
-    "objectID": "slides/index.html#exercise-14",
-    "href": "slides/index.html#exercise-14",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to recode variables\n\nNavigate to exercise 8.\nRecode the blank values for the grade variables.\n\nCheck to see if the recoding worked.\n\nRecode the mathanx variable.\n\nCheck to see that the recoding worked.\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/index.html#construct-new-variables",
-    "href": "slides/index.html#construct-new-variables",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Construct new variables",
-    "text": "Construct new variables\n\nThe most important function for constructing new variables is dplyr::mutate()\nFrom there, other functions may be required. For today, we are going to use rowSums() which allows us to create sum scores for each row\n\n\n\n\nThe default is to not calculate a sum if there are any NA values\n\ndf |&gt;\n  mutate(newvar = rowSums(\n    across(var1:var3)))\n\n\nIf you want to calculate a sum even if there are NA values, add na.rm = TRUE\n\ndf |&gt;\n  mutate(newvar = rowSums(\n    across(var1:var3), na.rm = TRUE))"
-  },
-  {
-    "objectID": "slides/index.html#exercise-15",
-    "href": "slides/index.html#exercise-15",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to construct gad_sum\n\nNavigate to exercise 9.\nCalculate gad_sum\nReview summary information for the new variable.\n\n\n\n\n−+\n03:00"
   }
 ]

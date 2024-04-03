@@ -146,7 +146,7 @@ countdown(minutes = 1, font_size = "2em")
   - Meaningful (`gender` instead of `Q1`)
   - Consistently formatted (capitalization and delimiters)
   - Consistent order of information
-    - `wave-responder-scale-#` (`w1_t_mast1`)
+    - `wave_responder_scale#` (`w1_t_mast1`)
 
 :::
  
@@ -350,7 +350,7 @@ countdown(minutes = 1, font_size = "2em")
 
 ::: {.notes}
 
-So by comparing pieces of information within the dataset, what data quality issues do you see within this dataset?
+So in this case we don't have any implicit knowledge, but by comparing pieces of information within the dataset, what data quality issues do you see for the accurate indicator here?
 
 :::
 
@@ -439,7 +439,10 @@ Indirect identifiers however are not necessarily unique to a particular individu
 - Math assessment may be low risk while a survey on substance use is higher risk
 
 ::: {.notes}
-You also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like, how often do you use drugs, the risk is higher because that information could impact your career, relationships, and so forth. 
+
+But there is more you need to check for.
+
+You also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth. 
 :::
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -470,6 +473,37 @@ This is a very small dataset so don't worry about indirect identifiers right now
 
 ![](images/quality-exercise7.PNG){fig-align="center"}
 
+
+## Biggest Advice
+
+The number one way to reduce data errors is to make a plan before you collect data
+
+> Correct data at the source
+
+<br>
+
+. . .
+
+- Plan the variables you want to collect
+
+. . .
+
+- Build your data collection/entry tools in a way that follows your plan
+
+. . .
+
+- Test your data tools before collecting/entering data
+
+. . .
+
+- Check your data often during data collection/entry
+
 ::: {.notes}
-That one PhD may or may not be an issue. May there is only one person with a PhD in our sample, but many with PhDs in the school so maybe it's not a big deal. People (outside of that school) don't necessarily know who is in our sample and who is not.
-::: 
+
+So before we move on to how to clean data for the purposes of data sharing, I want to point out one really important thing. And that is, if you are collecting your own original data
+
+Doing this ensures not only that you have much less data cleaning to do in the end, but it also prevents you from potentially losing data or having to recollect bad data. So it's 100% worth the time and effort to spend time planning for quality data collection in the beginning if you can.
+
+But of course, we are not always in charge of data collection and we just have to deal with the data we are given and so are going to talk about this in the next sections.
+
+:::

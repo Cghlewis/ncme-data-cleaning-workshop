@@ -60,7 +60,7 @@
 
 However, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards. 
 
-As you use this checklist to clean your specific datasaet you use the checklist steps that are relevant to your data and remove the steps that are not relevant. 
+As you use this checklist to clean your specific datasaet you use the steps that are relevant to your data and remove the steps that are not relevant. 
 
 The order of these steps are fluid. With the exception of the first two on the list, you can move them around in whatever order makes sense for your specific dataset.
 
@@ -75,7 +75,7 @@ We are going to take some time to review each step on this list with the excepti
 
 ::: {.notes}
 
-Importing your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to your raw data to start over again if you need to. 
+Importing your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to the untouched raw data to start over again if you need to. 
 
 :::
 
@@ -97,7 +97,7 @@ If you have access to those documents we discussed earlier, participant tracking
 
 ::: {.notes}
 
-You want to retrieve that missing data before moving forward in the cleaning process
+If you find that any data is missing in your review process (missing cases/missing variables) you'll want to retrieve that missing data before moving forward in the cleaning process
 
 Start back at step 1
 
@@ -109,14 +109,15 @@ Start back at step 1
 
 ::: {.notes}
 
-This means both removing anyone who should not be in the dataset - maybe they didn't consent to be in the study
+This means removing anyone who should not be in the dataset - maybe they didn't consent to be in the study
 
 It also means taking care of any duplicates in your data
 
 The first thing you'll want to do before removing duplicates is determine if it is a true duplicate, not just an error in the data
-  - Insider knowledge - or maybe able to deduce that from other pieces of information in the dataset
 
 Then removing any true duplicates based on your duplicate removal rule
+
+It's really important that these kinds of decisions rules are documented for future data users. And we'll talk more about where to document these kinds of things later.
 
 :::
 
@@ -148,6 +149,8 @@ Then removing any true duplicates based on your duplicate removal rule
   - Reduce precision in the data (In this example here, I’ve binned my age rages so they are less precise)
 - Truncation
   - Restricting upper and lower ranges to mask outliers
+  
+There are many, even more sophisticated ways, to de-identify data
 
 :::
 
@@ -167,32 +170,74 @@ Then removing any true duplicates based on your duplicate removal rule
 
 ## Normalize variables
 
-- Compare the types in your raw data to the types you expected in your data dictionary. Do they align?
-  - If not, what needs to be done so that they do
+- Compare the variable types in your raw data to the types you expected in your data dictionary. 
+  - Do they align? If not, what needs to be done so that they do
 
 ![](images/checklist9.PNG){fig-align="center"}
 
+:::{.notes}
+
+I realize this is unconventional terminology to use, but here I am using the term normalize to talk about returning variables to their normal or expected state. 
+
+:::
+
 ## Standardize variables
 
-- Are columns consistently measured, coded, and formatted according to your data dictionary?
+- Are columns consistently measured, categorized, and formatted according to your data dictionary?
+  - If not, what needs to be done so that they are
 
 ![](images/checklist10.PNG){fig-align="center"}
+
+:::{.notes}
+
+Here I am using the term standardize to convey the process of checking for consistency
+
+:::
 
 ## Update variable types
 
 ![](images/checklist11.PNG){fig-align="center"}
 
+:::{.notes}
+
+Character to Numeric, Numeric to Date, And so forth
+
+:::
+
 ## Recode variables
 
 ![](images/checklist12.PNG){fig-align="center"}
+
+:::{.notes}
+
+- This includes recoding your categorical numeric values to match your data dictionary values
+- But it also includes any planned coding, such as reverse coding a variable
+- As well as recoding any implicit values to their explicit values
+
+:::
 
 ## Construct additional variables
 
 ![](images/checklist13.PNG){fig-align="center"}
 
+:::{.notes}
+
+- This is not the time to construct analysis-specific variables. This is the time to create or calculate variables that should always be a part of the core study dataset.
+
+- This could be things like grouping variables (treatment, cohort, site)
+- It could be time component variables (year, wave)
+- It could be additional unique identifiers that you need to add for linking purposes (like adding a school ID to a teacher file)
+- Or it could be measure composite or summary scores that you want included in the core dataset
+- Any other variables you want added to the core sharing dataset
+
+- Some of these variables will be calculated, others may be merged in from other sources
+
+:::
+
 ## Add missing values
 
 ![](images/checklist14.PNG){fig-align="center"}
+
 
 ## Data validation
 
@@ -217,6 +262,15 @@ Then removing any true duplicates based on your duplicate removal rule
 :::
 :::
 
+:::{.notes}
+
+You should absolutely be checking your transformations throughout your cleaning process, but then, before exporting your data you should do one final review to make sure you haven't missed anything.  
+
+Here are several examples where various researchers did not have data validation as part of their data cleaning process and found out much later on that their data contained errors. And so we want to try to prevent this scenario by catching any errors now, rather than later.
+
+:::
+
+
 ## Data validation
 
 :::: {.columns}
@@ -226,7 +280,7 @@ Then removing any true duplicates based on your duplicate removal rule
 - Complete
   - Check for missing/duplicate cases
     - Check Ns by groups for completeness
-  - Correct for missing/too many columns
+  - Check for missing/too many columns
 - Valid and consistent
   - Check for unallowed categories/values out of range
     - Check ranges by groups
@@ -249,17 +303,62 @@ Then removing any true duplicates based on your duplicate removal rule
 :::
 :::
 
+:::{.notes}
+
+Use your data quality indicator list as a guide when doing your final data review
+
+:::
+
+## Data validation
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+1. Documentation errors
+    - Fix in documentation
+2. Data cleaning errors
+    - Fix in your cleaning process
+3. Data entry/export process errors
+    - Fix at the source and export new raw file
+4. True values that are inaccurate, uninterpretable, or outside of a valid range
+    - Leave the data as is (document the issue)
+    - Recode those values to designated error code
+    - Create data quality indicators
+    - Choose one source of truth for inconsistent values
+    - Use logical/deductive editing
+    
+:::
+ 
+::: {.column width="40%"}
+
+![](images/checklist15-4.PNG){fig-align="center"}
+
+:::
+:::
+
+:::{.notes}
+
+What's most important is that you document your decisions for future users
+
+:::
+
 ## Export data
 
 <br>
 
 ![](images/checklist16.jpg){fig-align="center"}
 
-
 ## Creating a data cleaning plan
 
 ![](images/data_cleaning_plan.PNG){fig-align="center"}
 
+
+:::{.notes}
+
+Ultimately what I like to do in a cleaning process is pull out my checklist, import and review my data, and then plan out the steps that are needed to clean my specific dataset
+
+:::
 
 ## BREAK!
 
