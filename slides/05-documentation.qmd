@@ -6,11 +6,18 @@
 ::: columns
 ::: {.column width="50%"}
 
+<br>
+
 1. Project-level documentation
+    - Project summary document
 
 2. Data-level documentation
+    - README
+    - Cleaning code/Data cleaning plan
 
 3. Variable-level documentation
+    - Data dictionary OR
+    - Codebook
 
 4. Repository Metadata
 
@@ -18,23 +25,139 @@
 
 ::: {.column width="50%"}
 
-Benefits:
 
-- Allows your data to be correctly interpreted and used
-- Allows your work to be reproducible
-- Allows your work to be findable
+<br>
+
+<br>
+
+✔️ Allows your data to be correctly interpreted and used
+
+<br>
+
+✔️ Allows your work to be reproducible
+
+<br>
+
+✔️ Allows your work to be findable
 
 :::
 :::
+
+:::{.notes}
+
+And some documentation, like repository metadata, allows your data to be findable
+
+:::
+
 
 ## Project-level documentation
 
+::: columns
+::: {.column width="50%"}
+
+- Funding source
+- Overview of study
+- Setting and sample
+- Project timeline
+- Measures used
+- Overview of study procedures
+  - Recruitment, consent, data collection 
+- Data preparation and processing
+  - Data quality monitoring, de-identification procedures, decision rules
+- Appendices
+  - Copies of instruments, consort diagrams
+:::
+
+::: {.column width="50%"}
+
+![](images/project_summary.PNG){fig-align="center" width="90%"}
+
+:::
+:::
+
+:::{.notes}
+
+This would be where you could document your decision rules for things dropping duplicates
+
+:::
+
 ## Data-level documentation
+
+::: columns
+::: {.column width="50%"}
+
+
+README
+
+![](images/readme.PNG){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+Data Cleaning Plan
+
+![](images/data_cleaning_plan2.PNG){fig-align="center"}
+
+:::
+:::
 
 ## Variable-level documentation
 
+::: columns
+::: {.column width="50%"}
+
+Data dictionary
+
+![](images/dictionary.PNG){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+
+Codebook
+
+![](images/codebook.PNG){fig-align="center"}
+
+:::
+:::
+
+
 ## Repository Metadata
 
+::: columns
+::: {.column width="50%"}
 
-## Thank you!
+![](images/osf_project.PNG){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+![](images/repository_metadata.PNG){fig-align="center" width="90%"}
+
+:::
+:::
+
+::: footer
+
+[Example Project Open Data Sharing](https://osf.io/59gte/)
+
+:::
+
+## Thank you! {.background-secondary}
+
+<br>
+
+🌟  **Please provide feedback on this workshop using this short survey.**   
+[https://forms.gle/qVTvVgP8nafbAuXT8](https://forms.gle/qVTvVgP8nafbAuXT8)
+
+<br>
+
+🌟 **Stay connected!**
+
+{{< fa link size=xl >}} [https://cghlewis.com/](https://cghlewis.com/)   
+{{< fa brands linkedin size=xl >}}    [https://www.linkedin.com/in/crystal-lewis-922b4193/](https://www.linkedin.com/in/crystal-lewis-922b4193/)   
+{{< fa brands github size=xl >}}  [https://github.com/Cghlewis](https://github.com/Cghlewis)  
 

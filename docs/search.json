@@ -529,7 +529,7 @@
     "href": "slides/index.html#import-our-file",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Import our file",
-    "text": "Import our file\n\n\n\nread_excel() has several arguments.\n\npath\n\nName of the file, plus folder names as needed\n“data/raw/w1_stu_obs_raw.xlsx”\n\nsheet = NULL\ncol_names = TRUE\nna = “”\nskip = 0\n\nType ?read_excel() in your console to see more arguments"
+    "text": "Import our file\n\n\n\nread_excel() has several arguments.\n\npath\n\nName of the file, plus folder names as needed\n“data/w1_stu_obs_raw.xlsx”\n\nsheet = NULL\ncol_names = TRUE\nna = “”\nskip = 0\n\nType ?read_excel() in your console to see more arguments"
   },
   {
     "objectID": "slides/index.html#exercise-7",
@@ -711,7 +711,7 @@
     "href": "slides/index.html#export-data-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Export data",
-    "text": "Export data\nSimilar to importing data, we have many options for exporting our data depending on the format we want to export to.\n\nopenxlsx::write.xlsx()\nhaven::write_sav(), haven::write_dta(), haven::write_sas()\nreadr::write_csv()\n\nx\n\nThe object we are exporting\n\nfile\n\nThe name of the new file plus any folders where you want the file to live\n\nna = “NA”\n\n\n\n\nwrite_csv(df, file = \"data/raw/w1_stu_obs_clean.csv\", na = \"\")"
+    "text": "Export data\nSimilar to importing data, we have many options for exporting our data depending on the format we want to export to.\n\nopenxlsx::write.xlsx()\nhaven::write_sav(), haven::write_dta(), haven::write_sas()\nreadr::write_csv()\n\nx\n\nThe object we are exporting\n\nfile\n\nThe name of the new file plus any folders where you want the file to live\n\nna = “NA”\n\n\n\nwrite_csv(df, file = \"data/w1_stu_obs_clean.csv\", na = \"\")"
   },
   {
     "objectID": "slides/index.html#exercise-17",
@@ -739,42 +739,42 @@
     "href": "slides/index.html#types-of-documentation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Types of documentation",
-    "text": "Types of documentation\n\n\n\nProject-level documentation\nData-level documentation\nVariable-level documentation\nRepository Metadata\n\n\nBenefits:\n\nAllows your data to be correctly interpreted and used\nAllows your work to be reproducible\nAllows your work to be findable"
+    "text": "Types of documentation\n\n\n\n\nProject-level documentation\n\nProject summary document\n\nData-level documentation\n\nREADME\nCleaning code/Data cleaning plan\n\nVariable-level documentation\n\nData dictionary OR\nCodebook\n\nRepository Metadata\n\n\n\n\n✔️ Allows your data to be correctly interpreted and used\n\n✔️ Allows your work to be reproducible\n\n✔️ Allows your work to be findable\n\n\n\nAnd some documentation, like repository metadata, allows your data to be findable"
   },
   {
     "objectID": "slides/index.html#project-level-documentation",
     "href": "slides/index.html#project-level-documentation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Project-level documentation",
-    "text": "Project-level documentation"
+    "text": "Project-level documentation\n\n\n\nFunding source\nOverview of study\nSetting and sample\nProject timeline\nMeasures used\nOverview of study procedures\n\nRecruitment, consent, data collection\n\nData preparation and processing\n\nData quality monitoring, de-identification procedures, decision rules\n\nAppendices\n\nCopies of instruments, consort diagrams\n\n\n\n\n\n\n\n\n\n\n\nThis would be where you could document your decision rules for things dropping duplicates"
   },
   {
     "objectID": "slides/index.html#data-level-documentation",
     "href": "slides/index.html#data-level-documentation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Data-level documentation",
-    "text": "Data-level documentation"
+    "text": "Data-level documentation\n\n\nREADME\n\n\n\n\n\n\nData Cleaning Plan"
   },
   {
     "objectID": "slides/index.html#variable-level-documentation",
     "href": "slides/index.html#variable-level-documentation",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Variable-level documentation",
-    "text": "Variable-level documentation"
+    "text": "Variable-level documentation\n\n\nData dictionary\n\n\n\n\n\n\nCodebook"
   },
   {
     "objectID": "slides/index.html#repository-metadata",
     "href": "slides/index.html#repository-metadata",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Repository Metadata",
-    "text": "Repository Metadata"
+    "text": "Repository Metadata\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample Project Open Data Sharing"
   },
   {
     "objectID": "slides/index.html#thank-you",
     "href": "slides/index.html#thank-you",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Thank you!",
-    "text": "Thank you!\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
+    "text": "Thank you!\n\n🌟 Please provide feedback on this workshop using this short survey.\nhttps://forms.gle/qVTvVgP8nafbAuXT8\n\n🌟 Stay connected!\n https://cghlewis.com/\n https://www.linkedin.com/in/crystal-lewis-922b4193/\n https://github.com/Cghlewis\n\n\n\n\nData Cleaning for Data Sharing // Cghlewis.github.io/ncme-data-cleaning-workshop/"
   },
   {
     "objectID": "prework.html",
@@ -841,7 +841,7 @@
     "href": "index.html#further-learning",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Further Learning",
-    "text": "Further Learning\n\nData Management in Large-Scale Education Research book\nThe Basics of Data Management\nData Organization in Spreadsheets\nData Cleaning for Data Sharing Blog Post Series\nFour Simple Ways to Integrate your Data Dictionary into Your Data Cleaning Process",
+    "text": "Further Learning\n\nData Management in Large-Scale Education Research book\nThe Basics of Data Management\nData Organization in Spreadsheets\nData Cleaning for Data Sharing Blog Post Series\nFour Simple Ways to Integrate your Data Dictionary into Your Data Cleaning Process\nR Data Wrangling Functions Wiki",
     "crumbs": [
       "Home"
     ]

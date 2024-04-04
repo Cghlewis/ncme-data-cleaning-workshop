@@ -369,7 +369,7 @@ Common data importing functions
 - `read_excel()` has several arguments. 
   - path
     - Name of the file, plus folder names as needed
-    - "data/raw/w1_stu_obs_raw.xlsx"
+    - "data/w1_stu_obs_raw.xlsx"
   - sheet = NULL
   - col_names = TRUE
   - na = ""
@@ -1206,11 +1206,9 @@ Similar to importing data, we have many options for exporting our data depending
       - The name of the new file plus any folders where you want the file to live
     - na = "NA"
     
-<br>
-    
 ```{r eval=FALSE}
 
-write_csv(df, file = "data/raw/w1_stu_obs_clean.csv", na = "")
+write_csv(df, file = "data/w1_stu_obs_clean.csv", na = "")
 
 ```
 

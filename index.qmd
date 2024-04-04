@@ -37,6 +37,7 @@ This workshop assumes you have some experience working with rectangular data, as
 - [Data Organization in Spreadsheets](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)
 * [Data Cleaning for Data Sharing Blog Post Series](https://cghlewis.com/blog/data_clean_01/)
 * [Four Simple Ways to Integrate your Data Dictionary into Your Data Cleaning Process](https://cghlewis.com/blog/dict_clean/)
+* [R Data Wrangling Functions Wiki](https://github.com/Cghlewis/data-wrangling-functions/wiki)
 
 
 ## Speaker
