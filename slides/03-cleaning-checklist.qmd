@@ -349,6 +349,23 @@ What's most important is that you document your decisions for future users
 
 ![](images/checklist16.jpg){fig-align="center"}
 
+## Export data
+
+When you export your files, it's important to name them consistently and clearly.
+
+- Follow rules similar to our variable naming rules
+  - Machine readable (except now `-` is allowed)
+  - Human readable
+    - A user should be able to understand the contents of the file without opening it
+
+<br>
+
+Which gives you a better idea of what is in the file? 🤔
+
+  - "Project X Full Data.csv"
+  - "projectx_wave1_stu_svy_clean.csv"
+
+
 ## Creating a data cleaning plan
 
 ![](images/data_cleaning_plan.PNG){fig-align="center"}

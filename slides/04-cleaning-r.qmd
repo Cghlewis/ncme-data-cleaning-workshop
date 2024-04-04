@@ -6,9 +6,126 @@ Before we jump in I just want to preface this section with the understanding tha
 
 :::
 
-## Packages
+## Objects
+
+<br>
+
+- If you want to save the work you do, you need to save it to an object that lives in your environment
+  - Objects should follow the same naming rules we discussed earlier
+- If you simply want to view the results, you don't need to save values into an object
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+```{r echo=TRUE}
+
+age <- c(12, 10, 8)
+
+age <- age + 1
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r echo=TRUE}
+
+mean(age)
+
+```
+
+:::
+:::
+
+## Objects
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+Data Frame (Tibble)
+
+- Two dimensional structure
+
+```{r}
+
+df <- data.frame(id = c(10, 20),
+                 age = c(12, 8))
+
+df
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+Vector
+
+- Consists of one or more elements all of the same type
+
+```{r}
+
+id <- c(10, 20)
+
+id
+
+```
+
+- Common vector types (class)
+  - character, numeric, date, logical
+  
+:::
+:::
+
+
+## Functions
+
+::: columns
+::: {.column width="50%"}
+
+- Anatomy of a function
+    - **function_name(argument1, argument2, argument3, ...)**
+      - the first argument is usually an object
+    - You can view arguments by typing ?functionname in your console
+
+- Arguments usually have defaults
+    - For example `mean(x, trim, na.rm)`
+      - trim = 0
+      - na.rm = FALSE
 
 - R has many built in (base) functions
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+<br>
+<br>
+
+|Function | Task |
+|-----|----------|
+| View() | View object |
+| str() |Display internal structure of an object |
+|c() |Combine elements| 
+| class() |Check the class/type of an object |
+
+:::
+:::
+
+:::{.notes}
+
+If you like the defaults, do nothing. You don't have to type out the arguments. If you want to change the default, you need to type out the arguments.
+
+:::
+
+## Packages
+
 - We can also use functions that live in packages that we can install onto our computer
 
 - Once installed, there are two ways to call packages
@@ -22,6 +139,7 @@ Before we jump in I just want to preface this section with the understanding tha
 Using `library()`
 
 ```{r echo=TRUE, eval=FALSE}
+
 library(dplyr)
 
 select(df, var1, var2) 
@@ -86,16 +204,16 @@ Selecting `test_score` and `grade_level` from our data frame named `sch_data`
 
 ```{r echo=FALSE}
 
-sch_data <- tibble::tribble(~id, ~test_score, ~grade_level,
-                350, 3,
-                380, 4,
-                290, 3)
+df <- tibble::tribble(~id, ~test_score, ~grade_level,
+                1, 350, 3,
+                2, 380, 4,
+                3, 290, 5)
 
 ```
 
 ```{r echo=TRUE}
 
-select(sch_data, test_score, 
+select(df, test_score, 
        grade_level)
 
 ```
@@ -109,7 +227,7 @@ Base R
 
 ```{r echo=TRUE}
 
-sch_data[ , c("test_score", 
+df[ , c("test_score", 
               "grade_level")]
 
 ```
@@ -250,6 +368,8 @@ Common data importing functions
 
 - `read_excel()` has several arguments. 
   - path
+    - Name of the file, plus folder names as needed
+    - "data/raw/w1_stu_obs_raw.xlsx"
   - sheet = NULL
   - col_names = TRUE
   - na = ""
@@ -276,8 +396,10 @@ Common data importing functions
 
 1. Open "exercises.Rmd" in our Posit Cloud project.
 2. Navigate to exercise 1.
-3. Update the code and run the code chunks using the green arrows.
-4. If you get stuck, you can open "solutions.Rmd"
+3. Update the code and run the code to read in the data using the green arrow.
+4. Run the code chunk to view the data.
+
+If you get stuck, you can open "solutions.Rmd"
 
 ```{r}
 #| echo: false
@@ -287,6 +409,8 @@ countdown(minutes = 3, font_size = "2em")
 ```
 
 ## Review our data
+
+<br>
 
 ::: columns
 ::: {.column width="50%"}
@@ -353,9 +477,12 @@ There are two key functions we can use to both identify and remove duplicates in
 
   - `janitor::get_dupes()`
     - Tells you which rows contain duplicate unique identifiers, if any
+
+<br>
+
   - `dplyr::distinct()`
     - Keeps the first instance of a duplicate unique identifier
-      - Helpful to first use `dplyr::arrange()` so that your data is always sorted the same way before dropping your duplicates
+
       
 :::{.notes}
 
@@ -366,12 +493,8 @@ And we found some duplicates in our sample
   
 ## Adjust the sample
 
-<br>
-
-::: columns
-::: {.column width="50%"}
-
-Check for duplicates
+::: panel-tabset
+### Check for duplicates
 
 ```{r}
 #| echo: true
@@ -385,30 +508,41 @@ df |>
 - Replace `id_vars` with your unique identifier
 - If you have more than one variable that uniquely identifies rows, use `c(first_name, last_name)`
 
-:::
-
-::: {.column width="50%"}
-
-Remove duplicates
+### Remove duplicates
 
 ```{r}
 #| echo: true
 #| eval: false
  
 df |>
-  arrange(another_identier) |>
   distinct(id_vars, 
            .keep_all = TRUE)
 
 ```
-- Replace `another_identifier` with a variable that makes your duplicates unique (e.g., "date")
-  - The default is to sort values in ascending order
 - Replace `id_vars` with your unique identifier/s
 - Always add the argument *.keep_all = TRUE*
+- But remember, this always keeps the first instance of your duplicate
+  - This may not always be want you want
 
+### Remove duplicates
+
+```{r}
+#| echo: true
+#| eval: false
+ 
+df |>
+  arrange(date) |>
+  distinct(id_vars, 
+           .keep_all = TRUE)
+
+```
+- Consider arranging your data first, before removing duplicates
+- Replace `date` with any variable that you want to arrange your data by
+  - The default is to sort values in ascending order
+    - If you want descending order `arrange(desc(date))
 
 :::
-:::
+
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -450,13 +584,72 @@ Examples of functions you might use:
 
 For our sample data we are going to use the following.
 
-1. `dplyr::select()` to drop identifying variables and
-2. `dplyr::case_when()` to recategorize names into our unique study ID values
+1. `dplyr::case_when()` to recategorize names into our unique study ID values and
+2. `dplyr::select()` to drop identifying variables
 
-## De-identify data - Select
+## De-identify data
 
-<br>
+::: panel-tabset
 
+### Recategorize values
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  dplyr::mutate(new_var_name =
+                  case_when(
+                    var_name == old_value1 ~ new_value1,
+                    var_name == old_value2 ~ new_value2
+                  ))
+
+```
+
+- To learn more about setting *default* values for `case_when()`, type `?case_when` in your console
+- Note that there is a new function, `case_match()`, that is worth looking in to. It reduces repetition in the syntax.
+
+### Recategorize values
+
+::: columns
+::: {.column width="50%"}
+
+
+My data frame that I want to de-identify
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+
+df <- data.frame(name = c("emma", "brandon"),
+                 score = c(22, 40))
+
+df
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+
+df |>
+  mutate(id = 
+           case_when(
+             name == "emma" ~ 300,
+             name == "brandon" ~ 301
+           ))
+
+
+```
+
+ 
+:::
+:::
+
+### Select variables
 
 ::: columns
 ::: {.column width="50%"}
@@ -472,12 +665,30 @@ df |>
 
 ```
 
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  select(varname1:varname3)
+
+```
+
+Using [tidyselection](https://tidyselect.r-lib.org/reference/language.html) helpers
+```{r}
+#| echo: true
+#| eval: false
+
+df |>
+  select(starts_with("grade"))
+
+```
 
 :::
 
 ::: {.column width="50%"}
 
-To drop variables I add `-`
+To drop variables I add **`-`**
 
 ```{r}
 #| echo: true
@@ -488,31 +699,37 @@ df |>
 
 ```
 
-- If I had more than one variable to drop, I can use `-c(var1, var2)`
+```{r}
+#| echo: true
+#| eval: false
+ 
+df |>
+  select(-varname1:varname3)
 
-:::
-:::
-
-## De-identify data - Categorize
-
-<br>
+```
 
 ```{r}
 #| echo: true
 #| eval: false
-
+ 
 df |>
-  dplyr::mutate(new_var_name =
-                  case_when(
-                    var_name == old_value1 ~ new_value1,
-                    var_name == old_value2 ~ new_value2,
-                  ))
+  select(-c(varname1, varname4))
 
 ```
 
+```{r}
+#| echo: true
+#| eval: false
+ 
+df |>
+  select(-starts_with("name"))
 
-- To learn more about setting *default* values for `case_when()`, type `?case_when` in your console
-- Note that there is a new function, `case_match()`, that is worth looking in to. It reduces repetition in the syntax.
+```
+
+:::
+:::
+
+:::
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -548,7 +765,7 @@ Two functions we can use to rename variables
 ::: columns
 ::: {.column width="50%"}
 
-Rename one variable
+Rename just a few variables
 
 ```{r}
 #| echo: true
@@ -687,6 +904,8 @@ countdown(minutes = 3, font_size = "2em")
 
 Depending on what is needed, there are several functions we can use to change variable types.
 
+<br>
+
 Some examples include:
 
 - `as.numeric()`
@@ -795,6 +1014,7 @@ df |>
 <br>
 
 `dplyr::across()` allows you to apply the same transformation across multiple columns
+    - This can be used in `case_when()`, `recode()`, or `replace_na()`
 
 <br>
 
@@ -802,15 +1022,12 @@ df |>
 
 df |>
   mutate(across(var1:var3, 
-                ~ case_when(
-                  . == oldvalue1 ~ newvalue1,
-                  . == oldvalue2 ~ newvalue2
-                )))
+                  ~ replace_na(., replace = 0)))
 
 ```
 
-
-If you don't want to save over the existing variables, you can add the argument *.names* which lives in the `dplyr::across()` function. This creates new variables with new names.
+This will save over existing variables.
+    - If you don't want to save over the existing variables, you can add the argument *.names* which lives in the `dplyr::across()` function. This creates new variables with new names.
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -885,3 +1102,171 @@ df |>
 countdown(minutes = 3, font_size = "2em")
 
 ```
+
+## Validate data
+
+::: columns
+::: {.column width="60%"}
+
+- Create tables of information
+  - `dplyr::count()`, `janitor::tabyl()`
+- Create graphs
+  - `ggplot2`
+- Calculate summary statistics
+  - All of the functions from "Review the data" section
+- Create codebooks
+  - `codebookr`, `memisc`, `sjPlot`
+- Creating tests that pass/fail based on a set of criteria
+  - `pointblank`, `validate`, `assertr`, `dataquieR`
+
+
+:::
+
+::: {.column width="40%"}
+
+![](images/codebook.PNG){fig-align="center"}
+
+:::
+:::
+
+:::{.notes}
+
+- There are many ways to validate data based on data quality criteria
+- You most likely want to do a combination of these things in your validation process
+
+:::
+## Validate data
+
+::: panel-tabset
+
+### Create our validation criteria
+
+Here we are using the `pointblank` package to develop some validation tests
+
+<br>
+
+```{r echo=FALSE}
+
+library(pointblank)
+
+df <- tibble::tribble(~stu_id, ~age, ~test_score,
+                      300, 12, 400,
+                      301, 13, 450,
+                      303, 12, 999)
+```
+
+
+```{r eval=FALSE}
+
+create_agent(df) |>
+  rows_distinct(columns = vars(stu_id)) |>
+  col_vals_not_null(columns = vars(stu_id)) |>
+  col_vals_between(columns = vars(stu_id), left = 300, right = 500, na_pass = FALSE) |>
+  col_is_numeric(columns = vars(age, test_score)) |>
+  col_vals_between(columns = vars(test_score), left = 0, right = 500, na_pass = TRUE) |>
+  interrogate()
+
+```
+
+### Review the report
+
+![](images/pointblank.PNG){fig-align="center"}
+
+:::
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 5 minutes to validate our data
+
+1. Navigate to exercise 10.
+2. Run the validation code.
+    - Do all of our tests pass?
+3. Update the code with one more validation criteria. Run the code again.
+    - Do all of our tests still pass?
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 5, font_size = "2em")
+
+```
+
+## Export data
+
+Similar to importing data, we have many options for exporting our data depending on the format we want to export to.
+
+- `openxlsx::write.xlsx()`
+- `haven::write_sav()`, `haven::write_dta()`, `haven::write_sas()`
+- `readr::write_csv()`
+    - x 
+      - The object we are exporting
+    - file
+      - The name of the new file plus any folders where you want the file to live
+    - na = "NA"
+    
+<br>
+    
+```{r eval=FALSE}
+
+write_csv(df, file = "data/raw/w1_stu_obs_clean.csv", na = "")
+
+```
+
+## [Exercise]{style="color:#ccd64d"}{.background-secondary}
+
+<br>
+
+### Take 2 minutes to export our data
+
+1. Navigate to exercise 11.
+2. Update our code to export the clean data file.
+3. Once exported, open the file to confirm it looks as expected.
+
+```{r}
+#| echo: false
+#| cache: false
+countdown(minutes = 2, font_size = "2em")
+
+```
+
+## Coding best practices
+
+::: columns
+::: {.column width="60%"}
+
+1. Use a coding template
+2. Follow a coding style guide
+    - The [tidyverse style guide](https://style.tidyverse.org/syntax.html)
+3. Use relative file paths
+    - ❌ "C:/Users/Crystal/Desktop/project/data/raw_file.csv"
+    - ✔️ "data/raw_file.csv"
+4. Write all cleaning steps in code
+5. Comment every step in your code
+6. Check all of your work throughout
+7. If possible, have someone else review your code
+
+:::
+
+::: {.column width="40%"}
+
+![](images/code_template.PNG){fig-align="center"}
+
+:::
+:::
+
+:::{.notes}
+
+You may have noticed that throughout these exercises, I always performed a check to make sure that the transformation worked as expected
+
+:::
+
+## Versioning
+
+1. Version your code ("sample_tch_svy_cleaning_v01.R")
+2. Version your files ("sample_tch_svy_clean_v01.csv")
+3. Make notes in a changelog.
+
+![](images/changelog.PNG){fig-align="center"}
+

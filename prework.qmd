@@ -24,7 +24,7 @@ Note that the presenter will **NOT** be able to help you with local computer pro
 ``` {r}
 #| eval: false
 
-pkgs <- c("tidyverse", "readxl", "summarytools", "janitor")
+pkgs <- c("tidyverse", "readxl", "summarytools", "janitor", "pointblank")
 
 install.packages(pkgs)
 

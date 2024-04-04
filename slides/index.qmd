@@ -22,3 +22,5 @@ execute:
 {{< include 03-cleaning-checklist.qmd >}}
 
 {{< include 04-cleaning-r.qmd >}}
+
+{{< include 05-documentation.qmd >}}

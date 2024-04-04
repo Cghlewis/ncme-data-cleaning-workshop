@@ -19,7 +19,7 @@ Before sharing research study data, it should be vetted to ensure that it is int
 
 ## Learning objectives
 
-- Understand how to assess a data set for 8 data quality indicators
+- Understand how to assess a data set for 7 data quality indicators
 - Be able to review a data set and apply a list of standardized data cleaning steps as needed
 - Feel comfortable using R code to clean a data set
 - Understand types of documentation that should be shared alongside data
@@ -30,11 +30,14 @@ This workshop is for any education researcher who could benefit from guidance on
 
 This workshop assumes you have some experience working with rectangular data, as well as a basic working knowledge of the R programming language and experience working in RStudio. This course will focus on functions in the {Tidyverse} so familiarity with that package will be helpful, but is not required. 
 
-## Further Reading
+## Further Learning
 
 * [Data Management in Large-Scale Education Research book](https://datamgmtinedresearch.com/)
-* [Data Cleaning for Data Sharing Blog Post Series](https://cghlewis.com/blog/data_clean_01/)
 * [The Basics of Data Management](https://figshare.com/articles/preprint/The_Basics_of_Data_Management/13215350/2)
+- [Data Organization in Spreadsheets](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989)
+* [Data Cleaning for Data Sharing Blog Post Series](https://cghlewis.com/blog/data_clean_01/)
+* [Four Simple Ways to Integrate your Data Dictionary into Your Data Cleaning Process](https://cghlewis.com/blog/dict_clean/)
+
 
 ## Speaker
 

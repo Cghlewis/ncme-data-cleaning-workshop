@@ -1,0 +1,40 @@
+# Documentation for Data Sharing {.background-secondary}
+
+
+## Types of documentation
+
+::: columns
+::: {.column width="50%"}
+
+1. Project-level documentation
+
+2. Data-level documentation
+
+3. Variable-level documentation
+
+4. Repository Metadata
+
+:::
+
+::: {.column width="50%"}
+
+Benefits:
+
+- Allows your data to be correctly interpreted and used
+- Allows your work to be reproducible
+- Allows your work to be findable
+
+:::
+:::
+
+## Project-level documentation
+
+## Data-level documentation
+
+## Variable-level documentation
+
+## Repository Metadata
+
+
+## Thank you!
+
