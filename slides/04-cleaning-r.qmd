@@ -2,7 +2,10 @@
 
 :::{.notes}
 
-Before we jump in I just want to preface this section with the understanding that this material isn't about learning all of the various ways you may be able to solve every unique data cleaning problem. There's no way to cover that much material, and on top of that, for every data cleaning issue you encounter in your data, there are probably 10 different ways to solve that issue. So I am sharing this to say, that this section is not about learning a specific set of data cleaning functions, it is about learning a standardized way of thinking through a data cleaning process and pulling from the available R functions, some of which we will learn today, to work through that process. 
+- Before we jump
+- that this material is not about learning a comprehensive set of data cleaning functions that you can use to solve every data cleaning issue you may encounter
+- There's no way to cover that much material, and on top of that, for every data cleaning issue you encounter in your data, there are probably 10 different ways to solve that issue. 
+- Instead this section is more about learning a standardized way of thinking through a data cleaning process and pulling from the available R functions, some of which we will learn today, to work through that process. 
 
 :::
 
@@ -10,9 +13,9 @@ Before we jump in I just want to preface this section with the understanding tha
 
 <br>
 
-- If you want to save the work you do, you need to save it to an object that lives in your environment
+- If you want to save the output from something you do in R, you need to save it to an object that lives in your environment
   - Objects should follow the same naming rules we discussed earlier
-- If you simply want to view the results, you don't need to save values into an object
+- If you simply want to view an output, you don't need to save it into an object
 
 <br>
 
@@ -38,6 +41,13 @@ mean(age)
 ```
 
 :::
+:::
+
+
+:::{.notes}
+
+Foundational
+
 :::
 
 ## Objects
@@ -82,16 +92,41 @@ id
 :::
 :::
 
+## RStudio Pane Layout
 
-## Functions
+
+![Image from [RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](images/r_panes.PNG)
+
+## Script Files
 
 ::: columns
 ::: {.column width="50%"}
 
+R Script File
+
+![](images/script.PNG){fig-align="center"}
+
+:::
+
+::: {.column width="50%"}
+
+R Markdown File
+
+![](images/rmdfile.PNG){fig-align="center"}
+
+:::
+:::
+
+
+## Functions
+
+::: columns
+::: {.column width="60%"}
+
 - Anatomy of a function
     - **function_name(argument1, argument2, argument3, ...)**
       - the first argument is usually an object
-    - You can view arguments by typing ?functionname in your console
+    - You can view arguments by typing `?functionname` in your console
 
 - Arguments usually have defaults
     - For example `mean(x, trim, na.rm)`
@@ -102,7 +137,7 @@ id
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 <br>
 <br>
@@ -167,72 +202,6 @@ Foundational
 
 :::
 
-## Tidyverse
-
-<br>
-
-An opinionated collection of R packages designed for data science
-
-All packages share an underlying design philosophy, grammar, and data structures
-
-<br>
-
-::: {layout-nrow=4}
-
-![](images/dplyr.png)
-![](images/tidyr.png)
-![](images/stringr.png)
-![](images/readr.png)
-![](images/purrr.png)
-
-:::
-
-## Tidyverse
-
-<br>
-
-Selecting `test_score` and `grade_level` from our data frame named `sch_data`
-
-<br>
-
-::: columns
-::: {.column width="50%"}
-
-[Tidy Evaluation](https://dplyr.tidyverse.org/articles/programming.html)
-
-<br>
-
-```{r echo=FALSE}
-
-df <- tibble::tribble(~id, ~test_score, ~grade_level,
-                1, 350, 3,
-                2, 380, 4,
-                3, 290, 5)
-
-```
-
-```{r echo=TRUE}
-
-select(df, test_score, 
-       grade_level)
-
-```
-:::
-
-::: {.column width="50%"}
-
-Base R
-
-<br>
-
-```{r echo=TRUE}
-
-df[ , c("test_score", 
-              "grade_level")]
-
-```
-:::
-:::
 
 ## Pipes
 
@@ -309,7 +278,7 @@ df |>
 Assignment operators
 
 - `<-` Assign value to an object
-- `=` Assign value to an object
+- `=` Assign values to an argument
 
 ```{r eval = FALSE}
 
@@ -396,8 +365,8 @@ Common data importing functions
 
 1. Open "exercises.Rmd" in our Posit Cloud project.
 2. Navigate to exercise 1.
-3. Update the code and run the code to read in the data using the green arrow.
-4. Run the code chunk to view the data.
+3. Update the first code chunk and run the code to read in the data using the green arrow.
+4. Run the second code chunk to view the data.
 
 If you get stuck, you can open "solutions.Rmd"
 
@@ -407,6 +376,12 @@ If you get stuck, you can open "solutions.Rmd"
 countdown(minutes = 3, font_size = "2em")
 
 ```
+
+:::{.notes}
+
+Everything in this file will build off of each other so you will need to keep up with the exercises along the way.
+
+:::
 
 ## Review our data
 
@@ -448,9 +423,9 @@ There are several functions we can use to explore data
 1. Navigate to exercise 2.
 2. Run the code. 
     - Write down any potential issues you see in the data.
-3. Open "sample_tch_svy_data_dictionary.xlsx" in the `docs` folder. 
+3. Open "sample_tch_svy_data-dictionary.xlsx" in the `docs` folder. 
     - What issues do you see when you compare the data to our data dictionary?
-4. Review "sample_tch_svy_cleaning-plan.txt" in the `docs` folder. 
+4. Open "sample_tch_svy_cleaning-plan.txt" in the `docs` folder. 
     - How does it compare to the issues you wrote down?
 
 ```{r}
@@ -539,7 +514,7 @@ df |>
 - Consider arranging your data first, before removing duplicates
 - Replace `date` with any variable that you want to arrange your data by
   - The default is to sort values in ascending order
-    - If you want descending order `arrange(desc(date))
+    - If you want descending order `arrange(desc(date))`
 
 :::
 
@@ -654,6 +629,7 @@ df |>
 ::: columns
 ::: {.column width="50%"}
 
+
 To select variables of interest
 
 ```{r}
@@ -674,7 +650,6 @@ df |>
 
 ```
 
-Using [tidyselection](https://tidyselect.r-lib.org/reference/language.html) helpers
 ```{r}
 #| echo: true
 #| eval: false
@@ -722,7 +697,7 @@ df |>
 #| eval: false
  
 df |>
-  select(-starts_with("name"))
+  select(-contains("name"))
 
 ```
 
@@ -738,9 +713,9 @@ df |>
 ### Take 5 minutes to de-identify our data
 
 1. Navigate to exercise 4.
-2. Run the code to create a `sch_id` variable.
+2. Edit and run the code to create a `sch_id` variable.
     - Review the new variable after it is created.
-3. Run the code to drop our identifying variables.
+3. Edit and run the code to drop our identifying variables.
     - Review to make sure those variables were removed.
 
 ```{r}
@@ -758,7 +733,7 @@ Two functions we can use to rename variables
     - Commonly used to rename just a few variables
 - `purrr::set_names()`
     - Used to rename all of our variables
-    - Variables must be in the exact right order
+    - Variables in your dataset must be ordered in the same way as in `set_names()`
 
 <br>
 
@@ -800,9 +775,9 @@ df |>
 
 ### Take 3 minutes to rename variables
 
-1. Navigate to exercise 3.
+1. Navigate to exercise 5.
 2. Review the current variable names.
-3. Rename variables according to our data dictionary.
+3. Edit the code to rename variables according to our data dictionary.
 4. Check variable names again to make sure the renaming worked.
 
 ```{r}
@@ -890,7 +865,7 @@ df |>
 
 1. Navigate to exercise 6.
 2. Review the current values for `tch_yrs`.
-3. Remove all non-numeric values from this variable.
+3. Edit the code to remove all non-numeric values from this variable.
 4. Review the new values in `tch_yrs`.
 
 ```{r}
@@ -961,7 +936,7 @@ We end up converting several values to `NA` (notice our warning)
 
 1. Navigate to exercise 7.
 2. Review the current variable type for `tch_yrs`.
-3. Convert the variable to numeric.
+3. Edit the code and convert the variable type to numeric.
 4. Review the new variable type for `tch_yrs`.
 
 ```{r}
@@ -1002,7 +977,7 @@ df |>
 df |> 
   mutate(newvar = 
            replace_na(oldvar, 
-                      replace = 0))
+                      replace = newvalue))
 
 ```
 
@@ -1013,7 +988,7 @@ df |>
 
 <br>
 
-`dplyr::across()` allows you to apply the same transformation across multiple columns
+`dplyr::across()` allows you to apply the same transformation across multiple columns  
     - This can be used in `case_when()`, `recode()`, or `replace_na()`
 
 <br>
@@ -1026,7 +1001,7 @@ df |>
 
 ```
 
-This will save over existing variables.
+This will save over existing variables.  
     - If you don't want to save over the existing variables, you can add the argument *.names* which lives in the `dplyr::across()` function. This creates new variables with new names.
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -1036,9 +1011,9 @@ This will save over existing variables.
 ### Take 5 minutes to recode variables
 
 1. Navigate to exercise 8.
-2. Recode the blank values for the `grade` variables.  
+2. Update the code to recode the blank values for the `grade` variables.  
     - Check to see if the recoding worked.
-3. Recode the `mathanx` variable.  
+3. Update the code to recode the `mathanx` variable.  
     - Check to see that the recoding worked.
 
 ```{r}
@@ -1093,7 +1068,7 @@ df |>
 ### Take 3 minutes to construct `gad_sum`
 
 1. Navigate to exercise 9.
-2. Calculate `gad_sum`
+2. Update the code to calculate `gad_sum`
 3. Review summary information for the new variable.
 
 ```{r}
@@ -1116,8 +1091,8 @@ countdown(minutes = 3, font_size = "2em")
   - All of the functions from "Review the data" section
 - Create codebooks
   - `codebookr`, `memisc`, `sjPlot`
-- Creating tests that pass/fail based on a set of criteria
-  - `pointblank`, `validate`, `assertr`, `dataquieR`
+- Create tests that pass/fail based on a set of criteria
+  - **`pointblank`**, `validate`, `assertr`, `dataquieR`
 
 
 :::
@@ -1132,6 +1107,9 @@ countdown(minutes = 3, font_size = "2em")
 :::{.notes}
 
 - There are many ways to validate data based on data quality criteria
+
+- Codebooks, which can be exported to things like word or text documents, provide univariate summary statistics about your data. It just gives you a nice easy to read summary of what is happening in your data.
+
 - You most likely want to do a combination of these things in your validation process
 
 :::
@@ -1141,7 +1119,7 @@ countdown(minutes = 3, font_size = "2em")
 
 ### Create our validation criteria
 
-Here we are using the `pointblank` package to develop some validation tests
+Here we are using the [pointblank](https://rstudio.github.io/pointblank/reference/index.html) package to develop some validation tests
 
 <br>
 
@@ -1256,7 +1234,11 @@ countdown(minutes = 2, font_size = "2em")
 
 :::{.notes}
 
-You may have noticed that throughout these exercises, I always performed a check to make sure that the transformation worked as expected
+That will just help ensure that your code is more readable, usable, and reproducible in the future. 
+
+- your chain of processing is lost, and your work is no longer reproducible
+
+You may have noticed that throughout these exercises, that we always performed a check to make sure that the transformation worked as expected
 
 :::
 

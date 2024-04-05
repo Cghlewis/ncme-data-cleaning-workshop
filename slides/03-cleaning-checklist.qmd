@@ -60,7 +60,7 @@
 
 However, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards. 
 
-As you use this checklist to clean your specific datasaet you use the steps that are relevant to your data and remove the steps that are not relevant. 
+As you use this checklist to clean your specific dataset you use the steps that are relevant to your data and remove the steps that are not relevant. 
 
 The order of these steps are fluid. With the exception of the first two on the list, you can move them around in whatever order makes sense for your specific dataset.
 
@@ -146,7 +146,7 @@ It's really important that these kinds of decisions rules are documented for fut
 - Suppression
   - Remove data in a particular cell or row (In this example, age 67 was an outlier so I suppressed that cell value and replaced it with -98 which I’ve coded as suppressed).
 - Generalization
-  - Reduce precision in the data (In this example here, I’ve binned my age rages so they are less precise)
+  - Reduce precision in the data (In this example here, I’ve binned my age ranges so they are less precise)
 - Truncation
   - Restricting upper and lower ranges to mask outliers
   

@@ -322,7 +322,7 @@ Again we don't have a data dictionary for this example...
 ## Accurate
 
 - Information should be accurate based on any implicit knowledge you have
-  - For instance, values should not exist for a school where you know that data was not collected that wave
+  - For instance, maybe you know a student is in 2nd grade because you've interacted with that student, but their grade level is shown as 5th in the data
 
 - Accurate within and across sources
   - A date of birth collected from school records should match the date of birth provided by the student
@@ -372,6 +372,8 @@ So in this case we don't have any implicit knowledge, but by comparing pieces of
 ::: {.notes}
 
 And the reason that this consistency matters is that a computer doesn't know that three different spellings of yes are all still yes. It will think these are 3 different things.
+
+So if you collect an item in the fall and then you collect that same item in the spring, you want to make sure that item is coded and formatted in the same way. This allows you to more easily compare and combine information.
 
 :::
 
@@ -501,9 +503,9 @@ The number one way to reduce data errors is to make a plan before you collect da
 
 ::: {.notes}
 
-So before we move on to how to clean data for the purposes of data sharing, I want to point out one really important thing. And that is, if you are collecting your own original data
+So before we move on to how to our data cleaning checklist, I want to point out one really important thing. And that is, if you are collecting your own original data
 
-Doing this ensures not only that you have much less data cleaning to do in the end, but it also prevents you from potentially losing data or having to recollect bad data. So it's 100% worth the time and effort to spend time planning for quality data collection in the beginning if you can.
+Doing this ensures not only that you have much less data cleaning to do in the end, but it also prevents you from potentially losing data or having to recollect bad data. So it's 100% worth the effort to spend time planning for quality data collection in the beginning if you can.
 
 But of course, we are not always in charge of data collection and we just have to deal with the data we are given and so are going to talk about this in the next sections.
 
