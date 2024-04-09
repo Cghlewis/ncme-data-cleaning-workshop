@@ -563,7 +563,7 @@ df |>
 
 1. Navigate to Exercise 3.
 2. Run the code to check for duplicates. 
-    - Which `tch_id` is duplicated?
+    - Make note of the duplicate `tch_id` number.
 3. Run the code to remove our duplicates. 
     - Our documented rule is that if both surveys are complete, keep the most recently completed row.
 4. Run a check to make sure duplicates are removed.

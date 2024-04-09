@@ -571,7 +571,7 @@
     "href": "slides/index.html#exercise-9",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to check for and remove duplicates.\n\nNavigate to Exercise 3.\nRun the code to check for duplicates.\n\nWhich tch_id is duplicated?\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun a check to make sure duplicates are removed.\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2024-04-02”).\n\n\n\n\n−+\n03:00"
+    "text": "Exercise\n\nTake 3 minutes to check for and remove duplicates.\n\nNavigate to Exercise 3.\nRun the code to check for duplicates.\n\nMake note of the duplicate tch_id number.\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun a check to make sure duplicates are removed.\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2024-04-02”).\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/index.html#de-identify-data-3",
