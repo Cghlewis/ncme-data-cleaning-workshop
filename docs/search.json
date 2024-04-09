@@ -249,7 +249,7 @@
     "href": "slides/index.html#de-identified-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identified",
-    "text": "De-identified\n\nOpen-ended questions\n\nThese variables may contain information that can directly or indirectly identify individuals\n\nOutliers\n\nIf someone has extreme values for a variable, it may be easier to identify that individual\n\nSmall cell sizes\n\nNCES Standard 4-2-10, suggests that all categories have at least 3 cases to minimize risk\n\nCombinations of variables, or crosstabs, can also create small cell-sizes\n\nrace + gender + grade level\n\n\n\n🚨 Consider this in the context of risk\n\nMath assessment may be low risk while a survey on substance use is higher risk\n\n\nBut there is more you need to check for.\nYou also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it’s a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth."
+    "text": "De-identified\n\nOpen-ended questions\n\nThese variables may contain information that can directly or indirectly identify individuals\n\nOutliers\n\nIf someone has extreme values for a variable, it may be easier to identify that individual\n\nSmall cell sizes\n\nNCES Standard 4-2-10, suggests that all categories have at least 3 cases to minimize risk\n\nCombinations of variables, or crosstabs, can also create small cell-sizes\n\nrace + gender + grade level\n\n\n\n🚨 Consider this in the context of risk\n\nMath assessment may be low risk while a survey on substance use is higher risk\n\n\nBut there is more you need to check for.\nMaking transformations based on these kinds of criteria can greatly alter your data, depending on the kinds of alterations you make. So before making alterations, you also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it’s a math assessment), the risk of harm if a participant re-identified is pretty low and you may decide to make minimal changes. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth and you need to be really thoughtful and careful in deciding what is the best course of action for your data."
   },
   {
     "objectID": "slides/index.html#exercise-6",
@@ -431,7 +431,7 @@
     "href": "slides/index.html#export-data-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Export data",
-    "text": "Export data\nWhen you export your files, it’s important to name them consistently and clearly.\n\nFollow rules similar to our variable naming rules\n\nMachine readable (except now - is allowed)\nHuman readable\n\nA user should be able to understand the contents of the file without opening it\n\n\n\n\nWhich gives you a better idea of what is in the file? 🤔\n\n“Project X Full Data.csv”\n“projectx_wave1_stu_svy_clean.csv”"
+    "text": "Export data\nWhen you export your files, it’s important to name them consistently and clearly.\n\nFollow rules similar to our variable naming rules\n\nMachine-readable (except now - is allowed)\nHuman-readable\n\nA user should be able to understand what the file contains without opening it\n\n\n\n\nWhich gives you a better idea of what is in the file? 🤔\n\n“Project X Full Data.csv”\n“projectx_wave1_stu_svy_clean.csv”"
   },
   {
     "objectID": "slides/index.html#creating-a-data-cleaning-plan",
@@ -459,7 +459,7 @@
     "href": "slides/index.html#objects",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Objects",
-    "text": "Objects\n\n\nIf you want to save the output from something you do in R, you need to save it to an object that lives in your environment\n\nObjects should follow the same naming rules we discussed earlier\n\nIf you simply want to view an output, you don’t need to save it into an object\n\n\n\n\n\nage &lt;- c(12, 10, 8)\n\nage &lt;- age + 1\n\n\n\nmean(age)\n\n[1] 11\n\n\n\n\n\nFoundational"
+    "text": "Objects\n\n\nIf you want to save the output from something you do in R, you need to save it to an object that lives in your environment\n\nObjects should follow the same naming rules we discussed earlier\n\nIf you simply want to view an output, you don’t need to save it into an object\n\n\n\n\n\nage &lt;- c(12, 10, 8)\n\nage_new &lt;- age + 1\n\n\n\nmean(age_new)\n\n[1] 11\n\n\n\n\n\nFoundational"
   },
   {
     "objectID": "slides/index.html#objects-1",
@@ -508,7 +508,7 @@
     "href": "slides/index.html#operators",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Operators",
-    "text": "Operators\n\n\nComparison operators\n\n== equal to\n!= not equal to\n&lt; less than\n&gt; greater than\n%in% value is present within\n\n\ndf |&gt;\n  filter(city %in% c(\"boston\",\"philly\"))\n\n\nAssignment operators\n\n&lt;- Assign value to an object\n= Assign values to an argument\n\n\ndf &lt;- df |&gt;\n  mutate(year = \"2024\")"
+    "text": "Operators\n\n\nComparison operators\n\n== equal to\n!= not equal to\n&lt; less than\n&gt; greater than\n%in% value is present within\n\n\ndf |&gt;\n  filter(city %in% c(\"boston\",\"philly\"))\n\n\nAssignment operators\n\n&lt;- Assign values to an object\n= Assign value to an argument\n\n\ndf &lt;- df |&gt;\n  mutate(year = \"2024\")"
   },
   {
     "objectID": "slides/index.html#scenario",
@@ -536,21 +536,21 @@
     "href": "slides/index.html#exercise-7",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nNavigate to exercise 1.\nUpdate the first code chunk and run the code to read in the data using the green arrow.\nRun the second code chunk to view the data.\n\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n−+\n03:00\n\n\n\n\nEverything in this file will build off of each other so you will need to keep up with the exercises along the way."
+    "text": "Exercise\n\nTake 3 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nFirst run the “Library packages” chunk using the green arrow.\nThen navigate to Exercise 1.\nUpdate the first code chunk and run the code to read in the data.\nRun the second code chunk to view the data.\n\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n−+\n03:00\n\n\n\n\nEverything in this file will build off of each other so you will need to keep up with the exercises along the way."
   },
   {
     "objectID": "slides/index.html#review-our-data",
     "href": "slides/index.html#review-our-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Review our data",
-    "text": "Review our data\n\n\n\n\nHow many rows?\n\nIn this hypothetical situation, we assume we are not missing any cases\nHowever, there may be duplicates\n\nHow many columns?\n\nCompare to our data dictionary\n\nWhat are the variable values and ranges?\n\nCompare to our data dictionary\n\nHow much missing data do we have?\n\n\nThere are several functions we can use to explore data\n\ndplyr::glimpse()\nskimr::skim()\nbase::summary()\nsummarytools::dfSummary()\nHmisc::describe()"
+    "text": "Review our data\n\n\n\n\nHow many rows?\n\nIn this hypothetical situation, we assume we are not missing any cases\nHowever, there may be duplicates\n\nHow many columns?\n\nCompare to our data dictionary\n\nWhat are the variable values and ranges? Variable types?\n\nCompare to our data dictionary\n\nHow much missing data do we have?\n\n\nThere are several functions we can use to explore data\n\ndplyr::glimpse()\nskimr::skim()\nbase::summary()\nsummarytools::dfSummary()\nHmisc::describe()"
   },
   {
     "objectID": "slides/index.html#exercise-8",
     "href": "slides/index.html#exercise-8",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data.\n\nOpen “sample_tch_svy_data-dictionary.xlsx” in the docs folder.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nOpen “sample_tch_svy_cleaning-plan.txt” in the docs folder.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
+    "text": "Exercise\n\nTake 5 minutes to review our data.\n\nNavigate to Exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data based on our data quality criteria.\n\nOpen “sample_tch_svy_data-dictionary.xlsx” in the docs folder.\n\nWhat issues do you see when you compare the data to our data dictionary?\n\nOpen “sample_tch_svy_cleaning-plan.txt” in the docs folder.\n\nHow does it compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
   },
   {
     "objectID": "slides/index.html#adjust-the-sample-1",
@@ -571,7 +571,7 @@
     "href": "slides/index.html#exercise-9",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to check for and remove duplicates.\n\nNavigate to exercise 3.\nRun the code to check for duplicates.\n\nWhich tch_id is duplicated?\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun a check to make sure duplicates are removed.\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2024-04-02”).\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to check for and remove duplicates.\n\nNavigate to Exercise 3.\nRun the code to check for duplicates.\n\nWhich tch_id is duplicated?\n\nRun the code to remove our duplicates.\n\nOur documented rule is that if both surveys are complete, keep the most recently completed row.\n\nRun a check to make sure duplicates are removed.\nRun the code to confirm that we kept the most recent submission of the duplicate survey (“2024-04-02”).\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#de-identify-data-3",
@@ -585,14 +585,14 @@
     "href": "slides/index.html#de-identify-data-4",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "De-identify data",
-    "text": "De-identify data\n\nRecategorize valuesRecategorize valuesSelect variables\n\n\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name == old_value1 ~ new_value1,\n                    var_name == old_value2 ~ new_value2\n                  ))\n\n\nTo learn more about setting default values for case_when(), type ?case_when in your console\nNote that there is a new function, case_match(), that is worth looking in to. It reduces repetition in the syntax.\n\n\n\n\n\nMy data frame that I want to de-identify\n\n\n     name score\n1    emma    22\n2 brandon    40\n\n\n\n\ndf |&gt;\n  mutate(id = \n           case_when(\n             name == \"emma\" ~ 300,\n             name == \"brandon\" ~ 301\n           ))\n\n     name score  id\n1    emma    22 300\n2 brandon    40 301\n\n\n\n\n\n\n\n\nTo select variables of interest\n\ndf |&gt;\n  select(varname1, varname2, varname3)\n\n\ndf |&gt;\n  select(varname1:varname3)\n\n\ndf |&gt;\n  select(starts_with(\"grade\"))\n\n\nTo drop variables I add -\n\ndf |&gt;\n  select(-varname1)\n\n\ndf |&gt;\n  select(-varname1:varname3)\n\n\ndf |&gt;\n  select(-c(varname1, varname4))\n\n\ndf |&gt;\n  select(-contains(\"name\"))"
+    "text": "De-identify data\n\nRecategorize valuesRecategorize valuesSelect variables\n\n\n\ndf |&gt;\n  dplyr::mutate(new_var_name =\n                  case_when(\n                    var_name == old_value1 ~ new_value1,\n                    var_name == old_value2 ~ new_value2\n                  ))\n\n\nTo learn more about setting default values for case_when(), type ?case_when in your console\nNote that there is a new function, case_match(), that is worth looking in to. It reduces repetition in the syntax.\n\n\n\n\n\nMy data frame that I want to de-identify\n\n\n    fname    lname score1 score2\n1    emma    royce     22     50\n2 brandon figueroa     40     61\n\n\n\n\ndf |&gt;\n  mutate(id = \n           case_when(\n             fname == \"emma\" ~ 300,\n             fname == \"brandon\" ~ 301\n           ))\n\n    fname    lname score1 score2  id\n1    emma    royce     22     50 300\n2 brandon figueroa     40     61 301\n\n\n\n\n\n\n\n\nTo select variables of interest\n\ndf |&gt;\n  select(score1, score2, id)\n\n\ndf |&gt;\n  select(score1:id)\n\n\ndf |&gt;\n  select(starts_with(\"score\"), id)\n\n\nTo drop variables I add -\n\ndf |&gt;\n  select(-fname:lname)\n\n\ndf |&gt;\n  select(-c(fname, lname))\n\n\ndf |&gt;\n  select(-contains(\"name\"))"
   },
   {
     "objectID": "slides/index.html#exercise-10",
     "href": "slides/index.html#exercise-10",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to de-identify our data\n\nNavigate to exercise 4.\nEdit and run the code to create a sch_id variable.\n\nReview the new variable after it is created.\n\nEdit and run the code to drop our identifying variables.\n\nReview to make sure those variables were removed.\n\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to de-identify our data\n\nNavigate to Exercise 4.\nEdit and run the code to create a sch_id variable.\n\nReview the new variable after it is created.\n\nEdit and run the code to drop our identifying variables.\n\nReview to make sure those variables were removed.\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#rename-variables-1",
@@ -606,7 +606,7 @@
     "href": "slides/index.html#exercise-11",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to rename variables\n\nNavigate to exercise 5.\nReview the current variable names.\nEdit the code to rename variables according to our data dictionary.\nCheck variable names again to make sure the renaming worked.\n\n\n\n\n−+\n03:00"
+    "text": "Exercise\n\nTake 3 minutes to rename variables\n\nNavigate to Exercise 5.\nReview the current variable names.\nEdit the code to rename variables according to our data dictionary.\nCheck variable names again to make sure the renaming worked.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/index.html#normalize-variables-1",
@@ -627,7 +627,7 @@
     "href": "slides/index.html#exercise-12",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to normalize our tch_yrs variable\n\nNavigate to exercise 6.\nReview the current values for tch_yrs.\nEdit the code to remove all non-numeric values from this variable.\nReview the new values in tch_yrs.\n\n\n\n\n−+\n03:00"
+    "text": "Exercise\n\nTake 3 minutes to normalize our tch_yrs variable\n\nNavigate to Exercise 6.\nReview the current values for tch_yrs.\nEdit the code to remove all non-numeric values from this variable.\nReview the new values in tch_yrs.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/index.html#update-variable-type",
@@ -648,28 +648,28 @@
     "href": "slides/index.html#exercise-13",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to convert tch_yrs to numeric\n\nNavigate to exercise 7.\nReview the current variable type for tch_yrs.\nEdit the code and convert the variable type to numeric.\nReview the new variable type for tch_yrs.\n\n\n\n\n−+\n03:00"
+    "text": "Exercise\n\nTake 3 minutes to convert tch_yrs to numeric\n\nNavigate to Exercise 7.\nReview the current variable type for tch_yrs.\nEdit the code and convert the variable type to numeric.\nReview the new variable type for tch_yrs.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/index.html#recode-variables-1",
     "href": "slides/index.html#recode-variables-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Recode variables",
-    "text": "Recode variables\nCommon functions for recoding values are\n\ndplyr::case_when()\ndplyr::recode()\ntidyr::replace_na()\n\n\n\n\n\ndf |&gt;\n  mutate(newvar = \n           recode(oldvar,\n                  `oldvalue` = newvalue))\n\n\n\ndf |&gt; \n  mutate(newvar = \n           replace_na(oldvar, \n                      replace = newvalue))"
+    "text": "Recode variables\nCommon functions for recoding values are\n\ndplyr::case_when()\ndplyr::recode()\ntidyr::replace_na()\n\n\n\n\n\ndf |&gt;\n  mutate(newvar = \n           recode(oldvar,\n                  oldvalue = newvalue))\n\n\nIf the oldvalue is numeric, it requires ticks around the number, e.g., `5`\nIf either the oldvalue or newvalue is character use quotation marks, e.g., “yes”,\n\n\n\ndf |&gt; \n  mutate(newvar = \n           replace_na(oldvar, \n                      replace = newvalue))"
   },
   {
     "objectID": "slides/index.html#recode-variables-2",
     "href": "slides/index.html#recode-variables-2",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Recode variables",
-    "text": "Recode variables\n\ndplyr::across() allows you to apply the same transformation across multiple columns\n- This can be used in case_when(), recode(), or replace_na()\n\n\ndf |&gt;\n  mutate(across(var1:var3, \n                  ~ replace_na(., replace = 0)))\n\nThis will save over existing variables.\n- If you don’t want to save over the existing variables, you can add the argument .names which lives in the dplyr::across() function. This creates new variables with new names."
+    "text": "Recode variables\n\ndplyr::across() allows you to apply the same transformation across multiple columns\n\nThis can be used in case_when(), recode(), or replace_na()\n\n\n\ndf |&gt;\n  mutate(across(var1:var3, \n                  ~ replace_na(., replace = 0)))\n\nThis will save over existing variables.\n\nIf you don’t want to save over the existing variables, you can add the argument .names which lives in the dplyr::across() function. This creates new variables with new names."
   },
   {
     "objectID": "slides/index.html#exercise-14",
     "href": "slides/index.html#exercise-14",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to recode variables\n\nNavigate to exercise 8.\nUpdate the code to recode the blank values for the grade variables.\n\nCheck to see if the recoding worked.\n\nUpdate the code to recode the mathanx variable.\n\nCheck to see that the recoding worked.\n\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to recode variables\n\nNavigate to Exercise 8.\nUpdate the code to recode the blank values for the grade variables.\n\nCheck to see if the recoding worked.\n\nUpdate the code to recode the mathanx variable.\n\nCheck to see that the recoding worked.\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#construct-new-variables",
@@ -683,7 +683,7 @@
     "href": "slides/index.html#exercise-15",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 3 minutes to construct gad_sum\n\nNavigate to exercise 9.\nUpdate the code to calculate gad_sum\nReview summary information for the new variable.\n\n\n\n\n−+\n03:00"
+    "text": "Exercise\n\nTake 3 minutes to construct gad_sum\n\nNavigate to Exercise 9.\nUpdate the code to calculate gad_sum\nReview summary information for the new variable.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "slides/index.html#validate-data",
@@ -704,7 +704,7 @@
     "href": "slides/index.html#exercise-16",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to validate our data\n\nNavigate to exercise 10.\nRun the validation code.\n\nDo all of our tests pass?\n\nUpdate the code with one more validation criteria. Run the code again.\n\nDo all of our tests still pass?\n\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 5 minutes to validate our data\n\nNavigate to Exercise 10.\nRun the validation code.\n\nDo all of our tests pass?\n\nUpdate the code with one more validation criteria. Run the code again.\n\nDo all of our tests still pass?\n\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/index.html#export-data-2",
@@ -718,7 +718,7 @@
     "href": "slides/index.html#exercise-17",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 2 minutes to export our data\n\nNavigate to exercise 11.\nUpdate our code to export the clean data file.\nOnce exported, open the file to confirm it looks as expected.\n\n\n\n\n−+\n02:00"
+    "text": "Exercise\n\nTake 2 minutes to export our data\n\nNavigate to Exercise 11.\nUpdate our code to export the clean data file.\nOnce exported, open the file to confirm it looks as expected.\n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/index.html#coding-best-practices",

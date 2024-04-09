@@ -445,7 +445,7 @@ Indirect identifiers however are not necessarily unique to a particular individu
 
 But there is more you need to check for.
 
-You also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if your re-identified is pretty low. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth. 
+Making transformations based on these kinds of criteria can greatly alter your data, depending on the kinds of alterations you make. So before making alterations, you also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if a participant re-identified is pretty low and you may decide to make minimal changes. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth and you need to be really thoughtful and careful in deciding what is the best course of action for your data. 
 :::
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}

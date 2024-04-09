@@ -26,7 +26,7 @@
 
 age <- c(12, 10, 8)
 
-age <- age + 1
+age_new <- age + 1
 
 ```
 
@@ -36,7 +36,7 @@ age <- age + 1
 
 ```{r echo=TRUE}
 
-mean(age)
+mean(age_new)
 
 ```
 
@@ -277,8 +277,8 @@ df |>
 
 Assignment operators
 
-- `<-` Assign value to an object
-- `=` Assign values to an argument
+- `<-` Assign values to an object
+- `=` Assign value to an argument
 
 ```{r eval = FALSE}
 
@@ -364,9 +364,10 @@ Common data importing functions
 <br>
 
 1. Open "exercises.Rmd" in our Posit Cloud project.
-2. Navigate to exercise 1.
-3. Update the first code chunk and run the code to read in the data using the green arrow.
-4. Run the second code chunk to view the data.
+2. First run the "Library packages" chunk using the green arrow.
+3. Then navigate to Exercise 1. 
+4. Update the first code chunk and run the code to read in the data.
+5. Run the second code chunk to view the data.
 
 If you get stuck, you can open "solutions.Rmd"
 
@@ -395,7 +396,7 @@ Everything in this file will build off of each other so you will need to keep up
   - However, there may be duplicates
 - How many columns?
   - Compare to our data dictionary
-- What are the variable values and ranges?
+- What are the variable values and ranges? Variable types?
   - Compare to our data dictionary
 - How much missing data do we have?
 
@@ -420,9 +421,9 @@ There are several functions we can use to explore data
 
 ### Take 5 minutes to review our data.
 
-1. Navigate to exercise 2.
+1. Navigate to Exercise 2.
 2. Run the code. 
-    - Write down any potential issues you see in the data.
+    - Write down any potential issues you see in the data based on our data quality criteria.
 3. Open "sample_tch_svy_data-dictionary.xlsx" in the `docs` folder. 
     - What issues do you see when you compare the data to our data dictionary?
 4. Open "sample_tch_svy_cleaning-plan.txt" in the `docs` folder. 
@@ -526,7 +527,7 @@ df |>
 
 ### Take 5 minutes to check for and remove duplicates.
 
-1. Navigate to exercise 3.
+1. Navigate to Exercise 3.
 2. Run the code to check for duplicates. 
     - Which `tch_id` is duplicated?
 3. Run the code to remove our duplicates. 
@@ -597,8 +598,10 @@ My data frame that I want to de-identify
 
 library(tidyverse)
 
-df <- data.frame(name = c("emma", "brandon"),
-                 score = c(22, 40))
+df <- data.frame(fname = c("emma", "brandon"),
+                 lname = c("royce", "figueroa"),
+                 score1 = c(22, 40),
+                 score2 = c(50, 61))
 
 df
 
@@ -613,8 +616,8 @@ df
 df |>
   mutate(id = 
            case_when(
-             name == "emma" ~ 300,
-             name == "brandon" ~ 301
+             fname == "emma" ~ 300,
+             fname == "brandon" ~ 301
            ))
 
 
@@ -637,7 +640,7 @@ To select variables of interest
 #| eval: false
 
 df |>
-  select(varname1, varname2, varname3)
+  select(score1, score2, id)
 
 ```
 
@@ -646,7 +649,7 @@ df |>
 #| eval: false
 
 df |>
-  select(varname1:varname3)
+  select(score1:id)
 
 ```
 
@@ -655,7 +658,7 @@ df |>
 #| eval: false
 
 df |>
-  select(starts_with("grade"))
+  select(starts_with("score"), id)
 
 ```
 
@@ -670,7 +673,7 @@ To drop variables I add **`-`**
 #| eval: false
  
 df |>
-  select(-varname1)
+  select(-fname:lname)
 
 ```
 
@@ -679,16 +682,7 @@ df |>
 #| eval: false
  
 df |>
-  select(-varname1:varname3)
-
-```
-
-```{r}
-#| echo: true
-#| eval: false
- 
-df |>
-  select(-c(varname1, varname4))
+  select(-c(fname, lname))
 
 ```
 
@@ -712,7 +706,7 @@ df |>
 
 ### Take 5 minutes to de-identify our data
 
-1. Navigate to exercise 4.
+1. Navigate to Exercise 4.
 2. Edit and run the code to create a `sch_id` variable.
     - Review the new variable after it is created.
 3. Edit and run the code to drop our identifying variables.
@@ -775,7 +769,7 @@ df |>
 
 ### Take 3 minutes to rename variables
 
-1. Navigate to exercise 5.
+1. Navigate to Exercise 5.
 2. Review the current variable names.
 3. Edit the code to rename variables according to our data dictionary.
 4. Check variable names again to make sure the renaming worked.
@@ -863,7 +857,7 @@ df |>
 
 ### Take 3 minutes to normalize our `tch_yrs` variable
 
-1. Navigate to exercise 6.
+1. Navigate to Exercise 6.
 2. Review the current values for `tch_yrs`.
 3. Edit the code to remove all non-numeric values from this variable.
 4. Review the new values in `tch_yrs`.
@@ -934,7 +928,7 @@ We end up converting several values to `NA` (notice our warning)
 
 ### Take 3 minutes to convert `tch_yrs` to numeric
 
-1. Navigate to exercise 7.
+1. Navigate to Exercise 7.
 2. Review the current variable type for `tch_yrs`.
 3. Edit the code and convert the variable type to numeric.
 4. Review the new variable type for `tch_yrs`.
@@ -964,9 +958,12 @@ Common functions for recoding values are
 df |>
   mutate(newvar = 
            recode(oldvar,
-                  `oldvalue` = newvalue))
+                  oldvalue = newvalue))
 
 ```
+
+- If the oldvalue is numeric, it requires ticks around the number, e.g., \`5\`
+- If either the oldvalue or newvalue is character use quotation marks, e.g., "yes", 
 
 :::
 
@@ -989,7 +986,8 @@ df |>
 <br>
 
 `dplyr::across()` allows you to apply the same transformation across multiple columns  
-    - This can be used in `case_when()`, `recode()`, or `replace_na()`
+
+- This can be used in `case_when()`, `recode()`, or `replace_na()`
 
 <br>
 
@@ -1002,7 +1000,8 @@ df |>
 ```
 
 This will save over existing variables.  
-    - If you don't want to save over the existing variables, you can add the argument *.names* which lives in the `dplyr::across()` function. This creates new variables with new names.
+
+- If you don't want to save over the existing variables, you can add the argument *.names* which lives in the `dplyr::across()` function. This creates new variables with new names.
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -1010,7 +1009,7 @@ This will save over existing variables.
 
 ### Take 5 minutes to recode variables
 
-1. Navigate to exercise 8.
+1. Navigate to Exercise 8.
 2. Update the code to recode the blank values for the `grade` variables.  
     - Check to see if the recoding worked.
 3. Update the code to recode the `mathanx` variable.  
@@ -1067,7 +1066,7 @@ df |>
 
 ### Take 3 minutes to construct `gad_sum`
 
-1. Navigate to exercise 9.
+1. Navigate to Exercise 9.
 2. Update the code to calculate `gad_sum`
 3. Review summary information for the new variable.
 
@@ -1158,7 +1157,7 @@ create_agent(df) |>
 
 ### Take 5 minutes to validate our data
 
-1. Navigate to exercise 10.
+1. Navigate to Exercise 10.
 2. Run the validation code.
     - Do all of our tests pass?
 3. Update the code with one more validation criteria. Run the code again.
@@ -1196,7 +1195,7 @@ write_csv(df, file = "data/w1_stu_obs_clean.csv", na = "")
 
 ### Take 2 minutes to export our data
 
-1. Navigate to exercise 11.
+1. Navigate to Exercise 11.
 2. Update our code to export the clean data file.
 3. Once exported, open the file to confirm it looks as expected.
 

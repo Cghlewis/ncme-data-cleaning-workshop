@@ -74,7 +74,7 @@ What project this data is associated with, how data was collected and who it was
 
 ::: {.column width="50%"}
 
-![](images/project_summary.PNG){fig-align="center" width="90%"}
+![](images/project_summary.PNG){fig-align="center" width="75%"}
 
 :::
 :::

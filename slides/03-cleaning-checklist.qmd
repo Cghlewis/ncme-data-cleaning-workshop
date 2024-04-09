@@ -354,9 +354,9 @@ What's most important is that you document your decisions for future users
 When you export your files, it's important to name them consistently and clearly.
 
 - Follow rules similar to our variable naming rules
-  - Machine readable (except now `-` is allowed)
-  - Human readable
-    - A user should be able to understand the contents of the file without opening it
+  - Machine-readable (except now `-` is allowed)
+  - Human-readable
+    - A user should be able to understand what the file contains without opening it
 
 <br>
 
