@@ -487,7 +487,7 @@
     "href": "slides/index.html#functions",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Functions",
-    "text": "Functions\n\n\n\nAnatomy of a function\n\nfunction_name(argument1, argument2, argument3, …)\n\nthe first argument is usually an object\n\nYou can view arguments by typing ?functionname in your console\n\nArguments usually have defaults\n\nFor example mean(x, trim, na.rm)\n\ntrim = 0\nna.rm = FALSE\n\n\nR has many built in (base) functions\n\n\n  \n\n\n\nFunction\nTask\n\n\n\n\nView()\nView object\n\n\nstr()\nDisplay internal structure of an object\n\n\nc()\nCombine elements\n\n\nclass()\nCheck the class/type of an object\n\n\n\n\n\n\nIf you like the defaults, do nothing. You don’t have to type out the arguments. If you want to change the default, you need to type out the arguments."
+    "text": "Functions\n\n\n\nAnatomy of a function\n\nfunction_name(argument1, argument2, argument3, …)\n\nthe first argument is usually an object\n\nYou can view arguments by typing ?functionname in your console\n\nArguments usually have defaults\n\nFor example mean(x, trim, na.rm)\n\ntrim = 0\nna.rm = FALSE\n\n\nR has many built in (base) functions\n\n\n\n\n  \n\n\n\nFunction\nTask\n\n\n\n\nView()\nView object\n\n\nstr()\nDisplay internal structure of an object\n\n\nc()\nCombine elements\n\n\nclass()\nCheck the class/type of an object\n\n\n\n\n\n\nIf you like the defaults, do nothing. You don’t have to type out the arguments. If you want to change the default, you need to type out the arguments."
   },
   {
     "objectID": "slides/index.html#packages",

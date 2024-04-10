@@ -137,7 +137,11 @@ R Markdown File
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="35%"}
 
 <br>
 <br>
