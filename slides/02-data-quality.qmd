@@ -106,7 +106,7 @@ And then last, for data to be analyzable, you should only collect one piece of i
 
 <br>
 
-What data quality issues do you detect for the "analyzable" indicator?
+What data quality issues do you detect for the **`analyzable`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 
@@ -189,7 +189,7 @@ countdown(minutes = 1, font_size = "2em")
 
 <br>
 
-What data quality issues do you detect for the "interpretable" indicator?
+What data quality issues do you detect for the **`interpretable`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 
@@ -247,7 +247,7 @@ Both of these documents are excellent resources for determining if you have a co
 
 <br>
 
-What data quality issues do you detect for the "complete" indicator?
+What data quality issues do you detect for the **`complete`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 
@@ -294,7 +294,7 @@ Again, the data dictionary is going to be a really important document in determi
 
 <br>
 
-What data quality issues do you detect for the "valid" indicator?
+What data quality issues do you detect for the **`valid`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 
@@ -338,7 +338,7 @@ So accuracy can be a tough thing to judge, but depending on your level of involv
 
 <br>
 
-What data quality issues do you detect for the "accurate" indicator?
+What data quality issues do you detect for the **`accurate`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 
@@ -382,7 +382,7 @@ So if you collect an item in the fall and then you collect that same item in the
 
 <br>
 
-What data quality issues do you detect for the "consistent" indicator?
+What data quality issues do you detect for the **`consistent`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 
@@ -452,7 +452,7 @@ Making transformations based on these kinds of criteria can greatly alter your d
 
 <br>
 
-What data quality issues do you detect for the "de-identified" indicator?
+What data quality issues do you detect for the **`de-identified`** indicator?
 
 ![](images/example-data.PNG){fig-align="center"}
 

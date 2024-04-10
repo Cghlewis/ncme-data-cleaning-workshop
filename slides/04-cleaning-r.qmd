@@ -87,7 +87,7 @@ id
 ```
 
 - Common vector types (class)
-  - character, numeric, date, logical
+  - character, numeric, date (POSIXct, POSIXlt), logical
   
 :::
 :::
@@ -369,7 +369,7 @@ Common data importing functions
 
 <br>
 
-### Take 3 minutes to import the data.
+### Take 2 minutes to import the data.
 
 <br>
 
@@ -384,7 +384,7 @@ If you get stuck, you can open "solutions.Rmd"
 ```{r}
 #| echo: false
 #| cache: false
-countdown(minutes = 3, font_size = "2em")
+countdown(minutes = 2, font_size = "2em")
 
 ```
 
@@ -426,6 +426,10 @@ There are several functions we can use to explore data
 
 :::
 :::
+
+## Review our data
+
+![](images/dfsummary.PNG){fig-align="center" width="70%"}
 
 ## [Exercise - Part 1]{style="color:#ccd64d"}{.background-secondary}
 
