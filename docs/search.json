@@ -518,6 +518,13 @@
     "text": "Scenario\n\nA team member has just collected a teacher survey and has exported a raw data file.\nThey have asked you to clean the file up for the purposes of data sharing."
   },
   {
+    "objectID": "slides/index.html#exercise-7",
+    "href": "slides/index.html#exercise-7",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise",
+    "text": "Exercise\n\nTake 5 minutes to open and look at our data file.\n\nLog in to Posit Cloud and navigate to our project\n\nhttps://posit.cloud/content/7872027\n\nOpen the data folder and download “sample_tch_svy_raw.xlsx” to view the file on your computer\n\nTo download the file, check the box next to the file and go to “More” then “Export”\n\nOpen the data file and review it.\n\nNotice that there is a tab called “labels” which contains information about the current state of the variables in the dataset\n\n\n\n\n\n−+\n05:00"
+  },
+  {
     "objectID": "slides/index.html#import-our-data",
     "href": "slides/index.html#import-our-data",
     "title": "Data Cleaning for Data Sharing Using R",
@@ -532,11 +539,11 @@
     "text": "Import our file\n\n\n\nread_excel() has several arguments.\n\npath\n\nName of the file, plus folder names as needed\n“data/w1_stu_obs_raw.xlsx”\n\nsheet = NULL\ncol_names = TRUE\nna = “”\nskip = 0\n\nType ?read_excel() in your console to see more arguments"
   },
   {
-    "objectID": "slides/index.html#exercise-7",
-    "href": "slides/index.html#exercise-7",
+    "objectID": "slides/index.html#exercise-8",
+    "href": "slides/index.html#exercise-8",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to open and look at our data file.\n\nLog in to Posit Cloud and navigate to our project\n\nhttps://posit.cloud/content/7872027\n\nOpen the data folder and download “sample_tch_svy_raw.xlsx” to view the file on your computer\n\nTo download the file, check the box next to the file and go to “More” then “Export”\n\nOpen the data file and review it.\n\nNotice that there is a tab called “labels” which contains information about the current state of the variables in the dataset\n\n\n\n\n\n−+\n05:00"
+    "text": "Exercise\n\nTake 2 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nFirst run the “Library packages” chunk using the green arrow.\nThen navigate to Exercise 1.\nUpdate the first code chunk and run the code to read in the data.\nRun the second code chunk to view the data.\n\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n−+\n02:00\n\n\n\n\nEverything in this file will build off of each other so you will need to keep up with the exercises along the way."
   },
   {
     "objectID": "slides/index.html#review-our-data",
@@ -546,11 +553,25 @@
     "text": "Review our data\n\n\n\n\nHow many rows?\n\nIn this hypothetical situation, we assume we are not missing any cases\nHowever, there may be duplicates\n\nHow many columns?\nWhat are the variable values and ranges? Variable types?\nHow much missing data do we have?\n\n\n\n\nThere are several functions we can use to explore data\n\ndplyr::glimpse()\nskimr::skim()\nbase::summary()\nsummarytools::dfSummary()\nHmisc::describe()"
   },
   {
-    "objectID": "slides/index.html#exercise-8",
-    "href": "slides/index.html#exercise-8",
+    "objectID": "slides/index.html#review-our-data-1",
+    "href": "slides/index.html#review-our-data-1",
     "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise",
-    "text": "Exercise\n\nTake 2 minutes to import the data.\n\n\nOpen “exercises.Rmd” in our Posit Cloud project.\nFirst run the “Library packages” chunk using the green arrow.\nThen navigate to Exercise 1.\nUpdate the first code chunk and run the code to read in the data.\nRun the second code chunk to view the data.\n\nIf you get stuck, you can open “solutions.Rmd”\n\n\n\n−+\n02:00\n\n\n\n\nEverything in this file will build off of each other so you will need to keep up with the exercises along the way."
+    "section": "Review our data",
+    "text": "Review our data"
+  },
+  {
+    "objectID": "slides/index.html#exercise---part-1",
+    "href": "slides/index.html#exercise---part-1",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise - Part 1",
+    "text": "Exercise - Part 1\n\nTake 3 minutes to review our data.\n\nNavigate to Exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data based on our data quality criteria (analyzable, interpretable, complete, valid, accurate, consistent, de-identified).\nNote: Ignore the warning messages from dfSummary()\n\n\n\n\n\n−+\n03:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
+  },
+  {
+    "objectID": "slides/index.html#exercise---part-2",
+    "href": "slides/index.html#exercise---part-2",
+    "title": "Data Cleaning for Data Sharing Using R",
+    "section": "Exercise - Part 2",
+    "text": "Exercise - Part 2\n\nTake 5 minutes to compare our data to our documents.\n\nExport and open the “sample_tch_svy_data-dictionary.xlsx” in the docs folder.\n\nCompare the data dictionary to what you see in our raw data.\nWhat additional issues do you see when you compare the data to our data dictionary?\n\nExport and open the “sample_tch_svy_cleaning-plan.txt” in the docs folder.\n\nHow does the cleaning plan compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
   },
   {
     "objectID": "slides/index.html#adjust-the-sample-1",
@@ -885,40 +906,5 @@
     "crumbs": [
       "Slides"
     ]
-  },
-  {
-    "objectID": "slides/index.html#exercise-18",
-    "href": "slides/index.html#exercise-18",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise",
-    "text": "Exercise\n\nTake 5 minutes to validate our data\n\nNavigate to Exercise 10.\nRun the validation code.\n\nDo all of our tests pass?\n\nUpdate the code with one more validation criteria. Run the code again.\n\nDo all of our tests still pass?\n\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/index.html#exercise-19",
-    "href": "slides/index.html#exercise-19",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise",
-    "text": "Exercise\n\nTake 2 minutes to export our data\n\nNavigate to Exercise 11.\nUpdate our code to export the clean data file to our “data” folder.\nOnce exported, export the file to confirm it looks as expected.\n\n\n\n\n−+\n02:00"
-  },
-  {
-    "objectID": "slides/index.html#exercise---part-1",
-    "href": "slides/index.html#exercise---part-1",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise - Part 1",
-    "text": "Exercise - Part 1\n\nTake 3 minutes to review our data.\n\nNavigate to Exercise 2.\nRun the code.\n\nWrite down any potential issues you see in the data based on our data quality criteria (analyzable, interpretable, complete, valid, accurate, consistent, de-identified).\nNote: Ignore the warning messages from dfSummary()\n\n\n\n\n\n−+\n03:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
-  },
-  {
-    "objectID": "slides/index.html#exercise---part-2",
-    "href": "slides/index.html#exercise---part-2",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Exercise - Part 2",
-    "text": "Exercise - Part 2\n\nTake 5 minutes to compare our data to our documents.\n\nExport and open the “sample_tch_svy_data-dictionary.xlsx” in the docs folder.\n\nCompare the data dictionary to what you see in our raw data.\nWhat additional issues do you see when you compare the data to our data dictionary?\n\nExport and open the “sample_tch_svy_cleaning-plan.txt” in the docs folder.\n\nHow does the cleaning plan compare to the issues you wrote down?\n\n\n\n\n\n−+\n05:00\n\n\n\n\nSo we are going to follow this data cleaning plan for the rest of this section"
-  },
-  {
-    "objectID": "slides/index.html#review-our-data-1",
-    "href": "slides/index.html#review-our-data-1",
-    "title": "Data Cleaning for Data Sharing Using R",
-    "section": "Review our data",
-    "text": "Review our data"
   }
 ]

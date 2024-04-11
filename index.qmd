@@ -15,7 +15,7 @@ title: "Data Cleaning for Data Sharing Using R"
 
 # Overview
 
-Before sharing research study data, it should be vetted to ensure that it is interpretable, analyzable, and reliable. This half-day, virtual workshop will provide a foundational understanding of how to organize data for the purpose of data sharing.
+Before sharing research study data, it should be vetted to ensure that it is interpretable, analyzable, and reliable. This half-day, in-person workshop will provide a foundational understanding of how to organize data for the purpose of data sharing.
 
 ## Learning objectives
 
