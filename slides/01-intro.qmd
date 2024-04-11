@@ -119,17 +119,26 @@ Get up and move around as much as you need to 🚶.
 ::: columns
 ::: {.column width="40%"}
 
+<br>
+
 - Your name
 - Your affiliation
 - Your role
-- Your data cleaning experience
-- Your experience with R
 
 :::
  
 ::: {.column width="60%"}
 ![Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE)](images/greeting.jpg){fig-align="center"}
 :::
+:::
+
+:::{.notes}
+
+- Raise your hand if you have cleaned data before?
+- Raise your hand if you clean data regularly?
+- Raise your hand if feel comfortable using R?
+- Raise your hand if you use R regularly?
+
 :::
 
 
