@@ -32,7 +32,7 @@
     "href": "slides/index.html#phases-of-data",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "3 Phases of Data",
-    "text": "3 Phases of Data\n\n\n\nSo, before we begin, I want to clarify what we will be talking about today. So in terms of data, there are typically 3 phases.\nFirst, there is raw data. And I am defining raw data as data that comes directly from a source. - That source could be original data\n\nWhat makes it raw, no transformations\nYou simply downloaded\nAnd the thing about this raw data is that it usually is messy AND it usually (in the world of education research) contains some identifying information. And we often can’t share this outside of our research team.\n\nNext, we have the clean data. And this is the data that we will be talking about today.\n\nThis is the data we typically share\nThis data is still in its true, raw form, but has been de-identified and minimally altered to allow the data to be correctly interpreted.\nentire study sample (no outliers have been removed), all missing data is still labelled as missing (no imputation is done), and no analysis-specific variables are calculated.\n\nLast, we have all of these analytic datasets.\n\nThese are datasets that are created from the general clean dataset and contain further manipulations that are done for a specific analysis\nThese datasets will typically also be publicly shared in a repository\nBut these datasets are analysis specific and are not going to be part of the data cleaning process we are discussing today."
+    "text": "3 Phases of Data"
   },
   {
     "objectID": "slides/index.html#a-sampling-of-open-datasets",
