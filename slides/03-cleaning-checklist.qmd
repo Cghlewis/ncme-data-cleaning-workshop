@@ -56,28 +56,11 @@
 :::
 :::
 
-::: {.notes}
-
-However, to produce datasets that consistently meet the data quality criteria we just reviewed, it can be helpful to follow a standardized checklist of data cleaning steps. These steps, although they are really general here, once you tailor them to your specific data source they can help you produce a dataset that meets our data quality standards. 
-
-As you use this checklist to clean your specific dataset you use the steps that are relevant to your data and remove the steps that are not relevant. 
-
-The order of these steps are fluid. With the exception of the first two on the list, you can move them around in whatever order makes sense for your specific dataset.
-
-We are going to take some time to review each step on this list with the exception of the ones in blue. Those require more time to cover than we have today, so instead I have linked to more information here for you to review in your own time.
-
-
-:::
 
 ## Import raw data
 
 ![](images/checklist1.PNG){fig-align="center"}
 
-::: {.notes}
-
-Importing your raw data will always be number one of course, and the most important rule here is to never make any manual edits directly in the raw data file. Your raw data file is your single source of truth for that data source. If you make errors in your data cleaning process, you should always be able to go back to the untouched raw data to start over again if you need to. 
-
-:::
 
 ## Review data
 
@@ -107,19 +90,6 @@ Start back at step 1
 
 ![](images/checklist4.PNG){fig-align="center"}
 
-::: {.notes}
-
-This means removing anyone who should not be in the dataset - maybe they didn't consent to be in the study
-
-It also means taking care of any duplicates in your data
-
-The first thing you'll want to do before removing duplicates is determine if it is a true duplicate, not just an error in the data
-
-Then removing any true duplicates based on your duplicate removal rule
-
-It's really important that these kinds of decisions rules are documented for future data users. And we'll talk more about where to document these kinds of things later.
-
-:::
 
 ## De-identify data
 
@@ -138,21 +108,6 @@ It's really important that these kinds of decisions rules are documented for fut
 |[Alena Filip](https://www.sjsu.edu/research/docs/irb-data-management-handbook.pdf) |Table 2 provides pros and cons of various de-identification methods|
 |[J-PAL](https://www.povertyactionlab.org/resource/data-de-identification)| Table 3 provides a list of direct and indirect identifiers and recommended removal methods|
 |[Schatschneider, et.al](https://figshare.com/articles/preprint/De-Identification_Guide/13228664)| Deidentifying Data Guide|
-
-:::{.notes}
-
-- Redaction
-  - Eliminate the entire variable from the data
-- Suppression
-  - Remove data in a particular cell or row (In this example, age 67 was an outlier so I suppressed that cell value and replaced it with -98 which I’ve coded as suppressed).
-- Generalization
-  - Reduce precision in the data (In this example here, I’ve binned my age ranges so they are less precise)
-- Truncation
-  - Restricting upper and lower ranges to mask outliers
-  
-There are many, even more sophisticated ways, to de-identify data
-
-:::
 
 ## Drop irrelevant columns
 
@@ -175,11 +130,6 @@ There are many, even more sophisticated ways, to de-identify data
 
 ![](images/checklist9.PNG){fig-align="center"}
 
-:::{.notes}
-
-I realize this is unconventional terminology to use, but here I am using the term normalize to talk about returning variables to their normal or expected state. 
-
-:::
 
 ## Standardize variables
 
@@ -188,51 +138,22 @@ I realize this is unconventional terminology to use, but here I am using the ter
 
 ![](images/checklist10.PNG){fig-align="center"}
 
-:::{.notes}
-
-Here I am using the term standardize to convey the process of checking for consistency
-
-:::
 
 ## Update variable types
 
 ![](images/checklist11.PNG){fig-align="center"}
 
-:::{.notes}
-
-Character to Numeric, Numeric to Date, And so forth
-
-:::
 
 ## Recode variables
 
 ![](images/checklist12.PNG){fig-align="center"}
 
-:::{.notes}
 
-- This includes recoding your categorical numeric values to match your data dictionary values
-- But it also includes any planned coding, such as reverse coding a variable
-- As well as recoding any implicit values to their explicit values
-
-:::
 
 ## Construct additional variables
 
 ![](images/checklist13.PNG){fig-align="center"}
 
-:::{.notes}
-
-- This is not the time to construct analysis-specific variables. This is the time to create or calculate variables that should always be a part of the core study dataset.
-
-- This could be things like grouping variables (treatment, cohort, site)
-- It could be time component variables (year, wave)
-- It could be additional unique identifiers that you need to add for linking purposes (like adding a school ID to a teacher file)
-- Or it could be measure composite or summary scores that you want included in the core dataset
-- Any other variables you want added to the core sharing dataset
-
-- Some of these variables will be calculated, others may be merged in from other sources
-
-:::
 
 ## Add missing values
 
@@ -261,15 +182,6 @@ Character to Numeric, Numeric to Date, And so forth
 
 :::
 :::
-
-:::{.notes}
-
-You should absolutely be checking your transformations throughout your cleaning process, but then, before exporting your data you should do one final review to make sure you haven't missed anything.  
-
-Here are several examples where various researchers did not have data validation as part of their data cleaning process and found out much later on that their data contained errors. And so we want to try to prevent this scenario by catching any errors now, rather than later.
-
-:::
-
 
 ## Data validation
 
@@ -303,11 +215,6 @@ Here are several examples where various researchers did not have data validation
 :::
 :::
 
-:::{.notes}
-
-Use your data quality indicator list as a guide when doing your final data review
-
-:::
 
 ## Data validation
 
@@ -337,12 +244,6 @@ Use your data quality indicator list as a guide when doing your final data revie
 :::
 :::
 
-:::{.notes}
-
-What's most important is that you document your decisions for future users
-
-:::
-
 ## Export data
 
 <br>
@@ -370,12 +271,6 @@ Which gives you a better idea of what is in the file? 🤔
 
 ![](images/data_cleaning_plan.PNG){fig-align="center"}
 
-
-:::{.notes}
-
-Ultimately what I like to do in a cleaning process is pull out my checklist, import and review my data, and then plan out the steps that are needed to clean my specific dataset
-
-:::
 
 ## BREAK!
 

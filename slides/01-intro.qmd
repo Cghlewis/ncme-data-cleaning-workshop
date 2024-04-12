@@ -59,20 +59,6 @@ Feel free to interrupt me with questions/comments at any time ✋.
 <br>
 
 Get up and move around as much as you need to 🚶.
-  
-::: {.notes}
-- All materials for the workshop can be found at this website. 
-  - Link also lives at the bottom of these slides
-
-- Hands on exercises in R in the second half of this workshop 
-  - Posit Cloud trouble shoot
-  - If you have any trouble logging into Posit Cloud
-
-- If Posit Cloud is a total failure, you should also be able to download the materials 
-
-- And then I really hope that today will be a very relaxed environment.
-
-:::
 
 ## About the Speaker
 
@@ -97,23 +83,6 @@ Get up and move around as much as you need to 🚶.
 :::
 :::
 
-::: {.notes}
-- Independent research data management consultant
-  - This means I work for myself. 
-
-- Prior to this I worked for the MPSI for 8 years 
-
-- I'm also a co-organization for two organizations. 
-  - whose mission it is to promote gender diversity in the R community. 
-  - We organize monthly meetups
-
-- I also organize the POWER Data Management in Education Research Hub.
-  - Our smaller hub is particularly focused on sharing knowledge around data management issues in education research.
-
-- And then probably the most noteworthy thing about me right now is that I recently finished writing this book
-
-:::
-
 ## Introductions
 
 ::: columns
@@ -130,15 +99,6 @@ Get up and move around as much as you need to 🚶.
 ::: {.column width="60%"}
 ![Image from [Unsplash](https://unsplash.com/photos/brown-and-black-short-coated-small-dog-with-white-long-coat-small-dog-on-gray-concrete-NIKl5WwL-RE)](images/greeting.jpg){fig-align="center"}
 :::
-:::
-
-:::{.notes}
-
-- Raise your hand if you have cleaned data before?
-- Raise your hand if you clean data regularly?
-- Raise your hand if feel comfortable using R?
-- Raise your hand if you use R regularly?
-
 :::
 
 
@@ -186,18 +146,6 @@ Get up and move around as much as you need to 🚶.
 
 ![](images/publicdata4.PNG){.fragment}
 
-
-:::
-
-::: {.notes}
-
-So in preparation for this workshop, I went through several public repositories and found a sampling of shared datasets. Let me show you some of them.
-
-What do you notice when you look at these different datasets?
-
-There is no real consistency in how data is structured, variables are named, or how information is coded. And this is a problem because it makes reuse of this data very difficult.
-
-Data don't necessarily have to be identically formatted. Different variable naming conventions can be used, different coding schemes can be used. But there are several data quality standards that all data should adhere to in order to allow data to be interpretable and usable, and that is what we are going to talk about today.
 
 :::
 

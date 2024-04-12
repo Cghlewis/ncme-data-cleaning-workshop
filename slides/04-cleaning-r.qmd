@@ -1,14 +1,5 @@
 # Cleaning in R {.background-secondary}
 
-:::{.notes}
-
-- Before we jump
-- that this material is not about learning a comprehensive set of data cleaning functions that you can use to solve every data cleaning issue you may encounter
-- There's no way to cover that much material, and on top of that, for every data cleaning issue you encounter in your data, there are probably 10 different ways to solve that issue. 
-- Instead this section is more about learning a standardized way of thinking through a data cleaning process and pulling from the available R functions, some of which we will learn today, to work through that process. 
-
-:::
-
 ## Objects
 
 <br>
@@ -41,13 +32,6 @@ mean(age_new)
 ```
 
 :::
-:::
-
-
-:::{.notes}
-
-Foundational
-
 :::
 
 ## Objects
@@ -198,12 +182,6 @@ dplyr::select(df, var1, var2)
 
 ```
 :::
-:::
-
-:::{.notes}
-
-Foundational
-
 :::
 
 
@@ -453,11 +431,6 @@ countdown(minutes = 3, font_size = "2em")
 
 ```
 
-:::{.notes}
-
-So we are going to follow this data cleaning plan for the rest of this section
-
-:::
 
 ## [Exercise - Part 2]{style="color:#ccd64d"}{.background-secondary}
 
@@ -477,12 +450,6 @@ So we are going to follow this data cleaning plan for the rest of this section
 countdown(minutes = 5, font_size = "2em")
 
 ```
-
-:::{.notes}
-
-So we are going to follow this data cleaning plan for the rest of this section
-
-:::
 
 
 ## Adjust the sample
@@ -560,7 +527,6 @@ df |>
     - If you want descending order `arrange(desc(date))`
 
 :::
-
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -1145,15 +1111,6 @@ countdown(minutes = 1, font_size = "2em")
 :::
 :::
 
-:::{.notes}
-
-- There are many ways to validate data based on data quality criteria
-
-- Codebooks, which can be exported to things like word or text documents, provide univariate summary statistics about your data. It just gives you a nice easy to read summary of what is happening in your data.
-
-- You most likely want to do a combination of these things in your validation process
-
-:::
 ## Validate data
 
 ::: panel-tabset
@@ -1273,15 +1230,6 @@ countdown(minutes = 2, font_size = "2em")
 :::
 :::
 
-:::{.notes}
-
-That will just help ensure that your code is more readable, usable, and reproducible in the future. 
-
-- your chain of processing is lost, and your work is no longer reproducible
-
-You may have noticed that throughout these exercises, that we always performed a check to make sure that the transformation worked as expected
-
-:::
 
 ## Versioning
 

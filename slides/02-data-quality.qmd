@@ -4,15 +4,6 @@
 
 ![](images/data-ready.PNG){fig-align="center" width="80%"}
 
-::: {.notes}
-
-Has anyone here ever had someone give them a dataset that they've said is good to go, but then you open the data and it looks something like this? Just a mess.
-
-I feel like this happens to me on a weekly basis.
-
-So today we are going to review a standard set of data quality indicators that we can use to determine if a dataset is really ready to be shared or not.
-
-:::
 
 ## 7 Data Quality Indicators
 
@@ -54,14 +45,6 @@ So today we are going to review a standard set of data quality indicators that w
 
 ![](images/quality-analyze1.PNG){fig-align="center"}
 
-::: {.notes}
-
-So first and foremost, data needs to make a rectangle. This rectangle shape is how machines read data.
-
-- short representation of the information contained in a column.
-
-
-:::
 
 ## Analyzable
 
@@ -70,11 +53,6 @@ So first and foremost, data needs to make a rectangle. This rectangle shape is h
   
 ![](images/quality-analyze2.PNG){fig-align="center" width="70%"}
 
-::: {.notes}
-
-Another rule of analyzable data is that information is explicit, not implicit. This means unless data is actually missing, there should be no blanks in your data. They should be filled with the applicable values.
-
-:::
 
 ## Analyzable
 
@@ -82,24 +60,12 @@ Another rule of analyzable data is that information is explicit, not implicit. T
 
 ![](images/quality-analyze3.PNG){fig-align="center"}
 
-::: {.notes}
-
-Another example of data that is not explicit is when color coding is used. Here, color coding is used to indicate study treatment groups. However, machines cannot interpret color codes. This information needs to be defined in a variable with values assigned for each group.
-
-:::
 
 ## Analyzable
 
 - Only one piece of information is collected per variable
 
 ![](images/quality-analyze4.PNG){fig-align="center"}
-
-::: {.notes}
-
-And then last, for data to be analyzable, you should only collect one piece of information per variable. In this example, a rate variable has been included the data where the numerator is the number of incidents and the denominator is the total number of students in the school. But it is difficult to work with combined information. It's much better to separate those pieces of information into their own variables and then you can aggregate information as needed.
-
-:::
-
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -157,32 +123,12 @@ countdown(minutes = 1, font_size = "2em")
 :::
 :::
 
-
-::: {.notes}
-
-- First interpretable applies to your variable names
-
-- Even dashes are not allowed because R reads them as minus signs
-- While periods are allowed in R, they aren't in other languages like Stata so it's best to avoid them.
-
-- Most statistical programs are case sensitive so if you are inconsistent with things like delimiters and capitalization, it just makes it so much more difficult to work with your data.
-
-:::
-
 ## Interpretable
 
 - When publicly sharing data, it is recommended to share data in at least one non-proprietary format (e.g., CSV)
   - But if you would also like to share a copy in a commonly used format such as SPSS, SAS, or Stata, consider adding embedded metadata (i.e., **variable label** and **value labels**)
   
 ![](images/quality-interpret1.PNG){fig-align="center"}
-
-::: {.notes}
-
-- But interpretable can also apply to other formatting
-
-- Because that can really help with interpretation. Rather than having to flip back and forth to the data dictionary to see what codes mean or what a variable represents, the information lives within the dataset and can be accessed as needed.
-
-:::
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -258,11 +204,6 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
-::: {.notes}
-
-Here we don't have access to a tracking database or a data dictionary but there is still something we can catch in this dataset without those documents.
-
-:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
@@ -305,11 +246,6 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
-::: {.notes}
-
-Again we don't have a data dictionary for this example...
-
-:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
@@ -328,11 +264,6 @@ Again we don't have a data dictionary for this example...
   - A date of birth collected from school records should match the date of birth provided by the student
   - If a student is in 2nd grade, they should be associated with a second grade teacher
   
-::: {.notes}
-
-So accuracy can be a tough thing to judge, but depending on your level of involvement in the study, you may have some implicit knowledge you can use to judge accuracy.
-
-:::
   
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
@@ -349,11 +280,6 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
-::: {.notes}
-
-So in this case we don't have any implicit knowledge, but by comparing pieces of information within the dataset, what data quality issues do you see for the accurate indicator here?
-
-:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
@@ -368,14 +294,6 @@ So in this case we don't have any implicit knowledge, but by comparing pieces of
 - Variables are consistently measured across collections of the same form
 
 ![](images/quality-consistent1.PNG){fig-align="center"}
-
-::: {.notes}
-
-And the reason that this consistency matters is that a computer doesn't know that three different spellings of yes are all still yes. It will think these are 3 different things.
-
-So if you collect an item in the fall and then you collect that same item in the spring, you want to make sure that item is coded and formatted in the same way. This allows you to more easily compare and combine information.
-
-:::
 
 
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
@@ -403,19 +321,6 @@ countdown(minutes = 1, font_size = "2em")
 
 ![](images/quality-identify1.PNG){fig-align="center"}
 
-::: {.notes}
-
-In the world of education research we are often working with human subjects and we often promise those subjects that their identifying information will remain private
-
-Direct identifiers are unique to an individual and can be used alone to identify a participant. 
-
-Indirect identifiers however are not necessarily unique to a particular individual, but if combined with other information they could be used to identify a participant.
-
-  - age + gender + education level
-  - 50 + female + PhD
-  - it’s possible that someone could use that information to identify someone in a dataset
-
-:::
 
 ## De-identified
 
@@ -441,13 +346,6 @@ Indirect identifiers however are not necessarily unique to a particular individu
 
 - Math assessment may be low risk while a survey on substance use is higher risk
 
-::: {.notes}
-
-But there is more you need to check for.
-
-Making transformations based on these kinds of criteria can greatly alter your data, depending on the kinds of alterations you make. So before making alterations, you also need to consider all of this in the context of risk. So if you are collecting information that is fairly innocuous (like maybe it's a math assessment), the risk of harm if a participant re-identified is pretty low and you may decide to make minimal changes. If you are collecting information like on substance use, the risk is higher because that information could impact your career, relationships, and so forth and you need to be really thoughtful and careful in deciding what is the best course of action for your data. 
-:::
-
 ## [Exercise]{style="color:#ccd64d"}{.background-secondary}
 
 <br>
@@ -463,11 +361,6 @@ countdown(minutes = 1, font_size = "2em")
 
 ```
 
-::: {.notes}
-
-This is a very small dataset so don't worry about indirect identifiers right now. Focus more on direct identifiers
-
-:::
 
 ## [Solution]{style="color:#ccd64d"}{.background-secondary}
 
@@ -500,13 +393,3 @@ The number one way to reduce data errors is to make a plan before you collect da
 . . .
 
 - Check your data often during data collection/entry
-
-::: {.notes}
-
-So before we move on to how to our data cleaning checklist, I want to point out one really important thing. And that is, if you are collecting your own original data
-
-Doing this ensures not only that you have much less data cleaning to do in the end, but it also prevents you from potentially losing data or having to recollect bad data. So it's 100% worth the effort to spend time planning for quality data collection in the beginning if you can.
-
-But of course, we are not always in charge of data collection and we just have to deal with the data we are given and so are going to talk about this in the next sections.
-
-:::

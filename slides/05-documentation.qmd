@@ -43,17 +43,6 @@
 :::
 :::
 
-:::{.notes}
-
-Always share some sort of documentation along with your file
-
-Even if you have the most pristine data file, users have no context for that file
-
-What project this data is associated with, how data was collected and who it was collected on, any transformations done to data, what variables represent
-
-:::
-
-
 ## Project-level documentation
 
 ::: columns
