@@ -971,7 +971,7 @@ df |>
 ```
 
 - If the oldvalue is numeric, it requires ticks around the number, e.g., \`5\`
-- If either the oldvalue or newvalue is character use quotation marks, e.g., "yes", 
+- If the newvalue is character use quotation marks, e.g., "yes", 
 
 :::
 

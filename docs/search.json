@@ -676,7 +676,7 @@
     "href": "slides/index.html#recode-variables-1",
     "title": "Data Cleaning for Data Sharing Using R",
     "section": "Recode variables",
-    "text": "Recode variables\nCommon functions for recoding values are\n\ndplyr::case_when()\ndplyr::recode()\ntidyr::replace_na()\n\n\n\n\n\ndf |&gt;\n  mutate(newvar = \n           recode(oldvar,\n                  oldvalue = newvalue))\n\n\nIf the oldvalue is numeric, it requires ticks around the number, e.g., `5`\nIf either the oldvalue or newvalue is character use quotation marks, e.g., “yes”,\n\n\n\ndf |&gt; \n  mutate(newvar = \n           replace_na(oldvar, \n                      replace = newvalue))"
+    "text": "Recode variables\nCommon functions for recoding values are\n\ndplyr::case_when()\ndplyr::recode()\ntidyr::replace_na()\n\n\n\n\n\ndf |&gt;\n  mutate(newvar = \n           recode(oldvar,\n                  oldvalue = newvalue))\n\n\nIf the oldvalue is numeric, it requires ticks around the number, e.g., `5`\nIf the newvalue is character use quotation marks, e.g., “yes”,\n\n\n\ndf |&gt; \n  mutate(newvar = \n           replace_na(oldvar, \n                      replace = newvalue))"
   },
   {
     "objectID": "slides/index.html#recode-variables-2",
