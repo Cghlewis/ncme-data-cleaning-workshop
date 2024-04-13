@@ -26,7 +26,7 @@ website:
   page-footer:
     left: "&copy; 2024 Crystal Lewis Consulting, LLC"
     center: "Website built with ❤︎️ and [Quarto](https://quarto.org/)."
-    right: "Inspired by the [Workshop Template by Jadey Ryan](https://github.com/jadeynryan/workshop-template) and the [R/Medicine 2023 workshop materials](https://github.com/shannonpileggi/rmedicine-data-cleaning-2023)."
+    right: "Inspired by [@jadeynryan](https://github.com/jadeynryan/workshop-template), the [R/Medicine 2023 workshop materials](https://github.com/shannonpileggi/rmedicine-data-cleaning-2023), and [@statishdan](https://github.com/ddsjoberg/clinical-reporting-gtsummary-rmed)."
 
   sidebar:
     background: "#708090"
