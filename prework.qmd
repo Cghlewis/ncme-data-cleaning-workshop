@@ -47,7 +47,7 @@ For this workshop it is assumed that you are comfortable navigating the RStudio 
 
 - [Getting Started with R](https://rfortherestofus.com/courses/getting-started)
 - [What They Forgot to Teach You About R](https://rstats.wtf/source-and-blank-slates) (In particular, the "A holistic workflow" section)
-- [R and Tidyverse for working with data](R and the Tidyverse for working with data)
+- [R and Tidyverse for working with data](https://carpentries-incubator.github.io/r-tidyverse-4-datasets/)
 - [R Software Handbook](https://bookdown.org/aschmi11/RESMHandbook/)
 
 
